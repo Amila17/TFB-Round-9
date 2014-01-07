@@ -1,0 +1,79 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: onion
+self.results['completed']: {}
+
+=====================================================
+  Beginning onion
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting onion
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 01:35:34 PST 2014
+
+  System load:  1.03               Processes:           124
+  Usage of /:   7.9% of 131.33GB   Users logged in:     0
+  Memory usage: 24%                IP address for eth0: 172.16.98.118
+  Swap usage:   4%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+151 packages can be updated.
+78 updates are security updates.
+
+mongodb start/running, process 14433
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+cc -O2 -Ionion/src/   -c -o hello.o hello.c
+(cd onion/build/tools/otemplate/; make)
+make[1]: Entering directory `/home/tfb/FrameworkBenchmarks/onion/onion/build/tools/otemplate'
+make[2]: Entering directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[3]: Entering directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[3]: Leaving directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+[ 90%] Built target otemplate
+make[3]: Entering directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[3]: Leaving directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+[100%] Built target i18n
+make[2]: Leaving directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[1]: Leaving directory `/home/tfb/FrameworkBenchmarks/onion/onion/build/tools/otemplate'
+onion/build/tools/otemplate/otemplate base.html base_html.c
+cc -O2 -Ionion/src/   -c -o base_html.o base_html.c
+onion/build/tools/otemplate/otemplate fortunes.html fortunes_html.c
+cc -O2 -Ionion/src/   -c -o fortunes_html.o fortunes_html.c
+cc hello.o base_html.o fortunes_html.o libonion_static.a -o hello -lpthread -lmysqlclient -ljson -lgnutls -lrt
+
+-----------------------------------------------------
+  Verifying URLs for onion
+-----------------------------------------------------
+VERIFYING JSON (/json) ...
+HTTP/1.1 200 OK
+Content-Length: 30
+Content-Type: application/json
+Server: libonion v0.5 - coralbits.com
+
+{ "message": "Hello, World!" }
+
+VALIDATING JSON ... PASS
+
+
+-----------------------------------------------------
+  Benchmarking onion ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+
+-----------------------------------------------------
+  Stopping onion
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped onion
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through onion
+----------------------------------------------------

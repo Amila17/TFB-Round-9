@@ -1,0 +1,105 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 11:24:56 PST 2014
+
+  System load:  0.0                Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+82 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer treefrog
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/world/plain
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/world/plain
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   572.31us  350.66us   2.85ms   79.31%
+    Req/Sec     1.95k   785.86     3.00k    61.96%
+  73909 requests in 5.00s, 12.55MB read
+Requests/sec:  14779.61
+Transfer/sec:      2.51MB
+
+---------------------------------------------------------
+ Running Warmup treefrog
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/world/plain
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/world/plain
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.93ms    5.64ms  51.92ms   75.34%
+    Req/Sec     3.22k   416.47     4.57k    69.92%
+  379298 requests in 15.00s, 64.39MB read
+  Socket errors: connect 0, read 0, write 0, timeout 180
+Requests/sec:  25285.60
+Transfer/sec:      4.29MB
+
+---------------------------------------------------------
+ Concurrency: 256 for treefrog
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/world/plain
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/world/plain
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.55     11.03   307.00     99.63%
+  2245 requests in 16.00s, 390.24KB read
+  Socket errors: connect 0, read 4, write 0, timeout 1894
+Requests/sec:    140.30
+Transfer/sec:     24.39KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for treefrog
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/world/plain
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/world/plain
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    58.82ms   51.81ms 212.04ms   68.68%
+    Req/Sec    33.28    203.36     3.16k    96.30%
+  10205 requests in 16.01s, 1.73MB read
+  Socket errors: connect 0, read 59, write 0, timeout 7179
+Requests/sec:    637.39
+Transfer/sec:    110.80KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for treefrog
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/world/plain
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/world/plain
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   202.18ms  161.77ms 626.77ms   82.48%
+    Req/Sec   293.83      1.37k   17.02k    95.08%
+  41757 requests in 16.02s, 7.09MB read
+  Socket errors: connect 0, read 297, write 0, timeout 28594
+Requests/sec:   2606.48
+Transfer/sec:    453.08KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for treefrog
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/world/plain
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/world/plain
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.23s   466.76ms   1.77s    62.22%
+    Req/Sec     1.28k     1.73k    8.94k    83.01%
+  164705 requests in 15.06s, 27.96MB read
+  Socket errors: connect 11, read 505, write 0, timeout 100356
+Requests/sec:  10935.75
+Transfer/sec:      1.86MB

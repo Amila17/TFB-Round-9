@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 03:04:39 PST 2014
+
+  System load:  1.17               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 0%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+81 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:9080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   511.61us   86.28us   1.02ms   66.79%
+    Req/Sec     2.03k   117.77     2.44k    61.62%
+  75574 requests in 5.00s, 12.52MB read
+Requests/sec:  15115.03
+Transfer/sec:      2.50MB
+
+---------------------------------------------------------
+ Running Warmup plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.24ms   43.90ms   1.11s    99.82%
+    Req/Sec     3.49k   382.40     5.35k    84.49%
+  406165 requests in 15.00s, 67.30MB read
+Requests/sec:  27077.75
+Transfer/sec:      4.49MB
+
+---------------------------------------------------------
+ Concurrency: 8 for plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   512.91us  230.18us  10.31ms   99.59%
+    Req/Sec     2.05k   123.10     2.56k    65.88%
+  233185 requests in 15.00s, 38.64MB read
+Requests/sec:  15545.88
+Transfer/sec:      2.58MB
+
+---------------------------------------------------------
+ Concurrency: 16 for plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   586.30us  276.19us  11.41ms   95.91%
+    Req/Sec     3.59k   248.27     4.44k    71.07%
+  408583 requests in 15.00s, 67.70MB read
+Requests/sec:  27239.77
+Transfer/sec:      4.51MB
+
+---------------------------------------------------------
+ Concurrency: 32 for plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.19ms  490.21us  12.60ms   66.80%
+    Req/Sec     3.59k   454.47     5.44k    67.48%
+  408335 requests in 15.00s, 67.66MB read
+Requests/sec:  27223.10
+Transfer/sec:      4.51MB
+
+---------------------------------------------------------
+ Concurrency: 64 for plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.39ms    1.15ms  15.24ms   59.81%
+    Req/Sec     3.57k   416.72     5.11k    67.56%
+  405862 requests in 15.00s, 67.25MB read
+Requests/sec:  27057.87
+Transfer/sec:      4.48MB
+
+---------------------------------------------------------
+ Concurrency: 128 for plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.76ms    2.50ms  19.62ms   58.40%
+    Req/Sec     3.51k   282.10     4.75k    72.74%
+  405444 requests in 15.00s, 67.18MB read
+Requests/sec:  27030.49
+Transfer/sec:      4.48MB
+
+---------------------------------------------------------
+ Concurrency: 256 for plain
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:9080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:9080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.68ms   16.22ms   1.11s    99.92%
+    Req/Sec     3.48k   352.19     5.13k    85.37%
+  405259 requests in 15.00s, 67.15MB read
+Requests/sec:  27017.96
+Transfer/sec:      4.48MB

@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 08:00:23 PST 2014
+
+  System load:  1.36               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+82 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/servlet/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/servlet/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   191.02us   33.19us 627.00us   67.71%
+    Req/Sec     5.31k   252.32     5.78k    77.97%
+  204131 requests in 5.00s, 29.59MB read
+Requests/sec:  40829.94
+Transfer/sec:      5.92MB
+
+---------------------------------------------------------
+ Running Warmup servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/servlet/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.20ms  151.61us   5.19ms   88.30%
+    Req/Sec    28.01k     1.58k   34.78k    61.23%
+  3173429 requests in 15.00s, 460.02MB read
+Requests/sec: 211568.15
+Transfer/sec:     30.67MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/servlet/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.19ms   16.84ms 479.69ms   97.52%
+    Req/Sec    39.74k     2.97k   48.33k    67.18%
+  4651422 requests in 15.00s, 674.26MB read
+Requests/sec: 310114.28
+Transfer/sec:     44.95MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/servlet/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    69.55ms  294.73ms   3.75s    96.79%
+    Req/Sec    49.67k     8.80k   86.29k    80.25%
+  5807735 requests in 15.00s, 841.90MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec: 387180.04
+Transfer/sec:     56.13MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/servlet/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   130.16ms  623.18ms  12.44s    96.68%
+    Req/Sec    55.93k     8.79k   76.70k    83.09%
+  6199135 requests in 15.00s, 0.88GB read
+  Socket errors: connect 0, read 0, write 0, timeout 8786
+Requests/sec: 413198.45
+Transfer/sec:     59.90MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/servlet/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/servlet/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.89s     6.78s   14.96s    26.58%
+    Req/Sec    44.98k    26.01k   91.93k    69.62%
+  6150513 requests in 15.05s, 0.87GB read
+  Socket errors: connect 11, read 998, write 0, timeout 87982
+Requests/sec: 408687.47
+Transfer/sec:     59.25MB

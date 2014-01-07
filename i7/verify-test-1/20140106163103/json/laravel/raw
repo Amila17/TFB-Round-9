@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Jan  6 23:44:20 PST 2014
+
+  System load:  0.01               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 0%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+81 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.08ms    4.60ms  36.21ms   85.88%
+    Req/Sec   284.61     95.54   571.00     71.75%
+  10904 requests in 5.00s, 6.69MB read
+  Non-2xx or 3xx responses: 5231
+Requests/sec:   2178.64
+Transfer/sec:      1.34MB
+
+---------------------------------------------------------
+ Running Warmup laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   121.59ms  134.41ms 661.53ms   82.17%
+    Req/Sec   259.04     17.08   310.00     68.07%
+  31121 requests in 15.02s, 18.81MB read
+  Non-2xx or 3xx responses: 15427
+Requests/sec:   2072.16
+Transfer/sec:      1.25MB
+
+---------------------------------------------------------
+ Concurrency: 8 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.95ms   14.93ms 120.12ms   97.88%
+    Req/Sec   283.45    112.16   666.00     69.53%
+  33054 requests in 15.00s, 20.27MB read
+  Non-2xx or 3xx responses: 15881
+Requests/sec:   2203.01
+Transfer/sec:      1.35MB
+
+---------------------------------------------------------
+ Concurrency: 16 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.25ms   16.13ms 190.94ms   92.46%
+    Req/Sec   281.27    110.15   717.00     69.20%
+  33340 requests in 15.01s, 20.21MB read
+  Non-2xx or 3xx responses: 16422
+Requests/sec:   2221.30
+Transfer/sec:      1.35MB
+
+---------------------------------------------------------
+ Concurrency: 32 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.57ms   39.06ms 384.84ms   91.57%
+    Req/Sec   274.12    102.01   693.00     68.58%
+  32583 requests in 15.01s, 19.73MB read
+  Non-2xx or 3xx responses: 16089
+Requests/sec:   2171.27
+Transfer/sec:      1.31MB
+
+---------------------------------------------------------
+ Concurrency: 64 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.53ms   69.01ms 598.17ms   90.72%
+    Req/Sec   271.38     84.63   540.00     69.58%
+  32620 requests in 15.01s, 19.78MB read
+  Non-2xx or 3xx responses: 16054
+Requests/sec:   2173.06
+Transfer/sec:      1.32MB
+
+---------------------------------------------------------
+ Concurrency: 128 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    66.71ms  126.90ms   1.15s    89.05%
+    Req/Sec   265.99     60.13   565.00     73.10%
+  31957 requests in 15.01s, 19.37MB read
+  Non-2xx or 3xx responses: 15748
+Requests/sec:   2128.86
+Transfer/sec:      1.29MB
+
+---------------------------------------------------------
+ Concurrency: 256 for laravel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   117.45ms  171.41ms 911.57ms   86.00%
+    Req/Sec   261.56     27.82   350.00     70.08%
+  31439 requests in 15.00s, 19.01MB read
+  Non-2xx or 3xx responses: 15568
+Requests/sec:   2095.48
+Transfer/sec:      1.27MB

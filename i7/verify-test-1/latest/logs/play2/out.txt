@@ -1,0 +1,90 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: play2
+self.results['completed']: {u'plain-linux-servlet': '__run_test timeout (=3600 seconds)'}
+
+=====================================================
+  Beginning play2
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting play2
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 04:50:19 PST 2014
+
+  System load:  1.42               Processes:           125
+  Usage of /:   7.9% of 131.33GB   Users logged in:     0
+  Memory usage: 24%                IP address for eth0: 172.16.98.118
+  Swap usage:   4%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+151 packages can be updated.
+78 updates are security updates.
+
+mongodb start/running, process 26280
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+[0m[[0minfo[0m] [0mLoading project definition from /home/tfb/FrameworkBenchmarks/play-java/project[0m
+[0m[[0minfo[0m] [0mSet current project to play-java (in build file:/home/tfb/FrameworkBenchmarks/play-java/)[0m
+[32m
+(Starting server. Type Ctrl+D to exit logs, the server will remain in background)
+[0m
+Play server process ID is 2034
+[[37minfo[0m] play - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+-----------------------------------------------------
+  Verifying URLs for play2
+-----------------------------------------------------
+VERIFYING JSON (/json) ...
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 27
+
+{"message":"Hello, World!"}
+
+VALIDATING JSON ... PASS
+
+VERIFYING DB (/db) ...
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 33
+
+[{"id":4782,"randomNumber":3865}]
+
+VALIDATING DB ... FAIL
+
+VERIFYING QUERY (/db?queries=2) ...
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 65
+
+[{"id":3536,"randomNumber":5986},{"id":8908,"randomNumber":7888}]
+
+VALIDATING QUERY ... PASS
+
+
+-----------------------------------------------------
+  Benchmarking play2 ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+
+-----------------------------------------------------
+  Stopping play2
+-----------------------------------------------------
+[info] Stopping application (with PID 2034)...
+[info] Done!
+
+-----------------------------------------------------
+  Stopped play2
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through play2
+----------------------------------------------------

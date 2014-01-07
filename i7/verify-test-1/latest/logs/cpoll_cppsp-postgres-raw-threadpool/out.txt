@@ -1,0 +1,92 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: cpoll_cppsp-postgres-raw-threadpool
+self.results['completed']: {}
+
+=====================================================
+  Beginning cpoll_cppsp-postgres-raw-threadpool
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting cpoll_cppsp-postgres-raw-threadpool
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Jan  6 18:22:04 PST 2014
+
+  System load:  1.75               Processes:           125
+  Usage of /:   7.9% of 131.33GB   Users logged in:     0
+  Memory usage: 24%                IP address for eth0: 172.16.98.118
+  Swap usage:   4%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+151 packages can be updated.
+78 updates are security updates.
+
+mongodb start/running, process 21091
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+rm -rf cppsp_rel0.2.3 cppsp_0.2
+rm -f www/*.so www/*.txt
+tar xf cppsp_0.2.3.tar.xz
+ln -s cppsp_rel0.2.3 cppsp_0.2
+make CXX=g++-4.8 -C cppsp_0.2 all
+make[1]: Entering directory `/home/tfb/FrameworkBenchmarks/cpoll_cppsp/cppsp_rel0.2.3'
+g++-4.8 cppsp_server/cppsp_standalone.C cpoll/all.C cppsp/all.C -o cppsp_standalone -lpthread -ldl -lrt -Ofast -march=native -flto -Wall --std=c++0x -Wno-pmf-conversions -I./include
+g++-4.8 cpoll/all.C -c -o cpoll.o -Ofast -march=native -flto -Wall --std=c++0x -Wno-pmf-conversions -I./include -fPIC
+g++-4.8 cppsp/all.C -c -o cppsp.o -Ofast -march=native -flto -Wall --std=c++0x -Wno-pmf-conversions -I./include -fPIC
+g++-4.8 socketd/all.C cpoll/all.C -o socketd_bin -lpthread -ldl -lrt -Ofast -march=native -flto -Wall --std=c++0x -Wno-pmf-conversions -I./include 
+g++-4.8 cppsp_server/socketd_cppsp.C cpoll/all.C cppsp/all.C -o socketd_cppsp -lpthread -ldl -lrt -Ofast -march=native -flto -Wall --std=c++0x -Wno-pmf-conversions -I./include
+g++-4.8 socketd_proxy.C cpoll/all.C -o socketd_proxy.so -ldl -lpthread --std=c++0x --shared -fPIC -Ofast -march=native -flto -Wall --std=c++0x -Wno-pmf-conversions -I./include 
+make[1]: Leaving directory `/home/tfb/FrameworkBenchmarks/cpoll_cppsp/cppsp_rel0.2.3'
+
+-----------------------------------------------------
+  Verifying URLs for cpoll_cppsp-postgres-raw-threadpool
+-----------------------------------------------------
+VERIFYING DB (/db_pg_threadpool) ...
+HTTP/1.1 200 OK
+Date: Tue, 7 Jan 2014 02:23:56 GMT
+Server: cppsp/0.2
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 34
+
+[{"id":3486,"randomNumber":3169}]
+
+
+VALIDATING DB ... FAIL
+
+VERIFYING QUERY (/db_pg_threadpool?queries=2) ...
+HTTP/1.1 200 OK
+Date: Tue, 7 Jan 2014 02:23:56 GMT
+Server: cppsp/0.2
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 65
+
+[{"id":3973,"randomNumber":986},{"id":4590,"randomNumber":7758}]
+
+
+VALIDATING QUERY ... PASS
+
+
+-----------------------------------------------------
+  Benchmarking cpoll_cppsp-postgres-raw-threadpool ...
+-----------------------------------------------------
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+
+-----------------------------------------------------
+  Stopping cpoll_cppsp-postgres-raw-threadpool
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped cpoll_cppsp-postgres-raw-threadpool
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through cpoll_cppsp-postgres-raw-threadpool
+----------------------------------------------------

@@ -1,0 +1,121 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 11:54:01 PST 2014
+
+  System load:  0.47               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+82 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.07ms  574.35us   1.73ms   62.30%
+    Req/Sec   508.24    722.56     2.22k    66.61%
+  27286 requests in 6.00s, 4.93MB read
+  Socket errors: connect 0, read 0, write 0, timeout 10
+Requests/sec:   4547.66
+Transfer/sec:    841.80KB
+
+---------------------------------------------------------
+ Running Warmup vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.95ms    2.01ms  44.93ms   88.43%
+    Req/Sec     2.21k   196.89     2.77k    72.94%
+  261477 requests in 15.00s, 47.27MB read
+  Socket errors: connect 0, read 0, write 0, timeout 163
+Requests/sec:  17428.60
+Transfer/sec:      3.15MB
+
+---------------------------------------------------------
+ Queries: 1 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.87ms  704.45us  13.74ms   72.96%
+    Req/Sec     4.85k   485.44     6.46k    66.99%
+  560353 requests in 15.00s, 84.32MB read
+  Socket errors: connect 0, read 0, write 0, timeout 205
+Requests/sec:  37364.98
+Transfer/sec:      5.62MB
+
+---------------------------------------------------------
+ Queries: 5 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    38.19ms    3.09ms  72.55ms   81.12%
+    Req/Sec   758.01     54.74     0.99k    74.29%
+  90688 requests in 15.01s, 24.73MB read
+  Socket errors: connect 0, read 0, write 0, timeout 144
+Requests/sec:   6043.51
+Transfer/sec:      1.65MB
+
+---------------------------------------------------------
+ Queries: 10 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    86.86ms    3.87ms 112.69ms   71.01%
+    Req/Sec   337.33     25.22   446.00     71.64%
+  40500 requests in 15.00s, 17.18MB read
+  Socket errors: connect 0, read 0, write 0, timeout 121
+Requests/sec:   2699.15
+Transfer/sec:      1.14MB
+
+---------------------------------------------------------
+ Queries: 15 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   133.54ms    7.03ms 186.20ms   69.33%
+    Req/Sec   220.60     25.83   276.00     68.77%
+  26473 requests in 15.01s, 15.24MB read
+  Socket errors: connect 0, read 0, write 0, timeout 119
+Requests/sec:   1763.52
+Transfer/sec:      1.02MB
+
+---------------------------------------------------------
+ Queries: 20 for vertx
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   176.19ms   11.99ms 234.15ms   78.30%
+    Req/Sec   165.00     15.02   230.00     66.67%
+  19839 requests in 15.02s, 14.43MB read
+  Socket errors: connect 0, read 0, write 0, timeout 134
+Requests/sec:   1320.77
+Transfer/sec:      0.96MB
