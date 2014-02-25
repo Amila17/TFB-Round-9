@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 11:12:03 PST 2014
+
+  System load:  0.63               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/wicket/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms    1.03ms  10.40ms   87.78%
+    Req/Sec     1.16k   408.07     1.75k    73.64%
+  40730 requests in 5.00s, 70.11MB read
+Requests/sec:   8146.92
+Transfer/sec:     14.02MB
+
+---------------------------------------------------------
+ Running Warmup wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/wicket/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.57ms   15.37ms 137.34ms   88.01%
+    Req/Sec   669.71    193.39     1.64k    69.46%
+  397608 requests in 14.99s, 684.44MB read
+Requests/sec:  26517.95
+Transfer/sec:     45.65MB
+
+---------------------------------------------------------
+ Concurrency: 8 for wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/wicket/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   716.06us  371.89us   6.63ms   99.34%
+    Req/Sec     1.48k   179.03     1.89k    76.69%
+  168931 requests in 15.00s, 290.79MB read
+Requests/sec:  11262.55
+Transfer/sec:     19.39MB
+
+---------------------------------------------------------
+ Concurrency: 16 for wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/wicket/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   754.93us  510.61us   8.13ms   98.71%
+    Req/Sec     1.43k   220.77     1.89k    73.94%
+  325363 requests in 15.00s, 560.07MB read
+Requests/sec:  21694.07
+Transfer/sec:     37.34MB
+
+---------------------------------------------------------
+ Concurrency: 32 for wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/wicket/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms  780.76us   7.96ms   94.49%
+    Req/Sec     0.93k   209.90     1.55k    66.71%
+  424666 requests in 15.00s, 731.01MB read
+Requests/sec:  28319.38
+Transfer/sec:     48.75MB
+
+---------------------------------------------------------
+ Concurrency: 64 for wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/wicket/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.48ms    0.95ms   8.50ms   91.84%
+    Req/Sec   755.38    190.63     1.44k    64.12%
+  430169 requests in 14.99s, 740.49MB read
+Requests/sec:  28690.89
+Transfer/sec:     49.39MB
+
+---------------------------------------------------------
+ Concurrency: 128 for wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/wicket/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.71ms    4.99ms  57.17ms   88.66%
+    Req/Sec   718.73    233.54     1.75k    70.22%
+  419078 requests in 14.99s, 721.40MB read
+Requests/sec:  27949.10
+Transfer/sec:     48.11MB
+
+---------------------------------------------------------
+ Concurrency: 256 for wicket
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/wicket/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/wicket/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.56ms   15.86ms 147.78ms   88.37%
+    Req/Sec   671.15    200.48     1.81k    69.45%
+  397322 requests in 15.00s, 683.94MB read
+Requests/sec:  26493.57
+Transfer/sec:     45.61MB

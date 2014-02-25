@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 09:32:29 PST 2014
+
+  System load:  0.06               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   331.01us    1.02ms  15.72ms   99.54%
+    Req/Sec     4.18k     0.96k    5.22k    82.81%
+  147732 requests in 5.00s, 23.78MB read
+Requests/sec:  29552.93
+Transfer/sec:      4.76MB
+
+---------------------------------------------------------
+ Running Warmup undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.99ms    2.59ms 210.99ms   82.11%
+    Req/Sec     3.16k   562.79     5.70k    70.92%
+  1798428 requests in 14.99s, 289.47MB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec: 119938.57
+Transfer/sec:     19.31MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   225.36us   66.86us   3.80ms   98.57%
+    Req/Sec     4.61k   271.01     5.11k    61.06%
+  523537 requests in 15.00s, 84.27MB read
+Requests/sec:  34904.99
+Transfer/sec:      5.62MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mysql
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   239.34us  100.60us   6.32ms   99.75%
+    Req/Sec     4.34k   315.58     4.89k    75.27%
+  986686 requests in 15.00s, 158.81MB read
+Requests/sec:  65789.37
+Transfer/sec:     10.59MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mysql
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   366.41us  350.00us   7.30ms   88.91%
+    Req/Sec     2.93k   500.79     4.55k    67.58%
+  1333487 requests in 14.99s, 214.63MB read
+Requests/sec:  88929.11
+Transfer/sec:     14.31MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mysql
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   432.61us  513.26us   6.84ms   89.24%
+    Req/Sec     2.54k   588.00     4.55k    69.19%
+  1445271 requests in 15.00s, 232.63MB read
+Requests/sec:  96362.73
+Transfer/sec:     15.51MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mysql
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.00ms    1.10ms  10.75ms   80.93%
+    Req/Sec     3.26k   679.87     6.78k    69.14%
+  1853457 requests in 14.99s, 298.33MB read
+Requests/sec: 123641.33
+Transfer/sec:     19.90MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.04ms    2.34ms  21.91ms   80.20%
+    Req/Sec     3.21k   676.01     6.50k    67.96%
+  1839170 requests in 14.99s, 296.03MB read
+Requests/sec: 122705.51
+Transfer/sec:     19.75MB

@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 07:17:35 PST 2014
+
+  System load:  0.33               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/queries-mongo?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/queries-mongo?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.87ms  433.24us   6.26ms   97.75%
+    Req/Sec     1.25k   185.96     1.67k    80.21%
+  46917 requests in 5.00s, 12.33MB read
+Requests/sec:   9384.32
+Transfer/sec:      2.47MB
+
+---------------------------------------------------------
+ Running Warmup start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries-mongo?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries-mongo?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.43ms    9.26ms  94.36ms   88.33%
+    Req/Sec     0.89k   260.03     2.16k    70.59%
+  520550 requests in 15.00s, 136.77MB read
+Requests/sec:  34709.41
+Transfer/sec:      9.12MB
+
+---------------------------------------------------------
+ Queries: 1 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries-mongo?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries-mongo?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.41ms    7.72ms  97.70ms   88.77%
+    Req/Sec     1.02k   255.57     2.29k    71.46%
+  602489 requests in 14.99s, 138.89MB read
+Requests/sec:  40180.44
+Transfer/sec:      9.26MB
+
+---------------------------------------------------------
+ Queries: 5 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries-mongo?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries-mongo?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.32ms   11.66ms 115.77ms   88.40%
+    Req/Sec   683.11    161.60     1.35k    69.07%
+  405690 requests in 14.99s, 145.80MB read
+Requests/sec:  27057.13
+Transfer/sec:      9.72MB
+
+---------------------------------------------------------
+ Queries: 10 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries-mongo?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries-mongo?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.57ms   15.62ms 167.57ms   88.34%
+    Req/Sec   503.37    120.87     1.04k    68.85%
+  299636 requests in 15.00s, 156.23MB read
+Requests/sec:  19975.70
+Transfer/sec:     10.42MB
+
+---------------------------------------------------------
+ Queries: 15 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries-mongo?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries-mongo?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.98ms   22.62ms 251.20ms   89.68%
+    Req/Sec   394.16    105.75     0.96k    67.87%
+  234764 requests in 15.01s, 160.22MB read
+Requests/sec:  15645.57
+Transfer/sec:     10.68MB
+
+---------------------------------------------------------
+ Queries: 20 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries-mongo?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries-mongo?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.61ms   29.84ms 280.32ms   89.18%
+    Req/Sec   324.38     91.93   716.00     68.86%
+  193816 requests in 15.00s, 163.49MB read
+Requests/sec:  12917.80
+Transfer/sec:     10.90MB

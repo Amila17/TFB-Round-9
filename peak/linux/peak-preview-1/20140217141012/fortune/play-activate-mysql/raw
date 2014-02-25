@@ -1,0 +1,133 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 02:07:11 PST 2014
+
+  System load:  0.13               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:9000/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.34ms    0.91ms  11.35ms   98.88%
+    Req/Sec   832.79    122.71     1.00k    81.47%
+  31002 requests in 5.00s, 68.15MB read
+Requests/sec:   6200.77
+Transfer/sec:     13.63MB
+
+---------------------------------------------------------
+ Running Warmup play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.83ms   94.58ms 549.68ms   93.99%
+    Req/Sec   563.76    326.12     2.67k    69.74%
+  324088 requests in 15.00s, 712.42MB read
+  Socket errors: connect 0, read 0, write 0, timeout 18
+Requests/sec:  21608.69
+Transfer/sec:     47.50MB
+
+---------------------------------------------------------
+ Concurrency: 8 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    48.48ms  188.07ms 798.72ms   94.08%
+    Req/Sec   809.45    238.75     1.00k    90.42%
+  91086 requests in 15.00s, 200.23MB read
+Requests/sec:   6072.49
+Transfer/sec:     13.35MB
+
+---------------------------------------------------------
+ Concurrency: 16 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18s   905.41ms   1.88s    62.96%
+    Req/Sec   294.28    392.84     1.00k    65.94%
+  70712 requests in 15.01s, 155.44MB read
+Requests/sec:   4711.62
+Transfer/sec:     10.36MB
+
+---------------------------------------------------------
+ Concurrency: 32 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.19s   796.69ms   3.39s    94.03%
+    Req/Sec    38.23    156.41     0.89k    94.19%
+  19119 requests in 15.26s, 42.03MB read
+  Socket errors: connect 0, read 0, write 0, timeout 32
+Requests/sec:   1253.17
+Transfer/sec:      2.75MB
+
+---------------------------------------------------------
+ Concurrency: 64 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.57s   593.43ms   1.80s    87.22%
+    Req/Sec    71.17    195.56   800.00     88.40%
+  41362 requests in 15.22s, 90.92MB read
+Requests/sec:   2717.06
+Transfer/sec:      5.97MB
+
+---------------------------------------------------------
+ Concurrency: 128 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.84s   571.18ms   2.42s    90.56%
+    Req/Sec    43.31    166.39     1.60k    93.06%
+  26072 requests in 15.38s, 57.31MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:   1695.09
+Transfer/sec:      3.73MB
+
+---------------------------------------------------------
+ Concurrency: 256 for play-activate-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:9000/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.65s     1.20s    6.77s    82.93%
+    Req/Sec    37.54    164.14     2.36k    94.32%
+  22135 requests in 15.52s, 48.66MB read
+  Socket errors: connect 0, read 1, write 0, timeout 251
+Requests/sec:   1425.80
+Transfer/sec:      3.13MB

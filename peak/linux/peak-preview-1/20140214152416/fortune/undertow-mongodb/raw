@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 09:56:18 PST 2014
+
+  System load:  0.39               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes/mongodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   253.67us  120.47us   3.89ms   99.52%
+    Req/Sec     4.10k   345.71     4.67k    89.27%
+  151027 requests in 5.00s, 269.19MB read
+Requests/sec:  30212.61
+Transfer/sec:     53.85MB
+
+---------------------------------------------------------
+ Running Warmup undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mongodb
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.23ms    1.90ms  16.33ms   85.23%
+    Req/Sec     2.90k   527.85     5.44k    68.84%
+  1644069 requests in 14.99s, 2.86GB read
+Requests/sec: 109695.94
+Transfer/sec:    195.52MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mongodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   246.33us   78.11us   5.71ms   96.82%
+    Req/Sec     4.21k   270.10     4.78k    79.67%
+  478891 requests in 15.00s, 853.58MB read
+Requests/sec:  31928.21
+Transfer/sec:     56.91MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mongodb
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   253.90us  144.86us  11.89ms   99.80%
+    Req/Sec     4.11k   318.92     4.67k    78.12%
+  934796 requests in 15.00s, 1.63GB read
+Requests/sec:  62328.58
+Transfer/sec:    111.10MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mongodb
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   377.81us  363.73us   7.27ms   89.77%
+    Req/Sec     2.85k   498.85     4.33k    69.57%
+  1293973 requests in 15.00s, 2.25GB read
+Requests/sec:  86283.91
+Transfer/sec:    153.79MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mongodb
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   441.94us  529.27us   7.38ms   89.94%
+    Req/Sec     2.50k   595.44     4.33k    63.21%
+  1423800 requests in 15.00s, 2.48GB read
+Requests/sec:  94946.16
+Transfer/sec:    169.23MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mongodb
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms    1.61ms  14.36ms   83.45%
+    Req/Sec     2.87k   780.12     7.44k    68.97%
+  1627648 requests in 14.99s, 2.83GB read
+Requests/sec: 108579.17
+Transfer/sec:    193.53MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mongodb
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.23ms    2.02ms 209.03ms   85.74%
+    Req/Sec     2.90k   575.09     6.89k    71.55%
+  1639194 requests in 14.99s, 2.85GB read
+  Socket errors: connect 0, read 0, write 0, timeout 6
+Requests/sec: 109320.81
+Transfer/sec:    194.86MB

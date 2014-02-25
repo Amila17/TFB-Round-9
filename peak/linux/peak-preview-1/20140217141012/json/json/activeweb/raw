@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 15:25:27 PST 2014
+
+  System load:  0.0                Processes:            271
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/activeweb/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   830.12us    3.09ms  33.03ms   99.01%
+    Req/Sec     2.32k     1.19k    5.33k    81.61%
+  84261 requests in 5.00s, 13.82MB read
+Requests/sec:  16855.62
+Transfer/sec:      2.76MB
+
+---------------------------------------------------------
+ Running Warmup activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.56ms    9.13ms 752.65ms   98.92%
+    Req/Sec     4.66k     1.41k   11.33k    69.05%
+  2601316 requests in 14.99s, 426.70MB read
+Requests/sec: 173487.55
+Transfer/sec:     28.46MB
+
+---------------------------------------------------------
+ Concurrency: 8 for activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   116.22us   60.67us   4.48ms   99.94%
+    Req/Sec     8.78k   639.54    10.22k    86.71%
+  995217 requests in 15.00s, 163.25MB read
+Requests/sec:  66352.81
+Transfer/sec:     10.88MB
+
+---------------------------------------------------------
+ Concurrency: 16 for activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   134.98us  245.52us  10.67ms   99.86%
+    Req/Sec     7.85k   777.35     9.22k    75.41%
+  1783163 requests in 15.00s, 292.50MB read
+Requests/sec: 118892.34
+Transfer/sec:     19.50MB
+
+---------------------------------------------------------
+ Concurrency: 32 for activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   173.16us  281.05us  10.81ms   99.03%
+    Req/Sec     6.06k     1.13k    9.11k    68.59%
+  2755401 requests in 14.99s, 451.97MB read
+Requests/sec: 183761.20
+Transfer/sec:     30.14MB
+
+---------------------------------------------------------
+ Concurrency: 64 for activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   204.99us  195.73us   4.93ms   93.51%
+    Req/Sec     5.06k     1.01k    8.22k    66.61%
+  2876716 requests in 14.99s, 471.87MB read
+Requests/sec: 191898.39
+Transfer/sec:     31.48MB
+
+---------------------------------------------------------
+ Concurrency: 128 for activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   699.91us    1.19ms  19.11ms   85.53%
+    Req/Sec     4.85k     1.31k   11.11k    68.66%
+  2754374 requests in 14.99s, 451.81MB read
+Requests/sec: 183774.81
+Transfer/sec:     30.14MB
+
+---------------------------------------------------------
+ Concurrency: 256 for activeweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/activeweb/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.45ms    2.80ms  32.50ms   85.36%
+    Req/Sec     4.68k     1.35k   13.60k    69.62%
+  2665791 requests in 14.99s, 437.27MB read
+Requests/sec: 177786.95
+Transfer/sec:     29.16MB

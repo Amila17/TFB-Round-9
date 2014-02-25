@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 06:48:42 PST 2014
+
+  System load:  2.13               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/spark/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   694.43us  285.33us   6.02ms   85.11%
+    Req/Sec     1.64k   427.55     2.33k    61.00%
+  58758 requests in 5.00s, 9.01MB read
+Requests/sec:  11753.55
+Transfer/sec:      1.80MB
+
+---------------------------------------------------------
+ Running Warmup spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/spark/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.88ms    5.25ms  84.51ms   81.84%
+    Req/Sec   561.73     61.50   735.00     78.61%
+  327656 requests in 15.00s, 50.24MB read
+Requests/sec:  21845.30
+Transfer/sec:      3.35MB
+
+---------------------------------------------------------
+ Concurrency: 8 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/spark/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   528.16us  147.39us   4.91ms   99.62%
+    Req/Sec     1.99k   162.88     2.33k    70.17%
+  225665 requests in 15.00s, 34.60MB read
+Requests/sec:  15045.14
+Transfer/sec:      2.31MB
+
+---------------------------------------------------------
+ Concurrency: 16 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/spark/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   556.53us  182.89us   4.39ms   99.70%
+    Req/Sec     1.89k   143.43     2.11k    93.75%
+  428605 requests in 15.00s, 65.72MB read
+Requests/sec:  28576.92
+Transfer/sec:      4.38MB
+
+---------------------------------------------------------
+ Concurrency: 32 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/spark/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   643.66us  272.87us   7.86ms   99.39%
+    Req/Sec     1.64k   156.95     1.89k    93.04%
+  746721 requests in 15.00s, 114.50MB read
+Requests/sec:  49797.82
+Transfer/sec:      7.64MB
+
+---------------------------------------------------------
+ Concurrency: 64 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/spark/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   710.64us  313.80us   5.31ms   98.90%
+    Req/Sec     1.49k   152.06     1.78k    80.21%
+  848048 requests in 14.99s, 130.04MB read
+Requests/sec:  56559.27
+Transfer/sec:      8.67MB
+
+---------------------------------------------------------
+ Concurrency: 128 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/spark/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.75ms    1.34ms  15.36ms   74.54%
+    Req/Sec   669.26    114.89     1.30k    67.23%
+  384523 requests in 15.00s, 58.96MB read
+Requests/sec:  25642.35
+Transfer/sec:      3.93MB
+
+---------------------------------------------------------
+ Concurrency: 256 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/spark/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.87ms    5.01ms  51.55ms   80.26%
+    Req/Sec   569.29     76.23     0.87k    69.51%
+  336406 requests in 14.99s, 51.58MB read
+Requests/sec:  22439.05
+Transfer/sec:      3.44MB

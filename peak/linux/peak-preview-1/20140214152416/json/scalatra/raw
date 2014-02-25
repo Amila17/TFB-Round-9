@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 06:18:45 PST 2014
+
+  System load:  0.03               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/scalatra/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   556.19us    2.15ms  21.85ms   98.69%
+    Req/Sec     4.75k     2.55k    8.56k    51.17%
+  165543 requests in 5.00s, 31.73MB read
+Requests/sec:  33116.61
+Transfer/sec:      6.35MB
+
+---------------------------------------------------------
+ Running Warmup scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/scalatra/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.71ms   48.83ms   1.01s    98.94%
+    Req/Sec     4.13k     2.17k   18.00k    69.36%
+  2306627 requests in 14.99s, 442.15MB read
+Requests/sec: 153901.26
+Transfer/sec:     29.50MB
+
+---------------------------------------------------------
+ Concurrency: 8 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/scalatra/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   159.07us  498.47us  11.86ms   99.77%
+    Req/Sec     7.31k     1.20k    8.78k    89.28%
+  829909 requests in 15.00s, 159.08MB read
+Requests/sec:  55331.55
+Transfer/sec:     10.61MB
+
+---------------------------------------------------------
+ Concurrency: 16 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/scalatra/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   163.68us  375.68us   9.24ms   99.75%
+    Req/Sec     6.66k     1.25k    8.22k    88.04%
+  1513701 requests in 15.00s, 290.16MB read
+Requests/sec: 100880.16
+Transfer/sec:     19.34MB
+
+---------------------------------------------------------
+ Concurrency: 32 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/scalatra/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   242.50us  705.87us  11.44ms   99.30%
+    Req/Sec     5.03k     1.38k    7.55k    76.51%
+  2287290 requests in 15.00s, 438.45MB read
+Requests/sec: 152522.98
+Transfer/sec:     29.24MB
+
+---------------------------------------------------------
+ Concurrency: 64 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/scalatra/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   258.40us  441.75us   7.95ms   97.18%
+    Req/Sec     4.36k     1.36k    8.00k    66.94%
+  2473132 requests in 14.98s, 474.07MB read
+Requests/sec: 165118.93
+Transfer/sec:     31.65MB
+
+---------------------------------------------------------
+ Concurrency: 128 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/scalatra/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.96ms    2.66ms  61.22ms   93.53%
+    Req/Sec     4.29k     1.82k   12.67k    68.12%
+  2438628 requests in 14.99s, 467.46MB read
+Requests/sec: 162690.49
+Transfer/sec:     31.19MB
+
+---------------------------------------------------------
+ Concurrency: 256 for scalatra
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/scalatra/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/scalatra/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.85ms   18.47ms 132.75ms   94.40%
+    Req/Sec     4.15k     2.36k   18.67k    68.24%
+  2356605 requests in 14.97s, 451.74MB read
+Requests/sec: 157377.88
+Transfer/sec:     30.17MB

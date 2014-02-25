@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 00:26:25 PST 2014
+
+  System load:  0.5                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer nodejs-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/mongodbdriver?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/mongodbdriver?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   605.21us  213.24us   8.93ms   98.07%
+    Req/Sec     1.74k   192.63     2.22k    78.11%
+  65991 requests in 5.00s, 15.88MB read
+Requests/sec:  13200.16
+Transfer/sec:      3.18MB
+
+---------------------------------------------------------
+ Running Warmup nodejs-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mongodbdriver?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mongodbdriver?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.57ms    2.73ms  32.49ms   73.81%
+    Req/Sec     1.13k   167.95     1.92k    68.39%
+  651738 requests in 14.99s, 156.84MB read
+Requests/sec:  43467.23
+Transfer/sec:     10.46MB
+
+---------------------------------------------------------
+ Queries: 1 for nodejs-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mongodbdriver?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mongodbdriver?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.91ms    1.24ms  44.62ms   84.47%
+    Req/Sec     2.20k   316.27     3.56k    73.94%
+  1251593 requests in 14.99s, 247.87MB read
+Requests/sec:  83489.52
+Transfer/sec:     16.53MB
+
+---------------------------------------------------------
+ Queries: 5 for nodejs-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mongodbdriver?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mongodbdriver?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.51ms    6.15ms  48.29ms   75.04%
+    Req/Sec   466.02     94.74   833.00     72.52%
+  265690 requests in 15.00s, 96.37MB read
+Requests/sec:  17716.87
+Transfer/sec:      6.43MB
+
+---------------------------------------------------------
+ Queries: 10 for nodejs-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mongodbdriver?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mongodbdriver?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.16ms    9.49ms  63.84ms   66.08%
+    Req/Sec   227.99     39.95   365.00     64.15%
+  133989 requests in 15.01s, 75.99MB read
+Requests/sec:   8929.61
+Transfer/sec:      5.06MB
+
+---------------------------------------------------------
+ Queries: 15 for nodejs-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mongodbdriver?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mongodbdriver?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.98ms   17.31ms 113.38ms   69.43%
+    Req/Sec   152.31     31.32   263.00     71.47%
+  89502 requests in 15.01s, 68.97MB read
+Requests/sec:   5963.80
+Transfer/sec:      4.60MB
+
+---------------------------------------------------------
+ Queries: 20 for nodejs-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mongodbdriver?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mongodbdriver?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    54.08ms   30.30ms 190.13ms   76.19%
+    Req/Sec   121.56     38.45   257.00     67.25%
+  67153 requests in 15.01s, 65.41MB read
+Requests/sec:   4472.98
+Transfer/sec:      4.36MB

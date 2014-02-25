@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 06:49:45 PST 2014
+
+  System load:  0.41               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/servlet//fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   331.50us  761.50us  14.92ms   99.71%
+    Req/Sec     3.55k   422.37     4.22k    85.10%
+  129490 requests in 5.00s, 178.82MB read
+Requests/sec:  25904.01
+Transfer/sec:     35.77MB
+
+---------------------------------------------------------
+ Running Warmup servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/servlet//fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.38ms    8.44ms  61.79ms   93.03%
+    Req/Sec     3.37k     1.44k   10.27k    70.54%
+  1934323 requests in 14.99s, 2.61GB read
+Requests/sec: 129073.04
+Transfer/sec:    178.24MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/servlet//fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   364.10us    1.00ms  14.42ms   99.47%
+    Req/Sec     3.52k   408.63     4.11k    94.00%
+  400348 requests in 15.00s, 552.85MB read
+Requests/sec:  26691.99
+Transfer/sec:     36.86MB
+
+---------------------------------------------------------
+ Concurrency: 16 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/servlet//fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   446.88us    1.54ms  14.42ms   98.77%
+    Req/Sec     3.66k   575.24     4.22k    95.77%
+  832331 requests in 15.00s, 1.12GB read
+Requests/sec:  55495.49
+Transfer/sec:     76.63MB
+
+---------------------------------------------------------
+ Concurrency: 32 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/servlet//fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   572.24us    1.95ms  14.68ms   98.04%
+    Req/Sec     3.33k   681.32     4.00k    93.06%
+  1512906 requests in 15.00s, 2.04GB read
+Requests/sec: 100886.46
+Transfer/sec:    139.32MB
+
+---------------------------------------------------------
+ Concurrency: 64 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/servlet//fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   652.60us    2.16ms  15.59ms   97.62%
+    Req/Sec     3.10k   690.87     3.89k    91.86%
+  1759610 requests in 14.99s, 2.37GB read
+Requests/sec: 117366.67
+Transfer/sec:    162.07MB
+
+---------------------------------------------------------
+ Concurrency: 128 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/servlet//fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.67ms    4.90ms  32.14ms   95.84%
+    Req/Sec     4.17k     1.32k    7.89k    78.55%
+  2368352 requests in 14.99s, 3.19GB read
+Requests/sec: 158013.67
+Transfer/sec:    218.20MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servlet-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/servlet//fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/servlet//fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.71ms   13.94ms 101.63ms   94.96%
+    Req/Sec     3.31k     1.48k    9.80k    70.86%
+  1895691 requests in 14.99s, 2.56GB read
+Requests/sec: 126439.80
+Transfer/sec:    174.60MB

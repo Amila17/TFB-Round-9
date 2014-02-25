@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Feb 19 09:20:51 PST 2014
+
+  System load:  0.01               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lapis
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   676.76us  549.91us  12.78ms   94.30%
+    Req/Sec     1.74k   516.23     2.89k    50.64%
+  65953 requests in 5.00s, 12.51MB read
+Requests/sec:  13190.66
+Transfer/sec:      2.50MB
+
+---------------------------------------------------------
+ Running Warmup lapis
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.01s   634.83ms   1.54s    71.74%
+    Req/Sec   348.65    625.40     2.18k    80.72%
+  203420 requests in 15.01s, 38.60MB read
+Requests/sec:  13548.25
+Transfer/sec:      2.57MB
+
+---------------------------------------------------------
+ Concurrency: 256 for lapis
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.23s   698.11ms   1.63s    75.26%
+    Req/Sec   355.65      1.00k    8.90k    92.63%
+  217522 requests in 15.23s, 41.27MB read
+Requests/sec:  14280.14
+Transfer/sec:      2.71MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for lapis
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.94s     2.67s   13.14s    43.14%
+    Req/Sec   536.69    667.74     2.81k    80.06%
+  217078 requests in 15.66s, 41.19MB read
+  Socket errors: connect 0, read 2, write 0, timeout 4555
+Requests/sec:  13864.13
+Transfer/sec:      2.63MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for lapis
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.21s     3.22s    7.20s    62.27%
+    Req/Sec   613.12    452.50     3.82k    68.57%
+  215285 requests in 15.63s, 40.85MB read
+  Socket errors: connect 0, read 476, write 0, timeout 24735
+Requests/sec:  13770.91
+Transfer/sec:      2.61MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for lapis
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.75s     3.46s    9.69s    81.45%
+    Req/Sec   382.53    463.17     3.44k    89.57%
+  214141 requests in 15.18s, 40.63MB read
+  Socket errors: connect 0, read 3796, write 0, timeout 98530
+Requests/sec:  14102.37
+Transfer/sec:      2.68MB

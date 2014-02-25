@@ -1,0 +1,131 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 10:06:07 PST 2014
+
+  System load:  0.37               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   295.61us  123.29us   4.13ms   99.47%
+    Req/Sec     3.52k   296.89     4.00k    76.78%
+  131124 requests in 5.00s, 233.72MB read
+Requests/sec:  26222.90
+Transfer/sec:     46.74MB
+
+---------------------------------------------------------
+ Running Warmup undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.36ms    2.79ms 213.55ms   80.75%
+    Req/Sec     2.78k   699.86     7.89k    71.23%
+  1562994 requests in 14.99s, 2.72GB read
+  Socket errors: connect 0, read 0, write 0, timeout 10
+Requests/sec: 104238.94
+Transfer/sec:    185.80MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   279.35us   71.79us   3.85ms   98.65%
+    Req/Sec     3.72k   219.75     4.11k    70.66%
+  423319 requests in 15.00s, 754.53MB read
+Requests/sec:  28223.01
+Transfer/sec:     50.31MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   293.17us  124.74us   6.52ms   99.73%
+    Req/Sec     3.56k   261.41     4.00k    89.48%
+  808805 requests in 15.00s, 1.41GB read
+Requests/sec:  53928.39
+Transfer/sec:     96.12MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   389.51us  272.34us   5.25ms   90.07%
+    Req/Sec     2.72k   359.89     3.78k    68.10%
+  1237022 requests in 15.00s, 2.15GB read
+Requests/sec:  82490.48
+Transfer/sec:    147.03MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   488.20us  516.16us   7.05ms   89.48%
+    Req/Sec     2.25k   491.74     3.67k    67.57%
+  1278678 requests in 15.00s, 2.23GB read
+Requests/sec:  85270.68
+Transfer/sec:    151.99MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms    1.27ms  12.42ms   81.15%
+    Req/Sec     2.81k   615.01     5.67k    69.77%
+  1599371 requests in 14.99s, 2.78GB read
+Requests/sec: 106678.40
+Transfer/sec:    190.15MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.42ms    3.92ms 217.31ms   85.76%
+    Req/Sec     2.78k   682.72     6.67k    71.16%
+  1568095 requests in 14.99s, 2.73GB read
+  Socket errors: connect 0, read 0, write 0, timeout 9
+Requests/sec: 104623.74
+Transfer/sec:    186.48MB

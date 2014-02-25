@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 14:13:35 PST 2014
+
+  System load:  1.8                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer activeweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/activeweb/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/activeweb/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    81.72us   47.59us   3.69ms   99.94%
+    Req/Sec    12.36k   774.54    13.33k    80.51%
+  463916 requests in 5.00s, 67.25MB read
+Requests/sec:  92792.42
+Transfer/sec:     13.45MB
+
+---------------------------------------------------------
+ Running Warmup activeweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/activeweb/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   821.86us    1.91ms  25.47ms   89.11%
+    Req/Sec     8.26k     2.29k   19.22k    68.69%
+  4687878 requests in 15.00s, 679.55MB read
+Requests/sec: 312583.40
+Transfer/sec:     45.31MB
+
+---------------------------------------------------------
+ Concurrency: 256 for activeweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/activeweb/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.14ms    8.12ms  89.59ms   69.09%
+    Req/Sec     8.93k     1.49k   15.95k    68.92%
+  5282798 requests in 15.00s, 765.79MB read
+Requests/sec: 352237.04
+Transfer/sec:     51.06MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for activeweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/activeweb/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    52.66ms   94.48ms   2.91s    98.22%
+    Req/Sec     8.15k     1.90k   21.17k    84.48%
+  4669034 requests in 15.00s, 676.82MB read
+  Socket errors: connect 0, read 0, write 0, timeout 37
+Requests/sec: 311365.50
+Transfer/sec:     45.14MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for activeweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/activeweb/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   257.41ms    1.09s   13.94s    98.68%
+    Req/Sec     7.48k     3.23k   20.01k    72.27%
+  4123121 requests in 15.00s, 597.68MB read
+  Socket errors: connect 0, read 0, write 0, timeout 8587
+Requests/sec: 274961.51
+Transfer/sec:     39.86MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for activeweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/activeweb/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.49s     4.15s   14.93s    90.55%
+    Req/Sec     6.79k     2.86k   16.69k    66.65%
+  4034283 requests in 15.01s, 584.80MB read
+  Socket errors: connect 0, read 64, write 0, timeout 88938
+Requests/sec: 268845.70
+Transfer/sec:     38.97MB

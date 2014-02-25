@@ -1,0 +1,109 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 02:10:58 PST 2014
+
+  System load:  0.01               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/index.php?plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   820.20ms  136.86ms 863.30ms   95.62%
+    Req/Sec    10.39     78.19     1.00k    96.82%
+  291 requests in 6.00s, 113.39KB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:     48.48
+Transfer/sec:     18.89KB
+
+---------------------------------------------------------
+ Running Warmup phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php?plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.30s     1.48s    3.06s    58.77%
+    Req/Sec   114.86    143.25   801.00     83.29%
+  73525 requests in 15.29s, 27.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 256
+Requests/sec:   4807.76
+Transfer/sec:      1.83MB
+
+---------------------------------------------------------
+ Concurrency: 256 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php?plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.39s   739.55ms   2.72s    46.78%
+    Req/Sec    89.60     92.80     0.87k    93.27%
+  52942 requests in 15.39s, 20.14MB read
+  Socket errors: connect 0, read 0, write 0, timeout 160
+Requests/sec:   3440.39
+Transfer/sec:      1.31MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php?plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.32s     2.92s   13.04s    88.05%
+    Req/Sec   127.83     81.56   411.00     63.72%
+  56439 requests in 15.49s, 21.47MB read
+  Socket errors: connect 0, read 1678, write 0, timeout 4275
+Requests/sec:   3642.60
+Transfer/sec:      1.39MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php?plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.71s     1.58s    8.47s    72.91%
+    Req/Sec   121.05    136.27   702.00     85.56%
+  53895 requests in 15.44s, 20.51MB read
+  Socket errors: connect 0, read 30947, write 0, timeout 21570
+  Non-2xx or 3xx responses: 2
+Requests/sec:   3490.70
+Transfer/sec:      1.33MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php?plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.51s     2.84s   11.41s    73.99%
+    Req/Sec    96.10    141.66     0.97k    86.94%
+  41011 requests in 15.13s, 15.60MB read
+  Socket errors: connect 0, read 867209, write 0, timeout 88610
+  Non-2xx or 3xx responses: 9
+Requests/sec:   2711.00
+Transfer/sec:      1.03MB

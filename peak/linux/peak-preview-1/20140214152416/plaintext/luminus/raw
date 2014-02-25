@@ -1,0 +1,106 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 23:20:45 PST 2014
+
+  System load:  0.23               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer luminus
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/luminus/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/luminus/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   150.72us  164.91us   7.23ms   99.86%
+    Req/Sec     6.90k   752.81     8.00k    87.23%
+  260933 requests in 5.00s, 37.82MB read
+Requests/sec:  52191.43
+Transfer/sec:      7.57MB
+
+---------------------------------------------------------
+ Running Warmup luminus
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/luminus/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/luminus/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.90ms   15.98ms 249.71ms   96.47%
+    Req/Sec     1.86k   750.23     7.11k    73.38%
+  1052644 requests in 15.00s, 152.59MB read
+  Socket errors: connect 0, read 0, write 0, timeout 5
+Requests/sec:  70186.90
+Transfer/sec:     10.17MB
+
+---------------------------------------------------------
+ Concurrency: 256 for luminus
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/luminus/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/luminus/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    55.17ms   58.03ms 453.27ms   85.64%
+    Req/Sec     1.76k   419.13     3.52k    70.78%
+  1031637 requests in 15.00s, 149.54MB read
+  Socket errors: connect 0, read 0, write 0, timeout 13
+Requests/sec:  68767.27
+Transfer/sec:      9.97MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for luminus
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/luminus/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/luminus/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   189.54ms  367.33ms   4.49s    89.09%
+    Req/Sec     2.23k     1.20k   10.39k    80.95%
+  991708 requests in 15.01s, 143.76MB read
+  Socket errors: connect 0, read 9, write 0, timeout 1471
+Requests/sec:  66090.63
+Transfer/sec:      9.58MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for luminus
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/luminus/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/luminus/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.12s     2.12s    7.94s    86.81%
+    Req/Sec     1.88k     1.34k    5.51k    57.79%
+  964412 requests in 15.02s, 139.80MB read
+  Socket errors: connect 0, read 1863, write 0, timeout 15987
+Requests/sec:  64227.84
+Transfer/sec:      9.31MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for luminus
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/luminus/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/luminus/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.90s     5.50s   14.27s    80.89%
+    Req/Sec     1.85k     1.19k    7.09k    79.41%
+  1069630 requests in 15.07s, 155.05MB read
+  Socket errors: connect 0, read 4351, write 0, timeout 95851
+Requests/sec:  70960.50
+Transfer/sec:     10.29MB

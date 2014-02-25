@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 04:11:21 PST 2014
+
+  System load:  0.0                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/hello_world/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.97ms    1.24ms  10.52ms   87.74%
+    Req/Sec   358.33    117.92   533.00     66.04%
+  13170 requests in 5.00s, 4.62MB read
+Requests/sec:   2633.72
+Transfer/sec:      0.92MB
+
+---------------------------------------------------------
+ Running Warmup rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   188.39ms  270.81ms   1.93s    91.90%
+    Req/Sec    48.21     12.85    63.00     90.24%
+  27163 requests in 15.07s, 9.53MB read
+  Socket errors: connect 0, read 0, write 0, timeout 26
+Requests/sec:   1802.75
+Transfer/sec:    647.86KB
+
+---------------------------------------------------------
+ Concurrency: 8 for rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.20ms    0.86ms   9.64ms   98.53%
+    Req/Sec     0.92k   157.02     1.22k    80.51%
+  104964 requests in 15.00s, 36.84MB read
+Requests/sec:   6997.71
+Transfer/sec:      2.46MB
+
+---------------------------------------------------------
+ Concurrency: 16 for rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.23ms    1.46ms  13.23ms   92.49%
+    Req/Sec   341.94     81.38   666.00     71.08%
+  77800 requests in 15.00s, 27.30MB read
+Requests/sec:   5186.69
+Transfer/sec:      1.82MB
+
+---------------------------------------------------------
+ Concurrency: 32 for rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.17ms    2.98ms  22.91ms   74.06%
+    Req/Sec   129.29     32.40   260.00     54.15%
+  61022 requests in 15.00s, 21.42MB read
+Requests/sec:   4067.26
+Transfer/sec:      1.43MB
+
+---------------------------------------------------------
+ Concurrency: 64 for rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.97ms    3.94ms  27.67ms   71.86%
+    Req/Sec    95.57     23.10   187.00     57.61%
+  56821 requests in 15.01s, 19.94MB read
+Requests/sec:   3786.73
+Transfer/sec:      1.33MB
+
+---------------------------------------------------------
+ Concurrency: 128 for rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    51.44ms   19.69ms 108.16ms   79.18%
+    Req/Sec    58.84     10.23   106.00     71.64%
+  35592 requests in 15.03s, 12.49MB read
+Requests/sec:   2368.80
+Transfer/sec:    851.29KB
+
+---------------------------------------------------------
+ Concurrency: 256 for rails-stripped-jruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/hello_world/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   110.76ms   23.26ms 185.65ms   83.49%
+    Req/Sec    53.61      8.03    94.00     71.83%
+  32430 requests in 15.05s, 11.38MB read
+Requests/sec:   2154.47
+Transfer/sec:    774.26KB

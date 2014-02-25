@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 10:15:57 PST 2014
+
+  System load:  0.14               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes/postgresql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.40ms   27.41ms 129.39ms   95.24%
+    Req/Sec     3.58k   847.84     4.22k    94.43%
+  134024 requests in 5.00s, 238.89MB read
+Requests/sec:  26810.96
+Transfer/sec:     47.79MB
+
+---------------------------------------------------------
+ Running Warmup undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/postgresql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.27ms  131.62ms 644.59ms   94.16%
+    Req/Sec     2.44k     1.18k    7.00k    73.45%
+  1378492 requests in 14.99s, 2.40GB read
+  Socket errors: connect 0, read 0, write 0, timeout 6
+Requests/sec:  91940.72
+Transfer/sec:    163.88MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/postgresql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.95ms   23.31ms 121.51ms   96.14%
+    Req/Sec     3.52k   744.95     4.11k    95.72%
+  401007 requests in 15.00s, 714.76MB read
+Requests/sec:  26735.68
+Transfer/sec:     47.65MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/postgresql
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.39ms   32.83ms 128.11ms   92.87%
+    Req/Sec     3.29k     0.95k    4.00k    92.08%
+  755086 requests in 15.10s, 1.31GB read
+Requests/sec:  50006.25
+Transfer/sec:     89.13MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/postgresql
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.73ms   41.10ms 133.46ms   89.12%
+    Req/Sec     2.52k     0.94k    3.67k    87.91%
+  1154431 requests in 15.04s, 2.01GB read
+Requests/sec:  76766.87
+Transfer/sec:    136.83MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/postgresql
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.38ms   42.16ms 136.68ms   88.87%
+    Req/Sec     2.07k     0.86k    3.56k    79.35%
+  1183456 requests in 15.00s, 2.06GB read
+Requests/sec:  78918.77
+Transfer/sec:    140.67MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/postgresql
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.14ms   48.45ms 150.68ms   86.68%
+    Req/Sec     2.46k     1.14k    5.78k    75.60%
+  1407931 requests in 14.99s, 2.45GB read
+Requests/sec:  93932.80
+Transfer/sec:    167.43MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/postgresql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.29ms   50.29ms 156.10ms   86.48%
+    Req/Sec     2.43k     1.18k    6.22k    73.37%
+  1372899 requests in 14.99s, 2.39GB read
+Requests/sec:  91608.77
+Transfer/sec:    163.29MB

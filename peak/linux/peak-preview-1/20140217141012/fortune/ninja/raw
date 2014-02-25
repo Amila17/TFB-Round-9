@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 23:03:20 PST 2014
+
+  System load:  0.51               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/ninja/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.23ms    1.32ms  16.49ms   93.42%
+    Req/Sec   338.57     64.15   555.00     77.32%
+  12479 requests in 5.00s, 28.29MB read
+Requests/sec:   2495.35
+Transfer/sec:      5.66MB
+
+---------------------------------------------------------
+ Running Warmup ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    92.39ms   58.66ms 394.43ms   73.11%
+    Req/Sec    65.85      9.81    99.00     69.22%
+  39550 requests in 15.02s, 89.66MB read
+Requests/sec:   2632.60
+Transfer/sec:      5.97MB
+
+---------------------------------------------------------
+ Concurrency: 8 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.02ms    0.93ms  16.67ms   94.58%
+    Req/Sec   355.37     63.27   555.00     80.19%
+  40469 requests in 15.00s, 91.74MB read
+Requests/sec:   2697.78
+Transfer/sec:      6.12MB
+
+---------------------------------------------------------
+ Concurrency: 16 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.29ms    1.96ms  27.06ms   92.80%
+    Req/Sec   171.54     44.13   333.00     83.01%
+  39797 requests in 15.00s, 90.22MB read
+Requests/sec:   2652.94
+Transfer/sec:      6.01MB
+
+---------------------------------------------------------
+ Concurrency: 32 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.25ms    3.83ms  42.85ms   91.76%
+    Req/Sec    86.64     23.11   181.00     68.31%
+  40974 requests in 15.00s, 92.88MB read
+Requests/sec:   2731.39
+Transfer/sec:      6.19MB
+
+---------------------------------------------------------
+ Concurrency: 64 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.05ms    5.08ms  65.57ms   90.53%
+    Req/Sec    69.97     18.03   133.00     71.75%
+  41683 requests in 15.00s, 94.49MB read
+Requests/sec:   2778.50
+Transfer/sec:      6.30MB
+
+---------------------------------------------------------
+ Concurrency: 128 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    44.55ms   22.59ms 217.01ms   72.99%
+    Req/Sec    68.29     13.71   126.00     70.68%
+  41148 requests in 15.02s, 93.28MB read
+Requests/sec:   2740.11
+Transfer/sec:      6.21MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    92.33ms   60.46ms 491.42ms   73.69%
+    Req/Sec    66.82     12.24   134.00     72.02%
+  40296 requests in 15.01s, 91.35MB read
+Requests/sec:   2684.21
+Transfer/sec:      6.08MB

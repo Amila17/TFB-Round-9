@@ -1,0 +1,106 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 00:10:44 PST 2014
+
+  System load:  0.25               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ninja-standalone
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   214.28us   85.22us   4.08ms   72.19%
+    Req/Sec     4.81k   399.74     6.11k    67.38%
+  182268 requests in 5.00s, 21.55MB read
+Requests/sec:  36456.96
+Transfer/sec:      4.31MB
+
+---------------------------------------------------------
+ Running Warmup ninja-standalone
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.53ms    4.89ms 226.02ms   97.70%
+    Req/Sec     0.92k   198.37     2.17k    80.03%
+  526978 requests in 15.00s, 62.32MB read
+  Socket errors: connect 0, read 0, write 0, timeout 81
+Requests/sec:  35134.96
+Transfer/sec:      4.15MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja-standalone
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   105.49ms   16.22ms 330.56ms   81.52%
+    Req/Sec     0.90k   128.28     1.70k    82.08%
+  533878 requests in 15.01s, 63.13MB read
+  Socket errors: connect 0, read 0, write 0, timeout 12
+Requests/sec:  35565.27
+Transfer/sec:      4.21MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for ninja-standalone
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   429.13ms  216.22ms   4.00s    92.64%
+    Req/Sec     0.89k   180.30     1.73k    76.38%
+  529097 requests in 15.02s, 62.57MB read
+  Socket errors: connect 0, read 0, write 0, timeout 263
+Requests/sec:  35226.41
+Transfer/sec:      4.17MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for ninja-standalone
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.92s     3.35s   14.86s    92.14%
+    Req/Sec     0.90k   341.90     3.91k    75.55%
+  524505 requests in 15.03s, 62.03MB read
+  Socket errors: connect 0, read 1069, write 0, timeout 10647
+Requests/sec:  34907.94
+Transfer/sec:      4.13MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for ninja-standalone
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.71s     3.84s   10.08s    72.18%
+    Req/Sec     0.87k   310.72     3.57k    80.43%
+  519352 requests in 15.09s, 61.42MB read
+  Socket errors: connect 0, read 2151, write 0, timeout 75051
+Requests/sec:  34413.59
+Transfer/sec:      4.07MB

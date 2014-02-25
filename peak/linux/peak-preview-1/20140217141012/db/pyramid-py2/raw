@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 03:08:05 PST 2014
+
+  System load:  1.18               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:6543/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.68ms    6.16ms  80.64ms   99.38%
+    Req/Sec   445.66     55.14   666.00     90.22%
+  16586 requests in 5.00s, 3.03MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:   3316.63
+Transfer/sec:    621.16KB
+
+---------------------------------------------------------
+ Running Warmup pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:6543/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.50ms    7.49ms 248.68ms   94.84%
+    Req/Sec   292.13     34.82   391.00     74.09%
+  173822 requests in 15.00s, 31.79MB read
+  Non-2xx or 3xx responses: 17
+Requests/sec:  11587.08
+Transfer/sec:      2.12MB
+
+---------------------------------------------------------
+ Concurrency: 8 for pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:6543/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.20ms  417.68us   5.68ms   69.77%
+    Req/Sec   460.12     64.52   666.00     78.40%
+  52389 requests in 15.00s, 9.58MB read
+  Non-2xx or 3xx responses: 2
+Requests/sec:   3492.31
+Transfer/sec:    654.07KB
+
+---------------------------------------------------------
+ Concurrency: 16 for pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:6543/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.14ms   19.45ms 220.17ms   99.17%
+    Req/Sec   429.31     77.14   700.00     77.01%
+  97843 requests in 15.00s, 17.90MB read
+  Non-2xx or 3xx responses: 5
+Requests/sec:   6523.07
+Transfer/sec:      1.19MB
+
+---------------------------------------------------------
+ Concurrency: 32 for pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:6543/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.71ms   83.59ms 221.27ms   81.52%
+    Req/Sec   293.86    155.58   666.00     77.10%
+  134889 requests in 15.59s, 24.67MB read
+  Non-2xx or 3xx responses: 14
+Requests/sec:   8652.85
+Transfer/sec:      1.58MB
+
+---------------------------------------------------------
+ Concurrency: 64 for pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:6543/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    55.73ms   92.64ms 222.54ms   75.70%
+    Req/Sec   249.57    157.10   700.00     66.35%
+  142934 requests in 15.59s, 26.14MB read
+  Non-2xx or 3xx responses: 15
+Requests/sec:   9171.08
+Transfer/sec:      1.68MB
+
+---------------------------------------------------------
+ Concurrency: 128 for pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:6543/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.95ms   48.68ms 256.44ms   95.05%
+    Req/Sec   289.83    125.88     0.97k    72.67%
+  171272 requests in 15.59s, 31.33MB read
+  Non-2xx or 3xx responses: 29
+Requests/sec:  10986.47
+Transfer/sec:      2.01MB
+
+---------------------------------------------------------
+ Concurrency: 256 for pyramid-py2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:6543/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:6543/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.26ms    7.30ms 253.39ms   94.91%
+    Req/Sec   294.81     30.16   384.00     68.80%
+  175281 requests in 15.00s, 32.06MB read
+  Non-2xx or 3xx responses: 24
+Requests/sec:  11683.60
+Transfer/sec:      2.14MB

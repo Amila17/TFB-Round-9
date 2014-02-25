@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 04:21:23 PST 2014
+
+  System load:  0.08               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/hello_world/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.49ms    9.79ms  45.03ms   92.01%
+    Req/Sec   589.00    188.20   800.00     89.49%
+  22350 requests in 5.00s, 8.33MB read
+Requests/sec:   4469.73
+Transfer/sec:      1.67MB
+
+---------------------------------------------------------
+ Running Warmup rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    50.51ms    5.55ms  91.43ms   76.79%
+    Req/Sec   119.18     13.33   159.00     64.40%
+  71424 requests in 15.03s, 26.62MB read
+Requests/sec:   4751.97
+Transfer/sec:      1.77MB
+
+---------------------------------------------------------
+ Concurrency: 8 for rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.66ms   10.13ms  40.14ms   91.70%
+    Req/Sec   585.92    190.70     0.89k    81.25%
+  66613 requests in 15.02s, 24.82MB read
+Requests/sec:   4433.57
+Transfer/sec:      1.65MB
+
+---------------------------------------------------------
+ Concurrency: 16 for rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.84ms    7.50ms  45.56ms   95.06%
+    Req/Sec   319.73     88.36   444.00     79.97%
+  72706 requests in 15.00s, 27.09MB read
+Requests/sec:   4846.95
+Transfer/sec:      1.81MB
+
+---------------------------------------------------------
+ Concurrency: 32 for rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.37ms    5.29ms  45.02ms   97.34%
+    Req/Sec   156.19     41.57   230.00     69.10%
+  72582 requests in 15.02s, 27.05MB read
+Requests/sec:   4831.41
+Transfer/sec:      1.80MB
+
+---------------------------------------------------------
+ Concurrency: 64 for rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.91ms    4.94ms  53.81ms   97.48%
+    Req/Sec   124.17     31.29   187.00     76.10%
+  72585 requests in 15.00s, 27.05MB read
+Requests/sec:   4838.52
+Transfer/sec:      1.80MB
+
+---------------------------------------------------------
+ Concurrency: 128 for rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.24ms    3.97ms  64.77ms   88.62%
+    Req/Sec   120.45     18.30   166.00     73.78%
+  71968 requests in 15.02s, 26.82MB read
+Requests/sec:   4792.70
+Transfer/sec:      1.79MB
+
+---------------------------------------------------------
+ Concurrency: 256 for rails-stripped-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/hello_world/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/hello_world/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    50.29ms    4.85ms  91.46ms   72.22%
+    Req/Sec   119.59     12.90   166.00     69.09%
+  71703 requests in 15.02s, 26.72MB read
+Requests/sec:   4774.01
+Transfer/sec:      1.78MB

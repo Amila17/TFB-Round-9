@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 09:45:47 PST 2014
+
+  System load:  2.25               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    99.27us  638.55us  11.85ms   99.69%
+    Req/Sec    15.32k     2.29k   19.00k    87.25%
+  540434 requests in 5.00s, 85.04MB read
+Requests/sec: 108108.29
+Transfer/sec:     17.01MB
+
+---------------------------------------------------------
+ Running Warmup undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   309.86us    2.00ms 211.12ms   99.12%
+    Req/Sec    23.45k     6.20k   47.11k    70.50%
+  12890084 requests in 15.00s, 1.98GB read
+  Socket errors: connect 0, read 0, write 0, timeout 26
+Requests/sec: 859607.30
+Transfer/sec:    135.26MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    62.16us   25.78us   2.57ms   96.69%
+    Req/Sec    15.70k     1.51k   19.11k    71.95%
+  1779482 requests in 15.00s, 280.01MB read
+Requests/sec: 118642.90
+Transfer/sec:     18.67MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    70.30us   42.50us   5.13ms   98.99%
+    Req/Sec    14.08k     1.10k   17.00k    67.91%
+  3196254 requests in 15.00s, 502.95MB read
+Requests/sec: 213111.65
+Transfer/sec:     33.53MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    79.56us  145.69us   9.99ms   99.93%
+    Req/Sec    12.65k     1.32k   16.44k    75.88%
+  5741645 requests in 14.99s, 0.88GB read
+Requests/sec: 383072.06
+Transfer/sec:     60.28MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   262.38us    2.32ms  55.09ms   99.16%
+    Req/Sec    11.26k     2.10k   16.11k    81.60%
+  6332346 requests in 14.82s, 0.97GB read
+Requests/sec: 427391.09
+Transfer/sec:     67.25MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   183.68us    1.09ms  79.22ms   99.74%
+    Req/Sec    19.57k     4.73k   32.22k    73.61%
+  10995527 requests in 14.91s, 1.69GB read
+Requests/sec: 737417.01
+Transfer/sec:    116.04MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-edge
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   308.26us    1.26ms  67.52ms   98.59%
+    Req/Sec    23.37k     5.78k   44.70k    67.88%
+  13166291 requests in 14.97s, 2.02GB read
+Requests/sec: 879284.09
+Transfer/sec:    138.36MB

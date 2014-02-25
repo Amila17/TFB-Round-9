@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 14:27:44 PST 2014
+
+  System load:  0.02               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    92.15us   77.68us 845.00us   98.07%
+    Req/Sec    10.85k   645.91    12.44k    64.74%
+  410372 requests in 5.00s, 66.53MB read
+Requests/sec:  82093.99
+Transfer/sec:     13.31MB
+
+---------------------------------------------------------
+ Running Warmup beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   829.32us  828.76us   8.19ms   85.63%
+    Req/Sec     7.69k     1.15k   11.22k    70.87%
+  4370670 requests in 14.99s, 708.59MB read
+Requests/sec: 291504.65
+Transfer/sec:     47.26MB
+
+---------------------------------------------------------
+ Concurrency: 8 for beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    86.36us   76.86us   1.21ms   99.24%
+    Req/Sec    11.69k   739.24    14.11k    63.35%
+  1327573 requests in 15.00s, 215.23MB read
+Requests/sec:  88510.67
+Transfer/sec:     14.35MB
+
+---------------------------------------------------------
+ Concurrency: 16 for beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   107.06us  127.39us   1.32ms   98.40%
+    Req/Sec     9.42k   808.77    11.89k    66.63%
+  2140021 requests in 15.00s, 346.95MB read
+Requests/sec: 142692.59
+Transfer/sec:     23.13MB
+
+---------------------------------------------------------
+ Concurrency: 32 for beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   155.15us  235.96us   1.99ms   96.92%
+    Req/Sec     6.52k   483.67     8.33k    68.64%
+  2985189 requests in 15.00s, 483.97MB read
+Requests/sec: 199065.05
+Transfer/sec:     32.27MB
+
+---------------------------------------------------------
+ Concurrency: 64 for beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   181.33us  276.74us   2.95ms   96.23%
+    Req/Sec     5.64k   461.45     7.44k    66.85%
+  3215821 requests in 14.99s, 521.36MB read
+Requests/sec: 214534.87
+Transfer/sec:     34.78MB
+
+---------------------------------------------------------
+ Concurrency: 128 for beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   409.15us  550.15us   5.61ms   91.09%
+    Req/Sec     7.68k     0.99k   11.00k    77.22%
+  4351895 requests in 14.98s, 705.55MB read
+Requests/sec: 290458.58
+Transfer/sec:     47.09MB
+
+---------------------------------------------------------
+ Concurrency: 256 for beego
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   810.57us  840.00us   9.47ms   87.16%
+    Req/Sec     7.87k     1.32k   14.89k    67.77%
+  4468091 requests in 15.00s, 724.39MB read
+Requests/sec: 297953.52
+Transfer/sec:     48.31MB

@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 11:05:22 PST 2014
+
+  System load:  0.18               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   496.06us   99.82us   1.92ms   87.85%
+    Req/Sec     2.11k   138.15     2.44k    76.29%
+  79968 requests in 5.00s, 104.63MB read
+Requests/sec:  15996.11
+Transfer/sec:     20.93MB
+
+---------------------------------------------------------
+ Running Warmup urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.47ms    3.33ms  48.27ms   69.36%
+    Req/Sec   185.96     14.93   246.00     64.17%
+  111067 requests in 15.01s, 145.32MB read
+Requests/sec:   7400.16
+Transfer/sec:      9.68MB
+
+---------------------------------------------------------
+ Concurrency: 8 for urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   503.33us   96.28us   1.61ms   86.62%
+    Req/Sec     2.07k   139.32     2.44k    58.30%
+  235674 requests in 15.00s, 308.37MB read
+Requests/sec:  15712.53
+Transfer/sec:     20.56MB
+
+---------------------------------------------------------
+ Concurrency: 16 for urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   565.72us  140.84us   2.24ms   85.95%
+    Req/Sec     1.85k   132.22     2.22k    56.26%
+  420887 requests in 15.00s, 550.71MB read
+Requests/sec:  28062.56
+Transfer/sec:     36.72MB
+
+---------------------------------------------------------
+ Concurrency: 32 for urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.02ms  299.04us   4.35ms   72.40%
+    Req/Sec     1.04k   124.85     1.55k    60.96%
+  471960 requests in 15.00s, 617.53MB read
+Requests/sec:  31471.60
+Transfer/sec:     41.18MB
+
+---------------------------------------------------------
+ Concurrency: 64 for urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.03ms  632.45us   5.89ms   69.50%
+    Req/Sec   527.85     91.59     0.89k    72.33%
+  300579 requests in 15.00s, 393.29MB read
+Requests/sec:  20044.94
+Transfer/sec:     26.23MB
+
+---------------------------------------------------------
+ Concurrency: 128 for urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.29ms    3.29ms  33.04ms   68.81%
+    Req/Sec   187.43     23.38   300.00     69.09%
+  111312 requests in 15.00s, 145.65MB read
+Requests/sec:   7419.15
+Transfer/sec:      9.71MB
+
+---------------------------------------------------------
+ Concurrency: 256 for urweb-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.45ms    3.34ms  48.37ms   69.59%
+    Req/Sec   185.80     14.80   246.00     65.40%
+  111008 requests in 15.01s, 145.25MB read
+Requests/sec:   7397.44
+Transfer/sec:      9.68MB
