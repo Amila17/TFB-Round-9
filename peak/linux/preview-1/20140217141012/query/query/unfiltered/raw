@@ -1,0 +1,116 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 10:24:09 PST 2014
+
+  System load:  0.54               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:9000/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:9000/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   757.40us  107.63us   3.46ms   93.06%
+    Req/Sec     1.38k    81.04     1.55k    90.32%
+  51795 requests in 5.00s, 8.62MB read
+Requests/sec:  10360.68
+Transfer/sec:      1.72MB
+
+---------------------------------------------------------
+ Running Warmup unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.14ms  745.71us  12.89ms   89.60%
+    Req/Sec     1.53k   170.04     2.00k    77.51%
+  872749 requests in 14.99s, 145.28MB read
+Requests/sec:  58211.84
+Transfer/sec:      9.69MB
+
+---------------------------------------------------------
+ Queries: 1 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.22ms    1.12ms 214.68ms   98.26%
+    Req/Sec     2.86k   284.46     4.22k    85.79%
+  1620466 requests in 15.00s, 220.65MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec: 108066.70
+Transfer/sec:     14.71MB
+
+---------------------------------------------------------
+ Queries: 5 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.96ms    1.50ms  24.57ms   84.18%
+    Req/Sec   616.88     58.31     0.86k    71.02%
+  361122 requests in 15.00s, 93.29MB read
+Requests/sec:  24081.76
+Transfer/sec:      6.22MB
+
+---------------------------------------------------------
+ Queries: 10 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.61ms    2.76ms  40.99ms   82.80%
+    Req/Sec   309.24     28.20   432.00     72.40%
+  183051 requests in 15.00s, 75.02MB read
+Requests/sec:  12201.86
+Transfer/sec:      5.00MB
+
+---------------------------------------------------------
+ Queries: 15 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.06ms    3.76ms  58.53ms   81.16%
+    Req/Sec   207.47     19.00   281.00     73.93%
+  123459 requests in 15.00s, 69.31MB read
+Requests/sec:   8228.00
+Transfer/sec:      4.62MB
+
+---------------------------------------------------------
+ Queries: 20 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    38.84ms    4.80ms  75.40ms   80.04%
+    Req/Sec   154.68     14.28   232.00     74.83%
+  92289 requests in 15.01s, 65.79MB read
+Requests/sec:   6147.35
+Transfer/sec:      4.38MB

@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 21:27:09 PST 2014
+
+  System load:  0.47               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/grails/hello/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.43ms    4.83ms  34.07ms   97.72%
+    Req/Sec     1.86k     0.93k    4.11k    61.11%
+  64859 requests in 5.00s, 11.94MB read
+Requests/sec:  12974.74
+Transfer/sec:      2.39MB
+
+---------------------------------------------------------
+ Running Warmup grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.65ms    5.89ms 591.32ms   90.12%
+    Req/Sec     1.81k   514.03     4.91k    69.49%
+  1026177 requests in 15.00s, 188.88MB read
+  Socket errors: connect 0, read 0, write 0, timeout 12
+Requests/sec:  68434.05
+Transfer/sec:     12.60MB
+
+---------------------------------------------------------
+ Concurrency: 8 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   228.66us  193.32us   8.44ms   99.86%
+    Req/Sec     4.59k   483.53     5.22k    91.72%
+  521280 requests in 15.00s, 95.95MB read
+Requests/sec:  34754.24
+Transfer/sec:      6.40MB
+
+---------------------------------------------------------
+ Concurrency: 16 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   279.99us  275.55us   5.77ms   99.24%
+    Req/Sec     3.78k   510.20     4.67k    83.59%
+  859448 requests in 15.00s, 158.19MB read
+Requests/sec:  57306.39
+Transfer/sec:     10.55MB
+
+---------------------------------------------------------
+ Concurrency: 32 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   484.87us  598.68us  14.13ms   97.34%
+    Req/Sec     2.31k   479.46     3.78k    72.31%
+  1047950 requests in 14.99s, 192.88MB read
+Requests/sec:  69886.87
+Transfer/sec:     12.86MB
+
+---------------------------------------------------------
+ Concurrency: 64 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   579.98us  533.61us   7.38ms   93.53%
+    Req/Sec     1.83k   379.29     3.22k    70.31%
+  1041021 requests in 15.00s, 191.61MB read
+Requests/sec:  69422.19
+Transfer/sec:     12.78MB
+
+---------------------------------------------------------
+ Concurrency: 128 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.82ms    1.85ms  15.97ms   84.25%
+    Req/Sec     1.86k   502.48     4.22k    69.89%
+  1055489 requests in 14.99s, 194.27MB read
+Requests/sec:  70416.64
+Transfer/sec:     12.96MB
+
+---------------------------------------------------------
+ Concurrency: 256 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/grails/hello/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.63ms    4.03ms  29.44ms   83.48%
+    Req/Sec     1.77k   401.75     4.00k    68.42%
+  1034382 requests in 14.99s, 190.39MB read
+Requests/sec:  68984.97
+Transfer/sec:     12.70MB

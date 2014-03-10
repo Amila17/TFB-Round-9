@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 20:39:27 PST 2014
+
+  System load:  0.03               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbsraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.02ms   21.33ms 111.44ms   94.55%
+    Req/Sec   560.05    193.64     1.00k    74.99%
+  21238 requests in 5.00s, 2.67MB read
+Requests/sec:   4247.61
+Transfer/sec:    546.62KB
+
+---------------------------------------------------------
+ Running Warmup flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.03ms   25.41ms 295.30ms   84.57%
+    Req/Sec   226.88     96.57   589.00     63.01%
+  115802 requests in 15.01s, 14.55MB read
+Requests/sec:   7714.26
+Transfer/sec:      0.97MB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.31ms   28.43ms 189.46ms   93.78%
+    Req/Sec     0.88k   357.20     1.60k    73.50%
+  98625 requests in 15.06s, 12.39MB read
+Requests/sec:   6550.47
+Transfer/sec:    842.96KB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.95ms   34.57ms 207.76ms   92.76%
+    Req/Sec   813.30    361.77     1.67k    68.34%
+  183289 requests in 15.00s, 23.03MB read
+Requests/sec:  12218.78
+Transfer/sec:      1.54MB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.44ms   50.85ms 265.09ms   92.01%
+    Req/Sec   485.58    292.89     1.55k    72.46%
+  216307 requests in 15.02s, 27.18MB read
+Requests/sec:  14397.64
+Transfer/sec:      1.81MB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.72ms   54.99ms 336.07ms   93.23%
+    Req/Sec   442.36    294.32     1.44k    65.59%
+  232383 requests in 15.04s, 29.20MB read
+Requests/sec:  15456.12
+Transfer/sec:      1.94MB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.91ms   25.95ms 839.94ms   96.54%
+    Req/Sec   300.33    139.62     1.05k    68.45%
+  156178 requests in 15.00s, 19.63MB read
+Requests/sec:  10410.84
+Transfer/sec:      1.31MB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask-pypy-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.72ms   34.51ms 798.17ms   94.56%
+    Req/Sec   266.48     99.90     1.00k    75.52%
+  150913 requests in 15.00s, 18.97MB read
+Requests/sec:  10060.54
+Transfer/sec:      1.26MB

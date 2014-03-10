@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 00:00:16 PST 2014
+
+  System load:  0.56               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   475.97us    2.43ms  28.33ms   99.10%
+    Req/Sec     4.29k   776.49     5.67k    78.09%
+  152793 requests in 5.00s, 41.24MB read
+Requests/sec:  30564.91
+Transfer/sec:      8.25MB
+
+---------------------------------------------------------
+ Running Warmup ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.22ms    2.15ms  31.61ms   65.19%
+    Req/Sec     0.86k   130.35     1.85k    73.73%
+  493975 requests in 15.00s, 133.32MB read
+  Socket errors: connect 0, read 0, write 0, timeout 5
+Requests/sec:  32937.22
+Transfer/sec:      8.89MB
+
+---------------------------------------------------------
+ Concurrency: 8 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   228.40us   93.29us   7.98ms   73.92%
+    Req/Sec     4.56k   339.11     5.78k    68.10%
+  517625 requests in 15.00s, 139.70MB read
+Requests/sec:  34510.74
+Transfer/sec:      9.31MB
+
+---------------------------------------------------------
+ Concurrency: 16 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   484.49us  298.54us   6.09ms   67.14%
+    Req/Sec     2.20k   308.21     3.44k    69.28%
+  499618 requests in 15.00s, 134.84MB read
+Requests/sec:  33312.94
+Transfer/sec:      8.99MB
+
+---------------------------------------------------------
+ Concurrency: 32 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.98ms  685.84us   6.61ms   61.88%
+    Req/Sec     1.12k   254.10     2.56k    70.98%
+  507634 requests in 15.00s, 137.01MB read
+Requests/sec:  33852.10
+Transfer/sec:      9.14MB
+
+---------------------------------------------------------
+ Concurrency: 64 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.25ms    0.89ms  10.52ms   61.92%
+    Req/Sec     0.90k   237.21     2.22k    74.18%
+  510947 requests in 14.99s, 137.90MB read
+Requests/sec:  34077.69
+Transfer/sec:      9.20MB
+
+---------------------------------------------------------
+ Concurrency: 128 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.63ms    2.03ms  17.73ms   59.55%
+    Req/Sec     0.89k   161.45     1.64k    70.39%
+  509275 requests in 15.00s, 137.45MB read
+Requests/sec:  33960.22
+Transfer/sec:      9.17MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.08ms    1.99ms  22.30ms   60.41%
+    Req/Sec     0.87k    90.73     1.24k    69.18%
+  508627 requests in 15.00s, 137.27MB read
+Requests/sec:  33913.24
+Transfer/sec:      9.15MB

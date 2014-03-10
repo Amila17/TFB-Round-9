@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 20:03:16 PST 2014
+
+  System load:  0.16               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbraw?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbraw?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.10ms   79.97us   1.74ms   84.38%
+    Req/Sec     0.97k    77.63     1.11k    74.55%
+  36257 requests in 5.00s, 7.87MB read
+Requests/sec:   7252.16
+Transfer/sec:      1.57MB
+
+---------------------------------------------------------
+ Running Warmup flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.97ms    6.92ms  57.90ms   77.65%
+    Req/Sec   532.66    129.57     1.16k    68.88%
+  309908 requests in 15.00s, 67.25MB read
+Requests/sec:  20663.79
+Transfer/sec:      4.48MB
+
+---------------------------------------------------------
+ Queries: 1 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.69ms    6.90ms  61.51ms   75.27%
+    Req/Sec   610.35    173.61     1.48k    68.06%
+  347606 requests in 15.00s, 63.57MB read
+Requests/sec:  23179.62
+Transfer/sec:      4.24MB
+
+---------------------------------------------------------
+ Queries: 5 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.84ms    8.37ms  79.15ms   79.84%
+    Req/Sec   431.89    109.61     0.97k    70.50%
+  247728 requests in 15.00s, 79.35MB read
+Requests/sec:  16519.03
+Transfer/sec:      5.29MB
+
+---------------------------------------------------------
+ Queries: 10 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.42ms   10.34ms  91.31ms   76.61%
+    Req/Sec   307.64     64.97   600.00     71.24%
+  181040 requests in 15.00s, 88.87MB read
+Requests/sec:  12068.66
+Transfer/sec:      5.92MB
+
+---------------------------------------------------------
+ Queries: 15 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.82ms   13.19ms 112.25ms   77.09%
+    Req/Sec   242.35     54.81   507.00     72.05%
+  141533 requests in 15.00s, 93.62MB read
+Requests/sec:   9433.20
+Transfer/sec:      6.24MB
+
+---------------------------------------------------------
+ Queries: 20 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    31.50ms   14.57ms 113.17ms   78.79%
+    Req/Sec   195.68     34.67   348.00     70.46%
+  115992 requests in 15.01s, 96.51MB read
+Requests/sec:   7729.00
+Transfer/sec:      6.43MB

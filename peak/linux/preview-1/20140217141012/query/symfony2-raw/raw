@@ -1,0 +1,122 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 08:11:58 PST 2014
+
+  System load:  0.02               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db-raw?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db-raw?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.38ms    4.25ms  15.87ms   70.30%
+    Req/Sec   189.78     39.00   318.00     72.89%
+  7444 requests in 5.01s, 2.21MB read
+  Non-2xx or 3xx responses: 3705
+Requests/sec:   1487.11
+Transfer/sec:    452.61KB
+
+---------------------------------------------------------
+ Running Warmup symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db-raw?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db-raw?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   194.28ms  175.49ms   1.34s    61.34%
+    Req/Sec    31.17      5.36    59.00     71.27%
+  19131 requests in 15.11s, 5.69MB read
+  Non-2xx or 3xx responses: 9549
+Requests/sec:   1266.39
+Transfer/sec:    385.55KB
+
+---------------------------------------------------------
+ Queries: 1 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db-raw?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db-raw?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   189.35ms  169.20ms 682.64ms   60.33%
+    Req/Sec    31.29      5.41    50.00     70.50%
+  19133 requests in 15.09s, 5.34MB read
+  Non-2xx or 3xx responses: 9548
+Requests/sec:   1267.94
+Transfer/sec:    362.58KB
+
+---------------------------------------------------------
+ Queries: 5 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db-raw?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db-raw?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   196.37ms  179.04ms 692.48ms   60.07%
+    Req/Sec    30.79      4.57    47.00     66.32%
+  18905 requests in 15.14s, 6.59MB read
+  Non-2xx or 3xx responses: 9433
+Requests/sec:   1248.85
+Transfer/sec:    445.79KB
+
+---------------------------------------------------------
+ Queries: 10 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db-raw?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db-raw?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   199.79ms  186.77ms   1.34s    66.25%
+    Req/Sec    30.51      5.31    55.00     66.67%
+  18713 requests in 15.15s, 8.13MB read
+  Non-2xx or 3xx responses: 9334
+Requests/sec:   1235.05
+Transfer/sec:    549.65KB
+
+---------------------------------------------------------
+ Queries: 15 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db-raw?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db-raw?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   200.25ms  182.24ms 846.57ms   60.56%
+    Req/Sec    30.41      4.96    49.00     72.63%
+  18642 requests in 15.09s, 9.69MB read
+  Non-2xx or 3xx responses: 9305
+Requests/sec:   1235.77
+Transfer/sec:    658.02KB
+
+---------------------------------------------------------
+ Queries: 20 for symfony2-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db-raw?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db-raw?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   202.44ms  185.16ms 855.81ms   61.76%
+    Req/Sec    30.22      5.06    54.00     70.29%
+  18484 requests in 15.13s, 11.19MB read
+  Non-2xx or 3xx responses: 9223
+Requests/sec:   1221.63
+Transfer/sec:    757.51KB

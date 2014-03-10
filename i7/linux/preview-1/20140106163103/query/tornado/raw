@@ -1,0 +1,121 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 10:51:53 PST 2014
+
+  System load:  0.09               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+82 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.90ms  511.40us  11.70ms   69.20%
+    Req/Sec   578.19    124.66     0.90k    65.62%
+  21916 requests in 5.00s, 4.63MB read
+  Non-2xx or 3xx responses: 2
+Requests/sec:   4382.12
+Transfer/sec:      0.93MB
+
+---------------------------------------------------------
+ Running Warmup tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   201.23ms  126.50ms 574.42ms   52.26%
+    Req/Sec   282.32    240.81   796.00     67.05%
+  34979 requests in 15.02s, 7.67MB read
+  Non-2xx or 3xx responses: 8837
+Requests/sec:   2329.53
+Transfer/sec:    523.24KB
+
+---------------------------------------------------------
+ Queries: 1 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   181.17ms  140.69ms 543.10ms   52.65%
+    Req/Sec   436.99    423.68     1.17k    67.13%
+  50148 requests in 15.05s, 9.48MB read
+  Non-2xx or 3xx responses: 9002
+Requests/sec:   3332.98
+Transfer/sec:    645.12KB
+
+---------------------------------------------------------
+ Queries: 5 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   216.41ms  130.64ms 503.78ms   60.37%
+    Req/Sec   164.26     56.14   328.00     45.23%
+  19356 requests in 15.01s, 5.27MB read
+  Non-2xx or 3xx responses: 11510
+Requests/sec:   1289.27
+Transfer/sec:    359.28KB
+
+---------------------------------------------------------
+ Queries: 10 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   263.77ms  120.85ms 925.34ms   72.14%
+    Req/Sec   122.07     20.60   239.00     83.23%
+  14483 requests in 15.02s, 4.15MB read
+  Non-2xx or 3xx responses: 11882
+Requests/sec:    964.42
+Transfer/sec:    283.09KB
+
+---------------------------------------------------------
+ Queries: 15 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   280.63ms  107.30ms   1.08s    75.25%
+    Req/Sec   115.98     13.81   153.00     68.54%
+  13781 requests in 15.03s, 3.65MB read
+  Non-2xx or 3xx responses: 13054
+Requests/sec:    916.97
+Transfer/sec:    248.79KB
+
+---------------------------------------------------------
+ Queries: 20 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   287.29ms  123.53ms   1.24s    72.74%
+    Req/Sec   113.79     14.97   151.00     70.55%
+  13343 requests in 15.01s, 3.29MB read
+  Non-2xx or 3xx responses: 13262
+Requests/sec:    889.01
+Transfer/sec:    224.61KB

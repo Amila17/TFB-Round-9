@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 21:31:25 PST 2014
+
+  System load:  0.31               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   485.53us   44.47us 759.00us   69.97%
+    Req/Sec     2.15k   115.84     2.44k    67.64%
+  81602 requests in 5.00s, 107.16MB read
+Requests/sec:  16322.95
+Transfer/sec:     21.44MB
+
+---------------------------------------------------------
+ Running Warmup hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.50ms  400.20us   7.68ms   84.08%
+    Req/Sec     1.80k   159.77     2.67k    74.65%
+  1023684 requests in 14.99s, 1.31GB read
+Requests/sec:  68284.79
+Transfer/sec:     89.67MB
+
+---------------------------------------------------------
+ Concurrency: 8 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   497.38us   46.66us 813.00us   68.81%
+    Req/Sec     2.10k   126.78     2.44k    78.41%
+  238639 requests in 15.00s, 313.38MB read
+Requests/sec:  15910.15
+Transfer/sec:     20.89MB
+
+---------------------------------------------------------
+ Concurrency: 16 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   498.15us   51.93us   0.86ms   70.43%
+    Req/Sec     2.10k   101.48     2.33k    64.17%
+  477358 requests in 15.00s, 626.87MB read
+Requests/sec:  31828.27
+Transfer/sec:     41.80MB
+
+---------------------------------------------------------
+ Concurrency: 32 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   658.14us  109.35us   1.44ms   69.82%
+    Req/Sec     1.59k    95.84     1.90k    82.45%
+  724361 requests in 14.99s, 0.93GB read
+Requests/sec:  48307.37
+Transfer/sec:     63.44MB
+
+---------------------------------------------------------
+ Concurrency: 64 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   758.94us  124.75us   2.23ms   69.56%
+    Req/Sec     1.38k    92.86     1.70k    79.68%
+  787405 requests in 14.99s, 1.01GB read
+Requests/sec:  52517.54
+Transfer/sec:     68.97MB
+
+---------------------------------------------------------
+ Concurrency: 128 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.94ms  362.98us   5.50ms   71.65%
+    Req/Sec     1.65k   233.67     2.22k    54.33%
+  940804 requests in 14.99s, 1.21GB read
+Requests/sec:  62745.99
+Transfer/sec:     82.40MB
+
+---------------------------------------------------------
+ Concurrency: 256 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.50ms  402.40us   9.02ms   84.59%
+    Req/Sec     1.80k   155.12     2.56k    74.68%
+  1025565 requests in 15.00s, 1.32GB read
+Requests/sec:  68393.55
+Transfer/sec:     89.82MB

@@ -1,0 +1,131 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 01:13:26 PST 2014
+
+  System load:  0.0                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   438.05us   55.54us   1.33ms   78.58%
+    Req/Sec     2.38k   184.76     2.78k    77.39%
+  89589 requests in 5.00s, 19.22MB read
+Requests/sec:  17921.13
+Transfer/sec:      3.84MB
+
+---------------------------------------------------------
+ Running Warmup php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.77ms   25.00ms   2.59s    99.98%
+    Req/Sec     1.72k   320.93     4.40k    72.94%
+  977068 requests in 15.00s, 209.61MB read
+  Socket errors: connect 0, read 0, write 0, timeout 31
+Requests/sec:  65159.47
+Transfer/sec:     13.98MB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   437.38us   51.05us 740.00us   74.13%
+    Req/Sec     2.38k   182.94     2.89k    77.58%
+  271056 requests in 15.00s, 58.15MB read
+Requests/sec:  18071.30
+Transfer/sec:      3.88MB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   472.12us   68.73us   1.07ms   67.70%
+    Req/Sec     2.21k   169.75     2.78k    66.26%
+  501917 requests in 15.00s, 107.68MB read
+Requests/sec:  33466.25
+Transfer/sec:      7.18MB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   609.94us  145.46us   3.02ms   79.23%
+    Req/Sec     1.73k   166.59     2.33k    71.41%
+  774882 requests in 14.99s, 166.23MB read
+Requests/sec:  51677.14
+Transfer/sec:     11.09MB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   753.55us  259.10us   4.93ms   79.04%
+    Req/Sec     1.42k   220.82     2.40k    65.61%
+  793540 requests in 15.00s, 170.24MB read
+Requests/sec:  52917.32
+Transfer/sec:     11.35MB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.79ms  795.48us  12.78ms   76.87%
+    Req/Sec     1.75k   197.85     5.55k    78.47%
+  992346 requests in 14.99s, 212.89MB read
+Requests/sec:  66179.28
+Transfer/sec:     14.20MB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-phalcon
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.89ms    5.59ms 323.38ms   95.77%
+    Req/Sec     1.67k   311.25     5.22k    74.70%
+  935072 requests in 14.99s, 200.60MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:  62367.99
+Transfer/sec:     13.38MB

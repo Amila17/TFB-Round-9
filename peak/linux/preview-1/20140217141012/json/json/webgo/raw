@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 11:01:53 PST 2014
+
+  System load:  0.02               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   118.12us   90.28us 723.00us   96.49%
+    Req/Sec     8.61k   500.52     9.89k    55.60%
+  325914 requests in 5.00s, 49.42MB read
+Requests/sec:  65197.61
+Transfer/sec:      9.89MB
+
+---------------------------------------------------------
+ Running Warmup webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.17ms    1.48ms  15.95ms   84.67%
+    Req/Sec     5.51k     1.14k   11.44k    68.28%
+  3065958 requests in 14.99s, 464.90MB read
+  Socket errors: connect 0, read 0, write 0, timeout 23
+Requests/sec: 204481.11
+Transfer/sec:     31.01MB
+
+---------------------------------------------------------
+ Concurrency: 8 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   113.72us   84.61us   1.12ms   98.92%
+    Req/Sec     8.89k   524.46    10.78k    62.93%
+  1010543 requests in 15.00s, 153.23MB read
+Requests/sec:  67375.11
+Transfer/sec:     10.22MB
+
+---------------------------------------------------------
+ Concurrency: 16 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   132.02us  142.29us   1.30ms   97.81%
+    Req/Sec     7.72k   607.93     9.67k    60.89%
+  1754601 requests in 15.00s, 266.06MB read
+Requests/sec: 116983.52
+Transfer/sec:     17.74MB
+
+---------------------------------------------------------
+ Concurrency: 32 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   194.24us  256.96us   2.26ms   95.97%
+    Req/Sec     5.27k   347.04     6.67k    63.53%
+  2390969 requests in 14.99s, 362.55MB read
+Requests/sec: 159466.74
+Transfer/sec:     24.18MB
+
+---------------------------------------------------------
+ Concurrency: 64 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   228.82us  308.19us   3.30ms   95.05%
+    Req/Sec     4.52k   334.53     5.67k    68.28%
+  2555546 requests in 14.99s, 387.51MB read
+Requests/sec: 170476.82
+Transfer/sec:     25.85MB
+
+---------------------------------------------------------
+ Concurrency: 128 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   617.28us  737.41us   6.33ms   87.15%
+    Req/Sec     5.17k   721.38     8.33k    68.30%
+  2948145 requests in 15.00s, 447.04MB read
+Requests/sec: 196604.89
+Transfer/sec:     29.81MB
+
+---------------------------------------------------------
+ Concurrency: 256 for webgo
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms    1.51ms  15.05ms   84.64%
+    Req/Sec     5.46k     1.07k   10.56k    68.40%
+  3103039 requests in 14.98s, 470.53MB read
+Requests/sec: 207084.75
+Transfer/sec:     31.40MB

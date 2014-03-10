@@ -1,0 +1,105 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 21:37:37 PST 2014
+
+  System load:  0.16               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer grails
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/grails/hello/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/grails/hello/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   230.63us  202.96us   6.20ms   99.86%
+    Req/Sec     4.54k   551.02     5.22k    88.81%
+  171088 requests in 5.00s, 28.23MB read
+Requests/sec:  34220.66
+Transfer/sec:      5.65MB
+
+---------------------------------------------------------
+ Running Warmup grails
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/grails/hello/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.74ms    8.39ms 214.82ms   91.59%
+    Req/Sec     1.92k   625.14     5.75k    70.33%
+  1104159 requests in 15.00s, 182.17MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:  73623.13
+Transfer/sec:     12.15MB
+
+---------------------------------------------------------
+ Concurrency: 256 for grails
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/grails/hello/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    52.28ms   18.57ms 262.96ms   69.23%
+    Req/Sec     1.86k   188.45     2.54k    71.37%
+  1110596 requests in 15.00s, 183.23MB read
+Requests/sec:  74048.84
+Transfer/sec:     12.22MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for grails
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/grails/hello/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   229.19ms  164.90ms   2.13s    83.33%
+    Req/Sec     1.73k   599.83     6.17k    86.15%
+  977244 requests in 15.00s, 161.23MB read
+  Socket errors: connect 0, read 0, write 0, timeout 461
+Requests/sec:  65148.53
+Transfer/sec:     10.75MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for grails
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/grails/hello/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   786.37ms    1.24s   13.89s    95.75%
+    Req/Sec     1.55k   728.97     5.18k    70.17%
+  847077 requests in 15.02s, 139.76MB read
+  Socket errors: connect 0, read 665, write 0, timeout 13492
+Requests/sec:  56385.67
+Transfer/sec:      9.30MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for grails
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/grails/hello/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.84s     4.27s   14.72s    64.76%
+    Req/Sec     1.29k     0.88k    4.89k    76.38%
+  761763 requests in 15.00s, 125.68MB read
+  Socket errors: connect 0, read 1873, write 0, timeout 94119
+Requests/sec:  50773.85
+Transfer/sec:      8.38MB

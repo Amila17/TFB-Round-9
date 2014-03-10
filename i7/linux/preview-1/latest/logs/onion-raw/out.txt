@@ -1,0 +1,178 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: onion-raw
+self.results['completed']: {}
+
+=====================================================
+  Beginning onion-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting onion-raw
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 01:39:16 PST 2014
+
+  System load:  0.3                Processes:           125
+  Usage of /:   7.9% of 131.33GB   Users logged in:     0
+  Memory usage: 24%                IP address for eth0: 172.16.98.118
+  Swap usage:   4%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+151 packages can be updated.
+78 updates are security updates.
+
+mongodb start/running, process 14774
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+cc -O2 -Ionion/src/   -c -o hello.o hello.c
+(cd onion/build/tools/otemplate/; make)
+make[1]: Entering directory `/home/tfb/FrameworkBenchmarks/onion/onion/build/tools/otemplate'
+make[2]: Entering directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[3]: Entering directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[3]: Leaving directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+[ 90%] Built target otemplate
+make[3]: Entering directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[3]: Leaving directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+[100%] Built target i18n
+make[2]: Leaving directory `/home/tfb/FrameworkBenchmarks/installs/onion/build'
+make[1]: Leaving directory `/home/tfb/FrameworkBenchmarks/onion/onion/build/tools/otemplate'
+onion/build/tools/otemplate/otemplate base.html base_html.c
+cc -O2 -Ionion/src/   -c -o base_html.o base_html.c
+onion/build/tools/otemplate/otemplate fortunes.html fortunes_html.c
+cc -O2 -Ionion/src/   -c -o fortunes_html.o fortunes_html.c
+cc hello.o base_html.o fortunes_html.o libonion_static.a -o hello -lpthread -lmysqlclient -ljson -lgnutls -lrt
+
+-----------------------------------------------------
+  Verifying URLs for onion-raw
+-----------------------------------------------------
+VERIFYING DB (/db) ...
+HTTP/1.1 200 OK
+Content-Length: 36
+Content-Type: application/json
+Server: libonion v0.5 - coralbits.com
+
+{ "id": 9548, "randomNumber": 6255 }
+
+VALIDATING DB ... PASS
+
+VERIFYING QUERY (/db?queries=2) ...
+HTTP/1.1 200 OK
+Content-Length: 78
+Content-Type: application/json
+Server: libonion v0.5 - coralbits.com
+
+[ { "id": 7105, "randomNumber": 2684 }, { "id": 2960, "randomNumber": 6027 } ]
+
+VALIDATING QUERY ... PASS
+
+VERIFYING FORTUNE (/fortune) ...
+HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Content-Type: text/html
+Server: libonion v0.5 - coralbits.com
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fortunes</title>
+  </head>
+  <body>
+
+<table>
+<tr>
+<th>id</th>
+<th>message</th>
+</tr>
+
+<tr>
+<td>11</td>
+<td>&lt;script&gt;alert(&quot;This should not be displayed in a browser alert box.&quot;);&lt;/script&gt;</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>A computer program does what you tell it to do, not what you want it to do.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>A computer scientist is someone who fixes things that aren't broken.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>A list is only as strong as its weakest link. — Donald Knuth</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>After enough decimal places, nobody gives a damn.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Any program that runs right is obsolete.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Computers make very fast, very accurate mistakes.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Feature: A bug with seniority.</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>fortune: No such file or directory</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>フレームワークのベンチマーク</td>
+</tr>
+
+</table>
+  
+  </body>
+</html>
+
+
+VALIDATING FORTUNE ... FAIL
+
+
+-----------------------------------------------------
+  Benchmarking onion-raw ...
+-----------------------------------------------------
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+BENCHMARKING Fortune ... Complete
+
+-----------------------------------------------------
+  Stopping onion-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped onion-raw
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through onion-raw
+----------------------------------------------------

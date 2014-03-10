@@ -1,0 +1,119 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 23:05:33 PST 2014
+
+  System load:  0.12               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/ninja/update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/ninja/update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.59ms    1.07ms  14.13ms   98.62%
+    Req/Sec   700.25    137.36     0.93k    74.36%
+  24951 requests in 5.00s, 7.73MB read
+Requests/sec:   4990.38
+Transfer/sec:      1.55MB
+
+---------------------------------------------------------
+ Running Warmup ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/update?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.91ms    6.76ms  58.79ms   65.25%
+    Req/Sec   642.46    137.26     1.12k    66.86%
+  378709 requests in 14.99s, 117.29MB read
+Requests/sec:  25257.29
+Transfer/sec:      7.82MB
+
+---------------------------------------------------------
+ Queries: 1 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/update?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.74ms    6.54ms  55.74ms   61.70%
+    Req/Sec   721.08    135.91     1.30k    72.24%
+  426260 requests in 15.00s, 116.62MB read
+Requests/sec:  28419.91
+Transfer/sec:      7.78MB
+
+---------------------------------------------------------
+ Queries: 5 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/update?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.33ms   14.30ms  92.85ms   68.74%
+    Req/Sec   519.50    660.61     3.20k    81.01%
+  269857 requests in 15.00s, 119.93MB read
+  Non-2xx or 3xx responses: 150900
+Requests/sec:  17988.93
+Transfer/sec:      7.99MB
+
+---------------------------------------------------------
+ Queries: 10 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/update?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    45.90ms  103.01ms 648.21ms   90.84%
+    Req/Sec   468.53    262.16     2.67k    72.28%
+  250284 requests in 15.00s, 129.65MB read
+  Non-2xx or 3xx responses: 151080
+Requests/sec:  16688.65
+Transfer/sec:      8.64MB
+
+---------------------------------------------------------
+ Queries: 15 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/update?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.98ms   13.86ms 106.11ms   60.60%
+    Req/Sec   395.44     88.47     0.94k    70.14%
+  232017 requests in 15.00s, 126.61MB read
+  Non-2xx or 3xx responses: 172299
+Requests/sec:  15471.30
+Transfer/sec:      8.44MB
+
+---------------------------------------------------------
+ Queries: 20 for ninja
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/ninja/update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/ninja/update?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.51ms   12.33ms 119.16ms   58.07%
+    Req/Sec   373.61     62.76   647.00     69.33%
+  220655 requests in 15.00s, 117.06MB read
+  Non-2xx or 3xx responses: 191271
+Requests/sec:  14708.45
+Transfer/sec:      7.80MB

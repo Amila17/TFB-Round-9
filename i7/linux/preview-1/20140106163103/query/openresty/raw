@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 01:50:31 PST 2014
+
+  System load:  1.4                Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 0%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+81 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   632.04us   77.13us   1.03ms   72.56%
+    Req/Sec     1.65k    83.91     1.90k    70.47%
+  62235 requests in 5.00s, 14.27MB read
+Requests/sec:  12447.40
+Transfer/sec:      2.86MB
+
+---------------------------------------------------------
+ Running Warmup openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.06ms    5.91ms 241.62ms   90.64%
+    Req/Sec     6.74k     1.14k   10.67k    76.42%
+  781418 requests in 15.00s, 179.23MB read
+Requests/sec:  52104.76
+Transfer/sec:     11.95MB
+
+---------------------------------------------------------
+ Queries: 1 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.64ms    4.24ms 142.74ms   96.59%
+    Req/Sec    13.06k     1.99k   18.78k    76.98%
+  1483038 requests in 15.00s, 292.38MB read
+Requests/sec:  98894.57
+Transfer/sec:     19.50MB
+
+---------------------------------------------------------
+ Queries: 5 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.45ms   14.60ms 244.35ms   65.68%
+    Req/Sec     2.27k   813.35    11.70k    76.49%
+  291561 requests in 15.00s, 93.38MB read
+Requests/sec:  19437.72
+Transfer/sec:      6.23MB
+
+---------------------------------------------------------
+ Queries: 10 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.97ms   20.09ms 323.22ms   66.50%
+    Req/Sec     1.18k   398.68     2.50k    69.50%
+  137816 requests in 15.00s, 65.15MB read
+Requests/sec:   9187.01
+Transfer/sec:      4.34MB
+
+---------------------------------------------------------
+ Queries: 15 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    36.77ms   21.68ms 211.71ms   74.07%
+    Req/Sec     0.88k    91.40     1.13k    69.47%
+  105084 requests in 15.00s, 65.60MB read
+Requests/sec:   7005.47
+Transfer/sec:      4.37MB
+
+---------------------------------------------------------
+ Queries: 20 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.52ms   25.60ms 250.99ms   75.78%
+    Req/Sec   669.89     53.20     0.94k    71.08%
+  80090 requests in 15.00s, 62.13MB read
+Requests/sec:   5338.65
+Transfer/sec:      4.14MB

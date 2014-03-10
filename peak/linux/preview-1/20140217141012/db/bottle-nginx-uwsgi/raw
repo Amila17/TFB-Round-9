@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 14:56:55 PST 2014
+
+  System load:  0.14               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.77ms    1.10ms  15.35ms   99.11%
+    Req/Sec   619.60     90.66   777.00     85.00%
+  22993 requests in 5.00s, 4.03MB read
+Requests/sec:   4598.73
+Transfer/sec:    825.09KB
+
+---------------------------------------------------------
+ Running Warmup bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.58ms    6.22ms  95.43ms   76.28%
+    Req/Sec   393.22     49.78   621.00     69.01%
+  233688 requests in 15.00s, 40.95MB read
+Requests/sec:  15580.55
+Transfer/sec:      2.73MB
+
+---------------------------------------------------------
+ Concurrency: 8 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.72ms  312.00us   8.44ms   74.49%
+    Req/Sec   614.14     69.57   777.00     75.79%
+  69890 requests in 15.00s, 12.25MB read
+Requests/sec:   4659.27
+Transfer/sec:    835.96KB
+
+---------------------------------------------------------
+ Concurrency: 16 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.14ms  402.67us  11.34ms   66.50%
+    Req/Sec   494.07     67.26   777.00     74.24%
+  112318 requests in 15.00s, 19.68MB read
+Requests/sec:   7487.84
+Transfer/sec:      1.31MB
+
+---------------------------------------------------------
+ Concurrency: 32 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.30ms    0.91ms  25.17ms   81.39%
+    Req/Sec   320.14     53.68   545.00     64.41%
+  146043 requests in 15.00s, 25.59MB read
+Requests/sec:   9737.78
+Transfer/sec:      1.71MB
+
+---------------------------------------------------------
+ Concurrency: 64 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.77ms    1.42ms  36.89ms   86.07%
+    Req/Sec   286.98     64.16   555.00     66.88%
+  163747 requests in 15.00s, 28.69MB read
+Requests/sec:  10919.22
+Transfer/sec:      1.91MB
+
+---------------------------------------------------------
+ Concurrency: 128 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.99ms    6.60ms  50.97ms   79.62%
+    Req/Sec   369.75    113.96     1.23k    77.93%
+  211919 requests in 15.00s, 37.13MB read
+Requests/sec:  14130.92
+Transfer/sec:      2.48MB
+
+---------------------------------------------------------
+ Concurrency: 256 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.72ms    6.68ms  84.43ms   79.51%
+    Req/Sec   389.30     49.19   649.00     69.81%
+  232390 requests in 15.00s, 40.72MB read
+Requests/sec:  15489.18
+Transfer/sec:      2.71MB

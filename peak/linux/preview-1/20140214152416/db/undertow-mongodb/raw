@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 09:52:10 PST 2014
+
+  System load:  0.05               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db/mongodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   351.61us    1.64ms  20.01ms   99.05%
+    Req/Sec     5.48k     1.23k    6.78k    84.82%
+  192938 requests in 5.00s, 31.06MB read
+Requests/sec:  38595.84
+Transfer/sec:      6.21MB
+
+---------------------------------------------------------
+ Running Warmup undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mongodb
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.94ms    7.92ms 638.48ms   99.82%
+    Req/Sec     3.52k   694.61    10.00k    75.39%
+  1970017 requests in 14.99s, 317.10MB read
+  Socket errors: connect 0, read 0, write 0, timeout 6
+Requests/sec: 131380.08
+Transfer/sec:     21.15MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mongodb
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   177.54us   67.41us   5.81ms   98.98%
+    Req/Sec     5.82k   358.68     6.55k    71.73%
+  660321 requests in 15.00s, 106.29MB read
+Requests/sec:  44024.70
+Transfer/sec:      7.09MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mongodb
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   187.32us   95.95us   6.13ms   99.79%
+    Req/Sec     5.52k   417.57     6.22k    85.88%
+  1254066 requests in 15.00s, 201.86MB read
+Requests/sec:  83618.40
+Transfer/sec:     13.46MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mongodb
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   347.17us  486.01us  11.87ms   89.13%
+    Req/Sec     3.16k   767.79     6.11k    69.60%
+  1435114 requests in 14.99s, 231.00MB read
+Requests/sec:  95707.71
+Transfer/sec:     15.41MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mongodb
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   383.43us  560.56us  12.52ms   88.78%
+    Req/Sec     2.94k   746.36     5.78k    69.34%
+  1669591 requests in 14.99s, 268.74MB read
+Requests/sec: 111348.22
+Transfer/sec:     17.92MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mongodb
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.96ms    1.39ms  12.06ms   83.76%
+    Req/Sec     3.49k     0.90k    8.33k    68.64%
+  1980588 requests in 14.99s, 318.80MB read
+Requests/sec: 132085.12
+Transfer/sec:     21.26MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-mongodb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/mongodb
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/mongodb
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.84ms    1.59ms  16.95ms   84.89%
+    Req/Sec     3.52k   603.36     6.33k    70.19%
+  1997783 requests in 14.99s, 321.57MB read
+Requests/sec: 133258.43
+Transfer/sec:     21.45MB

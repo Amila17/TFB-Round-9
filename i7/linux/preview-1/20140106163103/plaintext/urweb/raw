@@ -1,0 +1,105 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 11:38:59 PST 2014
+
+  System load:  0.0                Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+82 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.02ms  155.28us   1.74ms   69.69%
+    Req/Sec     1.03k   100.15     1.33k    70.47%
+  39142 requests in 5.00s, 7.06MB read
+Requests/sec:   7828.18
+Transfer/sec:      1.41MB
+
+---------------------------------------------------------
+ Running Warmup urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.36ms  684.68us   2.67ms   78.90%
+    Req/Sec     2.75k     1.30k    4.78k    46.92%
+  116902 requests in 16.01s, 21.07MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1747
+Requests/sec:   7303.03
+Transfer/sec:      1.32MB
+
+---------------------------------------------------------
+ Concurrency: 256 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.20ms    1.90ms  19.63ms   50.72%
+    Req/Sec     2.06k   730.70     3.47k    50.64%
+  121544 requests in 16.01s, 21.91MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1672
+Requests/sec:   7592.42
+Transfer/sec:      1.37MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.19ms    1.60ms  20.57ms   84.51%
+    Req/Sec     2.05k   729.22     3.38k    50.35%
+  120941 requests in 16.01s, 21.80MB read
+  Socket errors: connect 0, read 0, write 0, timeout 6808
+Requests/sec:   7554.92
+Transfer/sec:      1.36MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   145.93ms   93.94ms 219.36ms   62.71%
+    Req/Sec     2.71k   499.78     3.39k    58.99%
+  119172 requests in 16.01s, 21.48MB read
+  Socket errors: connect 0, read 0, write 0, timeout 27144
+Requests/sec:   7441.95
+Transfer/sec:      1.34MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for urweb
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 16.04s, 0.00B read
+  Socket errors: connect 11, read 13313, write 1647739, timeout 115069
+Requests/sec:      0.00
+Transfer/sec:       0.00B

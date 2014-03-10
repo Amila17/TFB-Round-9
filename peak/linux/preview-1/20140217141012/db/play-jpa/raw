@@ -1,0 +1,131 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 02:12:49 PST 2014
+
+  System load:  0.08               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:9000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.42ms    1.66ms  20.30ms   99.13%
+    Req/Sec     0.85k   197.76     1.22k    73.41%
+  30520 requests in 5.00s, 3.46MB read
+Requests/sec:   6104.74
+Transfer/sec:    708.05KB
+
+---------------------------------------------------------
+ Running Warmup play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.66ms    9.88ms 214.40ms   98.88%
+    Req/Sec     2.03k   677.20     8.89k    83.53%
+  1095744 requests in 14.99s, 124.11MB read
+  Socket errors: connect 0, read 0, write 0, timeout 78
+Requests/sec:  73075.22
+Transfer/sec:      8.28MB
+
+---------------------------------------------------------
+ Concurrency: 8 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   492.60us  141.00us   6.75ms   98.36%
+    Req/Sec     2.12k   176.90     2.56k    65.69%
+  241298 requests in 15.00s, 27.33MB read
+Requests/sec:  16087.40
+Transfer/sec:      1.82MB
+
+---------------------------------------------------------
+ Concurrency: 16 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   486.14us  218.28us  11.36ms   99.73%
+    Req/Sec     2.16k   199.79     2.44k    92.75%
+  492037 requests in 15.00s, 55.73MB read
+Requests/sec:  32806.39
+Transfer/sec:      3.72MB
+
+---------------------------------------------------------
+ Concurrency: 32 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   699.52us    1.07ms  28.03ms   96.46%
+    Req/Sec     1.66k   308.82     2.22k    73.15%
+  753739 requests in 15.00s, 85.37MB read
+Requests/sec:  50261.89
+Transfer/sec:      5.69MB
+
+---------------------------------------------------------
+ Concurrency: 64 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.93ms    1.96ms  29.34ms   95.21%
+    Req/Sec     1.45k   430.14     2.22k    61.50%
+  826240 requests in 14.99s, 93.58MB read
+Requests/sec:  55102.60
+Transfer/sec:      6.24MB
+
+---------------------------------------------------------
+ Concurrency: 128 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.89ms    2.69ms  46.75ms   95.28%
+    Req/Sec     1.93k   514.98     4.00k    69.52%
+  1091386 requests in 14.99s, 123.62MB read
+Requests/sec:  72783.60
+Transfer/sec:      8.24MB
+
+---------------------------------------------------------
+ Concurrency: 256 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.32ms    2.33ms  47.79ms   89.94%
+    Req/Sec     1.98k   434.70     4.11k    74.22%
+  1117058 requests in 14.99s, 126.52MB read
+  Socket errors: connect 0, read 0, write 0, timeout 6
+Requests/sec:  74511.06
+Transfer/sec:      8.44MB

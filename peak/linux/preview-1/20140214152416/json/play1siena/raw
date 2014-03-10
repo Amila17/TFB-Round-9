@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 03:34:57 PST 2014
+
+  System load:  0.07               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/play1/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   784.33us    3.93ms  36.09ms   98.33%
+    Req/Sec     4.80k     2.51k    8.56k    51.67%
+  169142 requests in 5.00s, 70.01MB read
+Requests/sec:  33836.84
+Transfer/sec:     14.00MB
+
+---------------------------------------------------------
+ Running Warmup play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/play1/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.28ms   10.10ms 225.31ms   97.75%
+    Req/Sec     3.80k     1.41k   12.44k    70.24%
+  2127007 requests in 14.99s, 0.86GB read
+  Socket errors: connect 0, read 0, write 0, timeout 5
+Requests/sec: 141892.90
+Transfer/sec:     58.73MB
+
+---------------------------------------------------------
+ Concurrency: 8 for play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/play1/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   375.62us    1.84ms  14.97ms   98.37%
+    Req/Sec     6.96k     1.41k    8.33k    93.22%
+  792093 requests in 15.00s, 327.84MB read
+Requests/sec:  52809.77
+Transfer/sec:     21.86MB
+
+---------------------------------------------------------
+ Concurrency: 16 for play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/play1/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   596.64us    2.58ms  16.15ms   97.14%
+    Req/Sec     6.00k     1.62k    7.55k    89.04%
+  1366178 requests in 15.00s, 565.45MB read
+Requests/sec:  91090.20
+Transfer/sec:     37.70MB
+
+---------------------------------------------------------
+ Concurrency: 32 for play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/play1/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   407.37us    1.56ms  13.07ms   98.18%
+    Req/Sec     4.67k     1.35k    7.00k    81.64%
+  2118839 requests in 15.00s, 0.86GB read
+Requests/sec: 141301.23
+Transfer/sec:     58.48MB
+
+---------------------------------------------------------
+ Concurrency: 64 for play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/play1/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   363.36us    1.11ms  12.27ms   98.76%
+    Req/Sec     3.86k     1.15k    6.55k    75.88%
+  2194323 requests in 14.99s, 0.89GB read
+Requests/sec: 146385.85
+Transfer/sec:     60.59MB
+
+---------------------------------------------------------
+ Concurrency: 128 for play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/play1/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.96ms    1.83ms  23.32ms   87.37%
+    Req/Sec     3.87k     1.36k    9.89k    70.32%
+  2196531 requests in 14.99s, 0.89GB read
+Requests/sec: 146549.03
+Transfer/sec:     60.66MB
+
+---------------------------------------------------------
+ Concurrency: 256 for play1siena
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/play1/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/play1/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.84ms    3.61ms  40.40ms   85.74%
+    Req/Sec     3.68k     1.16k    9.92k    69.47%
+  2118780 requests in 14.99s, 0.86GB read
+Requests/sec: 141308.69
+Transfer/sec:     58.49MB

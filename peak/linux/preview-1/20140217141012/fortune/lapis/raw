@@ -1,0 +1,131 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Feb 19 09:16:42 PST 2014
+
+  System load:  0.01               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.66ms  619.82us   5.65ms   67.77%
+    Req/Sec   398.27     73.12   666.00     68.80%
+  15086 requests in 5.00s, 20.34MB read
+Requests/sec:   3016.87
+Transfer/sec:      4.07MB
+
+---------------------------------------------------------
+ Running Warmup lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   101.40ms   51.54ms 210.10ms   68.39%
+    Req/Sec    68.97     37.00   307.00     74.14%
+  38696 requests in 15.03s, 52.18MB read
+  Socket errors: connect 0, read 0, write 0, timeout 36
+Requests/sec:   2574.31
+Transfer/sec:      3.47MB
+
+---------------------------------------------------------
+ Concurrency: 8 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.70ms  658.18us   5.62ms   68.33%
+    Req/Sec   396.82     78.58   777.00     64.91%
+  45176 requests in 15.00s, 60.92MB read
+Requests/sec:   3011.66
+Transfer/sec:      4.06MB
+
+---------------------------------------------------------
+ Concurrency: 16 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.93ms    5.32ms  25.59ms   87.20%
+    Req/Sec   194.48     85.88   416.00     62.27%
+  44994 requests in 15.00s, 60.67MB read
+Requests/sec:   2999.10
+Transfer/sec:      4.04MB
+
+---------------------------------------------------------
+ Concurrency: 32 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.86ms   11.69ms  39.95ms   58.46%
+    Req/Sec    88.71     66.22   307.00     61.82%
+  41321 requests in 15.01s, 55.72MB read
+Requests/sec:   2753.47
+Transfer/sec:      3.71MB
+
+---------------------------------------------------------
+ Concurrency: 64 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.13ms   11.11ms  43.85ms   54.81%
+    Req/Sec    70.84     52.71   266.00     70.08%
+  41753 requests in 15.01s, 56.30MB read
+Requests/sec:   2782.39
+Transfer/sec:      3.75MB
+
+---------------------------------------------------------
+ Concurrency: 128 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    51.42ms   24.97ms 114.92ms   65.83%
+    Req/Sec    65.94     30.51   238.00     76.73%
+  39406 requests in 15.03s, 53.14MB read
+Requests/sec:   2621.51
+Transfer/sec:      3.53MB
+
+---------------------------------------------------------
+ Concurrency: 256 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   102.51ms   53.12ms 210.15ms   66.70%
+    Req/Sec    69.08     36.48   266.00     73.87%
+  38222 requests in 15.03s, 51.54MB read
+  Socket errors: connect 0, read 0, write 0, timeout 28
+Requests/sec:   2543.62
+Transfer/sec:      3.43MB

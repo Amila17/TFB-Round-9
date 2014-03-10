@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 22:32:44 PST 2014
+
+  System load:  0.83               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer http-kit
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/http-kit/db/2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/http-kit/db/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   486.80us   84.99us   3.38ms   91.55%
+    Req/Sec     2.14k   151.72     2.44k    70.19%
+  79739 requests in 5.00s, 15.62MB read
+Requests/sec:  15950.74
+Transfer/sec:      3.13MB
+
+---------------------------------------------------------
+ Running Warmup http-kit
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/http-kit/db/2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/http-kit/db/2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.01ms    1.02ms  16.40ms   84.15%
+    Req/Sec     2.15k   363.72     3.33k    65.50%
+  1220670 requests in 14.99s, 239.18MB read
+Requests/sec:  81418.87
+Transfer/sec:     15.95MB
+
+---------------------------------------------------------
+ Queries: 1 for http-kit
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/http-kit/db/1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/http-kit/db/1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.03ms    0.96ms   8.71ms   84.27%
+    Req/Sec     2.09k   263.26     3.33k    69.36%
+  1190834 requests in 14.99s, 197.30MB read
+Requests/sec:  79424.08
+Transfer/sec:     13.16MB
+
+---------------------------------------------------------
+ Queries: 5 for http-kit
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/http-kit/db/5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/http-kit/db/5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.50ms  631.01us  11.39ms   87.80%
+    Req/Sec     1.14k   113.26     1.54k    68.69%
+  655320 requests in 15.00s, 188.52MB read
+Requests/sec:  43696.51
+Transfer/sec:     12.57MB
+
+---------------------------------------------------------
+ Queries: 10 for http-kit
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/http-kit/db/10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/http-kit/db/10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.77ms    0.93ms  16.26ms   79.62%
+    Req/Sec   569.78     47.09   782.00     63.60%
+  334426 requests in 15.00s, 146.81MB read
+Requests/sec:  22294.93
+Transfer/sec:      9.79MB
+
+---------------------------------------------------------
+ Queries: 15 for http-kit
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/http-kit/db/15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/http-kit/db/15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.09ms    1.22ms  34.61ms   75.10%
+    Req/Sec   378.02     30.98   529.00     62.53%
+  223730 requests in 15.00s, 132.06MB read
+Requests/sec:  14912.00
+Transfer/sec:      8.80MB
+
+---------------------------------------------------------
+ Queries: 20 for http-kit
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/http-kit/db/20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/http-kit/db/20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.42ms    1.47ms  33.70ms   72.17%
+    Req/Sec   282.77     22.75   391.00     60.85%
+  168054 requests in 15.00s, 124.63MB read
+Requests/sec:  11201.54
+Transfer/sec:      8.31MB

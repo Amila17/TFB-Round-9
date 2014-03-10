@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 02:38:05 PST 2014
+
+  System load:  0.95               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/web-apps/servlet/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/web-apps/servlet/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   435.79us   89.38us   3.23ms   97.59%
+    Req/Sec     2.41k   160.48     2.67k    81.36%
+  89218 requests in 5.00s, 17.75MB read
+Requests/sec:  17847.73
+Transfer/sec:      3.55MB
+
+---------------------------------------------------------
+ Running Warmup plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/web-apps/servlet/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/web-apps/servlet/db?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.20ms    1.55ms  48.71ms   59.51%
+    Req/Sec     1.98k   280.54     3.22k    67.86%
+  1137036 requests in 15.00s, 226.16MB read
+Requests/sec:  75827.62
+Transfer/sec:     15.08MB
+
+---------------------------------------------------------
+ Queries: 1 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/web-apps/servlet/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/web-apps/servlet/db?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.07ms    1.00ms  15.04ms   60.32%
+    Req/Sec     3.11k   418.49     4.44k    68.50%
+  1755017 requests in 14.99s, 295.89MB read
+Requests/sec: 117077.18
+Transfer/sec:     19.74MB
+
+---------------------------------------------------------
+ Queries: 5 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/web-apps/servlet/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/web-apps/servlet/db?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.72ms    3.21ms  15.21ms   58.25%
+    Req/Sec     0.94k   145.38     1.73k    71.02%
+  540758 requests in 14.99s, 157.25MB read
+Requests/sec:  36062.77
+Transfer/sec:     10.49MB
+
+---------------------------------------------------------
+ Queries: 10 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/web-apps/servlet/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/web-apps/servlet/db?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.51ms    6.26ms 361.79ms   60.49%
+    Req/Sec   495.70     77.70     0.87k    69.40%
+  288476 requests in 15.00s, 127.61MB read
+Requests/sec:  19232.40
+Transfer/sec:      8.51MB
+
+---------------------------------------------------------
+ Queries: 15 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/web-apps/servlet/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/web-apps/servlet/db?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.28ms    8.82ms 195.71ms   58.21%
+    Req/Sec   337.83     52.76   666.00     69.34%
+  197031 requests in 15.00s, 117.02MB read
+Requests/sec:  13133.10
+Transfer/sec:      7.80MB
+
+---------------------------------------------------------
+ Queries: 20 for plain-linux-servlet
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/web-apps/servlet/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/web-apps/servlet/db?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.79ms   11.43ms  47.48ms   58.47%
+    Req/Sec   259.72     50.09   592.00     74.05%
+  149115 requests in 15.01s, 111.16MB read
+Requests/sec:   9937.08
+Transfer/sec:      7.41MB

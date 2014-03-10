@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 05:49:57 PST 2014
+
+  System load:  0.01               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   486.29us    1.05ms  15.45ms   99.44%
+    Req/Sec     3.30k     1.73k    6.00k    57.08%
+  115332 requests in 5.00s, 20.02MB read
+Requests/sec:  23071.79
+Transfer/sec:      4.00MB
+
+---------------------------------------------------------
+ Running Warmup ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.62ms   28.92ms   1.47s    99.75%
+    Req/Sec     2.83k     1.15k    9.20k    68.70%
+  1533791 requests in 15.00s, 266.22MB read
+  Socket errors: connect 0, read 0, write 0, timeout 15
+Requests/sec: 102275.23
+Transfer/sec:     17.75MB
+
+---------------------------------------------------------
+ Concurrency: 8 for ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   206.62us   56.22us   3.92ms   95.06%
+    Req/Sec     5.01k   302.12     5.67k    60.02%
+  568044 requests in 15.00s, 98.59MB read
+Requests/sec:  37872.42
+Transfer/sec:      6.57MB
+
+---------------------------------------------------------
+ Concurrency: 16 for ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   228.12us  107.36us   3.82ms   98.04%
+    Req/Sec     4.55k   379.91     5.33k    78.60%
+  1035874 requests in 15.00s, 179.80MB read
+Requests/sec:  69069.82
+Transfer/sec:     11.99MB
+
+---------------------------------------------------------
+ Concurrency: 32 for ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   468.89us  516.24us   9.03ms   88.31%
+    Req/Sec     2.29k   443.07     4.44k    70.48%
+  1041457 requests in 15.00s, 180.76MB read
+Requests/sec:  69450.32
+Transfer/sec:     12.05MB
+
+---------------------------------------------------------
+ Concurrency: 64 for ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   585.51us  685.64us   9.44ms   86.22%
+    Req/Sec     1.90k   447.16     3.89k    69.52%
+  1082006 requests in 15.00s, 187.80MB read
+Requests/sec:  72156.77
+Transfer/sec:     12.52MB
+
+---------------------------------------------------------
+ Concurrency: 128 for ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.22ms    1.45ms  13.18ms   85.65%
+    Req/Sec     2.71k   632.43     7.55k    71.32%
+  1541063 requests in 15.00s, 267.48MB read
+Requests/sec: 102771.35
+Transfer/sec:     17.84MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ringojs
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.42ms    4.70ms  26.20ms   86.76%
+    Req/Sec     2.78k     0.91k    7.50k    68.50%
+  1611483 requests in 15.00s, 279.70MB read
+Requests/sec: 107463.06
+Transfer/sec:     18.65MB

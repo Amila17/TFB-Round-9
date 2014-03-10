@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 18:51:05 PST 2014
+
+  System load:  1.71               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   643.37us  218.81us   4.64ms   96.88%
+    Req/Sec     1.64k   141.17     1.89k    89.76%
+  59858 requests in 5.00s, 7.18MB read
+Requests/sec:  11972.95
+Transfer/sec:      1.44MB
+
+---------------------------------------------------------
+ Running Warmup elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.82ms    1.06ms  16.31ms   87.18%
+    Req/Sec   628.89     70.21     0.90k    71.93%
+  368067 requests in 15.00s, 44.15MB read
+Requests/sec:  24541.11
+Transfer/sec:      2.94MB
+
+---------------------------------------------------------
+ Concurrency: 8 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   636.32us  207.69us   6.28ms   97.30%
+    Req/Sec     1.66k   135.76     2.00k    80.09%
+  188494 requests in 15.00s, 22.61MB read
+Requests/sec:  12566.84
+Transfer/sec:      1.51MB
+
+---------------------------------------------------------
+ Concurrency: 16 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   735.70us  252.13us   6.43ms   95.70%
+    Req/Sec     1.43k   123.42     1.78k    86.43%
+  326029 requests in 15.00s, 39.11MB read
+Requests/sec:  21738.32
+Transfer/sec:      2.61MB
+
+---------------------------------------------------------
+ Concurrency: 32 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.13ms  407.47us   8.94ms   95.66%
+    Req/Sec     0.94k   118.67     1.22k    72.40%
+  429359 requests in 15.00s, 51.50MB read
+Requests/sec:  28630.94
+Transfer/sec:      3.43MB
+
+---------------------------------------------------------
+ Concurrency: 64 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.40ms  425.64us   6.84ms   95.01%
+    Req/Sec   757.88     92.30     1.00k    77.00%
+  430764 requests in 15.00s, 51.67MB read
+Requests/sec:  28726.59
+Transfer/sec:      3.45MB
+
+---------------------------------------------------------
+ Concurrency: 128 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.63ms  759.45us  11.57ms   94.31%
+    Req/Sec   688.64    101.23     1.00k    80.71%
+  391930 requests in 14.99s, 47.01MB read
+Requests/sec:  26138.10
+Transfer/sec:      3.14MB
+
+---------------------------------------------------------
+ Concurrency: 256 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.84ms    1.04ms  16.26ms   87.46%
+    Req/Sec   627.66     64.15     0.95k    78.07%
+  367241 requests in 14.99s, 44.05MB read
+Requests/sec:  24491.06
+Transfer/sec:      2.94MB

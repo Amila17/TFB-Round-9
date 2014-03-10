@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 11:21:16 PST 2014
+
+  System load:  1.75               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer wsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   108.46us   10.16us 355.00us   65.71%
+    Req/Sec     9.41k     0.93k   11.22k    57.32%
+  357918 requests in 5.00s, 55.64MB read
+Requests/sec:  71589.00
+Transfer/sec:     11.13MB
+
+---------------------------------------------------------
+ Running Warmup wsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.04ms  214.61us  10.11ms   58.94%
+    Req/Sec     6.06k   708.50     9.22k    70.65%
+  3444554 requests in 15.00s, 535.45MB read
+Requests/sec: 229672.15
+Transfer/sec:     35.70MB
+
+---------------------------------------------------------
+ Concurrency: 256 for wsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.09ms    2.36ms  30.99ms   66.75%
+    Req/Sec     6.46k   759.81     9.45k    71.07%
+  3793777 requests in 15.00s, 589.74MB read
+Requests/sec: 252892.22
+Transfer/sec:     39.31MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for wsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    72.45ms  133.35ms   1.62s    98.68%
+    Req/Sec     6.46k     1.52k   15.02k    80.33%
+  3791443 requests in 15.00s, 589.38MB read
+  Socket errors: connect 0, read 0, write 0, timeout 230
+Requests/sec: 252766.20
+Transfer/sec:     39.29MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for wsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   976.79ms    2.31s    7.62s    89.14%
+    Req/Sec     6.30k     3.61k   22.62k    72.99%
+  3787781 requests in 15.00s, 588.81MB read
+  Socket errors: connect 0, read 1184, write 0, timeout 8366
+Requests/sec: 252600.98
+Transfer/sec:     39.27MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for wsgi
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.36s     3.64s   14.81s    91.58%
+    Req/Sec     6.22k     2.05k   26.68k    73.00%
+  3771899 requests in 15.00s, 586.34MB read
+  Socket errors: connect 0, read 2928, write 0, timeout 85529
+Requests/sec: 251380.55
+Transfer/sec:     39.08MB

@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 20:39:57 PST 2014
+
+  System load:  0.74               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/grails/hello/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.86ms  308.54us   6.92ms   90.31%
+    Req/Sec     1.27k   261.87     1.67k    54.33%
+  45996 requests in 5.00s, 8.63MB read
+Requests/sec:   9200.45
+Transfer/sec:      1.73MB
+
+---------------------------------------------------------
+ Running Warmup grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.23ms    6.16ms  51.15ms   84.67%
+    Req/Sec     1.15k   106.26     1.46k    81.92%
+  668931 requests in 14.99s, 125.54MB read
+Requests/sec:  44612.64
+Transfer/sec:      8.37MB
+
+---------------------------------------------------------
+ Concurrency: 8 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   780.71us  283.72us   6.74ms   99.73%
+    Req/Sec     1.36k   123.89     1.55k    87.81%
+  153975 requests in 15.00s, 28.90MB read
+Requests/sec:  10265.34
+Transfer/sec:      1.93MB
+
+---------------------------------------------------------
+ Concurrency: 16 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   817.78us  391.72us  10.07ms   99.55%
+    Req/Sec     1.30k   138.51     1.55k    72.89%
+  296488 requests in 15.00s, 55.64MB read
+Requests/sec:  19768.04
+Transfer/sec:      3.71MB
+
+---------------------------------------------------------
+ Concurrency: 32 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.96ms  534.64us   7.44ms   98.56%
+    Req/Sec     1.13k   153.75     1.44k    85.58%
+  511730 requests in 15.00s, 96.03MB read
+Requests/sec:  34123.08
+Transfer/sec:      6.40MB
+
+---------------------------------------------------------
+ Concurrency: 64 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.06ms  588.29us   8.06ms   97.38%
+    Req/Sec     1.02k   151.36     1.33k    82.72%
+  579394 requests in 15.00s, 108.73MB read
+Requests/sec:  38638.11
+Transfer/sec:      7.25MB
+
+---------------------------------------------------------
+ Concurrency: 128 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.63ms    2.14ms  24.49ms   85.45%
+    Req/Sec     1.28k   329.12     2.56k    72.05%
+  726363 requests in 15.00s, 136.32MB read
+Requests/sec:  48437.94
+Transfer/sec:      9.09MB
+
+---------------------------------------------------------
+ Concurrency: 256 for grails
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/grails/hello/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/grails/hello/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.29ms    6.42ms  58.87ms   83.34%
+    Req/Sec     1.19k   262.35     2.30k    68.99%
+  699625 requests in 14.99s, 131.30MB read
+Requests/sec:  46668.21
+Transfer/sec:      8.76MB

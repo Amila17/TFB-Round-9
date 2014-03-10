@@ -1,0 +1,845 @@
+test.os.lower() = windows  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: aspnet-stripped-mongodb-raw
+self.results['completed']: {u'aspnet-postgresql-raw': '20140307143607', u'aspnet-postgresql-entityframework': '20140307142825', u'aspnet-jsonnet': '20140307140335', u'HttpListener-mongodb-raw': '20140307134149', u'aspnet-stripped': '20140307144228', u'aspnet-mysql-entityframework': '20140307141256', u'HttpListener-postgresql-raw': '20140307135917', u'aspnet-servicestack': '20140307143725', u'aspnet-mongodb-raw': '20140307140511', u'HttpListener': '20140307133836', u'aspnet-mysql-raw': '20140307142035', u'HttpListener-mysql-raw': '20140307135134', u'aspnet': '20140307140217'}
+
+=====================================================
+  Beginning aspnet-stripped-mongodb-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting aspnet-stripped-mongodb-raw
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Mar  7 14:42:30 PST 2014
+
+  System load:  0.01               Processes:            265
+  Usage of /:   7.5% of 151.38GB   Users logged in:      0
+  Memory usage: 3%                 IP address for eth4:  10.0.3.5
+  Swap usage:   0%                 IP address for bond0: 69.194.0.135
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+28 packages can be updated.
+25 updates are security updates.
+
+mysql start/running, process 16827
+mongodb start/running, process 16893
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+All packages listed in packages.config are already installed.
+
+Name             ID   State      Physical Path                  Bindings       
+----             --   -----      -------------                  --------       
+Benchmarks       2    Started    C:\FrameworkBenchmarks\aspnet- http *:8080:   
+                                 stripped\src                                  
+
+
+
+-----------------------------------------------------
+  VERIFYING DB (/mongodbdb)
+-----------------------------------------------------
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Fri, 07 Mar 2014 22:43:46 GMT
+Content-Length: 7617
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cannot deserialize ObjectId from BsonType Double.</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Cannot deserialize ObjectId from BsonType Double.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.IO.FileFormatException: Cannot deserialize ObjectId from BsonType Double.<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+The source code that generated this unhandled exception can only be shown when compiled in debug mode. To enable this, please follow one of the below steps, then request the URL:<br><br>1. Add a &quot;Debug=true&quot; directive at the top of the file that generated the error. Example:<br><br> &nbsp;&nbsp;&lt;%@ Page Language=&quot;C#&quot; Debug=&quot;true&quot; %&gt;<br><br>or:<br><br>2) Add the following section to the configuration file of your application:<br><br>&lt;configuration&gt;<br> &nbsp;&nbsp;&nbsp;&lt;system.web&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;compilation debug=&quot;true&quot;/&gt;<br> &nbsp;&nbsp;&nbsp;&lt;/system.web&gt;<br>&lt;/configuration&gt;<br><br> Note that this second technique will cause all files within a given application to be compiled in debug mode. The first technique will cause only that particular file to be compiled in debug mode.<br><br>Important: Running applications in debug mode does incur a memory/performance overhead. You should make sure that an application has debugging disabled before deploying into production scenario.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[FileFormatException: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +393
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +470
+
+[FileFormatException: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +862
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +577
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options) +303
+   MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions) +948
+   MongoDB.Driver.Internal.MongoConnection.ReceiveMessage(BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions) +706
+   MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message) +191
+   MongoDB.Driver.MongoCursorEnumerator`1.GetFirst() +589
+   MongoDB.Driver.MongoCursorEnumerator`1.MoveNext() +87
+   System.Linq.Enumerable.FirstOrDefault(IEnumerable`1 source) +247
+   MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context) +497
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +913
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously) +165
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.0.30319.33440
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileFormatException]: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+[FileFormatException]: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+
+VALIDATING DB ... FAIL
+
+
+-----------------------------------------------------
+  VERIFYING QUERY (/mongodbdb?queries=2)
+-----------------------------------------------------
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Fri, 07 Mar 2014 22:43:46 GMT
+Content-Length: 7617
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cannot deserialize ObjectId from BsonType Double.</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Cannot deserialize ObjectId from BsonType Double.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.IO.FileFormatException: Cannot deserialize ObjectId from BsonType Double.<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+The source code that generated this unhandled exception can only be shown when compiled in debug mode. To enable this, please follow one of the below steps, then request the URL:<br><br>1. Add a &quot;Debug=true&quot; directive at the top of the file that generated the error. Example:<br><br> &nbsp;&nbsp;&lt;%@ Page Language=&quot;C#&quot; Debug=&quot;true&quot; %&gt;<br><br>or:<br><br>2) Add the following section to the configuration file of your application:<br><br>&lt;configuration&gt;<br> &nbsp;&nbsp;&nbsp;&lt;system.web&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;compilation debug=&quot;true&quot;/&gt;<br> &nbsp;&nbsp;&nbsp;&lt;/system.web&gt;<br>&lt;/configuration&gt;<br><br> Note that this second technique will cause all files within a given application to be compiled in debug mode. The first technique will cause only that particular file to be compiled in debug mode.<br><br>Important: Running applications in debug mode does incur a memory/performance overhead. You should make sure that an application has debugging disabled before deploying into production scenario.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[FileFormatException: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +393
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +470
+
+[FileFormatException: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +862
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +577
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options) +303
+   MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions) +948
+   MongoDB.Driver.Internal.MongoConnection.ReceiveMessage(BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions) +706
+   MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message) +191
+   MongoDB.Driver.MongoCursorEnumerator`1.GetFirst() +589
+   MongoDB.Driver.MongoCursorEnumerator`1.MoveNext() +87
+   System.Linq.Enumerable.FirstOrDefault(IEnumerable`1 source) +247
+   MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context) +497
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +913
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously) +165
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.0.30319.33440
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileFormatException]: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+[FileFormatException]: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+
+/mongodbdb?queries=2 - FAIL
+
+-----------------------------------------------------
+
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Fri, 07 Mar 2014 22:43:46 GMT
+Content-Length: 7617
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cannot deserialize ObjectId from BsonType Double.</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Cannot deserialize ObjectId from BsonType Double.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.IO.FileFormatException: Cannot deserialize ObjectId from BsonType Double.<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+The source code that generated this unhandled exception can only be shown when compiled in debug mode. To enable this, please follow one of the below steps, then request the URL:<br><br>1. Add a &quot;Debug=true&quot; directive at the top of the file that generated the error. Example:<br><br> &nbsp;&nbsp;&lt;%@ Page Language=&quot;C#&quot; Debug=&quot;true&quot; %&gt;<br><br>or:<br><br>2) Add the following section to the configuration file of your application:<br><br>&lt;configuration&gt;<br> &nbsp;&nbsp;&nbsp;&lt;system.web&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;compilation debug=&quot;true&quot;/&gt;<br> &nbsp;&nbsp;&nbsp;&lt;/system.web&gt;<br>&lt;/configuration&gt;<br><br> Note that this second technique will cause all files within a given application to be compiled in debug mode. The first technique will cause only that particular file to be compiled in debug mode.<br><br>Important: Running applications in debug mode does incur a memory/performance overhead. You should make sure that an application has debugging disabled before deploying into production scenario.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[FileFormatException: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +393
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +470
+
+[FileFormatException: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +862
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +577
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options) +303
+   MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions) +948
+   MongoDB.Driver.Internal.MongoConnection.ReceiveMessage(BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions) +706
+   MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message) +191
+   MongoDB.Driver.MongoCursorEnumerator`1.GetFirst() +589
+   MongoDB.Driver.MongoCursorEnumerator`1.MoveNext() +87
+   System.Linq.Enumerable.FirstOrDefault(IEnumerable`1 source) +247
+   MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context) +497
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +913
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously) +165
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.0.30319.33440
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileFormatException]: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+[FileFormatException]: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+
+/mongodbdb?queries=0 - WARNING
+
+-----------------------------------------------------
+
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Fri, 07 Mar 2014 22:43:46 GMT
+Content-Length: 7617
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cannot deserialize ObjectId from BsonType Double.</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Cannot deserialize ObjectId from BsonType Double.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.IO.FileFormatException: Cannot deserialize ObjectId from BsonType Double.<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+The source code that generated this unhandled exception can only be shown when compiled in debug mode. To enable this, please follow one of the below steps, then request the URL:<br><br>1. Add a &quot;Debug=true&quot; directive at the top of the file that generated the error. Example:<br><br> &nbsp;&nbsp;&lt;%@ Page Language=&quot;C#&quot; Debug=&quot;true&quot; %&gt;<br><br>or:<br><br>2) Add the following section to the configuration file of your application:<br><br>&lt;configuration&gt;<br> &nbsp;&nbsp;&nbsp;&lt;system.web&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;compilation debug=&quot;true&quot;/&gt;<br> &nbsp;&nbsp;&nbsp;&lt;/system.web&gt;<br>&lt;/configuration&gt;<br><br> Note that this second technique will cause all files within a given application to be compiled in debug mode. The first technique will cause only that particular file to be compiled in debug mode.<br><br>Important: Running applications in debug mode does incur a memory/performance overhead. You should make sure that an application has debugging disabled before deploying into production scenario.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[FileFormatException: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +393
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +470
+
+[FileFormatException: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +862
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +577
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options) +303
+   MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions) +948
+   MongoDB.Driver.Internal.MongoConnection.ReceiveMessage(BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions) +706
+   MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message) +191
+   MongoDB.Driver.MongoCursorEnumerator`1.GetFirst() +589
+   MongoDB.Driver.MongoCursorEnumerator`1.MoveNext() +87
+   System.Linq.Enumerable.FirstOrDefault(IEnumerable`1 source) +247
+   MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context) +497
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +913
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously) +165
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.0.30319.33440
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileFormatException]: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+[FileFormatException]: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+
+/mongodbdb?queries=foo - WARNING
+
+-----------------------------------------------------
+
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Fri, 07 Mar 2014 22:43:46 GMT
+Content-Length: 7617
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cannot deserialize ObjectId from BsonType Double.</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Cannot deserialize ObjectId from BsonType Double.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.IO.FileFormatException: Cannot deserialize ObjectId from BsonType Double.<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+The source code that generated this unhandled exception can only be shown when compiled in debug mode. To enable this, please follow one of the below steps, then request the URL:<br><br>1. Add a &quot;Debug=true&quot; directive at the top of the file that generated the error. Example:<br><br> &nbsp;&nbsp;&lt;%@ Page Language=&quot;C#&quot; Debug=&quot;true&quot; %&gt;<br><br>or:<br><br>2) Add the following section to the configuration file of your application:<br><br>&lt;configuration&gt;<br> &nbsp;&nbsp;&nbsp;&lt;system.web&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;compilation debug=&quot;true&quot;/&gt;<br> &nbsp;&nbsp;&nbsp;&lt;/system.web&gt;<br>&lt;/configuration&gt;<br><br> Note that this second technique will cause all files within a given application to be compiled in debug mode. The first technique will cause only that particular file to be compiled in debug mode.<br><br>Important: Running applications in debug mode does incur a memory/performance overhead. You should make sure that an application has debugging disabled before deploying into production scenario.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[FileFormatException: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +393
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +470
+
+[FileFormatException: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +862
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +577
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options) +303
+   MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions) +948
+   MongoDB.Driver.Internal.MongoConnection.ReceiveMessage(BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions) +706
+   MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message) +191
+   MongoDB.Driver.MongoCursorEnumerator`1.GetFirst() +589
+   MongoDB.Driver.MongoCursorEnumerator`1.MoveNext() +87
+   System.Linq.Enumerable.FirstOrDefault(IEnumerable`1 source) +247
+   MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context) +497
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +913
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously) +165
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.0.30319.33440
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileFormatException]: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+[FileFormatException]: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDBDbHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+
+/mongodbdb?queries=501 - WARNING
+
+-----------------------------------------------------
+
+
+VALIDATING QUERY ... FAIL
+
+
+-----------------------------------------------------
+  VERIFYING FORTUNE (/mongodbfortunes)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Fri, 07 Mar 2014 22:43:46 GMT
+Content-Length: 1226
+
+<!DOCTYPE html><html><head><title>Fortunes</title></head><body><table><tr><th>id</th><th>message</th></tr><tr><td>11</td><td>&lt;script&gt;alert(&quot;This should not be displayed in a browser alert box.&quot;);&lt;/script&gt;</td></tr><tr><td>4</td><td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td></tr><tr><td>5</td><td>A computer program does what you tell it to do, not what you want it to do.</td></tr><tr><td>2</td><td>A computer scientist is someone who fixes things that aren&#39;t broken.</td></tr><tr><td>8</td><td>A list is only as strong as its weakest link. — Donald Knuth</td></tr><tr><td>0</td><td>Additional fortune added at request time.</td></tr><tr><td>3</td><td>After enough decimal places, nobody gives a damn.</td></tr><tr><td>7</td><td>Any program that runs right is obsolete.</td></tr><tr><td>10</td><td>Computers make very fast, very accurate mistakes.</td></tr><tr><td>6</td><td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td></tr><tr><td>9</td><td>Feature: A bug with seniority.</td></tr><tr><td>1</td><td>fortune: No such file or directory</td></tr><tr><td>12</td><td>フレームワークのベンチマーク</td></tr></table></body></html>
+
+VALIDATING FORTUNE ... FAIL
+
+
+-----------------------------------------------------
+  VERIFYING UPDATE (/mongodbupdates?queries=)
+-----------------------------------------------------
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Fri, 07 Mar 2014 22:43:46 GMT
+Content-Length: 7627
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cannot deserialize ObjectId from BsonType Double.</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Cannot deserialize ObjectId from BsonType Double.</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.IO.FileFormatException: Cannot deserialize ObjectId from BsonType Double.<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code>
+
+The source code that generated this unhandled exception can only be shown when compiled in debug mode. To enable this, please follow one of the below steps, then request the URL:<br><br>1. Add a &quot;Debug=true&quot; directive at the top of the file that generated the error. Example:<br><br> &nbsp;&nbsp;&lt;%@ Page Language=&quot;C#&quot; Debug=&quot;true&quot; %&gt;<br><br>or:<br><br>2) Add the following section to the configuration file of your application:<br><br>&lt;configuration&gt;<br> &nbsp;&nbsp;&nbsp;&lt;system.web&gt;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;compilation debug=&quot;true&quot;/&gt;<br> &nbsp;&nbsp;&nbsp;&lt;/system.web&gt;<br>&lt;/configuration&gt;<br><br> Note that this second technique will cause all files within a given application to be compiled in debug mode. The first technique will cause only that particular file to be compiled in debug mode.<br><br>Important: Running applications in debug mode does incur a memory/performance overhead. You should make sure that an application has debugging disabled before deploying into production scenario.</code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[FileFormatException: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +393
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +470
+
+[FileFormatException: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.]
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap) +862
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options) +577
+   MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options) +303
+   MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions) +948
+   MongoDB.Driver.Internal.MongoConnection.ReceiveMessage(BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions) +706
+   MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message) +191
+   MongoDB.Driver.MongoCursorEnumerator`1.GetFirst() +589
+   MongoDB.Driver.MongoCursorEnumerator`1.MoveNext() +87
+   System.Linq.Enumerable.FirstOrDefault(IEnumerable`1 source) +247
+   MongoDBUpdatesHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context) +521
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +913
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously) +165
+</pre></code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.0.30319.33440
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[FileFormatException]: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.Serializers.ObjectIdSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+[FileFormatException]: An error occurred while deserializing the _id property of class Benchmarks.AspNet.Models.MongoWorld: Cannot deserialize ObjectId from BsonType Double.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetReply(MongoConnection connection, MongoRequestMessage message)
+   at MongoDB.Driver.MongoCursorEnumerator`1.GetFirst()
+   at MongoDB.Driver.MongoCursorEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at MongoDBUpdatesHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-->
+
+VALIDATING UPDATE ... FAIL
+
+
+-----------------------------------------------------
+  Benchmarking aspnet-stripped-mongodb-raw ...
+-----------------------------------------------------
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+BENCHMARKING Fortune ... Complete
+BENCHMARKING Update ... Complete
+
+-----------------------------------------------------
+  Stopping aspnet-stripped-mongodb-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped aspnet-stripped-mongodb-raw
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through aspnet-stripped-mongodb-raw
+----------------------------------------------------

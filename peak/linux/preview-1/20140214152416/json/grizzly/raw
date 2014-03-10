@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 21:40:33 PST 2014
+
+  System load:  0.17               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    87.57us   91.57us   7.21ms   95.17%
+    Req/Sec    12.45k     2.53k   15.44k    85.89%
+  433940 requests in 5.00s, 67.87MB read
+Requests/sec:  86806.21
+Transfer/sec:     13.58MB
+
+---------------------------------------------------------
+ Running Warmup grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   375.47us    1.64ms  79.37ms   98.14%
+    Req/Sec    19.50k     4.71k   38.22k    71.17%
+  10634301 requests in 14.99s, 1.62GB read
+Requests/sec: 709191.31
+Transfer/sec:    110.92MB
+
+---------------------------------------------------------
+ Concurrency: 8 for grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    72.10us    6.61us 227.00us   66.06%
+    Req/Sec    13.89k     1.11k   16.00k    60.90%
+  1576711 requests in 15.00s, 246.60MB read
+Requests/sec: 105121.10
+Transfer/sec:     16.44MB
+
+---------------------------------------------------------
+ Concurrency: 16 for grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    80.32us   31.47us   5.72ms   97.60%
+    Req/Sec    12.32k   839.62    14.56k    61.49%
+  2796913 requests in 15.00s, 437.44MB read
+Requests/sec: 186510.49
+Transfer/sec:     29.17MB
+
+---------------------------------------------------------
+ Concurrency: 32 for grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    88.70us   31.66us   5.34ms   96.55%
+    Req/Sec    11.22k   682.48    13.33k    68.29%
+  5093081 requests in 14.99s, 796.57MB read
+Requests/sec: 339822.35
+Transfer/sec:     53.15MB
+
+---------------------------------------------------------
+ Concurrency: 64 for grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   100.73us   42.45us   5.41ms   94.14%
+    Req/Sec     9.88k     1.13k   13.00k    71.43%
+  5609597 requests in 14.99s, 0.86GB read
+Requests/sec: 374104.74
+Transfer/sec:     58.51MB
+
+---------------------------------------------------------
+ Concurrency: 128 for grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   211.04us  811.15us  64.10ms   99.17%
+    Req/Sec    16.30k     3.34k   27.00k    69.63%
+  9165326 requests in 14.99s, 1.40GB read
+Requests/sec: 611233.30
+Transfer/sec:     95.60MB
+
+---------------------------------------------------------
+ Concurrency: 256 for grizzly
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   388.08us    1.73ms  62.17ms   98.12%
+    Req/Sec    19.40k     4.27k   37.44k    70.35%
+  10897942 requests in 14.97s, 1.66GB read
+Requests/sec: 728091.17
+Transfer/sec:    113.88MB

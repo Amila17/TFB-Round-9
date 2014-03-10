@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 02:20:38 PST 2014
+
+  System load:  1.26               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:9000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   716.62us  255.30us   5.35ms   89.76%
+    Req/Sec     1.53k   318.94     2.11k    60.42%
+  55448 requests in 5.00s, 6.28MB read
+Requests/sec:  11091.58
+Transfer/sec:      1.26MB
+
+---------------------------------------------------------
+ Running Warmup play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.04ms    4.98ms 634.19ms   88.42%
+    Req/Sec   793.48    169.31     1.73k    71.82%
+  452772 requests in 15.00s, 51.28MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:  30194.08
+Transfer/sec:      3.42MB
+
+---------------------------------------------------------
+ Concurrency: 8 for play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   566.17us  163.24us   5.09ms   98.59%
+    Req/Sec     1.85k   163.20     2.22k    87.09%
+  210654 requests in 15.00s, 23.86MB read
+Requests/sec:  14044.31
+Transfer/sec:      1.59MB
+
+---------------------------------------------------------
+ Concurrency: 16 for play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   645.47us  211.86us   4.80ms   97.81%
+    Req/Sec     1.63k   163.23     2.00k    77.32%
+  371002 requests in 15.00s, 42.02MB read
+Requests/sec:  24736.44
+Transfer/sec:      2.80MB
+
+---------------------------------------------------------
+ Concurrency: 32 for play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.48ms    2.01ms  17.67ms   92.09%
+    Req/Sec     0.90k   337.19     1.67k    66.99%
+  409078 requests in 15.00s, 46.33MB read
+Requests/sec:  27276.79
+Transfer/sec:      3.09MB
+
+---------------------------------------------------------
+ Concurrency: 64 for play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.37ms    6.24ms  28.23ms   87.86%
+    Req/Sec   733.36    351.14     1.44k    63.41%
+  417554 requests in 15.00s, 47.29MB read
+Requests/sec:  27841.72
+Transfer/sec:      3.15MB
+
+---------------------------------------------------------
+ Concurrency: 128 for play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.16ms    3.30ms  81.50ms   93.98%
+    Req/Sec   793.79    192.85     1.67k    59.60%
+  450047 requests in 14.99s, 50.97MB read
+Requests/sec:  30015.05
+Transfer/sec:      3.40MB
+
+---------------------------------------------------------
+ Concurrency: 256 for play-scala
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.04ms    5.76ms 641.61ms   92.23%
+    Req/Sec   805.85    202.89     2.00k    72.72%
+  455461 requests in 15.00s, 51.59MB read
+Requests/sec:  30367.58
+Transfer/sec:      3.44MB

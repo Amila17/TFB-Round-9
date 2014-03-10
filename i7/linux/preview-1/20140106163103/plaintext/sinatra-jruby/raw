@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 08:41:52 PST 2014
+
+  System load:  0.24               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+82 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer sinatra-jruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   646.76us  440.70us  10.28ms   95.21%
+    Req/Sec     1.66k   273.55     2.33k    75.11%
+  62519 requests in 5.00s, 12.16MB read
+Requests/sec:  12503.73
+Transfer/sec:      2.43MB
+
+---------------------------------------------------------
+ Running Warmup sinatra-jruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    21.48ms    6.04ms  48.99ms   67.03%
+    Req/Sec     1.50k   190.17     2.64k    71.32%
+  176896 requests in 15.00s, 34.42MB read
+Requests/sec:  11792.62
+Transfer/sec:      2.29MB
+
+---------------------------------------------------------
+ Concurrency: 256 for sinatra-jruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   309.35ms   29.37ms 538.20ms   83.89%
+    Req/Sec     1.62k   140.99     2.18k    81.40%
+  193338 requests in 15.03s, 37.61MB read
+  Socket errors: connect 0, read 18, write 0, timeout 0
+Requests/sec:  12866.08
+Transfer/sec:      2.50MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for sinatra-jruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.16s   266.76ms   2.41s    87.86%
+    Req/Sec     1.55k   272.44     2.08k    66.94%
+  184748 requests in 15.09s, 35.94MB read
+  Socket errors: connect 0, read 209, write 0, timeout 164
+Requests/sec:  12246.12
+Transfer/sec:      2.38MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for sinatra-jruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.79s     2.08s    8.91s    67.59%
+    Req/Sec     1.28k   835.38     3.75k    68.65%
+  148673 requests in 15.01s, 28.92MB read
+  Socket errors: connect 0, read 648, write 0, timeout 16368
+Requests/sec:   9902.88
+Transfer/sec:      1.93MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for sinatra-jruby
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 16.05s, 0.00B read
+  Socket errors: connect 11, read 2095, write 0, timeout 114949
+Requests/sec:      0.00
+Transfer/sec:       0.00B

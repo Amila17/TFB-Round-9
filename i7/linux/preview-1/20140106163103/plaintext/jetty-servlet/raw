@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Jan  6 23:30:31 PST 2014
+
+  System load:  1.33               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 0%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+81 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer jetty-servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   221.45us   33.19us   1.10ms   70.76%
+    Req/Sec     4.58k   226.10     6.22k    89.32%
+  174048 requests in 5.00s, 24.23MB read
+Requests/sec:  34813.26
+Transfer/sec:      4.85MB
+
+---------------------------------------------------------
+ Running Warmup jetty-servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.24ms    5.47ms 627.95ms   99.14%
+    Req/Sec    28.12k     2.91k   38.44k    81.59%
+  3175612 requests in 15.00s, 442.16MB read
+Requests/sec: 211753.64
+Transfer/sec:     29.48MB
+
+---------------------------------------------------------
+ Concurrency: 256 for jetty-servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.56ms   19.15ms 474.18ms   97.55%
+    Req/Sec    41.13k     3.62k   52.63k    70.50%
+  4795720 requests in 15.00s, 667.74MB read
+Requests/sec: 319719.40
+Transfer/sec:     44.52MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for jetty-servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    34.01ms   75.37ms   1.35s    94.36%
+    Req/Sec    50.07k     8.47k  104.71k    76.02%
+  5893271 requests in 15.00s, 820.59MB read
+  Socket errors: connect 0, read 3, write 0, timeout 1127
+Requests/sec: 392886.62
+Transfer/sec:     54.71MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for jetty-servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   113.46ms  237.69ms   3.25s    90.66%
+    Req/Sec    53.75k     5.74k   72.84k    68.54%
+  6551138 requests in 15.00s, 0.89GB read
+  Socket errors: connect 0, read 119, write 0, timeout 6202
+Requests/sec: 436665.56
+Transfer/sec:     60.81MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for jetty-servlet
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   336.84ms  771.61ms  10.93s    91.05%
+    Req/Sec    58.94k     9.78k  104.36k    80.50%
+  6638691 requests in 15.01s, 0.90GB read
+  Socket errors: connect 11, read 147, write 0, timeout 53958
+Requests/sec: 442200.96
+Transfer/sec:     61.60MB

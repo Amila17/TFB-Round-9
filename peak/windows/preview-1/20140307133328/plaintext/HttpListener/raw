@@ -1,0 +1,106 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Mar  7 13:36:49 PST 2014
+
+  System load:  0.77               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+27 packages can be updated.
+24 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer HttpListener
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.4:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.4:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   199.56us    1.13ms  17.42ms   99.56%
+    Req/Sec     8.04k     1.94k   13.67k    63.81%
+  304148 requests in 5.00s, 46.70MB read
+Requests/sec:  60833.99
+Transfer/sec:      9.34MB
+
+---------------------------------------------------------
+ Running Warmup HttpListener
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.4:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.69ms  256.04ms   7.99s    99.84%
+    Req/Sec     3.45k     1.08k    7.89k    63.94%
+  1963494 requests in 15.00s, 301.48MB read
+  Socket errors: connect 0, read 0, write 0, timeout 344
+Requests/sec: 130924.18
+Transfer/sec:     20.10MB
+
+---------------------------------------------------------
+ Concurrency: 256 for HttpListener
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.4:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   869.84ms  822.26ms   2.42s    47.71%
+    Req/Sec     2.48k     3.47k   28.65k    82.64%
+  1467386 requests in 15.01s, 225.30MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:  97760.08
+Transfer/sec:     15.01MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for HttpListener
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.4:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.30s     3.11s    9.11s    70.69%
+    Req/Sec     2.58k     2.94k   22.05k    84.29%
+  1546044 requests in 15.03s, 237.38MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1923
+Requests/sec: 102882.78
+Transfer/sec:     15.80MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for HttpListener
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.4:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.93s     4.42s   14.75s    84.82%
+    Req/Sec     2.62k     2.07k   14.76k    70.16%
+  1560719 requests in 15.01s, 239.64MB read
+  Socket errors: connect 0, read 0, write 0, timeout 19917
+Requests/sec: 104008.24
+Transfer/sec:     15.97MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for HttpListener
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.4:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   982.86ms  261.92ms  10.94s    80.72%
+    Req/Sec     2.41k   216.46     2.89k    65.71%
+  1438139 requests in 15.01s, 220.81MB read
+  Socket errors: connect 0, read 0, write 0, timeout 63387
+Requests/sec:  95842.41
+Transfer/sec:     14.72MB

@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 01:50:25 PST 2014
+
+  System load:  0.18               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbraw.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   396.91us   51.79us   1.64ms   79.94%
+    Req/Sec     2.62k   176.21     3.11k    68.96%
+  99132 requests in 5.00s, 21.34MB read
+Requests/sec:  19829.95
+Transfer/sec:      4.27MB
+
+---------------------------------------------------------
+ Running Warmup php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw.php
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.81ms   16.10ms   2.77s    99.94%
+    Req/Sec     3.49k   785.41     7.33k    72.20%
+  1970180 requests in 14.99s, 424.12MB read
+Requests/sec: 131416.52
+Transfer/sec:     28.29MB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   390.71us   43.91us   2.24ms   72.29%
+    Req/Sec     2.66k   178.08     3.11k    67.05%
+  302966 requests in 15.00s, 65.22MB read
+Requests/sec:  20198.96
+Transfer/sec:      4.35MB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw.php
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   406.22us   39.78us 724.00us   70.49%
+    Req/Sec     2.56k   135.31     3.11k    67.03%
+  581455 requests in 15.00s, 125.17MB read
+Requests/sec:  38768.40
+Transfer/sec:      8.35MB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw.php
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   461.66us   67.73us   3.03ms   78.12%
+    Req/Sec     2.26k   139.67     2.78k    60.46%
+  1017317 requests in 14.99s, 219.00MB read
+Requests/sec:  67846.46
+Transfer/sec:     14.61MB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw.php
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   500.95us  100.61us   4.37ms   84.44%
+    Req/Sec     2.09k   153.17     2.56k    75.05%
+  1176916 requests in 14.99s, 253.36MB read
+Requests/sec:  78488.91
+Transfer/sec:     16.90MB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw.php
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.99ms  576.90us   9.51ms   90.94%
+    Req/Sec     3.22k   409.10     4.89k    68.93%
+  1801061 requests in 14.99s, 387.72MB read
+Requests/sec: 120132.83
+Transfer/sec:     25.86MB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbraw.php
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbraw.php
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.90ms    2.09ms 210.33ms   91.64%
+    Req/Sec     3.46k   676.71    13.00k    80.44%
+  1926410 requests in 14.99s, 414.70MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec: 128493.35
+Transfer/sec:     27.66MB

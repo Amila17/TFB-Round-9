@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 16:14:27 PST 2014
+
+  System load:  0.58               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/query?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/query?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.30ms  455.97us  10.20ms   96.48%
+    Req/Sec   811.91     90.64     1.00k    80.52%
+  30704 requests in 5.00s, 6.22MB read
+Requests/sec:   6141.16
+Transfer/sec:      1.24MB
+
+---------------------------------------------------------
+ Running Warmup cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/query?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/query?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.16ms    1.89ms  37.96ms   79.38%
+    Req/Sec   240.46     35.88   300.00     52.20%
+  142861 requests in 15.00s, 28.95MB read
+Requests/sec:   9524.39
+Transfer/sec:      1.93MB
+
+---------------------------------------------------------
+ Queries: 1 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/query?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/query?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.86ms    1.31ms  23.88ms   86.86%
+    Req/Sec   476.09     60.05   666.00     67.29%
+  280334 requests in 15.00s, 48.32MB read
+Requests/sec:  18694.17
+Transfer/sec:      3.22MB
+
+---------------------------------------------------------
+ Queries: 5 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/query?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/query?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    62.55ms    3.30ms  78.01ms   71.65%
+    Req/Sec    95.93     16.75   129.00     75.77%
+  57401 requests in 15.02s, 16.91MB read
+Requests/sec:   3820.91
+Transfer/sec:      1.13MB
+
+---------------------------------------------------------
+ Queries: 10 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/query?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/query?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   123.48ms    5.14ms 142.36ms   74.43%
+    Req/Sec    48.20      5.96    70.00     89.71%
+  29081 requests in 15.06s, 12.97MB read
+Requests/sec:   1930.68
+Transfer/sec:      0.86MB
+
+---------------------------------------------------------
+ Queries: 15 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/query?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/query?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   184.08ms    6.11ms 205.45ms   74.89%
+    Req/Sec    32.07      6.20    43.00     73.86%
+  19480 requests in 15.11s, 11.64MB read
+Requests/sec:   1289.07
+Transfer/sec:    788.93KB
+
+---------------------------------------------------------
+ Queries: 20 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/query?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/query?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   247.79ms    7.56ms 264.74ms   58.17%
+    Req/Sec    23.64      2.49    34.00     92.86%
+  14440 requests in 15.13s, 10.82MB read
+Requests/sec:    954.50
+Transfer/sec:    732.28KB

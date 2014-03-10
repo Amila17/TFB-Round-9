@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 22:06:57 PST 2014
+
+  System load:  0.03               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/mysql-orm/
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.01ms    1.56ms  19.15ms   98.13%
+    Req/Sec     1.27k   321.67     1.78k    76.50%
+  47599 requests in 5.00s, 9.84MB read
+Requests/sec:   9521.03
+Transfer/sec:      1.97MB
+
+---------------------------------------------------------
+ Running Warmup hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql-orm/
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.50ms    8.96ms  99.88ms   89.52%
+    Req/Sec     1.22k   765.28     4.33k    65.00%
+  490745 requests in 15.00s, 101.46MB read
+Requests/sec:  32727.12
+Transfer/sec:      6.77MB
+
+---------------------------------------------------------
+ Concurrency: 8 for hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql-orm/
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.02ms    1.75ms  19.13ms   98.10%
+    Req/Sec     1.29k   317.55     1.89k    81.87%
+  146693 requests in 15.00s, 30.33MB read
+Requests/sec:   9780.04
+Transfer/sec:      2.02MB
+
+---------------------------------------------------------
+ Concurrency: 16 for hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql-orm/
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.25ms    2.79ms  31.18ms   97.45%
+    Req/Sec     1.23k   344.41     1.89k    75.02%
+  280094 requests in 15.00s, 57.91MB read
+Requests/sec:  18667.45
+Transfer/sec:      3.86MB
+
+---------------------------------------------------------
+ Concurrency: 32 for hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql-orm/
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.31ms    5.49ms  53.24ms   94.95%
+    Req/Sec     0.94k   405.43     1.89k    72.95%
+  426003 requests in 15.00s, 88.07MB read
+Requests/sec:  28402.37
+Transfer/sec:      5.87MB
+
+---------------------------------------------------------
+ Concurrency: 64 for hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql-orm/
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.95ms    6.87ms  50.65ms   93.98%
+    Req/Sec   814.92    366.99     1.78k    62.87%
+  462770 requests in 15.01s, 95.67MB read
+Requests/sec:  30839.23
+Transfer/sec:      6.38MB
+
+---------------------------------------------------------
+ Concurrency: 128 for hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql-orm/
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.06ms    5.35ms 108.73ms   96.28%
+    Req/Sec     0.92k   416.06     2.89k    68.74%
+  496798 requests in 15.00s, 102.71MB read
+Requests/sec:  33128.81
+Transfer/sec:      6.85MB
+
+---------------------------------------------------------
+ Concurrency: 256 for hapi-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/mysql-orm/
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql-orm/
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.50ms    7.22ms 131.18ms   93.70%
+    Req/Sec     0.89k   289.24     2.30k    68.15%
+  502216 requests in 14.99s, 103.83MB read
+Requests/sec:  33495.69
+Transfer/sec:      6.92MB

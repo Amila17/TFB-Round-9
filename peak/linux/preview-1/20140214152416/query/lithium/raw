@@ -1,0 +1,118 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 23:08:32 PST 2014
+
+  System load:  0.02               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lithium
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.71ms  493.60us   8.31ms   77.77%
+    Req/Sec   182.58     35.53   272.00     77.10%
+  7025 requests in 5.00s, 1.91MB read
+Requests/sec:   1404.04
+Transfer/sec:    391.34KB
+
+---------------------------------------------------------
+ Running Warmup lithium
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    96.56ms   40.06ms 324.29ms   70.48%
+    Req/Sec    62.83      9.93   117.00     71.06%
+  37919 requests in 15.04s, 10.32MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:   2521.00
+Transfer/sec:    702.69KB
+
+---------------------------------------------------------
+ Queries: 1 for lithium
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    86.50ms   36.41ms 352.92ms   72.34%
+    Req/Sec    69.45      9.41   105.00     66.93%
+  41717 requests in 15.02s, 9.93MB read
+Requests/sec:   2777.88
+Transfer/sec:    677.38KB
+
+---------------------------------------------------------
+ Queries: 5 for lithium
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   117.04ms   44.52ms 374.40ms   71.47%
+    Req/Sec    51.96      9.07    92.00     75.53%
+  31207 requests in 15.04s, 11.68MB read
+Requests/sec:   2075.25
+Transfer/sec:    795.68KB
+
+---------------------------------------------------------
+ Queries: 10 for lithium
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   157.20ms   48.48ms 413.40ms   70.15%
+    Req/Sec    37.96      5.49    60.00     71.04%
+  22989 requests in 15.05s, 12.55MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:   1527.45
+Transfer/sec:    853.67KB
+
+---------------------------------------------------------
+ Queries: 15 for lithium
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   198.41ms   55.30ms 507.44ms   69.20%
+    Req/Sec    30.03      4.12    44.00     73.27%
+  18175 requests in 15.06s, 13.02MB read
+Requests/sec:   1207.11
+Transfer/sec:      0.86MB
+
+---------------------------------------------------------
+ Queries: 20 for lithium
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   242.22ms   67.41ms 504.98ms   73.26%
+    Req/Sec    24.48      3.21    37.00     67.14%
+  14984 requests in 15.08s, 13.28MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    993.60
+Transfer/sec:      0.88MB

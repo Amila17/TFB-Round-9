@@ -1,0 +1,96 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 23:26:20 PST 2014
+
+  System load:  1.01               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer nodejs
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   131.02us   23.16us 777.00us   91.44%
+    Req/Sec     7.83k   750.97     9.11k    77.09%
+  296452 requests in 5.00s, 48.63MB read
+Requests/sec:  59295.32
+Transfer/sec:      9.73MB
+
+---------------------------------------------------------
+ Running Warmup nodejs
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.00ms  377.33us  11.78ms   70.70%
+    Req/Sec     6.29k     0.88k   10.44k    70.96%
+  3573247 requests in 15.00s, 586.13MB read
+Requests/sec: 238258.00
+Transfer/sec:     39.08MB
+
+---------------------------------------------------------
+ Concurrency: 256 for nodejs
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.03ms    2.13ms 210.30ms   99.48%
+    Req/Sec     2.40k   211.93     3.31k    77.98%
+  1428490 requests in 15.02s, 234.32MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:  95129.83
+Transfer/sec:     15.60MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for nodejs
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    52.44ms   21.46ms   1.47s    96.02%
+    Req/Sec     7.38k   724.69     9.76k    83.30%
+  4357877 requests in 15.00s, 714.83MB read
+  Socket errors: connect 0, read 0, write 0, timeout 203
+Requests/sec: 290613.13
+Transfer/sec:     47.67MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for nodejs
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   380.18ms  290.83ms   1.58s    81.41%
+    Req/Sec     4.10k     1.21k   11.04k    80.50%
+  2297742 requests in 15.00s, 376.90MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1614
+Requests/sec: 153217.65
+Transfer/sec:     25.13MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for nodejs
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+

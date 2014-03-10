@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 01:52:27 PST 2014
+
+  System load:  0.31               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 0%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+81 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer openresty
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   180.80us   37.83us 381.00us   73.06%
+    Req/Sec     5.59k   380.66     6.78k    59.63%
+  210836 requests in 5.00s, 37.79MB read
+Requests/sec:  42170.29
+Transfer/sec:      7.56MB
+
+---------------------------------------------------------
+ Running Warmup openresty
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.29ms  357.71us  16.37ms   95.23%
+    Req/Sec    25.80k     1.52k   36.67k    61.99%
+  2928585 requests in 15.00s, 524.93MB read
+Requests/sec: 195246.61
+Transfer/sec:     35.00MB
+
+---------------------------------------------------------
+ Concurrency: 256 for openresty
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.36ms   17.93ms 477.03ms   97.59%
+    Req/Sec    32.46k     2.69k   41.25k    67.07%
+  3852320 requests in 15.00s, 690.50MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec: 256866.94
+Transfer/sec:     46.04MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for openresty
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.58ms  113.68ms   2.88s    92.96%
+    Req/Sec    37.71k     3.17k   48.57k    72.44%
+  4407196 requests in 15.00s, 789.98MB read
+  Socket errors: connect 0, read 0, write 0, timeout 259
+Requests/sec: 293809.17
+Transfer/sec:     52.66MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for openresty
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   221.17ms  953.17ms  14.69s    97.36%
+    Req/Sec    43.54k    12.56k  114.19k    86.27%
+  4739203 requests in 15.00s, 849.60MB read
+  Socket errors: connect 0, read 625, write 0, timeout 9022
+Requests/sec: 315881.25
+Transfer/sec:     56.63MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for openresty
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.12s     6.31s   14.82s    71.87%
+    Req/Sec    42.95k     8.17k  103.08k    77.48%
+  5045546 requests in 15.02s, 0.88GB read
+  Socket errors: connect 11, read 234, write 0, timeout 67296
+Requests/sec: 335899.25
+Transfer/sec:     60.24MB

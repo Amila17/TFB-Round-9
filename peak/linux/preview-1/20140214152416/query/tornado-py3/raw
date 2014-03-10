@@ -1,0 +1,123 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Feb 15 08:30:16 PST 2014
+
+  System load:  0.41               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.65ms  533.64us   4.02ms   76.96%
+    Req/Sec   688.56    170.17     0.90k    63.21%
+  25931 requests in 5.00s, 5.68MB read
+Requests/sec:   5186.13
+Transfer/sec:      1.14MB
+
+---------------------------------------------------------
+ Running Warmup tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.61ms    4.66ms  40.14ms   71.45%
+    Req/Sec   494.93     83.03   782.00     65.41%
+  285273 requests in 15.00s, 62.45MB read
+Requests/sec:  19023.85
+Transfer/sec:      4.16MB
+
+---------------------------------------------------------
+ Queries: 1 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.75ms    3.11ms  28.27ms   74.03%
+    Req/Sec   725.41    140.85     1.28k    67.98%
+  411367 requests in 15.00s, 74.45MB read
+Requests/sec:  27428.83
+Transfer/sec:      4.96MB
+
+---------------------------------------------------------
+ Queries: 5 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   427.14ms  426.22ms   1.08s    69.77%
+    Req/Sec    89.11    122.87   478.00     77.26%
+  57404 requests in 16.00s, 18.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 947
+  Non-2xx or 3xx responses: 2036
+Requests/sec:   3587.42
+Transfer/sec:      1.19MB
+
+---------------------------------------------------------
+ Queries: 10 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   132.15ms  180.78ms 518.56ms   83.01%
+    Req/Sec     4.52      7.56    19.00     73.56%
+  3745 requests in 16.01s, 1.91MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1595
+  Non-2xx or 3xx responses: 180
+Requests/sec:    233.95
+Transfer/sec:    122.14KB
+
+---------------------------------------------------------
+ Queries: 15 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   138.75ms  206.85ms   1.11s    90.61%
+    Req/Sec    18.91     17.97   112.00     52.69%
+  14710 requests in 16.00s, 10.04MB read
+  Socket errors: connect 0, read 0, write 0, timeout 758
+  Non-2xx or 3xx responses: 950
+Requests/sec:    919.66
+Transfer/sec:    642.87KB
+
+---------------------------------------------------------
+ Queries: 20 for tornado-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   409.13ms  477.14ms   2.64s    82.52%
+    Req/Sec    12.13      8.80    59.00     72.76%
+  7854 requests in 16.00s, 5.78MB read
+  Socket errors: connect 0, read 0, write 0, timeout 633
+  Non-2xx or 3xx responses: 1978
+Requests/sec:    490.92
+Transfer/sec:    370.26KB

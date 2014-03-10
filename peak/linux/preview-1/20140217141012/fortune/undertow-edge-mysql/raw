@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Feb 18 10:05:13 PST 2014
+
+  System load:  0.43               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   288.89us  123.32us   3.52ms   99.66%
+    Req/Sec     3.62k   278.44     4.00k    89.60%
+  134877 requests in 5.00s, 240.41MB read
+Requests/sec:  26981.64
+Transfer/sec:     48.09MB
+
+---------------------------------------------------------
+ Running Warmup undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.40ms    2.90ms  24.76ms   81.33%
+    Req/Sec     2.69k   546.49     5.33k    68.47%
+  1552485 requests in 14.99s, 2.70GB read
+Requests/sec: 103587.91
+Transfer/sec:    184.64MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   280.56us   76.17us   3.36ms   93.99%
+    Req/Sec     3.70k   264.78     4.22k    64.25%
+  420187 requests in 15.00s, 748.95MB read
+Requests/sec:  28014.40
+Transfer/sec:     49.93MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   292.51us  206.55us  10.79ms   99.83%
+    Req/Sec     3.59k   278.26     4.00k    81.16%
+  815728 requests in 15.00s, 1.42GB read
+Requests/sec:  54388.82
+Transfer/sec:     96.94MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   388.55us  270.05us   6.05ms   90.93%
+    Req/Sec     2.71k   366.16     3.78k    67.30%
+  1234747 requests in 15.00s, 2.15GB read
+Requests/sec:  82337.58
+Transfer/sec:    146.76MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   484.34us  512.62us   7.08ms   90.15%
+    Req/Sec     2.27k   494.46     3.67k    67.00%
+  1288080 requests in 15.00s, 2.24GB read
+Requests/sec:  85894.14
+Transfer/sec:    153.10MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms    1.33ms  15.67ms   81.86%
+    Req/Sec     2.81k   649.70     5.89k    69.34%
+  1597685 requests in 14.99s, 2.78GB read
+Requests/sec: 106565.53
+Transfer/sec:    189.94MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-edge-mysql
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.39ms    2.88ms  25.43ms   81.27%
+    Req/Sec     2.70k   569.33     5.25k    68.80%
+  1559124 requests in 14.99s, 2.71GB read
+Requests/sec: 103993.46
+Transfer/sec:    185.36MB

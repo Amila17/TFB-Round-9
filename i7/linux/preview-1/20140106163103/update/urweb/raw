@@ -1,0 +1,124 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Jan  7 11:36:58 PST 2014
+
+  System load:  0.01               Processes:           118
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+82 packages can be updated.
+38 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/updates?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.02ms  449.08us  11.93ms   77.48%
+    Req/Sec   147.06     26.24   214.00     83.63%
+  5694 requests in 5.01s, 1.34MB read
+  Non-2xx or 3xx responses: 54
+Requests/sec:   1137.64
+Transfer/sec:    273.31KB
+
+---------------------------------------------------------
+ Running Warmup urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/updates?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.95ms    3.15ms  14.00ms   72.03%
+    Req/Sec   387.41    190.52   785.00     51.15%
+  17082 requests in 16.01s, 4.01MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1818
+  Non-2xx or 3xx responses: 162
+Requests/sec:   1067.04
+Transfer/sec:    256.33KB
+
+---------------------------------------------------------
+ Queries: 1 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/updates?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/updates?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.77ms    1.77ms  10.93ms   82.39%
+    Req/Sec   702.72    154.81     1.00k    62.37%
+  29999 requests in 16.01s, 6.14MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1758
+Requests/sec:   1873.89
+Transfer/sec:    393.04KB
+
+---------------------------------------------------------
+ Queries: 5 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/updates?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/updates?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.40ms    9.12ms  39.28ms   69.80%
+    Req/Sec   124.86     14.57   181.00     75.88%
+  7401 requests in 16.01s, 2.43MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1687
+Requests/sec:    462.42
+Transfer/sec:    155.30KB
+
+---------------------------------------------------------
+ Queries: 10 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/updates?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/updates?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    41.68ms   19.49ms  81.04ms   79.04%
+    Req/Sec    82.88     18.85   134.00     50.31%
+  3726 requests in 16.01s, 1.79MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1801
+Requests/sec:    232.73
+Transfer/sec:    114.28KB
+
+---------------------------------------------------------
+ Queries: 15 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/updates?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/updates?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   348.29ms  445.36ms   1.09s    76.21%
+    Req/Sec    39.52     18.48    89.00     61.80%
+  2238 requests in 16.01s, 1.41MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1748
+  Non-2xx or 3xx responses: 11
+Requests/sec:    139.82
+Transfer/sec:     90.03KB
+
+---------------------------------------------------------
+ Queries: 20 for urweb
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/updates?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/updates?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   304.88ms  426.95ms   1.09s    76.21%
+    Req/Sec    38.12     17.04    82.00     74.46%
+  1703 requests in 16.01s, 1.33MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1755
+  Non-2xx or 3xx responses: 12
+Requests/sec:    106.40
+Transfer/sec:     84.80KB

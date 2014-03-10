@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Feb 14 20:01:04 PST 2014
+
+  System load:  0.14               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbsraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   824.52us   95.00us   1.95ms   83.52%
+    Req/Sec     1.27k   112.28     1.44k    69.99%
+  48003 requests in 5.00s, 8.69MB read
+Requests/sec:   9601.73
+Transfer/sec:      1.74MB
+
+---------------------------------------------------------
+ Running Warmup flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.64ms    8.89ms 106.23ms   88.93%
+    Req/Sec   746.88    271.43     1.84k    69.30%
+  383572 requests in 15.00s, 69.42MB read
+Requests/sec:  25579.14
+Transfer/sec:      4.63MB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   830.57us   87.77us   1.34ms   80.08%
+    Req/Sec     1.26k    91.54     1.44k    84.20%
+  143128 requests in 15.00s, 25.90MB read
+Requests/sec:   9542.34
+Transfer/sec:      1.73MB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   849.26us  112.01us   1.90ms   81.98%
+    Req/Sec     1.23k   108.84     1.44k    76.22%
+  279916 requests in 15.00s, 50.66MB read
+Requests/sec:  18663.07
+Transfer/sec:      3.38MB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05ms  273.77us   3.39ms   77.90%
+    Req/Sec     1.01k   146.95     1.44k    72.42%
+  461897 requests in 15.00s, 83.60MB read
+Requests/sec:  30800.61
+Transfer/sec:      5.57MB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.22ms  414.06us   5.30ms   80.12%
+    Req/Sec     0.89k   159.63     1.44k    74.37%
+  507504 requests in 15.00s, 91.85MB read
+Requests/sec:  33843.53
+Transfer/sec:      6.13MB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.10ms    2.69ms  31.74ms   86.66%
+    Req/Sec   818.83    241.87     2.00k    65.03%
+  460663 requests in 15.00s, 83.37MB read
+Requests/sec:  30717.62
+Transfer/sec:      5.56MB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.73ms    6.36ms  55.90ms   74.99%
+    Req/Sec   694.62    231.55     2.06k    71.75%
+  390210 requests in 14.99s, 70.62MB read
+Requests/sec:  26023.67
+Transfer/sec:      4.71MB

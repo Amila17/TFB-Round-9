@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Feb 17 21:29:29 PST 2014
+
+  System load:  0.76               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+8 packages can be updated.
+6 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   599.71us   50.24us   0.95ms   70.75%
+    Req/Sec     1.74k    84.98     2.00k    72.61%
+  66101 requests in 5.00s, 12.39MB read
+Requests/sec:  13221.98
+Transfer/sec:      2.48MB
+
+---------------------------------------------------------
+ Running Warmup hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.04ms  177.93us   9.71ms   80.32%
+    Req/Sec     1.56k   137.07     2.00k    71.63%
+  889853 requests in 14.99s, 166.80MB read
+Requests/sec:  59357.88
+Transfer/sec:     11.13MB
+
+---------------------------------------------------------
+ Queries: 1 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.42ms  444.16us   7.89ms   84.62%
+    Req/Sec     1.86k   182.75     2.67k    80.30%
+  1050219 requests in 15.00s, 163.03MB read
+Requests/sec:  70035.62
+Transfer/sec:     10.87MB
+
+---------------------------------------------------------
+ Queries: 5 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.76ms  206.94us   8.32ms   71.08%
+    Req/Sec     0.92k    55.37     1.23k    49.55%
+  532280 requests in 15.00s, 151.72MB read
+Requests/sec:  35491.41
+Transfer/sec:     10.12MB
+
+---------------------------------------------------------
+ Queries: 10 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.92ms  402.04us  14.29ms   68.71%
+    Req/Sec   513.63     26.99   666.00     62.73%
+  301798 requests in 15.00s, 134.63MB read
+Requests/sec:  20119.35
+Transfer/sec:      8.98MB
+
+---------------------------------------------------------
+ Queries: 15 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.20ms  608.46us  20.14ms   67.90%
+    Req/Sec   353.24     20.24   472.00     87.75%
+  209244 requests in 15.00s, 127.05MB read
+Requests/sec:  13948.32
+Transfer/sec:      8.47MB
+
+---------------------------------------------------------
+ Queries: 20 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.50ms  816.67us  26.45ms   67.84%
+    Req/Sec   268.98     14.92   347.00     87.97%
+  159979 requests in 15.00s, 122.90MB read
+Requests/sec:  10662.51
+Transfer/sec:      8.19MB

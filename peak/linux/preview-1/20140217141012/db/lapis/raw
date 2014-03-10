@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Feb 19 09:12:34 PST 2014
+
+  System load:  0.22               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+15 packages can be updated.
+13 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.22ms  293.18us   2.34ms   67.95%
+    Req/Sec     0.88k   140.42     1.55k    73.79%
+  33241 requests in 5.00s, 6.62MB read
+Requests/sec:   6649.14
+Transfer/sec:      1.32MB
+
+---------------------------------------------------------
+ Running Warmup lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    55.13ms   37.51ms 130.08ms   57.37%
+    Req/Sec   119.08     39.96   461.00     71.48%
+  71024 requests in 15.03s, 14.14MB read
+Requests/sec:   4726.29
+Transfer/sec:      0.94MB
+
+---------------------------------------------------------
+ Concurrency: 8 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.20ms  298.79us   9.10ms   72.25%
+    Req/Sec     0.89k   131.28     1.55k    78.46%
+  101467 requests in 15.00s, 20.20MB read
+Requests/sec:   6764.66
+Transfer/sec:      1.35MB
+
+---------------------------------------------------------
+ Concurrency: 16 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.97ms    1.93ms  13.03ms   92.01%
+    Req/Sec   409.35    156.74   777.00     64.98%
+  93212 requests in 15.00s, 18.55MB read
+Requests/sec:   6213.88
+Transfer/sec:      1.24MB
+
+---------------------------------------------------------
+ Concurrency: 32 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.57ms    5.16ms  24.40ms   60.41%
+    Req/Sec   172.83     89.82   481.00     60.51%
+  81536 requests in 15.00s, 16.23MB read
+Requests/sec:   5435.24
+Transfer/sec:      1.08MB
+
+---------------------------------------------------------
+ Concurrency: 64 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.89ms    6.28ms  24.14ms   51.96%
+    Req/Sec   136.44     78.79   423.00     79.58%
+  80785 requests in 15.00s, 16.08MB read
+Requests/sec:   5385.62
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Concurrency: 128 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.17ms   19.05ms  73.50ms   49.53%
+    Req/Sec   122.06     48.47   419.00     72.18%
+  73179 requests in 15.01s, 14.57MB read
+Requests/sec:   4874.12
+Transfer/sec:      0.97MB
+
+---------------------------------------------------------
+ Concurrency: 256 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    56.65ms   37.33ms 546.62ms   59.81%
+    Req/Sec   113.55     37.32   588.00     75.71%
+  67529 requests in 15.03s, 13.44MB read
+Requests/sec:   4494.01
+Transfer/sec:      0.89MB
