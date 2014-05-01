@@ -1,0 +1,143 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 08:16:37 UTC 2014
+
+  System load:  0.1                Processes:           327
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 10%                IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db-mongo
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.86ms   27.86ms 223.28ms   97.94%
+    Req/Sec   161.55     58.61   275.00     66.89%
+  5925 requests in 5.00s, 1.34MB read
+Requests/sec:   1184.34
+Transfer/sec:    274.96KB
+
+---------------------------------------------------------
+ Running Warmup start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db-mongo
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    43.11ms  206.72ms   3.75s    98.92%
+    Req/Sec     5.41k     2.33k    8.33k    75.47%
+  156326 requests in 15.00s, 48.11MB read
+  Non-2xx or 3xx responses: 147333
+Requests/sec:  10421.30
+Transfer/sec:      3.21MB
+
+---------------------------------------------------------
+ Concurrency: 8 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db-mongo
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.22ms  220.63us   7.02ms   76.50%
+    Req/Sec     3.39k   234.12     4.22k    69.64%
+  96219 requests in 15.00s, 30.09MB read
+  Non-2xx or 3xx responses: 96219
+Requests/sec:   6414.66
+Transfer/sec:      2.01MB
+
+---------------------------------------------------------
+ Concurrency: 16 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db-mongo
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.31ms  243.27us   3.09ms   68.88%
+    Req/Sec     6.32k   429.41     7.44k    67.63%
+  177646 requests in 15.00s, 55.56MB read
+  Non-2xx or 3xx responses: 177646
+Requests/sec:  11843.14
+Transfer/sec:      3.70MB
+
+---------------------------------------------------------
+ Concurrency: 32 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db-mongo
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.92ms  548.31us   6.94ms   76.78%
+    Req/Sec     8.79k     0.99k   10.78k    79.78%
+  244791 requests in 15.00s, 76.56MB read
+  Non-2xx or 3xx responses: 244791
+Requests/sec:  16319.25
+Transfer/sec:      5.10MB
+
+---------------------------------------------------------
+ Concurrency: 64 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db-mongo
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.29ms    1.16ms  10.91ms   74.95%
+    Req/Sec     7.66k   584.60     9.10k    80.94%
+  220254 requests in 15.00s, 68.89MB read
+  Non-2xx or 3xx responses: 220254
+Requests/sec:  14683.40
+Transfer/sec:      4.59MB
+
+---------------------------------------------------------
+ Concurrency: 128 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db-mongo
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.07ms    2.75ms  24.08ms   78.03%
+    Req/Sec     7.26k   823.59     8.90k    92.87%
+  211364 requests in 15.00s, 66.11MB read
+  Non-2xx or 3xx responses: 211364
+Requests/sec:  14090.71
+Transfer/sec:      4.41MB
+
+---------------------------------------------------------
+ Concurrency: 256 for start-mongodb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/db-mongo
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db-mongo
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.00ms   12.22ms 578.03ms   94.97%
+    Req/Sec     7.28k   458.39     8.76k    79.41%
+  212098 requests in 15.00s, 66.34MB read
+  Non-2xx or 3xx responses: 212098
+Requests/sec:  14139.28
+Transfer/sec:      4.42MB

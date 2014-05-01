@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 17:34:09 PDT 2014
+
+  System load:  0.77               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.08ms   41.19ms 310.57ms   98.21%
+    Req/Sec   335.68    112.13   444.00     85.71%
+  12173 requests in 5.00s, 254.20MB read
+  Non-2xx or 3xx responses: 12173
+Requests/sec:   2433.98
+Transfer/sec:     50.83MB
+
+---------------------------------------------------------
+ Running Warmup nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.40ms   21.12ms 260.62ms   87.61%
+    Req/Sec   262.26     59.48   477.00     73.69%
+  156447 requests in 15.00s, 3.19GB read
+  Non-2xx or 3xx responses: 156447
+Requests/sec:  10428.84
+Transfer/sec:    217.84MB
+
+---------------------------------------------------------
+ Concurrency: 8 for nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.21ms    4.68ms  31.61ms   95.13%
+    Req/Sec   437.87    111.95   666.00     74.11%
+  49876 requests in 15.00s, 1.02GB read
+  Non-2xx or 3xx responses: 49876
+Requests/sec:   3324.51
+Transfer/sec:     69.42MB
+
+---------------------------------------------------------
+ Concurrency: 16 for nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.28ms   17.10ms 103.69ms   94.95%
+    Req/Sec   404.09    128.98   666.00     77.75%
+  92138 requests in 15.02s, 1.88GB read
+  Non-2xx or 3xx responses: 92138
+Requests/sec:   6133.57
+Transfer/sec:    128.09MB
+
+---------------------------------------------------------
+ Concurrency: 32 for nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.49ms   21.20ms 104.68ms   92.60%
+    Req/Sec   287.51    114.79   600.00     78.86%
+  130359 requests in 15.00s, 2.66GB read
+  Non-2xx or 3xx responses: 130359
+Requests/sec:   8691.56
+Transfer/sec:    181.51MB
+
+---------------------------------------------------------
+ Concurrency: 64 for nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.94ms   22.92ms 111.45ms   92.17%
+    Req/Sec   239.32    100.31   600.00     76.11%
+  136865 requests in 15.06s, 2.79GB read
+  Non-2xx or 3xx responses: 136865
+Requests/sec:   9085.61
+Transfer/sec:    189.74MB
+
+---------------------------------------------------------
+ Concurrency: 128 for nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.92ms   11.65ms 111.98ms   89.21%
+    Req/Sec   260.77     76.70   666.00     71.06%
+  154291 requests in 15.01s, 3.15GB read
+  Non-2xx or 3xx responses: 154291
+Requests/sec:  10276.61
+Transfer/sec:    214.64MB
+
+---------------------------------------------------------
+ Concurrency: 256 for nancy-libevent2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.66ms   18.90ms 217.50ms   83.05%
+    Req/Sec   263.48     54.56   506.00     71.87%
+  156704 requests in 15.00s, 3.20GB read
+  Non-2xx or 3xx responses: 156704
+Requests/sec:  10446.49
+Transfer/sec:    218.19MB

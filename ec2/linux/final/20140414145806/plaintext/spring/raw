@@ -1,0 +1,112 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 08:13:18 UTC 2014
+
+  System load:  1.54               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.82ms    2.73ms  20.66ms   93.11%
+    Req/Sec   452.20    127.49   700.00     73.47%
+  3045 requests in 5.00s, 422.26KB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec:    608.93
+Transfer/sec:     84.44KB
+
+---------------------------------------------------------
+ Running Warmup spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.58ms    7.42ms 110.52ms   82.54%
+    Req/Sec     3.23k   203.26     3.49k    79.43%
+  95646 requests in 15.00s, 12.95MB read
+Requests/sec:   6376.16
+Transfer/sec:      0.86MB
+
+---------------------------------------------------------
+ Concurrency: 256 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   524.95ms   19.90ms 639.43ms   72.72%
+    Req/Sec     3.92k   278.21     4.41k    65.62%
+  117090 requests in 15.00s, 15.86MB read
+Requests/sec:   7805.29
+Transfer/sec:      1.06MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.96s   337.58ms   2.95s    87.03%
+    Req/Sec     3.97k   817.24     5.50k    54.55%
+  118474 requests in 15.00s, 16.04MB read
+  Socket errors: connect 0, read 0, write 0, timeout 157
+Requests/sec:   7897.03
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.40s     2.76s   11.14s    83.37%
+    Req/Sec     3.79k     1.66k    6.26k    60.47%
+  108465 requests in 15.01s, 14.69MB read
+  Socket errors: connect 0, read 0, write 0, timeout 18913
+Requests/sec:   7226.27
+Transfer/sec:      0.98MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for spring
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.50s     4.13s   14.72s    78.45%
+    Req/Sec     3.67k     1.23k    5.06k    71.43%
+  96519 requests in 15.03s, 13.07MB read
+  Socket errors: connect 8197, read 0, write 0, timeout 101148
+Requests/sec:   6419.86
+Transfer/sec:      0.87MB

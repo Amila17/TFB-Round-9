@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 04:31:44 PDT 2014
+
+  System load:  0.14               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.92ms   17.98ms  87.67ms   93.92%
+    Req/Sec     5.44k     3.46k   11.44k    53.84%
+  190405 requests in 5.00s, 32.32MB read
+Requests/sec:  38090.13
+Transfer/sec:      6.47MB
+
+---------------------------------------------------------
+ Running Warmup tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.32ms    8.29ms 632.90ms   98.28%
+    Req/Sec     3.35k     1.45k    9.46k    70.30%
+  1812911 requests in 14.99s, 307.75MB read
+Requests/sec: 120931.71
+Transfer/sec:     20.53MB
+
+---------------------------------------------------------
+ Concurrency: 8 for tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   183.31us    2.33ms  86.18ms   99.88%
+    Req/Sec     9.30k     1.86k   12.33k    68.98%
+  1055451 requests in 15.00s, 179.17MB read
+Requests/sec:  70368.73
+Transfer/sec:     11.95MB
+
+---------------------------------------------------------
+ Concurrency: 16 for tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   376.92us    5.04ms 135.59ms   99.76%
+    Req/Sec     6.51k     1.89k   10.67k    57.81%
+  1475358 requests in 15.00s, 250.45MB read
+Requests/sec:  98369.58
+Transfer/sec:     16.70MB
+
+---------------------------------------------------------
+ Concurrency: 32 for tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.14ms   15.67ms 380.77ms   99.57%
+    Req/Sec     5.25k     1.73k    9.22k    62.22%
+  2380209 requests in 14.99s, 404.05MB read
+Requests/sec: 158734.84
+Transfer/sec:     26.95MB
+
+---------------------------------------------------------
+ Concurrency: 64 for tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.98ms   38.88ms 516.49ms   99.00%
+    Req/Sec     4.22k     1.60k    8.78k    71.40%
+  2398114 requests in 15.00s, 407.09MB read
+Requests/sec: 159922.65
+Transfer/sec:     27.15MB
+
+---------------------------------------------------------
+ Concurrency: 128 for tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   751.98us    2.91ms 688.19ms   99.90%
+    Req/Sec     4.28k     1.05k    9.78k    72.04%
+  2436730 requests in 14.99s, 413.64MB read
+Requests/sec: 162507.82
+Transfer/sec:     27.59MB
+
+---------------------------------------------------------
+ Concurrency: 256 for tornado-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.46ms    4.23ms   1.05s    99.70%
+    Req/Sec     4.37k   775.53     7.89k    69.32%
+  2485152 requests in 14.99s, 421.86MB read
+Requests/sec: 165736.30
+Transfer/sec:     28.13MB

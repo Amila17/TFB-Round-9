@@ -1,0 +1,125 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Apr 14 19:57:31 UTC 2014
+
+  System load:  0.17               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.73ms    5.77ms  39.74ms   71.53%
+    Req/Sec    77.23     27.43   148.00     54.78%
+  2756 requests in 5.01s, 612.39KB read
+Requests/sec:    549.94
+Transfer/sec:    122.20KB
+
+---------------------------------------------------------
+ Running Warmup flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   478.76ms  119.09ms   1.32s    92.31%
+    Req/Sec   272.15     15.20   299.00     65.85%
+  8154 requests in 15.01s, 1.77MB read
+Requests/sec:    543.33
+Transfer/sec:    120.74KB
+
+---------------------------------------------------------
+ Queries: 1 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   339.54ms   72.87ms 801.99ms   88.99%
+    Req/Sec   377.25     41.15   444.00     70.45%
+  11345 requests in 15.00s, 2.07MB read
+Requests/sec:    756.23
+Transfer/sec:    141.62KB
+
+---------------------------------------------------------
+ Queries: 5 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   826.18ms  184.67ms   2.34s    87.46%
+    Req/Sec   155.63     22.06   205.00     77.78%
+  4500 requests in 15.02s, 1.44MB read
+Requests/sec:    299.62
+Transfer/sec:     98.28KB
+
+---------------------------------------------------------
+ Queries: 10 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.45s   547.24ms   4.26s    84.81%
+    Req/Sec    92.90     24.57   150.00     75.00%
+  2568 requests in 15.01s, 1.27MB read
+  Socket errors: connect 0, read 39, write 0, timeout 62
+Requests/sec:    171.06
+Transfer/sec:     86.44KB
+
+---------------------------------------------------------
+ Queries: 15 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.77s     1.05s    6.11s    73.85%
+    Req/Sec    64.05     20.65   114.00     70.00%
+  1753 requests in 15.02s, 1.21MB read
+  Socket errors: connect 0, read 292, write 0, timeout 237
+Requests/sec:    116.71
+Transfer/sec:     82.33KB
+
+---------------------------------------------------------
+ Queries: 20 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.07s     1.29s    7.77s    77.56%
+    Req/Sec    52.83     22.84    87.00     72.22%
+  1371 requests in 15.03s, 1.19MB read
+  Socket errors: connect 0, read 278, write 0, timeout 394
+Requests/sec:     91.23
+Transfer/sec:     80.85KB

@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 06:38:43 PDT 2014
+
+  System load:  0.03               Processes:            272
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   480.26us  103.63us   1.46ms   88.46%
+    Req/Sec     2.17k   137.54     2.56k    59.76%
+  82235 requests in 5.00s, 12.14MB read
+Requests/sec:  16449.94
+Transfer/sec:      2.43MB
+
+---------------------------------------------------------
+ Running Warmup urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.67ms  602.18us  19.72ms   87.74%
+    Req/Sec     2.37k   200.73     3.11k    75.00%
+  1349345 requests in 14.99s, 199.18MB read
+Requests/sec:  90020.21
+Transfer/sec:     13.29MB
+
+---------------------------------------------------------
+ Concurrency: 8 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   486.32us  100.56us   2.04ms   87.88%
+    Req/Sec     2.15k   148.27     2.56k    70.07%
+  244362 requests in 15.00s, 36.07MB read
+Requests/sec:  16291.98
+Transfer/sec:      2.40MB
+
+---------------------------------------------------------
+ Concurrency: 16 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   539.41us  139.92us   2.48ms   87.03%
+    Req/Sec     1.94k   145.97     2.33k    65.89%
+  440695 requests in 15.00s, 65.05MB read
+Requests/sec:  29383.84
+Transfer/sec:      4.34MB
+
+---------------------------------------------------------
+ Concurrency: 32 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   616.21us  204.06us   3.17ms   86.63%
+    Req/Sec     1.71k   157.27     2.22k    66.13%
+  777036 requests in 15.00s, 114.70MB read
+Requests/sec:  51814.87
+Transfer/sec:      7.65MB
+
+---------------------------------------------------------
+ Concurrency: 64 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   663.67us  236.98us   4.38ms   87.84%
+    Req/Sec     1.59k   161.28     2.11k    65.31%
+  903991 requests in 14.99s, 133.44MB read
+Requests/sec:  60292.61
+Transfer/sec:      8.90MB
+
+---------------------------------------------------------
+ Concurrency: 128 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.34ms  576.53us  16.57ms   88.81%
+    Req/Sec     2.38k   249.93     3.22k    66.51%
+  1351972 requests in 14.99s, 199.56MB read
+Requests/sec:  90161.69
+Transfer/sec:     13.31MB
+
+---------------------------------------------------------
+ Concurrency: 256 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.67ms  593.43us  14.50ms   87.47%
+    Req/Sec     2.37k   202.08     3.11k    74.73%
+  1348131 requests in 14.99s, 199.00MB read
+Requests/sec:  89923.22
+Transfer/sec:     13.27MB

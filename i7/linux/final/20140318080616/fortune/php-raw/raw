@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 20:18:15 PDT 2014
+
+  System load:  0.1                Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   704.09us  118.53us   1.52ms   73.07%
+    Req/Sec     1.49k   117.32     2.00k    74.68%
+  56278 requests in 5.00s, 81.09MB read
+Requests/sec:  11255.85
+Transfer/sec:     16.22MB
+
+---------------------------------------------------------
+ Running Warmup php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.80ms   15.46ms 394.05ms   95.49%
+    Req/Sec     3.32k   449.34     5.41k    76.34%
+  389612 requests in 15.00s, 561.41MB read
+Requests/sec:  25973.58
+Transfer/sec:     37.43MB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   713.16us  118.09us   1.48ms   74.02%
+    Req/Sec     1.46k   120.22     1.89k    65.72%
+  166722 requests in 15.00s, 240.24MB read
+Requests/sec:  11114.92
+Transfer/sec:     16.02MB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   725.99us  235.09us   3.52ms   86.31%
+    Req/Sec     2.87k   222.76     3.78k    64.61%
+  326670 requests in 15.00s, 470.72MB read
+Requests/sec:  21778.74
+Transfer/sec:     31.38MB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.18ms    1.84ms  63.84ms   96.76%
+    Req/Sec     3.68k   642.92     5.78k    68.07%
+  416605 requests in 15.00s, 600.31MB read
+Requests/sec:  27774.38
+Transfer/sec:     40.02MB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.20ms    2.97ms  93.90ms   96.87%
+    Req/Sec     3.82k   552.93     6.40k    69.09%
+  432923 requests in 15.00s, 623.82MB read
+Requests/sec:  28862.46
+Transfer/sec:     41.59MB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.64ms    7.63ms 243.21ms   97.01%
+    Req/Sec     3.57k   443.33     5.39k    69.11%
+  414629 requests in 15.00s, 597.46MB read
+Requests/sec:  27642.80
+Transfer/sec:     39.83MB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortune.php
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune.php
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.82ms   15.91ms 523.87ms   95.46%
+    Req/Sec     3.35k   515.47    12.36k    77.87%
+  389424 requests in 15.00s, 561.14MB read
+Requests/sec:  25962.53
+Transfer/sec:     37.41MB

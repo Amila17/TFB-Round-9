@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 11:43:35 PDT 2014
+
+  System load:  0.15               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.52ms  201.64us   2.85ms   87.61%
+    Req/Sec   691.41     73.54     0.89k    61.01%
+  26317 requests in 5.00s, 5.16MB read
+Requests/sec:   5263.28
+Transfer/sec:      1.03MB
+
+---------------------------------------------------------
+ Running Warmup django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.87ms   29.55ms 217.32ms   90.77%
+    Req/Sec   324.22    117.81   771.00     72.09%
+  143919 requests in 15.00s, 28.24MB read
+Requests/sec:   9592.18
+Transfer/sec:      1.88MB
+
+---------------------------------------------------------
+ Concurrency: 8 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.48ms  237.67us  13.27ms   93.66%
+    Req/Sec   714.20     71.02     0.89k    83.73%
+  81484 requests in 15.00s, 15.99MB read
+Requests/sec:   5432.21
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Concurrency: 16 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.61ms  309.55us  14.73ms   85.78%
+    Req/Sec   658.42     80.44     0.89k    74.62%
+  150401 requests in 15.00s, 29.51MB read
+Requests/sec:  10027.33
+Transfer/sec:      1.97MB
+
+---------------------------------------------------------
+ Concurrency: 32 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.09ms  774.90us  16.82ms   78.76%
+    Req/Sec   348.35     65.96   600.00     79.30%
+  158550 requests in 15.00s, 31.11MB read
+Requests/sec:  10571.19
+Transfer/sec:      2.07MB
+
+---------------------------------------------------------
+ Concurrency: 64 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.31ms    1.30ms  24.02ms   86.67%
+    Req/Sec   252.31     62.66   545.00     76.46%
+  143910 requests in 15.00s, 28.24MB read
+Requests/sec:   9595.56
+Transfer/sec:      1.88MB
+
+---------------------------------------------------------
+ Concurrency: 128 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.78ms    6.42ms  64.13ms   82.28%
+    Req/Sec   247.49     54.18   515.00     67.79%
+  143345 requests in 15.00s, 28.13MB read
+Requests/sec:   9557.68
+Transfer/sec:      1.88MB
+
+---------------------------------------------------------
+ Concurrency: 256 for django-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.51ms   11.29ms 122.27ms   68.06%
+    Req/Sec   244.80     52.62   500.00     70.29%
+  143501 requests in 15.00s, 28.16MB read
+Requests/sec:   9567.39
+Transfer/sec:      1.88MB

@@ -1,0 +1,111 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Apr 14 16:31:44 UTC 2014
+
+  System load:  0.79               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer bottle-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.50ms  247.32us   2.16ms   58.54%
+    Req/Sec   704.21    109.11     1.00k    80.32%
+  14050 requests in 5.00s, 2.18MB read
+Requests/sec:   2810.20
+Transfer/sec:    447.33KB
+
+---------------------------------------------------------
+ Running Warmup bottle-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.21ms   13.55ms 116.72ms   69.91%
+    Req/Sec     3.08k   276.30     3.74k    63.85%
+  90527 requests in 15.00s, 14.07MB read
+Requests/sec:   6034.82
+Transfer/sec:      0.94MB
+
+---------------------------------------------------------
+ Concurrency: 256 for bottle-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   601.24ms  149.41ms   1.69s    91.21%
+    Req/Sec     3.47k   507.49     4.46k    77.14%
+  103103 requests in 15.02s, 16.03MB read
+Requests/sec:   6863.18
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for bottle-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.32s   736.55ms   6.31s    86.79%
+    Req/Sec     6.22k     1.26k    7.22k    83.33%
+  104461 requests in 15.01s, 16.24MB read
+  Socket errors: connect 0, read 22, write 0, timeout 2648
+Requests/sec:   6960.26
+Transfer/sec:      1.08MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for bottle-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.71s     1.96s   13.99s    93.73%
+    Req/Sec     6.74k   119.68     6.91k    71.43%
+  97230 requests in 16.12s, 15.12MB read
+  Socket errors: connect 0, read 23, write 0, timeout 23453
+Requests/sec:   6030.46
+Transfer/sec:      0.94MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for bottle-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.56s     4.63s   13.18s    81.03%
+    Req/Sec     3.45k     1.62k    4.59k   100.00%
+  75844 requests in 15.03s, 11.79MB read
+  Socket errors: connect 8197, read 6490, write 0, timeout 101631
+Requests/sec:   5046.38
+Transfer/sec:    803.38KB

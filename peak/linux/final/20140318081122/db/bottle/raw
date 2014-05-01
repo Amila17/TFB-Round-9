@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 08:59:45 PDT 2014
+
+  System load:  0.88               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.33ms  234.95us   8.83ms   89.77%
+    Req/Sec   790.38     81.45     1.00k    50.63%
+  30047 requests in 5.00s, 5.35MB read
+Requests/sec:   6009.83
+Transfer/sec:      1.07MB
+
+---------------------------------------------------------
+ Running Warmup bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.11ms   17.91ms 277.45ms   89.24%
+    Req/Sec   344.87    124.71   766.00     61.56%
+  178100 requests in 15.00s, 31.72MB read
+Requests/sec:  11875.03
+Transfer/sec:      2.12MB
+
+---------------------------------------------------------
+ Concurrency: 8 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.38ms  318.28us  12.49ms   88.83%
+    Req/Sec   772.19     99.02     1.00k    58.21%
+  87726 requests in 15.00s, 15.63MB read
+Requests/sec:   5848.44
+Transfer/sec:      1.04MB
+
+---------------------------------------------------------
+ Concurrency: 16 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.47ms  401.70us  17.37ms   93.84%
+    Req/Sec   724.82    101.45     1.00k    68.51%
+  164966 requests in 15.00s, 29.38MB read
+Requests/sec:  10998.69
+Transfer/sec:      1.96MB
+
+---------------------------------------------------------
+ Concurrency: 32 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.83ms    0.85ms  25.69ms   90.94%
+    Req/Sec   605.46    127.23     1.00k    74.38%
+  275559 requests in 15.00s, 49.08MB read
+Requests/sec:  18374.14
+Transfer/sec:      3.27MB
+
+---------------------------------------------------------
+ Concurrency: 64 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.27ms    1.16ms  25.33ms   85.35%
+    Req/Sec   509.50    137.95     0.90k    64.79%
+  289944 requests in 15.00s, 51.65MB read
+Requests/sec:  19332.37
+Transfer/sec:      3.44MB
+
+---------------------------------------------------------
+ Concurrency: 128 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.78ms    5.28ms 131.77ms   85.85%
+    Req/Sec   337.42     94.31     0.88k    67.56%
+  191575 requests in 15.00s, 34.12MB read
+Requests/sec:  12774.27
+Transfer/sec:      2.28MB
+
+---------------------------------------------------------
+ Concurrency: 256 for bottle
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.30ms    9.80ms 150.77ms   75.56%
+    Req/Sec   309.41     68.74   612.00     69.53%
+  178096 requests in 15.00s, 31.72MB read
+Requests/sec:  11870.42
+Transfer/sec:      2.11MB

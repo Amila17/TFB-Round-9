@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 03:01:54 PDT 2014
+
+  System load:  0.35               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.28ms    0.99ms  23.99ms   97.94%
+    Req/Sec     0.88k   192.71     1.33k    66.04%
+  33108 requests in 5.00s, 8.57MB read
+Requests/sec:   6620.38
+Transfer/sec:      1.71MB
+
+---------------------------------------------------------
+ Running Warmup start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.13ms   68.89ms   3.02s    95.66%
+    Req/Sec     1.75k   419.09     3.50k    68.85%
+  208128 requests in 15.00s, 53.89MB read
+Requests/sec:  13874.48
+Transfer/sec:      3.59MB
+
+---------------------------------------------------------
+ Queries: 1 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.28ms   55.05ms   1.36s    95.44%
+    Req/Sec     2.11k   475.33     3.78k    68.53%
+  250253 requests in 15.00s, 57.21MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:  16683.33
+Transfer/sec:      3.81MB
+
+---------------------------------------------------------
+ Queries: 5 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.91ms   56.08ms   1.03s    91.01%
+    Req/Sec     1.14k   212.23     1.75k    67.85%
+  135385 requests in 15.00s, 47.36MB read
+Requests/sec:   9023.55
+Transfer/sec:      3.16MB
+
+---------------------------------------------------------
+ Queries: 10 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.18ms   53.27ms 484.80ms   87.72%
+    Req/Sec   684.61     92.26     0.96k    66.52%
+  81990 requests in 15.00s, 41.19MB read
+Requests/sec:   5464.35
+Transfer/sec:      2.74MB
+
+---------------------------------------------------------
+ Queries: 15 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    64.40ms   78.14ms 932.79ms   88.90%
+    Req/Sec   493.36     66.81   725.00     69.18%
+  59155 requests in 15.00s, 38.68MB read
+Requests/sec:   3944.11
+Transfer/sec:      2.58MB
+
+---------------------------------------------------------
+ Queries: 20 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    85.76ms   79.55ms 761.09ms   84.00%
+    Req/Sec   387.34     46.77   534.00     68.78%
+  46323 requests in 15.01s, 37.31MB read
+Requests/sec:   3087.06
+Transfer/sec:      2.49MB

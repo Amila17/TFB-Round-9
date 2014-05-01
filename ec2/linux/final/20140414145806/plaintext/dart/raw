@@ -1,0 +1,109 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.53ms    4.16ms  47.38ms   99.11%
+    Req/Sec   488.38     90.96   777.00     84.18%
+  18286 requests in 5.00s, 3.05MB read
+Requests/sec:   3656.96
+Transfer/sec:    624.80KB
+
+---------------------------------------------------------
+ Running Warmup dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    62.27ms  138.03ms   3.85s    97.48%
+    Req/Sec     1.82k   171.90     2.20k    73.56%
+  54344 requests in 15.00s, 9.07MB read
+  Socket errors: connect 0, read 0, write 0, timeout 122
+Requests/sec:   3622.81
+Transfer/sec:    618.99KB
+
+---------------------------------------------------------
+ Concurrency: 256 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05s   683.20ms   5.97s    87.91%
+    Req/Sec     1.95k   138.09     2.15k    82.14%
+  58348 requests in 15.00s, 9.74MB read
+  Socket errors: connect 0, read 0, write 0, timeout 137
+Requests/sec:   3889.71
+Transfer/sec:    664.60KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.07s     2.29s   13.28s    90.47%
+    Req/Sec     1.64k   244.93     1.98k    54.55%
+  47539 requests in 15.00s, 8.02MB read
+  Socket errors: connect 0, read 118339, write 0, timeout 4001
+  Non-2xx or 3xx responses: 484
+Requests/sec:   3168.79
+Transfer/sec:    547.15KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.78s     6.44s   14.31s    59.69%
+    Req/Sec     1.59k   163.15     1.87k    64.29%
+  46944 requests in 15.01s, 7.87MB read
+  Socket errors: connect 0, read 125593, write 0, timeout 7896
+  Non-2xx or 3xx responses: 207
+Requests/sec:   3127.63
+Transfer/sec:    536.91KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.40s     3.21s   13.64s    89.19%
+    Req/Sec   774.00    176.26     0.94k   100.00%
+  23085 requests in 15.04s, 4.03MB read
+  Socket errors: connect 8197, read 179942, write 0, timeout 63557
+  Non-2xx or 3xx responses: 1062
+Requests/sec:   1535.23
+Transfer/sec:    274.65KB

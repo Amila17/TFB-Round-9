@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 13:38:57 UTC 2014
+
+  System load:  0.21               Processes:           71
+  Usage of /:   25.8% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.91ms    4.41ms  32.22ms   64.40%
+    Req/Sec   119.21     50.58   266.00     54.80%
+  4095 requests in 5.01s, 638.93KB read
+Requests/sec:    817.42
+Transfer/sec:    127.54KB
+
+---------------------------------------------------------
+ Running Warmup yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8000/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   275.28ms  177.92ms   1.16s    75.46%
+    Req/Sec   473.26     31.85   513.00     83.33%
+  14076 requests in 15.00s, 2.14MB read
+Requests/sec:    938.19
+Transfer/sec:    146.39KB
+
+---------------------------------------------------------
+ Concurrency: 8 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8000/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.71ms    2.86ms  20.28ms   65.59%
+    Req/Sec   472.71     55.43   666.00     64.49%
+  13899 requests in 15.00s, 2.12MB read
+Requests/sec:    926.39
+Transfer/sec:    144.56KB
+
+---------------------------------------------------------
+ Concurrency: 16 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8000/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.61ms    9.60ms  54.75ms   75.16%
+    Req/Sec   508.85     84.93   673.00     55.29%
+  14714 requests in 15.00s, 2.24MB read
+Requests/sec:    980.75
+Transfer/sec:    153.04KB
+
+---------------------------------------------------------
+ Concurrency: 32 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8000/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.34ms   20.21ms 104.38ms   71.02%
+    Req/Sec   502.60     87.74   651.00     57.96%
+  14841 requests in 15.01s, 2.26MB read
+Requests/sec:    988.98
+Transfer/sec:    154.32KB
+
+---------------------------------------------------------
+ Concurrency: 64 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8000/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    63.64ms   20.08ms 149.02ms   69.30%
+    Req/Sec   499.30     17.14   551.00     67.38%
+  14918 requests in 15.00s, 2.27MB read
+Requests/sec:    994.42
+Transfer/sec:    155.17KB
+
+---------------------------------------------------------
+ Concurrency: 128 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8000/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   120.36ms   67.72ms 417.36ms   73.22%
+    Req/Sec   505.33     25.95   546.00     55.77%
+  14903 requests in 15.00s, 2.27MB read
+Requests/sec:    993.48
+Transfer/sec:    155.02KB
+
+---------------------------------------------------------
+ Concurrency: 256 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8000/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   268.04ms  121.12ms 716.89ms   69.95%
+    Req/Sec   478.86     23.16   526.00     69.77%
+  14198 requests in 15.00s, 2.16MB read
+Requests/sec:    946.31
+Transfer/sec:    147.65KB

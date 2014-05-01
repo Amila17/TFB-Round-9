@@ -1,0 +1,131 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 00:43:40 PDT 2014
+
+  System load:  0.05               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.79s   113.74ms   1.88s    71.43%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  24 requests in 6.00s, 6.49KB read
+Requests/sec:      4.00
+Transfer/sec:      1.08KB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   272.69ms  693.48ms   2.67s    90.11%
+    Req/Sec   123.96     56.24   336.00     73.10%
+  72198 requests in 15.01s, 42.05MB read
+  Socket errors: connect 0, read 0, write 0, timeout 17
+Requests/sec:   4810.64
+Transfer/sec:      2.80MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.02ms   14.87ms 107.50ms   97.64%
+    Req/Sec   220.33     60.74   416.00     84.98%
+  25390 requests in 15.00s, 14.73MB read
+Requests/sec:   1692.44
+Transfer/sec:      0.98MB
+
+---------------------------------------------------------
+ Concurrency: 16 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.79ms   11.74ms 108.28ms   98.07%
+    Req/Sec   200.43     57.81   384.00     68.70%
+  46418 requests in 15.01s, 27.08MB read
+Requests/sec:   3093.28
+Transfer/sec:      1.80MB
+
+---------------------------------------------------------
+ Concurrency: 32 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.18ms   24.20ms 204.05ms   95.11%
+    Req/Sec   130.93     49.65   280.00     71.38%
+  61654 requests in 15.00s, 35.89MB read
+Requests/sec:   4109.09
+Transfer/sec:      2.39MB
+
+---------------------------------------------------------
+ Concurrency: 64 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.01ms   18.35ms 159.97ms   96.34%
+    Req/Sec   109.01     41.09   238.00     72.70%
+  64531 requests in 15.00s, 37.63MB read
+Requests/sec:   4301.46
+Transfer/sec:      2.51MB
+
+---------------------------------------------------------
+ Concurrency: 128 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.04ms   24.61ms 315.31ms   89.58%
+    Req/Sec   116.00     30.75   246.00     68.50%
+  69594 requests in 15.01s, 40.59MB read
+Requests/sec:   4637.12
+Transfer/sec:      2.70MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servicestack-nginx-default
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.99s     5.20s   13.01s    38.40%
+    Req/Sec    45.05     63.68   409.00     79.84%
+  29072 requests in 16.00s, 16.98MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1002
+Requests/sec:   1816.84
+Transfer/sec:      1.06MB

@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 10:10:24 PDT 2014
+
+  System load:  0.05               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/index.php/bench/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.07ms  226.96us   4.89ms   83.62%
+    Req/Sec   507.64     57.61   666.00     69.11%
+  19299 requests in 5.00s, 4.28MB read
+Requests/sec:   3859.36
+Transfer/sec:      0.86MB
+
+---------------------------------------------------------
+ Running Warmup codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php/bench/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.45ms   20.53ms   1.81s    95.79%
+    Req/Sec   267.87     40.24   446.00     70.20%
+  159675 requests in 15.00s, 35.44MB read
+Requests/sec:  10643.81
+Transfer/sec:      2.36MB
+
+---------------------------------------------------------
+ Concurrency: 8 for codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php/bench/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.07ms  203.96us   3.73ms   81.57%
+    Req/Sec   507.98     57.84   666.00     68.71%
+  57814 requests in 15.00s, 12.83MB read
+Requests/sec:   3854.10
+Transfer/sec:      0.86MB
+
+---------------------------------------------------------
+ Concurrency: 16 for codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php/bench/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.14ms  301.18us   5.35ms   78.89%
+    Req/Sec   494.69     63.04   666.00     78.44%
+  112511 requests in 15.00s, 24.97MB read
+Requests/sec:   7501.07
+Transfer/sec:      1.66MB
+
+---------------------------------------------------------
+ Concurrency: 32 for codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php/bench/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.82ms  699.89us   8.39ms   72.25%
+    Req/Sec   378.33     70.01   666.00     71.07%
+  171765 requests in 15.00s, 38.12MB read
+Requests/sec:  11452.94
+Transfer/sec:      2.54MB
+
+---------------------------------------------------------
+ Concurrency: 64 for codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php/bench/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.36ms    0.95ms   9.92ms   73.24%
+    Req/Sec   320.97     70.17   600.00     58.97%
+  182148 requests in 15.00s, 40.43MB read
+Requests/sec:  12145.39
+Transfer/sec:      2.70MB
+
+---------------------------------------------------------
+ Concurrency: 128 for codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php/bench/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.29ms    4.13ms  58.23ms   70.46%
+    Req/Sec   300.36     48.24   695.00     67.66%
+  177113 requests in 15.00s, 39.31MB read
+Requests/sec:  11809.74
+Transfer/sec:      2.62MB
+
+---------------------------------------------------------
+ Concurrency: 256 for codeigniter-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/index.php/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/index.php/bench/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.69ms   46.39ms   1.84s    99.73%
+    Req/Sec   270.99     57.91   595.00     73.67%
+  161398 requests in 15.00s, 35.82MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:  10759.79
+Transfer/sec:      2.39MB

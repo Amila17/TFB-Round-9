@@ -1,0 +1,116 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 06:04:41 PDT 2014
+
+  System load:  1.0                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/updates/mysql?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/updates/mysql?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   667.15us  632.19us  24.76ms   99.49%
+    Req/Sec     1.63k   149.42     1.89k    96.39%
+  61162 requests in 5.00s, 11.81MB read
+Requests/sec:  12234.71
+Transfer/sec:      2.36MB
+
+---------------------------------------------------------
+ Running Warmup undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/updates/mysql?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/updates/mysql?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.52ms    5.72ms 117.93ms   85.52%
+    Req/Sec   376.12     64.25   720.00     79.20%
+  224365 requests in 15.00s, 43.34MB read
+Requests/sec:  14957.41
+Transfer/sec:      2.89MB
+
+---------------------------------------------------------
+ Queries: 1 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/updates/mysql?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/updates/mysql?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.28ms   12.69ms 672.73ms   92.20%
+    Req/Sec   662.76    197.35     1.00k    80.47%
+  388484 requests in 14.99s, 63.27MB read
+Requests/sec:  25909.06
+Transfer/sec:      4.22MB
+
+---------------------------------------------------------
+ Queries: 5 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/updates/mysql?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/updates/mysql?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.77ms   10.69ms 663.96ms   94.11%
+    Req/Sec   151.15     14.90   230.00     72.45%
+  90781 requests in 15.00s, 25.88MB read
+Requests/sec:   6050.92
+Transfer/sec:      1.72MB
+
+---------------------------------------------------------
+ Queries: 10 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/updates/mysql?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/updates/mysql?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    78.77ms    9.08ms 118.96ms   75.54%
+    Req/Sec    75.63      9.54   137.00     80.01%
+  45715 requests in 15.02s, 19.96MB read
+Requests/sec:   3043.10
+Transfer/sec:      1.33MB
+
+---------------------------------------------------------
+ Queries: 15 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/updates/mysql?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/updates/mysql?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   119.64ms   23.93ms 736.12ms   96.81%
+    Req/Sec    49.92      4.18    69.00     78.86%
+  30367 requests in 15.03s, 17.86MB read
+Requests/sec:   2019.90
+Transfer/sec:      1.19MB
+
+---------------------------------------------------------
+ Queries: 20 for undertow-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/updates/mysql?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/updates/mysql?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   156.71ms   16.55ms 362.65ms   81.82%
+    Req/Sec    37.61      5.08    69.00     77.72%
+  23023 requests in 15.05s, 17.03MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:   1529.56
+Transfer/sec:      1.13MB

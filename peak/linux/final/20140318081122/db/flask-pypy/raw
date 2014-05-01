@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 14:07:38 PDT 2014
+
+  System load:  0.42               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.51ms   24.62ms 124.59ms   92.19%
+    Req/Sec   324.81    147.23   600.00     69.22%
+  11989 requests in 5.00s, 1.51MB read
+Requests/sec:   2397.07
+Transfer/sec:    308.45KB
+
+---------------------------------------------------------
+ Running Warmup flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    74.97ms   91.05ms   1.39s    93.09%
+    Req/Sec   100.20     45.72   266.00     67.83%
+  54900 requests in 15.02s, 6.90MB read
+Requests/sec:   3654.39
+Transfer/sec:    470.26KB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.65ms   19.37ms 118.14ms   95.72%
+    Req/Sec   438.70    174.20     0.89k    73.62%
+  47989 requests in 15.00s, 6.03MB read
+Requests/sec:   3198.40
+Transfer/sec:    411.59KB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.55ms   22.20ms 140.49ms   95.54%
+    Req/Sec   398.73    151.82   777.00     66.14%
+  87554 requests in 15.00s, 11.00MB read
+Requests/sec:   5836.94
+Transfer/sec:    751.11KB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.96ms   43.56ms 270.59ms   94.60%
+    Req/Sec   212.68    123.49     0.90k    77.52%
+  89301 requests in 15.02s, 11.22MB read
+Requests/sec:   5945.88
+Transfer/sec:    765.15KB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.91ms   50.68ms 340.76ms   95.14%
+    Req/Sec   187.29    136.76     1.11k    82.90%
+  92413 requests in 15.01s, 11.61MB read
+Requests/sec:   6155.41
+Transfer/sec:    792.11KB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.69ms   26.15ms 688.27ms   92.35%
+    Req/Sec   140.67     52.50   454.00     67.00%
+  76111 requests in 15.00s, 9.56MB read
+Requests/sec:   5073.09
+Transfer/sec:    652.84KB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask-pypy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbs
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    49.98ms   50.27ms   1.10s    91.33%
+    Req/Sec   134.15     47.82   355.00     73.98%
+  75499 requests in 15.01s, 9.49MB read
+Requests/sec:   5029.33
+Transfer/sec:    647.19KB

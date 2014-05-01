@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 07:06:43 PDT 2014
+
+  System load:  0.16               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   195.48us   48.60us   2.17ms   78.43%
+    Req/Sec     5.25k   277.16     6.33k    65.14%
+  198272 requests in 5.00s, 24.96MB read
+Requests/sec:  39659.33
+Transfer/sec:      4.99MB
+
+---------------------------------------------------------
+ Running Warmup vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.27ms  296.37us  19.03ms   91.72%
+    Req/Sec    26.63k     2.10k   43.11k    69.32%
+  3022844 requests in 15.00s, 380.53MB read
+Requests/sec: 201563.27
+Transfer/sec:     25.37MB
+
+---------------------------------------------------------
+ Concurrency: 256 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.30ms  593.52us  23.38ms   95.39%
+    Req/Sec    84.66k     3.68k  104.00k    69.66%
+  9723754 requests in 15.00s, 1.20GB read
+Requests/sec: 648270.92
+Transfer/sec:     81.61MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.03ms   65.16ms   1.56s    96.74%
+    Req/Sec    83.22k    10.16k  124.35k    69.36%
+  9805866 requests in 15.00s, 1.21GB read
+  Socket errors: connect 0, read 0, write 0, timeout 852
+Requests/sec: 653717.69
+Transfer/sec:     82.30MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    80.06ms  239.34ms   5.36s    94.13%
+    Req/Sec    86.50k    10.89k  114.44k    74.18%
+  9771670 requests in 15.00s, 1.20GB read
+  Socket errors: connect 0, read 0, write 0, timeout 5065
+Requests/sec: 651323.69
+Transfer/sec:     82.01MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   220.80ms  704.81ms  13.91s    93.05%
+    Req/Sec    78.80k    10.50k  119.90k    71.46%
+  9443943 requests in 15.01s, 1.16GB read
+  Socket errors: connect 11, read 43, write 0, timeout 59557
+Requests/sec: 629039.42
+Transfer/sec:     79.27MB

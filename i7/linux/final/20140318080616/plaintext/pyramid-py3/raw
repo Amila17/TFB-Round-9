@@ -1,0 +1,102 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 22:17:15 PDT 2014
+
+  System load:  0.04               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:6543/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:6543/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   651.32us  263.27us   5.70ms   89.14%
+    Req/Sec     1.40k   153.04     1.89k    61.78%
+  52840 requests in 5.00s, 8.67MB read
+Requests/sec:  10567.55
+Transfer/sec:      1.73MB
+
+---------------------------------------------------------
+ Running Warmup pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.89ms    4.12ms  57.41ms   94.36%
+    Req/Sec     1.62k    73.18     1.85k    66.57%
+  191735 requests in 15.00s, 31.45MB read
+Requests/sec:  12780.90
+Transfer/sec:      2.10MB
+
+---------------------------------------------------------
+ Concurrency: 256 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  188883 requests in 15.00s, 30.98MB read
+Requests/sec:  12590.86
+Transfer/sec:      2.07MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  186281 requests in 15.00s, 30.56MB read
+Requests/sec:  12417.95
+Transfer/sec:      2.04MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  184882 requests in 15.00s, 30.33MB read
+  Socket errors: connect 0, read 3, write 0, timeout 6571
+Requests/sec:  12321.90
+Transfer/sec:      2.02MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for pyramid-py3
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:6543/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:6543/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  42332 requests in 15.01s, 6.94MB read
+  Socket errors: connect 11, read 0, write 0, timeout 109658
+Requests/sec:   2819.86
+Transfer/sec:    473.65KB

@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 04:14:25 PDT 2014
+
+  System load:  0.0                Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   389.68us    1.36ms  15.85ms   98.69%
+    Req/Sec     5.00k     1.87k    7.67k    68.30%
+  176369 requests in 5.00s, 32.46MB read
+Requests/sec:  35275.70
+Transfer/sec:      6.49MB
+
+---------------------------------------------------------
+ Running Warmup tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   157.80ms  819.50ms   4.74s    96.48%
+    Req/Sec    13.50k     4.43k   32.44k    78.21%
+  1516039 requests in 15.00s, 279.04MB read
+  Socket errors: connect 0, read 0, write 0, timeout 17
+Requests/sec: 101072.27
+Transfer/sec:     18.60MB
+
+---------------------------------------------------------
+ Concurrency: 8 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   154.40us   78.24us   5.79ms   93.20%
+    Req/Sec     6.56k   528.78     8.11k    69.44%
+  745900 requests in 15.00s, 137.29MB read
+Requests/sec:  49728.29
+Transfer/sec:      9.15MB
+
+---------------------------------------------------------
+ Concurrency: 16 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   172.49us  179.66us  11.31ms   95.40%
+    Req/Sec    12.01k     1.46k   15.56k    73.34%
+  1362096 requests in 15.00s, 250.71MB read
+Requests/sec:  90810.63
+Transfer/sec:     16.71MB
+
+---------------------------------------------------------
+ Concurrency: 32 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   301.73us  549.25us  14.91ms   97.32%
+    Req/Sec    14.90k     2.53k   21.11k    75.28%
+  1688571 requests in 15.00s, 310.80MB read
+Requests/sec: 112575.32
+Transfer/sec:     20.72MB
+
+---------------------------------------------------------
+ Concurrency: 64 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   588.46us  733.61us  16.00ms   97.89%
+    Req/Sec    14.97k     1.93k   20.56k    84.53%
+  1695676 requests in 15.00s, 312.10MB read
+Requests/sec: 113054.27
+Transfer/sec:     20.81MB
+
+---------------------------------------------------------
+ Concurrency: 128 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.14ms    1.33ms  42.29ms   98.20%
+    Req/Sec    14.97k     2.05k   28.22k    88.47%
+  1696561 requests in 15.00s, 312.27MB read
+Requests/sec: 113109.31
+Transfer/sec:     20.82MB
+
+---------------------------------------------------------
+ Concurrency: 256 for tapestry
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/tapestry/hellojson
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/tapestry/hellojson
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.35ms    4.87ms 151.73ms   97.45%
+    Req/Sec    14.94k     2.44k   30.70k    84.87%
+  1692326 requests in 15.00s, 311.49MB read
+Requests/sec: 112825.73
+Transfer/sec:     20.77MB

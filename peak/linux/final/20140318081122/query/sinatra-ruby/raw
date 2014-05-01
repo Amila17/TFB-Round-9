@@ -1,0 +1,119 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 01:55:17 PDT 2014
+
+  System load:  0.05               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   522.63ms  713.09ms   2.41s    87.24%
+    Req/Sec    63.73    126.19   700.00     88.79%
+  2528 requests in 6.00s, 692.44KB read
+Requests/sec:    421.25
+Transfer/sec:    115.38KB
+
+---------------------------------------------------------
+ Running Warmup sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   402.83ms   61.87ms   2.40s    95.25%
+    Req/Sec    14.52      3.00    25.00     76.76%
+  8986 requests in 15.14s, 2.40MB read
+Requests/sec:    593.33
+Transfer/sec:    162.57KB
+
+---------------------------------------------------------
+ Queries: 1 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   249.92ms   53.12ms   2.38s    97.62%
+    Req/Sec    23.59      2.41    35.00     80.05%
+  14439 requests in 15.11s, 3.43MB read
+Requests/sec:    955.28
+Transfer/sec:    232.09KB
+
+---------------------------------------------------------
+ Queries: 5 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.04s   348.89ms   2.80s    81.24%
+    Req/Sec     6.59      6.47    54.00     65.78%
+  4240 requests in 15.65s, 1.52MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    270.99
+Transfer/sec:     99.74KB
+
+---------------------------------------------------------
+ Queries: 10 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.76s   372.10ms   2.75s    81.88%
+    Req/Sec     3.26      2.81    15.00     63.53%
+  2300 requests in 16.00s, 1.18MB read
+  Socket errors: connect 0, read 0, write 0, timeout 7
+Requests/sec:    143.76
+Transfer/sec:     75.23KB
+
+---------------------------------------------------------
+ Queries: 15 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.41s   323.14ms   4.14s    88.84%
+    Req/Sec     2.18      3.19    21.00     86.83%
+  1570 requests in 16.00s, 1.04MB read
+  Socket errors: connect 0, read 0, write 0, timeout 244
+Requests/sec:     98.10
+Transfer/sec:     66.56KB
+
+---------------------------------------------------------
+ Queries: 20 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/queries?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.23s   514.54ms   5.02s    83.07%
+    Req/Sec     1.47      1.95    10.00     90.27%
+  1195 requests in 16.01s, 0.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 636
+Requests/sec:     74.65
+Transfer/sec:     62.23KB

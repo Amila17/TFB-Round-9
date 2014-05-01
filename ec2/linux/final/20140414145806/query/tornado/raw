@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 10:00:50 UTC 2014
+
+  System load:  0.24               Processes:           71
+  Usage of /:   25.8% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.46ms    4.74ms  22.19ms   69.12%
+    Req/Sec   173.19    102.82   333.00     51.84%
+  4942 requests in 5.00s, 1.06MB read
+  Non-2xx or 3xx responses: 1
+Requests/sec:    987.84
+Transfer/sec:    217.60KB
+
+---------------------------------------------------------
+ Running Warmup tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/queries?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   290.34ms   39.11ms 389.99ms   75.36%
+    Req/Sec   441.47     15.17   471.00     62.50%
+  13077 requests in 15.02s, 2.81MB read
+  Non-2xx or 3xx responses: 2
+Requests/sec:    870.62
+Transfer/sec:    191.77KB
+
+---------------------------------------------------------
+ Queries: 1 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/queries?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   213.08ms   58.71ms 378.44ms   54.17%
+    Req/Sec   595.81     31.16   665.00     68.09%
+  17725 requests in 15.02s, 3.17MB read
+Requests/sec:   1180.23
+Transfer/sec:    216.43KB
+
+---------------------------------------------------------
+ Queries: 5 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/queries?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   555.27ms  139.07ms 913.24ms   59.43%
+    Req/Sec   230.35     10.49   248.00     61.29%
+  6784 requests in 15.01s, 2.20MB read
+  Non-2xx or 3xx responses: 4
+Requests/sec:    451.85
+Transfer/sec:    149.96KB
+
+---------------------------------------------------------
+ Queries: 10 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/queries?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05s    94.26ms   1.55s    76.55%
+    Req/Sec   120.55     10.24   141.00     74.19%
+  3513 requests in 15.03s, 1.77MB read
+  Non-2xx or 3xx responses: 2
+Requests/sec:    233.77
+Transfer/sec:    120.68KB
+
+---------------------------------------------------------
+ Queries: 15 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/queries?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.50s   409.00ms   2.38s    64.02%
+    Req/Sec    82.35     15.42   105.00     54.84%
+  2408 requests in 15.03s, 1.65MB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+  Non-2xx or 3xx responses: 2
+Requests/sec:    160.17
+Transfer/sec:    112.20KB
+
+---------------------------------------------------------
+ Queries: 20 for tornado
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/queries?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.98s   568.26ms   3.39s    61.26%
+    Req/Sec    62.29      3.45    67.00     71.43%
+  1807 requests in 15.02s, 1.56MB read
+  Socket errors: connect 0, read 0, write 0, timeout 237
+  Non-2xx or 3xx responses: 3
+Requests/sec:    120.29
+Transfer/sec:    106.36KB

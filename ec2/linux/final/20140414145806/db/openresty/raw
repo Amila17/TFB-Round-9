@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 01:09:27 UTC 2014
+
+  System load:  1.0                Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.43ms  278.15us   6.89ms   74.24%
+    Req/Sec   430.46     54.42   600.00     75.73%
+  16281 requests in 5.00s, 3.24MB read
+Requests/sec:   3255.64
+Transfer/sec:    663.88KB
+
+---------------------------------------------------------
+ Running Warmup openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.69ms   34.95ms   1.17s    92.91%
+    Req/Sec     4.05k   674.31     5.06k    62.96%
+  119018 requests in 15.00s, 23.70MB read
+Requests/sec:   7934.02
+Transfer/sec:      1.58MB
+
+---------------------------------------------------------
+ Concurrency: 8 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.45ms  277.74us   7.95ms   75.90%
+    Req/Sec     1.70k   122.83     2.22k    75.74%
+  48356 requests in 15.00s, 9.63MB read
+Requests/sec:   3223.62
+Transfer/sec:    657.36KB
+
+---------------------------------------------------------
+ Concurrency: 16 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.61ms  419.74us   7.23ms   85.55%
+    Req/Sec     3.20k   245.40     3.89k    66.99%
+  90408 requests in 15.00s, 18.00MB read
+Requests/sec:   6027.20
+Transfer/sec:      1.20MB
+
+---------------------------------------------------------
+ Concurrency: 32 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.88ms    7.20ms 184.05ms   97.62%
+    Req/Sec     4.58k   441.98     6.09k    76.10%
+  130211 requests in 15.00s, 25.93MB read
+Requests/sec:   8680.82
+Transfer/sec:      1.73MB
+
+---------------------------------------------------------
+ Concurrency: 64 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.19ms    9.52ms 156.34ms   89.65%
+    Req/Sec     4.59k   483.12     6.46k    70.60%
+  133807 requests in 15.00s, 26.65MB read
+Requests/sec:   8920.32
+Transfer/sec:      1.78MB
+
+---------------------------------------------------------
+ Concurrency: 128 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.54ms   27.81ms 471.15ms   94.42%
+    Req/Sec     4.54k   549.59     5.69k    80.44%
+  133438 requests in 15.00s, 26.57MB read
+Requests/sec:   8895.67
+Transfer/sec:      1.77MB
+
+---------------------------------------------------------
+ Concurrency: 256 for openresty
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.85ms   31.39ms 695.48ms   88.58%
+    Req/Sec     4.46k   538.27     6.13k    69.87%
+  131205 requests in 15.00s, 26.13MB read
+Requests/sec:   8746.48
+Transfer/sec:      1.74MB

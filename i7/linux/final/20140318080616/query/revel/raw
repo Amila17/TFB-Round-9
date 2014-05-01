@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 23:34:10 PDT 2014
+
+  System load:  0.9                Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   773.06us  191.77us   2.86ms   95.01%
+    Req/Sec     1.35k   102.74     1.55k    86.20%
+  51261 requests in 5.00s, 9.17MB read
+Requests/sec:  10251.95
+Transfer/sec:      1.83MB
+
+---------------------------------------------------------
+ Running Warmup revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.61ms    2.66ms  21.79ms   76.37%
+    Req/Sec     5.92k   555.60     7.62k    69.06%
+  688682 requests in 15.00s, 123.19MB read
+Requests/sec:  45912.72
+Transfer/sec:      8.21MB
+
+---------------------------------------------------------
+ Queries: 1 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.33ms    2.41ms  23.30ms   59.45%
+    Req/Sec    10.04k     1.08k   14.09k    67.00%
+  1150891 requests in 15.00s, 168.79MB read
+Requests/sec:  76727.74
+Transfer/sec:     11.25MB
+
+---------------------------------------------------------
+ Queries: 5 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.81ms    5.94ms  53.73ms   73.46%
+    Req/Sec     2.12k   382.17     2.73k    64.67%
+  250165 requests in 15.00s, 67.73MB read
+Requests/sec:  16677.38
+Transfer/sec:      4.52MB
+
+---------------------------------------------------------
+ Queries: 10 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    41.61ms    8.82ms  80.65ms   67.81%
+    Req/Sec   773.50     52.09     1.20k    84.67%
+  92626 requests in 15.00s, 39.11MB read
+Requests/sec:   6175.38
+Transfer/sec:      2.61MB
+
+---------------------------------------------------------
+ Queries: 15 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    61.57ms   10.30ms 108.81ms   68.97%
+    Req/Sec   520.43     24.42   651.00     73.09%
+  62167 requests in 15.01s, 35.67MB read
+Requests/sec:   4142.76
+Transfer/sec:      2.38MB
+
+---------------------------------------------------------
+ Queries: 20 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    81.70ms   11.48ms 132.27ms   70.94%
+    Req/Sec   391.23     16.04   464.00     70.92%
+  46844 requests in 15.01s, 33.98MB read
+Requests/sec:   3121.40
+Transfer/sec:      2.26MB

@@ -1,0 +1,274 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: servlet-raw
+self.results['completed']: {}
+
+=====================================================
+  Beginning servlet-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting servlet-raw
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 01:17:48 PDT 2014
+
+  System load:  7.84               Processes:            267
+  Usage of /:   7.5% of 151.38GB   Users logged in:      0
+  Memory usage: 3%                 IP address for eth4:  10.0.3.5
+  Swap usage:   0%                 IP address for bond0: 69.194.0.135
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+31 packages can be updated.
+26 updates are security updates.
+
+mysql start/running, process 34541
+mongodb start/running, process 34606
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for hello.world:world:war:1.0.0-BUILD-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 64, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-war-plugin is missing. @ line 72, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Servlet 1.0.0-BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.3:clean (default-clean) @ world ---
+[INFO] Deleting file set: /home/techempower/FrameworkBenchmarks/servlet/target (included: [**], excluded: [])
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ world ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/techempower/FrameworkBenchmarks/servlet/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ world ---
+[INFO] Compiling 10 source files to /home/techempower/FrameworkBenchmarks/servlet/target/classes
+[INFO] 
+[INFO] --- maven-war-plugin:2.1.1:war (default-cli) @ world ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [world] in [/home/techempower/FrameworkBenchmarks/servlet/target/world-1.0.0-BUILD-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/techempower/FrameworkBenchmarks/servlet/src/main/webapp]
+[INFO] Webapp assembled in [42 msecs]
+[INFO] Building war: /home/techempower/FrameworkBenchmarks/servlet/target/servlet.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.846s
+[INFO] Finished at: Wed Mar 19 01:18:08 PDT 2014
+[INFO] Final Memory: 15M/481M
+[INFO] ------------------------------------------------------------------------
+Resin/4.0.36 launching watchdog at 127.0.0.1:6600
+Resin/4.0.36 started -server 'default' with watchdog at 127.0.0.1:6600
+
+-----------------------------------------------------
+  VERIFYING DB (/servlet/db)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 30
+Date: Wed, 19 Mar 2014 08:19:12 GMT
+
+{"id":461,"randomNumber":4767}
+
+VALIDATING DB ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING QUERY (/servlet/db?queries=2)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 65
+Date: Wed, 19 Mar 2014 08:19:12 GMT
+
+[{"id":5687,"randomNumber":6133},{"id":8431,"randomNumber":4381}]
+
+/servlet/db?queries=2 - PASS
+
+-----------------------------------------------------
+
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 31
+Date: Wed, 19 Mar 2014 08:19:12 GMT
+
+{"id":6113,"randomNumber":3153}
+
+/servlet/db?queries=0 - WARNING
+
+-----------------------------------------------------
+
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 31
+Date: Wed, 19 Mar 2014 08:19:12 GMT
+
+{"id":8469,"randomNumber":9384}
+
+/servlet/db?queries=foo - WARNING
+
+-----------------------------------------------------
+
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Wed, 19 Mar 2014 08:19:12 GMT
+
+[{"id":8558,"randomNumber":208},{"id":501,"randomNumber":4265},{"id":2930,"randomNumber":458},{"id":7729,"randomNumber":8131},{"id":5637,"randomNumber":6854},{"id":5588,"randomNumber":2020},{"id":5018,"randomNumber":9977},{"id":287,"randomNumber":6630},{"id":9560,"randomNumber":8374},{"id":2562,"randomNumber":8863},{"id":1929,"randomNumber":4607},{"id":3532,"randomNumber":1826},{"id":1894,"randomNumber":3679},{"id":6119,"randomNumber":1837},{"id":8321,"randomNumber":3007},{"id":5827,"randomNumber":9012},{"id":9056,"randomNumber":1919},{"id":2317,"randomNumber":2410},{"id":2868,"randomNumber":8280},{"id":994,"randomNumber":4834},{"id":4272,"randomNumber":7199},{"id":5368,"randomNumber":2220},{"id":2528,"randomNumber":7525},{"id":246,"randomNumber":1265},{"id":1478,"randomNumber":2602},{"id":6432,"randomNumber":2313},{"id":7,"randomNumber":2248},{"id":6598,"randomNumber":6980},{"id":1760,"randomNumber":6472},{"id":681,"randomNumber":193},{"id":8095,"randomNumber":4294},{"id":8171,"randomNumber":9214},{"id":1268,"randomNumber":9868},{"id":2340,"randomNumber":1811},{"id":5618,"randomNumber":8221},{"id":5628,"randomNumber":4836},{"id":9086,"randomNumber":501},{"id":6558,"randomNumber":2159},{"id":9347,"randomNumber":4160},{"id":2169,"randomNumber":222},{"id":4321,"randomNumber":7587},{"id":8454,"randomNumber":3602},{"id":5374,"randomNumber":4994},{"id":3630,"randomNumber":7900},{"id":8044,"randomNumber":7429},{"id":5148,"randomNumber":6544},{"id":698,"randomNumber":4590},{"id":5047,"randomNumber":2966},{"id":5274,"randomNumber":3615},{"id":4437,"randomNumber":3507},{"id":7727,"randomNumber":1508},{"id":3682,"randomNumber":1216},{"id":3877,"randomNumber":9529},{"id":4587,"randomNumber":6947},{"id":4958,"randomNumber":7136},{"id":4751,"randomNumber":2940},{"id":905,"randomNumber":3103},{"id":9521,"randomNumber":663},{"id":8113,"randomNumber":9887},{"id":7252,"randomNumber":7473},{"id":833,"randomNumber":3540},{"id":2564,"randomNumber":5110},{"id":2111,"randomNumber":9262},{"id":9118,"randomNumber":7334},{"id":9840,"randomNumber":5041},{"id":3134,"randomNumber":606},{"id":1836,"randomNumber":2047},{"id":6850,"randomNumber":9986},{"id":1917,"randomNumber":3378},{"id":8852,"randomNumber":6901},{"id":3851,"randomNumber":5704},{"id":5410,"randomNumber":6018},{"id":2716,"randomNumber":4060},{"id":9902,"randomNumber":6274},{"id":4753,"randomNumber":8836},{"id":7531,"randomNumber":7048},{"id":5189,"randomNumber":4876},{"id":7655,"randomNumber":2415},{"id":3064,"randomNumber":4392},{"id":4618,"randomNumber":3589},{"id":7620,"randomNumber":5628},{"id":9610,"randomNumber":6264},{"id":1724,"randomNumber":7876},{"id":5471,"randomNumber":7515},{"id":4876,"randomNumber":7841},{"id":6540,"randomNumber":439},{"id":8789,"randomNumber":3540},{"id":4026,"randomNumber":3478},{"id":9752,"randomNumber":5961},{"id":329,"randomNumber":6825},{"id":1554,"randomNumber":6397},{"id":129,"randomNumber":8984},{"id":4576,"randomNumber":8254},{"id":535,"randomNumber":9756},{"id":6670,"randomNumber":3813},{"id":8451,"randomNumber":8951},{"id":4612,"randomNumber":3774},{"id":6551,"randomNumber":5234},{"id":1650,"randomNumber":4447},{"id":8807,"randomNumber":747},{"id":9496,"randomNumber":3404},{"id":1210,"randomNumber":7311},{"id":7671,"randomNumber":8268},{"id":2158,"randomNumber":3033},{"id":5996,"randomNumber":3587},{"id":9839,"randomNumber":2442},{"id":9638,"randomNumber":390},{"id":2344,"randomNumber":5},{"id":5991,"randomNumber":5562},{"id":1850,"randomNumber":846},{"id":5310,"randomNumber":7727},{"id":9250,"randomNumber":5024},{"id":2431,"randomNumber":7709},{"id":4177,"randomNumber":7172},{"id":5008,"randomNumber":8525},{"id":844,"randomNumber":9471},{"id":3304,"randomNumber":2449},{"id":576,"randomNumber":5192},{"id":907,"randomNumber":1221},{"id":617,"randomNumber":6086},{"id":9191,"randomNumber":3712},{"id":8028,"randomNumber":7878},{"id":879,"randomNumber":6417},{"id":6288,"randomNumber":9061},{"id":2433,"randomNumber":7972},{"id":2085,"randomNumber":5595},{"id":9056,"randomNumber":1919},{"id":2591,"randomNumber":6932},{"id":7717,"randomNumber":9288},{"id":2036,"randomNumber":1564},{"id":793,"randomNumber":1769},{"id":9279,"randomNumber":3701},{"id":5522,"randomNumber":1050},{"id":356,"randomNumber":391},{"id":3994,"randomNumber":3291},{"id":9602,"randomNumber":7149},{"id":3558,"randomNumber":1670},{"id":6349,"randomNumber":7493},{"id":2640,"randomNumber":9465},{"id":9801,"randomNumber":8330},{"id":2869,"randomNumber":4396},{"id":4379,"randomNumber":9208},{"id":1280,"randomNumber":7261},{"id":546,"randomNumber":9556},{"id":2,"randomNumber":1330},{"id":1405,"randomNumber":9639},{"id":5263,"randomNumber":1388},{"id":2543,"randomNumber":7894},{"id":6173,"randomNumber":2594},{"id":441,"randomNumber":2341},{"id":1201,"randomNumber":48},{"id":3554,"randomNumber":5686},{"id":2569,"randomNumber":1554},{"id":6045,"randomNumber":9317},{"id":3836,"randomNumber":2964},{"id":4564,"randomNumber":8159},{"id":9593,"randomNumber":8423},{"id":6497,"randomNumber":8300},{"id":6488,"randomNumber":3462},{"id":69,"randomNumber":3535},{"id":550,"randomNumber":602},{"id":7400,"randomNumber":9611},{"id":5733,"randomNumber":9874},{"id":4509,"randomNumber":4625},{"id":8911,"randomNumber":6962},{"id":3014,"randomNumber":4371},{"id":4153,"randomNumber":3898},{"id":401,"randomNumber":2587},{"id":8446,"randomNumber":2778},{"id":2699,"randomNumber":4544},{"id":2373,"randomNumber":1920},{"id":1794,"randomNumber":320},{"id":1459,"randomNumber":7782},{"id":8636,"randomNumber":2503},{"id":8530,"randomNumber":8684},{"id":3855,"randomNumber":351},{"id":9759,"randomNumber":87},{"id":1379,"randomNumber":3790},{"id":3005,"randomNumber":4163},{"id":2714,"randomNumber":5089},{"id":4847,"randomNumber":5493},{"id":1517,"randomNumber":6611},{"id":4013,"randomNumber":4553},{"id":8904,"randomNumber":2280},{"id":1795,"randomNumber":4436},{"id":9761,"randomNumber":8452},{"id":7197,"randomNumber":9642},{"id":594,"randomNumber":4223},{"id":1994,"randomNumber":1617},{"id":641,"randomNumber":7285},{"id":7274,"randomNumber":9576},{"id":8121,"randomNumber":9764},{"id":6652,"randomNumber":7787},{"id":6873,"randomNumber":5811},{"id":8234,"randomNumber":1538},{"id":4150,"randomNumber":7231},{"id":4724,"randomNumber":4252},{"id":164,"randomNumber":8190},{"id":2743,"randomNumber":2270},{"id":6943,"randomNumber":3760},{"id":9191,"randomNumber":3712},{"id":4509,"randomNumber":4625},{"id":3303,"randomNumber":7462},{"id":6582,"randomNumber":1467},{"id":6213,"randomNumber":5783},{"id":7267,"randomNumber":5498},{"id":2617,"randomNumber":1070},{"id":59,"randomNumber":9191},{"id":6235,"randomNumber":9203},{"id":9958,"randomNumber":585},{"id":9166,"randomNumber":6597},{"id":882,"randomNumber":7650},{"id":3379,"randomNumber":8746},{"id":2958,"randomNumber":1124},{"id":9618,"randomNumber":4137},{"id":9535,"randomNumber":6025},{"id":2729,"randomNumber":797},{"id":2380,"randomNumber":879},{"id":5574,"randomNumber":7357},{"id":2958,"randomNumber":1124},{"id":3450,"randomNumber":5866},{"id":1607,"randomNumber":1142},{"id":1995,"randomNumber":4651},{"id":415,"randomNumber":191},{"id":1691,"randomNumber":3082},{"id":3592,"randomNumber":2437},{"id":9596,"randomNumber":1802},{"id":6894,"randomNumber":8074},{"id":1651,"randomNumber":3587},{"id":4418,"randomNumber":3449},{"id":7352,"randomNumber":5300},{"id":9489,"randomNumber":7704},{"id":4150,"randomNumber":7231},{"id":7896,"randomNumber":5832},{"id":8923,"randomNumber":3525},{"id":2906,"randomNumber":7443},{"id":2671,"randomNumber":721},{"id":6755,"randomNumber":3931},{"id":5161,"randomNumber":6214},{"id":8348,"randomNumber":7636},{"id":5754,"randomNumber":5251},{"id":8507,"randomNumber":2857},{"id":6918,"randomNumber":4004},{"id":3643,"randomNumber":4802},{"id":9851,"randomNumber":6724},{"id":3058,"randomNumber":7897},{"id":7717,"randomNumber":9288},{"id":7916,"randomNumber":1259},{"id":5742,"randomNumber":7016},{"id":4320,"randomNumber":651},{"id":7034,"randomNumber":8498},{"id":3420,"randomNumber":6041},{"id":6700,"randomNumber":8046},{"id":3433,"randomNumber":1048},{"id":7486,"randomNumber":3170},{"id":3148,"randomNumber":3682},{"id":1430,"randomNumber":386},{"id":9451,"randomNumber":6499},{"id":9103,"randomNumber":3015},{"id":7801,"randomNumber":1318},{"id":8962,"randomNumber":2781},{"id":6932,"randomNumber":544},{"id":9313,"randomNumber":6131},{"id":2602,"randomNumber":6151},{"id":7583,"randomNumber":5879},{"id":2992,"randomNumber":9513},{"id":5334,"randomNumber":5027},{"id":8418,"randomNumber":9605},{"id":8230,"randomNumber":2004},{"id":9839,"randomNumber":2442},{"id":213,"randomNumber":5946},{"id":1910,"randomNumber":1017},{"id":2143,"randomNumber":1709},{"id":117,"randomNumber":6253},{"id":2137,"randomNumber":2679},{"id":361,"randomNumber":3676},{"id":1613,"randomNumber":4172},{"id":7756,"randomNumber":6749},{"id":8137,"randomNumber":9222},{"id":8114,"randomNumber":5478},{"id":3655,"randomNumber":1611},{"id":3620,"randomNumber":3863},{"id":6655,"randomNumber":2554},{"id":3471,"randomNumber":4588},{"id":4820,"randomNumber":2161},{"id":1482,"randomNumber":2762},{"id":6392,"randomNumber":2140},{"id":3091,"randomNumber":9846},{"id":9634,"randomNumber":5678},{"id":2086,"randomNumber":9771},{"id":6615,"randomNumber":6555},{"id":2410,"randomNumber":7288},{"id":3779,"randomNumber":9633},{"id":9326,"randomNumber":5513},{"id":2710,"randomNumber":9172},{"id":2766,"randomNumber":5189},{"id":4581,"randomNumber":793},{"id":5608,"randomNumber":6471},{"id":5562,"randomNumber":3253},{"id":5074,"randomNumber":880},{"id":6877,"randomNumber":6155},{"id":4621,"randomNumber":5386},{"id":9681,"randomNumber":7123},{"id":2155,"randomNumber":4189},{"id":5871,"randomNumber":4562},{"id":1065,"randomNumber":8883},{"id":9051,"randomNumber":7043},{"id":3167,"randomNumber":5080},{"id":3644,"randomNumber":9270},{"id":2239,"randomNumber":9641},{"id":834,"randomNumber":1829},{"id":9893,"randomNumber":3714},{"id":1064,"randomNumber":7805},{"id":8906,"randomNumber":1710},{"id":3224,"randomNumber":1231},{"id":7804,"randomNumber":7068},{"id":5622,"randomNumber":829},{"id":3614,"randomNumber":9596},{"id":459,"randomNumber":9851},{"id":1432,"randomNumber":3755},{"id":3955,"randomNumber":4110},{"id":9212,"randomNumber":7659},{"id":2072,"randomNumber":5419},{"id":9031,"randomNumber":5816},{"id":8636,"randomNumber":2503},{"id":9604,"randomNumber":3303},{"id":5225,"randomNumber":8852},{"id":5233,"randomNumber":3745},{"id":5981,"randomNumber":7898},{"id":757,"randomNumber":8838},{"id":6060,"randomNumber":2791},{"id":2494,"randomNumber":5796},{"id":1479,"randomNumber":6626},{"id":544,"randomNumber":9074},{"id":7186,"randomNumber":2236},{"id":9265,"randomNumber":5024},{"id":3965,"randomNumber":167},{"id":4299,"randomNumber":9988},{"id":7231,"randomNumber":1993},{"id":1330,"randomNumber":6560},{"id":9868,"randomNumber":5944},{"id":8529,"randomNumber":588},{"id":7701,"randomNumber":9416},{"id":4714,"randomNumber":1916},{"id":7396,"randomNumber":4932},{"id":3382,"randomNumber":3035},{"id":1992,"randomNumber":4268},{"id":8423,"randomNumber":2482},{"id":5463,"randomNumber":8056},{"id":904,"randomNumber":3983},{"id":1166,"randomNumber":651},{"id":4975,"randomNumber":9675},{"id":7164,"randomNumber":2094},{"id":8226,"randomNumber":3327},{"id":2789,"randomNumber":3881},{"id":7810,"randomNumber":5451},{"id":9360,"randomNumber":442},{"id":3082,"randomNumber":8871},{"id":1024,"randomNumber":1729},{"id":8408,"randomNumber":4187},{"id":3067,"randomNumber":9291},{"id":2426,"randomNumber":2761},{"id":7456,"randomNumber":7464},{"id":169,"randomNumber":5981},{"id":3690,"randomNumber":6302},{"id":5660,"randomNumber":675},{"id":9083,"randomNumber":8943},{"id":7739,"randomNumber":8227},{"id":6191,"randomNumber":2400},{"id":6270,"randomNumber":3732},{"id":3771,"randomNumber":6617},{"id":7094,"randomNumber":9745},{"id":4897,"randomNumber":3499},{"id":7908,"randomNumber":7277},{"id":6373,"randomNumber":1497},{"id":2068,"randomNumber":3549},{"id":8784,"randomNumber":437},{"id":4093,"randomNumber":215},{"id":8004,"randomNumber":5814},{"id":4868,"randomNumber":6272},{"id":2521,"randomNumber":5690},{"id":1502,"randomNumber":4875},{"id":2195,"randomNumber":8249},{"id":3005,"randomNumber":4163},{"id":1906,"randomNumber":4784},{"id":6923,"randomNumber":3958},{"id":4964,"randomNumber":6399},{"id":9744,"randomNumber":6158},{"id":4180,"randomNumber":5086},{"id":5556,"randomNumber":2801},{"id":879,"randomNumber":6417},{"id":4758,"randomNumber":1004},{"id":7538,"randomNumber":6870},{"id":620,"randomNumber":3429},{"id":3145,"randomNumber":5835},{"id":2104,"randomNumber":3776},{"id":5050,"randomNumber":7614},{"id":1588,"randomNumber":4460},{"id":1216,"randomNumber":118},{"id":4622,"randomNumber":6839},{"id":7414,"randomNumber":2825},{"id":8502,"randomNumber":2093},{"id":449,"randomNumber":9272},{"id":7647,"randomNumber":8661},{"id":479,"randomNumber":3282},{"id":286,"randomNumber":6155},{"id":439,"randomNumber":5889},{"id":7719,"randomNumber":516},{"id":5296,"randomNumber":4626},{"id":2195,"randomNumber":8249},{"id":1697,"randomNumber":2815},{"id":614,"randomNumber":7753},{"id":6658,"randomNumber":5543},{"id":2147,"randomNumber":327},{"id":318,"randomNumber":6045},{"id":8933,"randomNumber":4681},{"id":3369,"randomNumber":9562},{"id":6652,"randomNumber":7787},{"id":263,"randomNumber":5989},{"id":8948,"randomNumber":8800},{"id":2218,"randomNumber":2536},{"id":4183,"randomNumber":4423},{"id":8793,"randomNumber":9901},{"id":3727,"randomNumber":8851},{"id":3287,"randomNumber":6023},{"id":8430,"randomNumber":4341},{"id":4717,"randomNumber":4876},{"id":303,"randomNumber":7099},{"id":2057,"randomNumber":6259},{"id":2590,"randomNumber":4080},{"id":1078,"randomNumber":5514},{"id":1788,"randomNumber":6803},{"id":4345,"randomNumber":6810},{"id":2632,"randomNumber":7496},{"id":6087,"randomNumber":9727},{"id":8688,"randomNumber":2099},{"id":3323,"randomNumber":4245},{"id":4754,"randomNumber":463},{"id":7870,"randomNumber":7929},{"id":391,"randomNumber":9446},{"id":7111,"randomNumber":2881},{"id":7691,"randomNumber":46},{"id":8721,"randomNumber":6458},{"id":6403,"randomNumber":9358},{"id":6037,"randomNumber":6604},{"id":5659,"randomNumber":4820},{"id":5299,"randomNumber":960},{"id":316,"randomNumber":2516},{"id":2900,"randomNumber":6637},{"id":2936,"randomNumber":9358},{"id":7443,"randomNumber":9784},{"id":1092,"randomNumber":3258},{"id":6856,"randomNumber":524},{"id":9653,"randomNumber":7632},{"id":1410,"randomNumber":239},{"id":2120,"randomNumber":5598},{"id":7902,"randomNumber":4091},{"id":7189,"randomNumber":476},{"id":8863,"randomNumber":667},{"id":6226,"randomNumber":3769},{"id":1500,"randomNumber":2984},{"id":4093,"randomNumber":215},{"id":5568,"randomNumber":6289},{"id":3739,"randomNumber":3990},{"id":5882,"randomNumber":5564},{"id":6408,"randomNumber":8976},{"id":3887,"randomNumber":5839},{"id":2239,"randomNumber":9641},{"id":8567,"randomNumber":6356},{"id":8836,"randomNumber":7661},{"id":2335,"randomNumber":565},{"id":2249,"randomNumber":3536},{"id":4170,"randomNumber":4946},{"id":7753,"randomNumber":2417},{"id":8521,"randomNumber":3584},{"id":9741,"randomNumber":8162},{"id":326,"randomNumber":4675},{"id":4202,"randomNumber":3213},{"id":7255,"randomNumber":8829},{"id":5412,"randomNumber":5049},{"id":8600,"randomNumber":9949},{"id":1364,"randomNumber":9179},{"id":1884,"randomNumber":2883},{"id":6978,"randomNumber":2116},{"id":3072,"randomNumber":3035},{"id":6083,"randomNumber":2556},{"id":3919,"randomNumber":8101},{"id":8371,"randomNumber":4610},{"id":442,"randomNumber":627},{"id":7060,"randomNumber":986},{"id":7602,"randomNumber":5693},{"id":8260,"randomNumber":9908},{"id":6232,"randomNumber":5238},{"id":1685,"randomNumber":2858},{"id":3347,"randomNumber":1807},{"id":7439,"randomNumber":9515},{"id":4062,"randomNumber":5856},{"id":8697,"randomNumber":6782},{"id":9374,"randomNumber":6682},{"id":4286,"randomNumber":1473}]
+
+/servlet/db?queries=501 - PASS
+
+-----------------------------------------------------
+
+
+VALIDATING QUERY ... PASS (with warnings)
+
+
+-----------------------------------------------------
+  VERIFYING FORTUNE (/servlet//fortunes)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: text/html; charset=utf-8
+Content-Length: 1308
+Date: Wed, 19 Mar 2014 08:19:13 GMT
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fortunes</title>
+</head>
+<body>
+<table>
+<tr>
+<th>id</th>
+<th>message</th>
+</tr>
+
+<tr>
+<td>11</td>
+<td>&lt;script&gt;alert(&#034;This should not be displayed in a browser alert box.&#034;);&lt;/script&gt;</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>A computer program does what you tell it to do, not what you want it to do.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>A computer scientist is someone who fixes things that aren&#039;t broken.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>A list is only as strong as its weakest link. — Donald Knuth</td>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Additional fortune added at request time.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>After enough decimal places, nobody gives a damn.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Any program that runs right is obsolete.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Computers make very fast, very accurate mistakes.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Feature: A bug with seniority.</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>fortune: No such file or directory</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>フレームワークのベンチマーク</td>
+</tr>
+
+</table></body>
+</html>
+
+
+VALIDATING FORTUNE ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING UPDATE (/servlet/update?queries=)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Server: Resin/4.0.36
+Content-Type: application/json
+Content-Length: 65
+Date: Wed, 19 Mar 2014 08:19:13 GMT
+
+[{"id":9518,"randomNumber":7661},{"id":5840,"randomNumber":5648}]
+
+VALIDATING UPDATE ... PASS
+
+
+-----------------------------------------------------
+  Benchmarking servlet-raw ...
+-----------------------------------------------------
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+BENCHMARKING Fortune ... Complete
+BENCHMARKING Update ... Complete
+
+-----------------------------------------------------
+  Stopping servlet-raw
+-----------------------------------------------------
+Resin/4.0.36 shutdown watchdog at 127.0.0.1:6600
+
+-----------------------------------------------------
+  Stopped servlet-raw
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through servlet-raw
+----------------------------------------------------

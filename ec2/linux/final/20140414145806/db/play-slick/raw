@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 03:41:33 UTC 2014
+
+  System load:  0.03               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:9000/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.57ms    6.20ms  62.70ms   88.17%
+    Req/Sec    74.74     21.70   122.00     64.67%
+  2890 requests in 5.01s, 335.22KB read
+Requests/sec:    577.10
+Transfer/sec:     66.94KB
+
+---------------------------------------------------------
+ Running Warmup play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   214.20ms  116.09ms   1.16s    86.92%
+    Req/Sec   599.51    107.70   800.00     60.00%
+  17797 requests in 15.02s, 2.02MB read
+Requests/sec:   1185.28
+Transfer/sec:    137.49KB
+
+---------------------------------------------------------
+ Concurrency: 8 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.84ms    4.68ms  60.67ms   98.78%
+    Req/Sec   551.63     75.51   750.00     89.92%
+  16005 requests in 15.00s, 1.81MB read
+Requests/sec:   1066.83
+Transfer/sec:    123.75KB
+
+---------------------------------------------------------
+ Concurrency: 16 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.21ms    3.37ms  53.01ms   98.29%
+    Req/Sec     1.03k   114.68     1.29k    89.88%
+  30007 requests in 15.00s, 3.40MB read
+Requests/sec:   2000.42
+Transfer/sec:    232.03KB
+
+---------------------------------------------------------
+ Concurrency: 32 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.44ms    4.84ms  66.22ms   90.73%
+    Req/Sec     1.45k   188.42     1.80k    87.27%
+  42860 requests in 15.00s, 4.85MB read
+Requests/sec:   2857.22
+Transfer/sec:    331.42KB
+
+---------------------------------------------------------
+ Concurrency: 64 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.99ms   20.91ms 305.67ms   91.81%
+    Req/Sec     1.61k   176.05     2.03k    69.68%
+  47532 requests in 15.00s, 5.38MB read
+Requests/sec:   3168.59
+Transfer/sec:    367.53KB
+
+---------------------------------------------------------
+ Concurrency: 128 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.06ms   42.22ms 404.69ms   92.02%
+    Req/Sec     1.65k   204.02     2.39k    74.27%
+  48953 requests in 15.00s, 5.55MB read
+Requests/sec:   3263.44
+Transfer/sec:    378.54KB
+
+---------------------------------------------------------
+ Concurrency: 256 for play-slick
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:9000/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    75.89ms   80.56ms 746.21ms   90.61%
+    Req/Sec     1.66k   195.80     2.21k    65.99%
+  49517 requests in 15.01s, 5.61MB read
+Requests/sec:   3297.86
+Transfer/sec:    382.52KB

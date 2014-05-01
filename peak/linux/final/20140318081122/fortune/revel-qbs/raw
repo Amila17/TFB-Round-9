@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 23:57:50 PDT 2014
+
+  System load:  0.27               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   529.80us  285.97us   2.41ms   97.01%
+    Req/Sec     1.99k   214.10     2.56k    67.65%
+  75537 requests in 5.00s, 102.87MB read
+Requests/sec:  15105.49
+Transfer/sec:     20.57MB
+
+---------------------------------------------------------
+ Running Warmup revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.18ms    4.95ms  37.08ms   67.76%
+    Req/Sec   463.20     51.06   657.00     69.65%
+  274379 requests in 15.00s, 373.66MB read
+Requests/sec:  18296.80
+Transfer/sec:     24.92MB
+
+---------------------------------------------------------
+ Concurrency: 8 for revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   531.74us  275.38us   2.62ms   97.07%
+    Req/Sec     1.98k   221.61     2.56k    60.76%
+  224901 requests in 15.00s, 306.28MB read
+Requests/sec:  14994.29
+Transfer/sec:     20.42MB
+
+---------------------------------------------------------
+ Concurrency: 16 for revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   805.81us  440.71us   3.10ms   94.43%
+    Req/Sec     1.30k   156.18     1.89k    68.07%
+  296022 requests in 15.00s, 403.14MB read
+Requests/sec:  19737.54
+Transfer/sec:     26.88MB
+
+---------------------------------------------------------
+ Concurrency: 32 for revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.77ms  737.15us   5.30ms   82.72%
+    Req/Sec   603.75    100.29     1.00k    65.08%
+  274876 requests in 15.00s, 374.34MB read
+Requests/sec:  18330.13
+Transfer/sec:     24.96MB
+
+---------------------------------------------------------
+ Concurrency: 64 for revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.24ms    0.90ms   6.31ms   76.59%
+    Req/Sec   480.41     92.19     0.89k    77.50%
+  273439 requests in 14.99s, 372.38MB read
+Requests/sec:  18236.36
+Transfer/sec:     24.84MB
+
+---------------------------------------------------------
+ Concurrency: 128 for revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.64ms    2.50ms  19.32ms   67.25%
+    Req/Sec   469.20     67.25   764.00     68.24%
+  274235 requests in 14.99s, 373.47MB read
+Requests/sec:  18289.04
+Transfer/sec:     24.91MB
+
+---------------------------------------------------------
+ Concurrency: 256 for revel-qbs
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.19ms    4.94ms  44.44ms   68.01%
+    Req/Sec   463.59     51.61   684.00     69.60%
+  274579 requests in 15.00s, 373.93MB read
+Requests/sec:  18308.50
+Transfer/sec:     24.93MB

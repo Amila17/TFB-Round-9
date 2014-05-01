@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 11:59:40 PDT 2014
+
+  System load:  0.05               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.01ms  558.67us  14.42ms   98.52%
+    Req/Sec   351.10     56.77   444.00     83.92%
+  13336 requests in 5.00s, 18.99MB read
+Requests/sec:   2666.35
+Transfer/sec:      3.80MB
+
+---------------------------------------------------------
+ Running Warmup django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.96ms   18.66ms 197.09ms   67.12%
+    Req/Sec   169.20     45.21   384.00     66.64%
+  98386 requests in 15.01s, 140.09MB read
+Requests/sec:   6554.84
+Transfer/sec:      9.33MB
+
+---------------------------------------------------------
+ Concurrency: 8 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.00ms  535.36us  14.71ms   97.69%
+    Req/Sec   351.69     55.90   444.00     85.27%
+  40177 requests in 15.00s, 57.21MB read
+Requests/sec:   2678.21
+Transfer/sec:      3.81MB
+
+---------------------------------------------------------
+ Concurrency: 16 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.23ms    0.90ms  22.03ms   91.81%
+    Req/Sec   332.75     62.18   444.00     63.68%
+  76046 requests in 15.00s, 108.28MB read
+Requests/sec:   5069.56
+Transfer/sec:      7.22MB
+
+---------------------------------------------------------
+ Concurrency: 32 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.87ms    1.80ms  34.13ms   84.68%
+    Req/Sec   230.17     70.84   444.00     80.63%
+  105495 requests in 15.00s, 150.21MB read
+Requests/sec:   7033.09
+Transfer/sec:     10.01MB
+
+---------------------------------------------------------
+ Concurrency: 64 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.75ms    2.15ms  40.50ms   88.57%
+    Req/Sec   191.18     49.42   416.00     77.70%
+  107953 requests in 15.00s, 153.71MB read
+Requests/sec:   7194.57
+Transfer/sec:     10.24MB
+
+---------------------------------------------------------
+ Concurrency: 128 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.52ms    8.95ms 141.15ms   83.23%
+    Req/Sec   171.29     39.43   386.00     67.43%
+  98753 requests in 15.01s, 140.61MB read
+Requests/sec:   6580.99
+Transfer/sec:      9.37MB
+
+---------------------------------------------------------
+ Concurrency: 256 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.40ms   17.21ms 165.84ms   68.39%
+    Req/Sec   168.02     40.95   397.00     67.46%
+  98249 requests in 15.01s, 139.89MB read
+Requests/sec:   6544.25
+Transfer/sec:      9.32MB

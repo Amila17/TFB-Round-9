@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 07:53:05 PDT 2014
+
+  System load:  0.37               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8000/dbs/2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8000/dbs/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.90ms  184.59us   2.34ms   96.44%
+    Req/Sec     1.16k    81.76     1.33k    84.61%
+  44291 requests in 5.00s, 8.22MB read
+Requests/sec:   8857.71
+Transfer/sec:      1.64MB
+
+---------------------------------------------------------
+ Running Warmup yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8000/dbs/2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8000/dbs/2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.77ms    8.07ms  99.02ms   84.29%
+    Req/Sec   643.00    135.60     1.18k    68.57%
+  375805 requests in 15.00s, 69.73MB read
+Requests/sec:  25057.50
+Transfer/sec:      4.65MB
+
+---------------------------------------------------------
+ Queries: 1 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8000/dbs/1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8000/dbs/1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.73ms    6.86ms  78.90ms   86.45%
+    Req/Sec     0.96k   244.57     2.20k    69.75%
+  556097 requests in 15.00s, 86.32MB read
+Requests/sec:  37073.47
+Transfer/sec:      5.76MB
+
+---------------------------------------------------------
+ Queries: 5 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8000/dbs/5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8000/dbs/5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.35ms   10.28ms 100.06ms   74.70%
+    Req/Sec   333.89     49.35   562.00     69.57%
+  198864 requests in 15.00s, 54.98MB read
+Requests/sec:  13255.79
+Transfer/sec:      3.66MB
+
+---------------------------------------------------------
+ Queries: 10 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8000/dbs/10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8000/dbs/10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.14ms   13.97ms 146.62ms   73.51%
+    Req/Sec   189.87     25.16   290.00     71.71%
+  113518 requests in 15.01s, 48.58MB read
+Requests/sec:   7564.18
+Transfer/sec:      3.24MB
+
+---------------------------------------------------------
+ Queries: 15 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8000/dbs/15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8000/dbs/15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    45.87ms   18.15ms 238.34ms   72.61%
+    Req/Sec   130.26     16.26   188.00     70.33%
+  77992 requests in 15.02s, 45.19MB read
+Requests/sec:   5194.25
+Transfer/sec:      3.01MB
+
+---------------------------------------------------------
+ Queries: 20 for yesod
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8000/dbs/20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8000/dbs/20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    59.39ms   21.79ms 244.29ms   72.95%
+    Req/Sec   101.13     12.36   142.00     69.64%
+  60547 requests in 15.01s, 44.26MB read
+Requests/sec:   4033.03
+Transfer/sec:      2.95MB

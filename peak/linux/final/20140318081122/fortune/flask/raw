@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 13:21:17 PDT 2014
+
+  System load:  0.02               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.02ms  410.01us  12.14ms   93.83%
+    Req/Sec   530.43     60.54   666.00     71.83%
+  19948 requests in 5.00s, 27.97MB read
+Requests/sec:   3989.07
+Transfer/sec:      5.59MB
+
+---------------------------------------------------------
+ Running Warmup flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.00ms   18.86ms 222.64ms   77.95%
+    Req/Sec   220.11     70.65   500.00     65.38%
+  120646 requests in 15.00s, 169.13MB read
+Requests/sec:   8041.38
+Transfer/sec:     11.27MB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.03ms  366.95us  13.11ms   92.56%
+    Req/Sec   523.36     62.63   666.00     69.67%
+  59331 requests in 15.00s, 83.18MB read
+Requests/sec:   3955.21
+Transfer/sec:      5.54MB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.05ms  512.46us  21.66ms   89.46%
+    Req/Sec   524.06     73.05   666.00     62.48%
+  118878 requests in 15.00s, 166.66MB read
+Requests/sec:   7925.47
+Transfer/sec:     11.11MB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.95ms    1.40ms  32.36ms   93.42%
+    Req/Sec   379.50    100.51   666.00     73.67%
+  172813 requests in 15.00s, 242.27MB read
+Requests/sec:  11522.34
+Transfer/sec:     16.15MB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.74ms    1.93ms  43.53ms   87.00%
+    Req/Sec   312.92    100.22   666.00     69.04%
+  173890 requests in 15.00s, 243.78MB read
+Requests/sec:  11593.81
+Transfer/sec:     16.25MB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.62ms    6.65ms 154.37ms   85.76%
+    Req/Sec   219.99     60.79   736.00     68.82%
+  124750 requests in 15.00s, 174.89MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:   8316.05
+Transfer/sec:     11.66MB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.07ms   11.41ms 215.29ms   66.71%
+    Req/Sec   203.67     36.05   373.00     71.41%
+  120814 requests in 15.00s, 169.37MB read
+Requests/sec:   8052.53
+Transfer/sec:     11.29MB

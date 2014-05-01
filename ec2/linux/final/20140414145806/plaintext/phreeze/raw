@@ -1,0 +1,107 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/index.php?plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   273.85ms  570.35ms   1.85s    86.96%
+    Req/Sec    94.39     76.88   350.00     52.12%
+  4175 requests in 5.87s, 1.59MB read
+Requests/sec:    710.78
+Transfer/sec:    276.92KB
+
+---------------------------------------------------------
+ Running Warmup phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   256.06ms  187.99ms   1.21s    81.05%
+    Req/Sec   471.80     99.12   552.00     90.24%
+  14155 requests in 15.00s, 5.39MB read
+  Socket errors: connect 0, read 0, write 0, timeout 61
+Requests/sec:    943.59
+Transfer/sec:    367.67KB
+
+---------------------------------------------------------
+ Concurrency: 256 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 2 http://50.112.80.55:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.45s   821.70ms   6.11s    63.46%
+    Req/Sec   421.50      0.71   422.00    100.00%
+  14011 requests in 15.01s, 5.33MB read
+  Socket errors: connect 0, read 0, write 0, timeout 798
+Requests/sec:    933.71
+Transfer/sec:    363.82KB
+
+---------------------------------------------------------
+ Concurrency: 1024 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 2 http://50.112.80.55:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?plaintext
+  2 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.34s   788.74ms   9.06s    53.88%
+    Req/Sec   466.50    549.42     0.86k   100.00%
+  13824 requests in 15.02s, 5.26MB read
+  Socket errors: connect 0, read 2067, write 0, timeout 5553
+Requests/sec:    920.41
+Transfer/sec:    358.64KB
+
+---------------------------------------------------------
+ Concurrency: 4096 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 2 http://50.112.80.55:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?plaintext
+  2 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  7077 requests in 15.03s, 2.69MB read
+  Socket errors: connect 0, read 102885, write 0, timeout 23199
+  Non-2xx or 3xx responses: 57
+Requests/sec:    470.89
+Transfer/sec:    183.22KB
+
+---------------------------------------------------------
+ Concurrency: 16384 for phreeze
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 2 http://50.112.80.55:8080/index.php?plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?plaintext
+  2 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  4962 requests in 15.03s, 1.89MB read
+  Socket errors: connect 8197, read 205233, write 0, timeout 83378
+Requests/sec:    330.04
+Transfer/sec:    128.60KB

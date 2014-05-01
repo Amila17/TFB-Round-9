@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 03:45:24 PDT 2014
+
+  System load:  0.0                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.19ms    3.44ms  15.24ms   82.63%
+    Req/Sec   239.59     40.23   409.00     73.91%
+  9117 requests in 5.00s, 2.51MB read
+  Non-2xx or 3xx responses: 4521
+Requests/sec:   1821.67
+Transfer/sec:    513.47KB
+
+---------------------------------------------------------
+ Running Warmup symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   144.69ms  132.63ms 499.89ms   57.43%
+    Req/Sec    40.03      5.09    59.00     72.91%
+  24417 requests in 15.12s, 6.72MB read
+  Non-2xx or 3xx responses: 12153
+Requests/sec:   1614.97
+Transfer/sec:    455.45KB
+
+---------------------------------------------------------
+ Concurrency: 8 for symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.40ms    3.53ms  18.07ms   70.60%
+    Req/Sec   240.92     57.45   428.00     69.60%
+  28041 requests in 15.00s, 7.72MB read
+  Non-2xx or 3xx responses: 13937
+Requests/sec:   1868.82
+Transfer/sec:    526.92KB
+
+---------------------------------------------------------
+ Concurrency: 16 for symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.37ms    6.03ms  33.88ms   51.88%
+    Req/Sec   126.02     33.44   280.00     72.80%
+  29873 requests in 15.01s, 8.17MB read
+  Non-2xx or 3xx responses: 14069
+Requests/sec:   1990.58
+Transfer/sec:    557.30KB
+
+---------------------------------------------------------
+ Concurrency: 32 for symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.27ms  101.04ms   1.03s    99.00%
+    Req/Sec    52.92     17.31   116.00     69.81%
+  25548 requests in 15.02s, 6.97MB read
+  Non-2xx or 3xx responses: 11827
+Requests/sec:   1700.97
+Transfer/sec:    475.18KB
+
+---------------------------------------------------------
+ Concurrency: 64 for symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    52.14ms  162.39ms   1.05s    97.38%
+    Req/Sec    41.13     14.93   107.00     73.27%
+  24877 requests in 15.02s, 6.82MB read
+  Non-2xx or 3xx responses: 11902
+Requests/sec:   1656.14
+Transfer/sec:    464.61KB
+
+---------------------------------------------------------
+ Concurrency: 128 for symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    85.04ms   89.95ms   1.16s    87.29%
+    Req/Sec    36.78      8.82    74.00     72.95%
+  22414 requests in 15.05s, 6.17MB read
+  Non-2xx or 3xx responses: 11174
+Requests/sec:   1489.37
+Transfer/sec:    420.13KB
+
+---------------------------------------------------------
+ Concurrency: 256 for symfony2-stripped
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   168.18ms  149.93ms 563.17ms   61.19%
+    Req/Sec    34.30      5.34    56.00     69.56%
+  20922 requests in 15.13s, 5.76MB read
+  Non-2xx or 3xx responses: 10435
+Requests/sec:   1382.57
+Transfer/sec:    390.07KB

@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 05:35:11 UTC 2014
+
+  System load:  1.63               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.51ms  386.60us   6.31ms   85.53%
+    Req/Sec   422.43     56.93   600.00     73.32%
+  15962 requests in 5.00s, 2.34MB read
+Requests/sec:   3191.94
+Transfer/sec:    479.37KB
+
+---------------------------------------------------------
+ Running Warmup revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.66ms  102.60ms 960.51ms   97.37%
+    Req/Sec     4.70k   831.85     6.48k    89.46%
+  137890 requests in 15.00s, 20.22MB read
+Requests/sec:   9192.26
+Transfer/sec:      1.35MB
+
+---------------------------------------------------------
+ Concurrency: 8 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.56ms    1.89ms  38.27ms   98.25%
+    Req/Sec     1.70k   179.32     2.11k    73.81%
+  48400 requests in 15.00s, 7.10MB read
+Requests/sec:   3226.60
+Transfer/sec:    484.57KB
+
+---------------------------------------------------------
+ Concurrency: 16 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.68ms  639.12us   9.18ms   93.37%
+    Req/Sec     3.16k   335.68     3.78k    81.66%
+  89813 requests in 15.00s, 13.17MB read
+Requests/sec:   5987.32
+Transfer/sec:      0.88MB
+
+---------------------------------------------------------
+ Concurrency: 32 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.71ms    1.67ms  40.46ms   87.38%
+    Req/Sec     4.62k   719.86     6.22k    70.60%
+  131451 requests in 15.00s, 19.28MB read
+Requests/sec:   8763.40
+Transfer/sec:      1.29MB
+
+---------------------------------------------------------
+ Concurrency: 64 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.84ms    5.98ms  67.87ms   87.85%
+    Req/Sec     4.93k   567.67     6.64k    70.47%
+  144575 requests in 15.00s, 21.20MB read
+Requests/sec:   9638.18
+Transfer/sec:      1.41MB
+
+---------------------------------------------------------
+ Concurrency: 128 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.44ms   13.28ms 127.19ms   88.10%
+    Req/Sec     4.83k   426.58     6.01k    68.25%
+  143695 requests in 15.00s, 21.07MB read
+Requests/sec:   9579.55
+Transfer/sec:      1.40MB
+
+---------------------------------------------------------
+ Concurrency: 256 for revel
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    27.09ms   25.39ms 210.61ms   87.85%
+    Req/Sec     4.71k   364.56     5.81k    69.68%
+  140559 requests in 15.00s, 20.61MB read
+Requests/sec:   9370.16
+Transfer/sec:      1.37MB

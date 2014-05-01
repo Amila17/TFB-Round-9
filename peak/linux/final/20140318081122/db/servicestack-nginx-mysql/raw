@@ -1,0 +1,132 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 00:51:12 PDT 2014
+
+  System load:  0.0                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/mysql/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.88s   138.27ms   1.96s    80.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  24 requests in 6.00s, 230.53KB read
+Requests/sec:      4.00
+Transfer/sec:     38.41KB
+
+---------------------------------------------------------
+ Running Warmup servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   222.41ms  664.51ms   3.19s    93.61%
+    Req/Sec   100.39     41.17   268.00     75.85%
+  59788 requests in 15.01s, 560.85MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+  Non-2xx or 3xx responses: 2
+Requests/sec:   3982.82
+Transfer/sec:     37.36MB
+
+---------------------------------------------------------
+ Concurrency: 8 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.19ms   17.36ms 107.85ms   96.51%
+    Req/Sec   173.56     50.93   285.00     85.86%
+  20189 requests in 15.01s, 189.37MB read
+Requests/sec:   1345.16
+Transfer/sec:     12.62MB
+
+---------------------------------------------------------
+ Concurrency: 16 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.45ms   17.71ms 111.30ms   94.41%
+    Req/Sec   155.64     53.47   285.00     74.48%
+  36329 requests in 15.01s, 340.77MB read
+Requests/sec:   2421.11
+Transfer/sec:     22.71MB
+
+---------------------------------------------------------
+ Concurrency: 32 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.81ms   22.63ms 144.11ms   91.30%
+    Req/Sec   103.92     41.92   217.00     70.29%
+  49201 requests in 15.00s, 461.51MB read
+Requests/sec:   3279.50
+Transfer/sec:     30.76MB
+
+---------------------------------------------------------
+ Concurrency: 64 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.99ms   23.39ms 108.05ms   89.66%
+    Req/Sec    84.38     37.11   194.00     70.55%
+  50257 requests in 15.00s, 471.41MB read
+Requests/sec:   3349.48
+Transfer/sec:     31.42MB
+
+---------------------------------------------------------
+ Concurrency: 128 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.50ms   49.94ms 414.75ms   89.52%
+    Req/Sec    87.40     31.93   208.00     68.17%
+  52558 requests in 15.01s, 493.04MB read
+Requests/sec:   3502.51
+Transfer/sec:     32.86MB
+
+---------------------------------------------------------
+ Concurrency: 256 for servicestack-nginx-mysql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/mysql/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    76.54ms  117.89ms   2.06s    88.23%
+    Req/Sec    84.42     27.23   213.00     68.02%
+  50773 requests in 15.02s, 476.26MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:   3380.55
+Transfer/sec:     31.71MB

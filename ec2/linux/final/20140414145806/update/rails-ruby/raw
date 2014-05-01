@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 04:57:51 UTC 2014
+
+  System load:  0.1                Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    58.27ms   64.59ms 334.16ms   89.64%
+    Req/Sec    24.93      9.68    48.00     69.75%
+  1015 requests in 5.03s, 442.63KB read
+Requests/sec:    201.98
+Transfer/sec:     88.08KB
+
+---------------------------------------------------------
+ Running Warmup rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.25s   151.77ms   1.56s    90.06%
+    Req/Sec   101.58     32.01   142.00     50.00%
+  2994 requests in 15.24s, 1.28MB read
+Requests/sec:    196.40
+Transfer/sec:     85.65KB
+
+---------------------------------------------------------
+ Queries: 1 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   782.51ms   60.89ms   1.03s    76.11%
+    Req/Sec   162.48     11.24   189.00     69.70%
+  4898 requests in 15.07s, 1.94MB read
+Requests/sec:    325.01
+Transfer/sec:    131.65KB
+
+---------------------------------------------------------
+ Queries: 5 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.33s   383.36ms   2.60s    93.52%
+    Req/Sec    51.95     32.71   100.00     57.89%
+  1607 requests in 15.49s, 852.00KB read
+  Socket errors: connect 0, read 0, write 0, timeout 255
+Requests/sec:    103.71
+Transfer/sec:     54.99KB
+
+---------------------------------------------------------
+ Queries: 10 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.33s     1.19s    5.19s    85.52%
+    Req/Sec    26.82     21.51    59.00     47.06%
+  809 requests in 16.01s, 554.42KB read
+  Socket errors: connect 0, read 0, write 0, timeout 995
+Requests/sec:     50.53
+Transfer/sec:     34.63KB
+
+---------------------------------------------------------
+ Queries: 15 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.33s     2.39s    7.27s    87.46%
+    Req/Sec   694.51      2.27k   13.78k    92.52%
+  24804 requests in 15.39s, 7.86MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1070
+  Non-2xx or 3xx responses: 24326
+Requests/sec:   1611.69
+Transfer/sec:    523.08KB
+
+---------------------------------------------------------
+ Queries: 20 for rails-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.94s     5.66s   11.41s    52.41%
+    Req/Sec     2.39k     3.40k   12.34k    78.04%
+  74551 requests in 15.03s, 23.03MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1124
+  Non-2xx or 3xx responses: 74334
+Requests/sec:   4958.62
+Transfer/sec:      1.53MB

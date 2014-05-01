@@ -1,0 +1,124 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 23:36:31 PDT 2014
+
+  System load:  0.15               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/restexpress/mysql?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/restexpress/mysql?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    50.69ms  131.96ms 487.65ms   88.67%
+    Req/Sec   268.61    107.96   444.00     82.57%
+  10368 requests in 5.00s, 1.65MB read
+  Non-2xx or 3xx responses: 3159
+Requests/sec:   2072.43
+Transfer/sec:    337.03KB
+
+---------------------------------------------------------
+ Running Warmup restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/restexpress/mysql?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/restexpress/mysql?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   160.97ms  187.75ms   1.50s    84.94%
+    Req/Sec    64.91     42.13   200.00     73.45%
+  39478 requests in 15.04s, 6.50MB read
+  Non-2xx or 3xx responses: 16641
+Requests/sec:   2625.46
+Transfer/sec:    442.69KB
+
+---------------------------------------------------------
+ Queries: 1 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/restexpress/mysql?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/restexpress/mysql?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   229.79ms  302.84ms 911.47ms   83.21%
+    Req/Sec    65.68     48.27   229.00     67.85%
+  40912 requests in 15.04s, 5.88MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+  Non-2xx or 3xx responses: 16148
+Requests/sec:   2720.17
+Transfer/sec:    400.61KB
+
+---------------------------------------------------------
+ Queries: 5 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/restexpress/mysql?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/restexpress/mysql?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   137.85ms  139.96ms 545.67ms   87.91%
+    Req/Sec    67.14     39.22   167.00     70.55%
+  40017 requests in 15.04s, 8.79MB read
+  Socket errors: connect 0, read 0, write 0, timeout 6
+  Non-2xx or 3xx responses: 15012
+Requests/sec:   2661.30
+Transfer/sec:    598.84KB
+
+---------------------------------------------------------
+ Queries: 10 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/restexpress/mysql?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/restexpress/mysql?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   140.52ms  140.52ms 550.71ms   87.63%
+    Req/Sec    63.91     32.97   144.00     65.83%
+  38196 requests in 15.05s, 12.15MB read
+  Non-2xx or 3xx responses: 13623
+Requests/sec:   2537.46
+Transfer/sec:    826.28KB
+
+---------------------------------------------------------
+ Queries: 15 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/restexpress/mysql?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/restexpress/mysql?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   208.39ms  278.28ms 949.12ms   86.38%
+    Req/Sec    58.11     30.88   124.00     64.59%
+  34945 requests in 15.02s, 14.87MB read
+  Non-2xx or 3xx responses: 11456
+Requests/sec:   2326.47
+Transfer/sec:      0.99MB
+
+---------------------------------------------------------
+ Queries: 20 for restexpress-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/restexpress/mysql?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/restexpress/mysql?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   160.09ms  143.58ms 708.01ms   86.20%
+    Req/Sec    51.48     22.46   106.00     74.06%
+  31363 requests in 15.05s, 17.63MB read
+  Non-2xx or 3xx responses: 8087
+Requests/sec:   2084.11
+Transfer/sec:      1.17MB

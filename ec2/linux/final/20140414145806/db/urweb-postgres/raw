@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 12:25:20 UTC 2014
+
+  System load:  0.25               Processes:           77
+  Usage of /:   25.8% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.59ms  592.88us  10.22ms   66.68%
+    Req/Sec   135.90     24.83   200.00     81.84%
+  5286 requests in 5.00s, 798.99KB read
+Requests/sec:   1056.31
+Transfer/sec:    159.66KB
+
+---------------------------------------------------------
+ Running Warmup urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   232.83ms    3.51ms 243.08ms   68.78%
+    Req/Sec   549.97      6.61   569.00     68.33%
+  16488 requests in 15.00s, 2.43MB read
+Requests/sec:   1099.08
+Transfer/sec:    166.13KB
+
+---------------------------------------------------------
+ Concurrency: 8 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.46ms  767.00us  11.82ms   78.94%
+    Req/Sec   555.80     58.13   733.00     79.60%
+  16139 requests in 15.00s, 2.38MB read
+Requests/sec:   1075.72
+Transfer/sec:    162.60KB
+
+---------------------------------------------------------
+ Concurrency: 16 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.75ms    0.86ms  17.71ms   66.79%
+    Req/Sec   550.80     32.74   666.00     61.16%
+  16268 requests in 15.00s, 2.40MB read
+Requests/sec:   1084.27
+Transfer/sec:    163.89KB
+
+---------------------------------------------------------
+ Concurrency: 32 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.48ms    1.08ms  33.49ms   69.37%
+    Req/Sec   546.87     21.65   622.00     62.77%
+  16276 requests in 15.00s, 2.40MB read
+Requests/sec:   1084.79
+Transfer/sec:    163.97KB
+
+---------------------------------------------------------
+ Concurrency: 64 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    58.98ms    1.44ms  64.28ms   67.80%
+    Req/Sec   543.68     10.75   571.00     79.58%
+  16247 requests in 15.00s, 2.40MB read
+Requests/sec:   1082.93
+Transfer/sec:    163.68KB
+
+---------------------------------------------------------
+ Concurrency: 128 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   117.59ms    3.01ms 136.78ms   76.67%
+    Req/Sec   544.62     12.34   571.00     80.65%
+  16321 requests in 15.00s, 2.41MB read
+Requests/sec:   1088.00
+Transfer/sec:    164.45KB
+
+---------------------------------------------------------
+ Concurrency: 256 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   236.56ms    9.19ms 303.48ms   97.18%
+    Req/Sec   541.00     12.43   559.00     93.33%
+  16215 requests in 15.00s, 2.39MB read
+Requests/sec:   1080.88
+Transfer/sec:    163.38KB

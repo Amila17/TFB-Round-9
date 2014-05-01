@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 01:59:15 PDT 2014
+
+  System load:  0.07               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/queries?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us  100.00%
+    Req/Sec     0.00      0.00     0.00    100.00%
+  7 requests in 6.00s, 638.96KB read
+  Socket errors: connect 0, read 0, write 0, timeout 19
+  Non-2xx or 3xx responses: 3
+Requests/sec:      1.17
+Transfer/sec:    106.46KB
+
+---------------------------------------------------------
+ Running Warmup sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.87s   569.37ms   3.62s    90.37%
+    Req/Sec     8.63      3.24    18.00     65.22%
+  1098 requests in 16.01s, 49.84MB read
+  Socket errors: connect 0, read 21, write 0, timeout 704
+  Non-2xx or 3xx responses: 242
+Requests/sec:     68.60
+Transfer/sec:      3.11MB
+
+---------------------------------------------------------
+ Queries: 1 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.59s   230.70ms   1.97s    78.38%
+    Req/Sec    16.77      3.89    27.00     69.91%
+  2035 requests in 15.45s, 47.56MB read
+  Socket errors: connect 0, read 20, write 0, timeout 176
+  Non-2xx or 3xx responses: 230
+Requests/sec:    131.69
+Transfer/sec:      3.08MB
+
+---------------------------------------------------------
+ Queries: 5 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.31s     1.55s    6.84s    84.38%
+    Req/Sec     4.20      2.16     9.00     64.06%
+  537 requests in 15.43s, 53.34MB read
+  Socket errors: connect 0, read 22, write 0, timeout 1169
+  Non-2xx or 3xx responses: 259
+Requests/sec:     34.80
+Transfer/sec:      3.46MB
+
+---------------------------------------------------------
+ Queries: 10 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.89s     3.32s    9.36s    85.00%
+    Req/Sec     2.74k     7.02k   35.56k    86.84%
+  390959 requests in 16.00s, 108.67MB read
+  Socket errors: connect 0, read 11, write 0, timeout 1269
+  Non-2xx or 3xx responses: 390880
+Requests/sec:  24432.91
+Transfer/sec:      6.79MB
+
+---------------------------------------------------------
+ Queries: 15 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.06s     5.13s   11.53s    71.18%
+    Req/Sec     5.90k    10.70k   58.89k    81.39%
+  741905 requests in 16.00s, 158.61MB read
+  Socket errors: connect 0, read 1, write 0, timeout 1277
+  Non-2xx or 3xx responses: 741881
+Requests/sec:  46361.32
+Transfer/sec:      9.91MB
+
+---------------------------------------------------------
+ Queries: 20 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/queries?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/queries?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.45s     7.28s   15.05s    56.03%
+    Req/Sec    11.28k    11.95k   47.89k    81.58%
+  1336764 requests in 16.00s, 244.19MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1216
+  Non-2xx or 3xx responses: 1336755
+Requests/sec:  83545.69
+Transfer/sec:     15.26MB

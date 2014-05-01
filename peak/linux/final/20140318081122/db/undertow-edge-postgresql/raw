@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 05:38:41 PDT 2014
+
+  System load:  0.05               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db/postgresql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.32ms   29.88ms 120.48ms   93.35%
+    Req/Sec     3.30k     1.22k    4.55k    85.27%
+  117435 requests in 5.00s, 18.90MB read
+Requests/sec:  23491.84
+Transfer/sec:      3.78MB
+
+---------------------------------------------------------
+ Running Warmup undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/postgresql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   104.11ms  228.88ms 629.43ms   83.47%
+    Req/Sec     2.53k     1.23k    5.67k    74.87%
+  1417858 requests in 14.99s, 228.21MB read
+  Socket errors: connect 0, read 0, write 0, timeout 2
+Requests/sec:  94557.66
+Transfer/sec:     15.22MB
+
+---------------------------------------------------------
+ Concurrency: 8 for undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/postgresql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   110.22ms  298.58ms 921.08ms   88.06%
+    Req/Sec     3.64k     1.36k    4.67k    87.98%
+  417183 requests in 15.09s, 67.15MB read
+Requests/sec:  27651.51
+Transfer/sec:      4.45MB
+
+---------------------------------------------------------
+ Concurrency: 16 for undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/postgresql
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    75.18ms  224.54ms 748.46ms   89.98%
+    Req/Sec     3.46k     1.17k    4.33k    89.80%
+  788323 requests in 15.00s, 126.88MB read
+Requests/sec:  52560.95
+Transfer/sec:      8.46MB
+
+---------------------------------------------------------
+ Concurrency: 32 for undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/postgresql
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   144.12ms  331.36ms 909.01ms   84.16%
+    Req/Sec     2.56k     1.14k    3.89k    83.88%
+  1169512 requests in 15.00s, 188.24MB read
+Requests/sec:  77986.35
+Transfer/sec:     12.55MB
+
+---------------------------------------------------------
+ Concurrency: 64 for undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/postgresql
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   135.63ms  281.48ms 724.98ms   81.25%
+    Req/Sec     1.99k     1.03k    3.78k    74.90%
+  1167548 requests in 15.37s, 187.92MB read
+Requests/sec:  75947.56
+Transfer/sec:     12.22MB
+
+---------------------------------------------------------
+ Concurrency: 128 for undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/postgresql
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   148.96ms  298.43ms 753.48ms   80.28%
+    Req/Sec     2.46k     1.30k    5.33k    72.72%
+  1407098 requests in 15.00s, 226.48MB read
+Requests/sec:  93837.08
+Transfer/sec:     15.10MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-edge-postgresql
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/postgresql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/postgresql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   188.04ms  365.00ms 909.41ms   79.40%
+    Req/Sec     2.39k     1.31k    5.55k    71.52%
+  1370042 requests in 14.99s, 220.52MB read
+Requests/sec:  91403.97
+Transfer/sec:     14.71MB

@@ -1,0 +1,105 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 03:31:45 PDT 2014
+
+  System load:  0.15               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer stream-postgresql-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   413.82us  120.15us   2.33ms   79.60%
+    Req/Sec     2.51k   227.96     3.22k    71.19%
+  94457 requests in 5.00s, 19.18MB read
+Requests/sec:  18892.78
+Transfer/sec:      3.84MB
+
+---------------------------------------------------------
+ Running Warmup stream-postgresql-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.93ms   29.49ms   1.07s    95.89%
+    Req/Sec     3.62k   675.10     6.40k    68.74%
+  426419 requests in 15.00s, 86.60MB read
+Requests/sec:  28429.96
+Transfer/sec:      5.77MB
+
+---------------------------------------------------------
+ Concurrency: 256 for stream-postgresql-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   141.85ms  127.17ms   1.22s    88.17%
+    Req/Sec     3.64k   309.91     4.50k    68.37%
+  435176 requests in 15.00s, 88.38MB read
+Requests/sec:  29011.98
+Transfer/sec:      5.89MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for stream-postgresql-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   530.40ms  864.92ms   7.70s    89.85%
+    Req/Sec     3.71k   467.69     4.77k    78.01%
+  444560 requests in 15.00s, 90.29MB read
+  Socket errors: connect 0, read 0, write 0, timeout 982
+Requests/sec:  29637.16
+Transfer/sec:      6.02MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for stream-postgresql-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.55s     3.41s   14.68s    88.71%
+    Req/Sec     3.41k   401.14     5.05k    85.38%
+  407635 requests in 15.00s, 85.93MB read
+  Socket errors: connect 0, read 443885, write 0, timeout 12139
+  Non-2xx or 3xx responses: 23406
+Requests/sec:  27171.10
+Transfer/sec:      5.73MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for stream-postgresql-raw
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.12s     4.87s   14.82s    79.96%
+    Req/Sec     3.25k   256.44     3.99k    69.63%
+  390578 requests in 15.01s, 82.88MB read
+  Socket errors: connect 11, read 556521, write 0, timeout 38750
+  Non-2xx or 3xx responses: 26476
+Requests/sec:  26019.70
+Transfer/sec:      5.52MB

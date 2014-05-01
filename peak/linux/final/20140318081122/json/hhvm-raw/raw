@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 15:54:04 PDT 2014
+
+  System load:  0.04               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   217.05us   28.55us 496.00us   82.22%
+    Req/Sec     4.77k   263.40     5.55k    58.86%
+  180360 requests in 5.00s, 26.66MB read
+Requests/sec:  36079.83
+Transfer/sec:      5.33MB
+
+---------------------------------------------------------
+ Running Warmup hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.16ms  761.92us  75.27ms   73.77%
+    Req/Sec     1.52k   177.38     2.67k    74.26%
+  859337 requests in 14.99s, 127.03MB read
+Requests/sec:  57308.42
+Transfer/sec:      8.47MB
+
+---------------------------------------------------------
+ Concurrency: 8 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   250.35us   41.34us   0.96ms   74.11%
+    Req/Sec     4.13k   237.71     4.78k    71.61%
+  469439 requests in 15.00s, 69.39MB read
+Requests/sec:  31297.60
+Transfer/sec:      4.63MB
+
+---------------------------------------------------------
+ Concurrency: 16 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   310.54us   63.40us   0.97ms   66.72%
+    Req/Sec     3.34k   195.83     4.11k    59.58%
+  760925 requests in 15.00s, 112.48MB read
+Requests/sec:  50737.64
+Transfer/sec:      7.50MB
+
+---------------------------------------------------------
+ Concurrency: 32 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   523.59us   91.43us   1.81ms   68.74%
+    Req/Sec     2.00k   127.30     2.44k    79.29%
+  908782 requests in 14.99s, 134.34MB read
+Requests/sec:  60605.74
+Transfer/sec:      8.96MB
+
+---------------------------------------------------------
+ Concurrency: 64 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   665.86us  104.19us   1.56ms   68.23%
+    Req/Sec     1.57k    93.71     2.00k    82.83%
+  894277 requests in 14.99s, 132.19MB read
+Requests/sec:  59643.51
+Transfer/sec:      8.82MB
+
+---------------------------------------------------------
+ Concurrency: 128 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.04ms  424.02us   3.60ms   66.10%
+    Req/Sec     1.55k   141.35     2.11k    64.19%
+  881856 requests in 15.00s, 130.36MB read
+Requests/sec:  58806.83
+Transfer/sec:      8.69MB
+
+---------------------------------------------------------
+ Concurrency: 256 for hhvm-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.31ms  755.87us  74.05ms   72.40%
+    Req/Sec     1.47k   159.30     2.22k    65.90%
+  830974 requests in 15.00s, 122.83MB read
+Requests/sec:  55414.59
+Transfer/sec:      8.19MB

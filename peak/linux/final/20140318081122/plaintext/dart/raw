@@ -1,0 +1,104 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 11:26:18 PDT 2014
+
+  System load:  0.07               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   434.16us  646.38us  12.12ms   99.12%
+    Req/Sec     2.71k   401.27     3.33k    82.96%
+  101197 requests in 5.00s, 16.88MB read
+Requests/sec:  20240.31
+Transfer/sec:      3.38MB
+
+---------------------------------------------------------
+ Running Warmup dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.37ms    6.95ms  54.94ms   92.75%
+    Req/Sec     1.40k   384.11     3.15k    73.41%
+  810041 requests in 15.00s, 135.15MB read
+Requests/sec:  54005.87
+Transfer/sec:      9.01MB
+
+---------------------------------------------------------
+ Concurrency: 256 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    69.47ms   18.32ms 150.98ms   69.18%
+    Req/Sec     1.40k   144.34     1.96k    69.70%
+  840982 requests in 15.00s, 140.31MB read
+Requests/sec:  56062.12
+Transfer/sec:      9.35MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   273.48ms   75.77ms   1.46s    74.64%
+    Req/Sec     1.44k   153.39     2.30k    92.77%
+  863266 requests in 15.00s, 144.03MB read
+Requests/sec:  57564.45
+Transfer/sec:      9.60MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.02s   741.67ms   8.79s    85.27%
+    Req/Sec     1.44k   198.31     2.37k    77.90%
+  859367 requests in 14.99s, 143.39MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3529
+Requests/sec:  57314.33
+Transfer/sec:      9.56MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for dart
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.17s     5.03s   13.96s    58.95%
+    Req/Sec     1.39k   333.03     3.60k    78.51%
+  850663 requests in 15.00s, 141.99MB read
+  Socket errors: connect 0, read 3872, write 0, timeout 67026
+  Non-2xx or 3xx responses: 193
+Requests/sec:  56692.09
+Transfer/sec:      9.46MB

@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Apr 14 18:54:35 UTC 2014
+
+  System load:  1.43               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 9%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    12.81ms    3.95ms  25.76ms   68.37%
+    Req/Sec    79.96     16.04   121.00     66.45%
+  3174 requests in 5.01s, 389.92KB read
+Requests/sec:    633.11
+Transfer/sec:     77.78KB
+
+---------------------------------------------------------
+ Running Warmup elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    76.23ms   24.27ms 403.88ms   91.77%
+    Req/Sec     1.70k    96.41     1.87k    72.00%
+  49830 requests in 15.01s, 5.98MB read
+Requests/sec:   3320.88
+Transfer/sec:    407.91KB
+
+---------------------------------------------------------
+ Concurrency: 8 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.88ms    3.82ms  23.64ms   58.73%
+    Req/Sec   419.92     82.74   666.00     67.97%
+  12384 requests in 15.00s, 1.49MB read
+Requests/sec:    825.46
+Transfer/sec:    101.39KB
+
+---------------------------------------------------------
+ Concurrency: 16 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.30ms    3.23ms  25.47ms   83.56%
+    Req/Sec     1.22k   336.68     1.92k    70.76%
+  35367 requests in 15.00s, 4.24MB read
+Requests/sec:   2357.80
+Transfer/sec:    289.61KB
+
+---------------------------------------------------------
+ Concurrency: 32 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.05ms    1.41ms  28.13ms   81.79%
+    Req/Sec     1.81k   155.97     2.20k    78.52%
+  53062 requests in 15.00s, 6.36MB read
+Requests/sec:   3537.32
+Transfer/sec:    434.49KB
+
+---------------------------------------------------------
+ Concurrency: 64 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.04ms    3.71ms  43.56ms   66.60%
+    Req/Sec     1.79k   116.12     2.15k    69.32%
+  53127 requests in 15.00s, 6.37MB read
+Requests/sec:   3541.38
+Transfer/sec:    434.99KB
+
+---------------------------------------------------------
+ Concurrency: 128 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    34.16ms    6.70ms  72.93ms   75.25%
+    Req/Sec     1.89k   114.30     2.09k    76.81%
+  56180 requests in 15.00s, 6.74MB read
+Requests/sec:   3744.83
+Transfer/sec:    459.99KB
+
+---------------------------------------------------------
+ Concurrency: 256 for elli
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    71.26ms    9.98ms 107.28ms   67.66%
+    Req/Sec     1.81k    95.00     2.01k    67.52%
+  53990 requests in 15.00s, 6.48MB read
+Requests/sec:   3598.19
+Transfer/sec:    441.97KB

@@ -1,0 +1,485 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: ninja-standalone
+self.results['completed']: {}
+
+=====================================================
+  Beginning ninja-standalone
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting ninja-standalone
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+mysql start/running, process 10693
+mongodb start/running, process 10759
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ninja-standalone 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.3:clean (default-clean) @ ninja-standalone ---
+[INFO] Deleting file set: /home/ubuntu/FrameworkBenchmarks/ninja-standalone/target (included: [**], excluded: [])
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-banned-dependencies) @ ninja-standalone ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ ninja-standalone ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ ninja-standalone ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/ubuntu/FrameworkBenchmarks/ninja-standalone/target/classes
+[WARNING] /home/ubuntu/FrameworkBenchmarks/ninja-standalone/src/main/java/dao/FortuneDao.java: /home/ubuntu/FrameworkBenchmarks/ninja-standalone/src/main/java/dao/FortuneDao.java uses unchecked or unsafe operations.
+[WARNING] /home/ubuntu/FrameworkBenchmarks/ninja-standalone/src/main/java/dao/FortuneDao.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (default-cli) @ ninja-standalone ---
+[INFO] Building jar: /home/ubuntu/FrameworkBenchmarks/ninja-standalone/target/ninja-standalone-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 25.184s
+[INFO] Finished at: Tue Apr 15 00:29:39 UTC 2014
+[INFO] Final Memory: 52M/650M
+[INFO] ------------------------------------------------------------------------
+ _______  .___ _______        ____.  _____   
+ \      \ |   |\      \      |    | /  _  \  
+ /   |   \|   |/   |   \     |    |/  /_\  \ 
+/    |    \   /    |    \/\__|    /    |    \  http://www.ninjaframework.org
+\____|__  /___\____|__  /\________\____|__  /  @ninjaframework
+     web\/framework   \/                  \/   2.5.1
+
+
+-----------------------------------------------------
+  VERIFYING JSON (/json)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:40 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: application/json;charset=UTF-8
+Content-Length: 27
+Server: Jetty(9.0.z-SNAPSHOT)
+
+{"message":"Hello, World!"}
+
+VALIDATING JSON ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING DB (/db)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:40 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: application/json;charset=UTF-8
+Content-Length: 37
+Server: Jetty(9.0.z-SNAPSHOT)
+
+{"id":6838,"randomNumber":1005006526}
+
+VALIDATING DB ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING QUERY (/queries?queries=2)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:40 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: application/json;charset=UTF-8
+Content-Length: 79
+Server: Jetty(9.0.z-SNAPSHOT)
+
+[{"id":2779,"randomNumber":-1759468376},{"id":5681,"randomNumber":-1624333287}]
+
+/queries?queries=2 - PASS
+
+-----------------------------------------------------
+
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:40 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: application/json;charset=UTF-8
+Content-Length: 39
+Server: Jetty(9.0.z-SNAPSHOT)
+
+[{"id":4944,"randomNumber":-328917115}]
+
+/queries?queries=0 - PASS
+
+-----------------------------------------------------
+
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:40 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: application/json;charset=UTF-8
+Content-Length: 39
+Server: Jetty(9.0.z-SNAPSHOT)
+
+[{"id":8777,"randomNumber":-170607650}]
+
+/queries?queries=foo - PASS
+
+-----------------------------------------------------
+
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:42 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: application/json;charset=UTF-8
+Content-Length: 18923
+Server: Jetty(9.0.z-SNAPSHOT)
+
+[{"id":5609,"randomNumber":-1147806211},{"id":2819,"randomNumber":-554683821},{"id":8148,"randomNumber":824060389},{"id":8433,"randomNumber":-1197205829},{"id":5720,"randomNumber":-1037588318},{"id":5174,"randomNumber":-722883903},{"id":3113,"randomNumber":-1971549383},{"id":601,"randomNumber":-1033951093},{"id":1459,"randomNumber":-354094925},{"id":8800,"randomNumber":-1420806118},{"id":599,"randomNumber":1765039063},{"id":6598,"randomNumber":1005145875},{"id":5096,"randomNumber":1292253066},{"id":7279,"randomNumber":1211648556},{"id":4768,"randomNumber":-1704064672},{"id":2942,"randomNumber":-236544355},{"id":5020,"randomNumber":1176849852},{"id":1238,"randomNumber":1411278317},{"id":7276,"randomNumber":69674484},{"id":6151,"randomNumber":-412633866},{"id":4908,"randomNumber":-582067930},{"id":5461,"randomNumber":-1236941406},{"id":9946,"randomNumber":-601220991},{"id":3870,"randomNumber":-1395579946},{"id":5301,"randomNumber":1280184166},{"id":75,"randomNumber":719978486},{"id":6689,"randomNumber":-238843289},{"id":5283,"randomNumber":-1430301063},{"id":7902,"randomNumber":-1988853106},{"id":6100,"randomNumber":785955520},{"id":6773,"randomNumber":138947666},{"id":4341,"randomNumber":927984643},{"id":1187,"randomNumber":-170111739},{"id":5600,"randomNumber":73134659},{"id":9302,"randomNumber":-1384444504},{"id":310,"randomNumber":-1832421207},{"id":1773,"randomNumber":-972523293},{"id":8195,"randomNumber":750442704},{"id":4642,"randomNumber":-931397748},{"id":2202,"randomNumber":151543421},{"id":5708,"randomNumber":129093378},{"id":1074,"randomNumber":-1009051687},{"id":762,"randomNumber":1514651375},{"id":641,"randomNumber":445466934},{"id":8278,"randomNumber":-1073848874},{"id":1936,"randomNumber":2118774550},{"id":5361,"randomNumber":-1103441440},{"id":1103,"randomNumber":816249783},{"id":8809,"randomNumber":1632713719},{"id":2789,"randomNumber":-1357500615},{"id":7137,"randomNumber":1173483305},{"id":5477,"randomNumber":1567640969},{"id":3469,"randomNumber":1627228078},{"id":968,"randomNumber":1586375056},{"id":5832,"randomNumber":-257943805},{"id":9389,"randomNumber":35168014},{"id":9782,"randomNumber":168365243},{"id":649,"randomNumber":1358291364},{"id":9088,"randomNumber":923292839},{"id":5927,"randomNumber":956082977},{"id":4981,"randomNumber":-1145060383},{"id":2190,"randomNumber":-1886570321},{"id":6589,"randomNumber":1214675936},{"id":299,"randomNumber":486920398},{"id":2701,"randomNumber":670410754},{"id":9719,"randomNumber":-883947387},{"id":63,"randomNumber":1790164794},{"id":8138,"randomNumber":921424385},{"id":3091,"randomNumber":-2038081570},{"id":6128,"randomNumber":11247348},{"id":7991,"randomNumber":1509944574},{"id":2966,"randomNumber":1265249318},{"id":1182,"randomNumber":1458834091},{"id":4803,"randomNumber":11690370},{"id":7221,"randomNumber":933577549},{"id":778,"randomNumber":-1566752252},{"id":3358,"randomNumber":976335996},{"id":4999,"randomNumber":1791503986},{"id":7136,"randomNumber":1878647351},{"id":407,"randomNumber":637416329},{"id":1162,"randomNumber":717998783},{"id":9513,"randomNumber":2072137989},{"id":3072,"randomNumber":-1667857280},{"id":8093,"randomNumber":-2092882103},{"id":5681,"randomNumber":-1624333287},{"id":4197,"randomNumber":2011780646},{"id":69,"randomNumber":1717015466},{"id":3906,"randomNumber":-1394742727},{"id":3762,"randomNumber":1604209651},{"id":977,"randomNumber":1130343344},{"id":6458,"randomNumber":-1432556964},{"id":8018,"randomNumber":-991306197},{"id":1255,"randomNumber":446703527},{"id":3126,"randomNumber":-922477008},{"id":7475,"randomNumber":765161426},{"id":7747,"randomNumber":-898189250},{"id":8172,"randomNumber":550828487},{"id":6284,"randomNumber":410584101},{"id":308,"randomNumber":1536562025},{"id":2995,"randomNumber":-342773778},{"id":2222,"randomNumber":-390311652},{"id":4625,"randomNumber":-14137780},{"id":8460,"randomNumber":-1469942820},{"id":656,"randomNumber":-1881354512},{"id":6718,"randomNumber":1058746224},{"id":8998,"randomNumber":-809687359},{"id":2878,"randomNumber":-691447947},{"id":3540,"randomNumber":1756490038},{"id":20,"randomNumber":-616813467},{"id":4966,"randomNumber":1823460472},{"id":8592,"randomNumber":440510003},{"id":2284,"randomNumber":2080595751},{"id":7665,"randomNumber":-1615091256},{"id":8612,"randomNumber":1670053209},{"id":7356,"randomNumber":-1407245246},{"id":7139,"randomNumber":2102079288},{"id":3581,"randomNumber":1983717975},{"id":1904,"randomNumber":-1048151812},{"id":3108,"randomNumber":-1167159040},{"id":4335,"randomNumber":-1282673300},{"id":9294,"randomNumber":797663874},{"id":2517,"randomNumber":-1620893172},{"id":242,"randomNumber":-1940361978},{"id":1048,"randomNumber":1448355112},{"id":9834,"randomNumber":-265218949},{"id":9618,"randomNumber":-228507242},{"id":318,"randomNumber":297069572},{"id":8816,"randomNumber":-1004121288},{"id":9716,"randomNumber":-871883225},{"id":4963,"randomNumber":-1627035230},{"id":2760,"randomNumber":1967592248},{"id":7300,"randomNumber":-146626380},{"id":3698,"randomNumber":-1760367012},{"id":9755,"randomNumber":-61272966},{"id":8789,"randomNumber":-283577511},{"id":1213,"randomNumber":1564258292},{"id":6559,"randomNumber":-1174635961},{"id":8528,"randomNumber":2068800392},{"id":1767,"randomNumber":2040573285},{"id":6451,"randomNumber":-1404399414},{"id":556,"randomNumber":-1327893035},{"id":4388,"randomNumber":573374145},{"id":4981,"randomNumber":-1145060383},{"id":7615,"randomNumber":1684623973},{"id":2802,"randomNumber":-685181612},{"id":7435,"randomNumber":-868485058},{"id":2218,"randomNumber":-1213554885},{"id":171,"randomNumber":-504244426},{"id":4067,"randomNumber":-289425242},{"id":302,"randomNumber":-1467633219},{"id":9513,"randomNumber":2072137989},{"id":9241,"randomNumber":1778894913},{"id":4094,"randomNumber":1392841143},{"id":2650,"randomNumber":1869647227},{"id":238,"randomNumber":1737452499},{"id":7277,"randomNumber":-1993471513},{"id":8320,"randomNumber":1858126642},{"id":533,"randomNumber":1544347905},{"id":1791,"randomNumber":-1560930543},{"id":711,"randomNumber":1989688496},{"id":7560,"randomNumber":1206369045},{"id":3632,"randomNumber":1496892213},{"id":4561,"randomNumber":-2113864142},{"id":6993,"randomNumber":-706760915},{"id":2355,"randomNumber":568951169},{"id":3826,"randomNumber":-1876305090},{"id":5287,"randomNumber":1756659408},{"id":4801,"randomNumber":1589252773},{"id":7894,"randomNumber":-729178639},{"id":4982,"randomNumber":1826232248},{"id":5189,"randomNumber":-71143461},{"id":3723,"randomNumber":1469127843},{"id":6987,"randomNumber":2116008145},{"id":8386,"randomNumber":716206349},{"id":9924,"randomNumber":1212261360},{"id":7719,"randomNumber":-1413587470},{"id":5186,"randomNumber":2068290084},{"id":1074,"randomNumber":-1009051687},{"id":334,"randomNumber":878687678},{"id":90,"randomNumber":-1803493179},{"id":8248,"randomNumber":1769986939},{"id":5954,"randomNumber":-1870350306},{"id":1976,"randomNumber":-421624134},{"id":8148,"randomNumber":824060389},{"id":1733,"randomNumber":1193625450},{"id":4021,"randomNumber":-349401733},{"id":8320,"randomNumber":1858126642},{"id":5829,"randomNumber":223137442},{"id":1231,"randomNumber":1100645728},{"id":4196,"randomNumber":1679460620},{"id":7003,"randomNumber":-621809470},{"id":5692,"randomNumber":-1041383150},{"id":1260,"randomNumber":561414003},{"id":1206,"randomNumber":-149044960},{"id":1329,"randomNumber":-138524323},{"id":4846,"randomNumber":705701458},{"id":1045,"randomNumber":843678219},{"id":3224,"randomNumber":1221330108},{"id":2485,"randomNumber":1167673392},{"id":2831,"randomNumber":173597484},{"id":7399,"randomNumber":1626601322},{"id":8250,"randomNumber":1608534523},{"id":1324,"randomNumber":2030566102},{"id":8737,"randomNumber":-1041538071},{"id":9507,"randomNumber":686416286},{"id":4118,"randomNumber":1504834445},{"id":8047,"randomNumber":-668263862},{"id":3318,"randomNumber":-1280749277},{"id":212,"randomNumber":-2050276414},{"id":4061,"randomNumber":-1586530510},{"id":620,"randomNumber":-215682978},{"id":1891,"randomNumber":659652751},{"id":2160,"randomNumber":1053480442},{"id":8656,"randomNumber":116559632},{"id":5590,"randomNumber":1866337675},{"id":9651,"randomNumber":524467644},{"id":8232,"randomNumber":979340785},{"id":920,"randomNumber":828976174},{"id":5628,"randomNumber":2132401012},{"id":4356,"randomNumber":1697120714},{"id":9930,"randomNumber":-665806883},{"id":8818,"randomNumber":1626154322},{"id":5015,"randomNumber":-1621442441},{"id":8211,"randomNumber":-1210173999},{"id":1830,"randomNumber":-948385649},{"id":1019,"randomNumber":370021171},{"id":1901,"randomNumber":1947168273},{"id":511,"randomNumber":2107376454},{"id":6173,"randomNumber":-654685557},{"id":7139,"randomNumber":2102079288},{"id":6947,"randomNumber":432750886},{"id":4572,"randomNumber":1766255971},{"id":501,"randomNumber":-800330970},{"id":3105,"randomNumber":712930791},{"id":7200,"randomNumber":-522899796},{"id":4871,"randomNumber":141507045},{"id":6329,"randomNumber":-2052249092},{"id":9459,"randomNumber":-501628995},{"id":7900,"randomNumber":1356326960},{"id":9825,"randomNumber":1327242040},{"id":3469,"randomNumber":1627228078},{"id":10000,"randomNumber":1193215310},{"id":6423,"randomNumber":-1474374669},{"id":5050,"randomNumber":112209324},{"id":7983,"randomNumber":1054848346},{"id":1517,"randomNumber":605093439},{"id":5830,"randomNumber":1282594588},{"id":7707,"randomNumber":-1878856336},{"id":2154,"randomNumber":483424370},{"id":4280,"randomNumber":1737121987},{"id":9496,"randomNumber":1820291091},{"id":95,"randomNumber":-1994933810},{"id":8644,"randomNumber":-584625511},{"id":9428,"randomNumber":597014138},{"id":8119,"randomNumber":94817945},{"id":2783,"randomNumber":669953261},{"id":7415,"randomNumber":764821833},{"id":6561,"randomNumber":-1101571661},{"id":969,"randomNumber":631725790},{"id":7241,"randomNumber":-1497761000},{"id":861,"randomNumber":-718864730},{"id":2759,"randomNumber":-392916027},{"id":6774,"randomNumber":-292485089},{"id":8380,"randomNumber":-1981674997},{"id":7892,"randomNumber":1658006561},{"id":831,"randomNumber":-1293396819},{"id":8740,"randomNumber":919654395},{"id":4067,"randomNumber":-289425242},{"id":9313,"randomNumber":-1820167921},{"id":4510,"randomNumber":182531116},{"id":5071,"randomNumber":-1920773919},{"id":9675,"randomNumber":1783645286},{"id":9681,"randomNumber":1068617149},{"id":7999,"randomNumber":1848106646},{"id":772,"randomNumber":-479939446},{"id":9971,"randomNumber":-1860229020},{"id":4618,"randomNumber":1786944133},{"id":9500,"randomNumber":-875294863},{"id":7740,"randomNumber":641638843},{"id":1311,"randomNumber":596804647},{"id":6640,"randomNumber":-1666183935},{"id":5465,"randomNumber":1334053039},{"id":3702,"randomNumber":443421743},{"id":8489,"randomNumber":-34689198},{"id":1651,"randomNumber":2027798531},{"id":3933,"randomNumber":97728192},{"id":6013,"randomNumber":1321969578},{"id":2661,"randomNumber":-1600574122},{"id":8134,"randomNumber":14588635},{"id":7773,"randomNumber":417655999},{"id":5097,"randomNumber":1230467381},{"id":6158,"randomNumber":1468470299},{"id":410,"randomNumber":-1460491899},{"id":9719,"randomNumber":-883947387},{"id":4977,"randomNumber":1674617810},{"id":4530,"randomNumber":2142206344},{"id":4761,"randomNumber":-1875965749},{"id":7864,"randomNumber":1931137386},{"id":5870,"randomNumber":1988467678},{"id":3736,"randomNumber":-371452179},{"id":8287,"randomNumber":-326362555},{"id":442,"randomNumber":-946905623},{"id":3562,"randomNumber":-978621295},{"id":3673,"randomNumber":1487286190},{"id":2403,"randomNumber":924718503},{"id":8798,"randomNumber":1561263637},{"id":6855,"randomNumber":-665344996},{"id":2898,"randomNumber":-1067076098},{"id":2531,"randomNumber":627839791},{"id":4226,"randomNumber":1259838091},{"id":1661,"randomNumber":274224605},{"id":3172,"randomNumber":-2094756725},{"id":3053,"randomNumber":-2138043504},{"id":4207,"randomNumber":1144718962},{"id":7659,"randomNumber":1400454048},{"id":6742,"randomNumber":285952696},{"id":8298,"randomNumber":1515647811},{"id":7441,"randomNumber":-12711558},{"id":1855,"randomNumber":-1668725852},{"id":9240,"randomNumber":386824353},{"id":3508,"randomNumber":1093479431},{"id":6052,"randomNumber":-587217974},{"id":3936,"randomNumber":1723163285},{"id":5444,"randomNumber":915478299},{"id":9033,"randomNumber":-841193284},{"id":4551,"randomNumber":-1352033937},{"id":3960,"randomNumber":-1157256134},{"id":8771,"randomNumber":-1312699482},{"id":4440,"randomNumber":221828391},{"id":3952,"randomNumber":-1552724012},{"id":160,"randomNumber":-1909460011},{"id":7754,"randomNumber":-1689781308},{"id":5751,"randomNumber":377057066},{"id":6572,"randomNumber":615176962},{"id":2099,"randomNumber":928170879},{"id":9391,"randomNumber":-1030819586},{"id":6551,"randomNumber":-751301840},{"id":1345,"randomNumber":-1491167533},{"id":8132,"randomNumber":418307403},{"id":4763,"randomNumber":1615155320},{"id":9727,"randomNumber":1356053225},{"id":5346,"randomNumber":-306459264},{"id":7324,"randomNumber":-1781315682},{"id":958,"randomNumber":-1739581107},{"id":3862,"randomNumber":331851825},{"id":6158,"randomNumber":1468470299},{"id":9739,"randomNumber":-703906576},{"id":6698,"randomNumber":1938687187},{"id":2845,"randomNumber":2040551536},{"id":1253,"randomNumber":-1550218740},{"id":8608,"randomNumber":867465996},{"id":9565,"randomNumber":-984001506},{"id":8120,"randomNumber":-1391884191},{"id":6152,"randomNumber":517857481},{"id":1171,"randomNumber":919351801},{"id":8830,"randomNumber":-445849951},{"id":8876,"randomNumber":1856455748},{"id":6140,"randomNumber":1155773440},{"id":96,"randomNumber":-57741229},{"id":1251,"randomNumber":-2062033232},{"id":4900,"randomNumber":-1209729584},{"id":26,"randomNumber":-1778677155},{"id":4958,"randomNumber":-2027916199},{"id":4989,"randomNumber":241461929},{"id":8382,"randomNumber":237850028},{"id":7607,"randomNumber":1261927553},{"id":5037,"randomNumber":-266211758},{"id":3169,"randomNumber":670595817},{"id":5330,"randomNumber":1515830530},{"id":955,"randomNumber":-1899824761},{"id":2863,"randomNumber":-1981925025},{"id":2147,"randomNumber":2103605365},{"id":8339,"randomNumber":1395220783},{"id":9248,"randomNumber":-232081245},{"id":8141,"randomNumber":-2133666710},{"id":241,"randomNumber":1197053969},{"id":782,"randomNumber":-37468483},{"id":121,"randomNumber":1426741896},{"id":2362,"randomNumber":-886749314},{"id":1705,"randomNumber":-1516073048},{"id":3087,"randomNumber":221481121},{"id":108,"randomNumber":-962583629},{"id":6452,"randomNumber":577111035},{"id":3624,"randomNumber":1591358305},{"id":9043,"randomNumber":1942822436},{"id":7758,"randomNumber":687500241},{"id":3494,"randomNumber":1864935198},{"id":8192,"randomNumber":1429704780},{"id":8568,"randomNumber":-1845550960},{"id":1305,"randomNumber":-648537646},{"id":6827,"randomNumber":1501822251},{"id":3461,"randomNumber":191412545},{"id":3313,"randomNumber":2033660647},{"id":188,"randomNumber":1527410565},{"id":1582,"randomNumber":-2023387131},{"id":6245,"randomNumber":-411767230},{"id":9862,"randomNumber":-1269610350},{"id":7231,"randomNumber":1578408610},{"id":781,"randomNumber":1421207621},{"id":930,"randomNumber":455640977},{"id":9992,"randomNumber":974579391},{"id":7922,"randomNumber":1748200993},{"id":155,"randomNumber":-966120132},{"id":413,"randomNumber":224921333},{"id":5985,"randomNumber":-1822606547},{"id":6913,"randomNumber":-1621648405},{"id":8452,"randomNumber":-880444127},{"id":5424,"randomNumber":1790242071},{"id":2154,"randomNumber":483424370},{"id":310,"randomNumber":-1832421207},{"id":9339,"randomNumber":-380740371},{"id":7399,"randomNumber":1626601322},{"id":1094,"randomNumber":1764349254},{"id":5867,"randomNumber":-1476232301},{"id":7664,"randomNumber":-1148987472},{"id":1500,"randomNumber":445172536},{"id":5020,"randomNumber":1176849852},{"id":2058,"randomNumber":921549428},{"id":941,"randomNumber":723611739},{"id":6271,"randomNumber":1194428498},{"id":1218,"randomNumber":280860410},{"id":5859,"randomNumber":-1349455352},{"id":5167,"randomNumber":252613696},{"id":9614,"randomNumber":1983293300},{"id":6036,"randomNumber":1396662420},{"id":9753,"randomNumber":-567662345},{"id":5282,"randomNumber":-1787567400},{"id":758,"randomNumber":-1767272811},{"id":4164,"randomNumber":-2009812616},{"id":6457,"randomNumber":1909888326},{"id":5877,"randomNumber":-2034795869},{"id":3542,"randomNumber":-1998521231},{"id":2108,"randomNumber":-1159193242},{"id":3928,"randomNumber":306370058},{"id":8413,"randomNumber":-700155477},{"id":9901,"randomNumber":-1468009404},{"id":1407,"randomNumber":-1329158942},{"id":7336,"randomNumber":1490761301},{"id":3670,"randomNumber":62547726},{"id":608,"randomNumber":231403308},{"id":9229,"randomNumber":-199864361},{"id":4631,"randomNumber":638226186},{"id":7683,"randomNumber":-2028172682},{"id":3769,"randomNumber":415070845},{"id":5301,"randomNumber":1280184166},{"id":5797,"randomNumber":-272421067},{"id":790,"randomNumber":-1746848242},{"id":1390,"randomNumber":-1264238636},{"id":3893,"randomNumber":135387955},{"id":2575,"randomNumber":-95822393},{"id":1740,"randomNumber":1914378732},{"id":8077,"randomNumber":1020993746},{"id":1116,"randomNumber":1593016606},{"id":4029,"randomNumber":-698124908},{"id":1648,"randomNumber":-781124453},{"id":4146,"randomNumber":2126836525},{"id":5841,"randomNumber":1705410222},{"id":3764,"randomNumber":1810899551},{"id":927,"randomNumber":214827336},{"id":6517,"randomNumber":-529693033},{"id":6509,"randomNumber":-934287303},{"id":1016,"randomNumber":-630049824},{"id":9323,"randomNumber":402297682},{"id":1939,"randomNumber":1993765789},{"id":4211,"randomNumber":1562687735},{"id":2690,"randomNumber":1427854375},{"id":2729,"randomNumber":-1270895370},{"id":3223,"randomNumber":195621280},{"id":9455,"randomNumber":1226603210},{"id":6458,"randomNumber":-1432556964},{"id":5142,"randomNumber":-305583106},{"id":2084,"randomNumber":1819370966},{"id":2508,"randomNumber":-132110603},{"id":9890,"randomNumber":1224147651},{"id":1798,"randomNumber":1101966098},{"id":1137,"randomNumber":-407426852},{"id":3088,"randomNumber":-137560140},{"id":126,"randomNumber":2053228565},{"id":5949,"randomNumber":-62509588},{"id":4642,"randomNumber":-931397748},{"id":2594,"randomNumber":-473506424},{"id":9251,"randomNumber":-723080469},{"id":9462,"randomNumber":1143403183},{"id":6080,"randomNumber":1482264203},{"id":2604,"randomNumber":-775448058},{"id":5115,"randomNumber":2050091813},{"id":1088,"randomNumber":-768541241},{"id":3780,"randomNumber":-1047513878},{"id":6459,"randomNumber":1068824432},{"id":1570,"randomNumber":-1718789387},{"id":9401,"randomNumber":649386660},{"id":949,"randomNumber":156732636},{"id":179,"randomNumber":-1499245391},{"id":8929,"randomNumber":719916413},{"id":6067,"randomNumber":-395945510},{"id":3003,"randomNumber":681149650},{"id":3888,"randomNumber":-1888043519},{"id":1109,"randomNumber":323085369},{"id":1971,"randomNumber":349919557},{"id":8447,"randomNumber":-78323670}]
+
+/queries?queries=501 - PASS
+
+-----------------------------------------------------
+
+
+VALIDATING QUERY ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING FORTUNE (/fortunes)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:43 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Server: Jetty(9.0.z-SNAPSHOT)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fortunes</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>message</th>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>&lt;script&gt;alert(&quot;This should not be displayed in a browser alert box.&quot;);&lt;/script&gt;</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>A bad random number generator: 1, 1, 1, 1, 1, 4.33e+67, 1, 1, 1</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>A computer program does what you tell it to do, not what you want it to do.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>A computer scientist is someone who fixes things that aren&#39;t broken.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>A list is only as strong as its weakest link. — Donald Knuth</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>Additional fortune added at request time.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>After enough decimal places, nobody gives a damn.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Any program that runs right is obsolete.</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Computers make very fast, very accurate mistakes.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Emacs is a nice operating system, but I prefer UNIX. — Tom Christaensen</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Feature: A bug with seniority.</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>fortune: No such file or directory</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>フレームワークのベンチマーク</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+VALIDATING FORTUNE ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING UPDATE (/update?queries=)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Date: Tue, 15 Apr 2014 00:30:43 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Type: application/json;charset=UTF-8
+Content-Length: 75
+Server: Jetty(9.0.z-SNAPSHOT)
+
+[{"id":7982,"randomNumber":84364674},{"id":3539,"randomNumber":1914481243}]
+
+VALIDATING UPDATE ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING PLAINTEXT (/plaintext)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=UTF-8
+Content-Length: 13
+Server: Jetty(9.0.z-SNAPSHOT)
+
+Hello, world!
+
+VALIDATING PLAINTEXT ... PASS
+
+
+-----------------------------------------------------
+  Benchmarking ninja-standalone ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+BENCHMARKING Fortune ... Complete
+BENCHMARKING Update ... 00:40:18.707 [qtp1207168383-229] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:27.203 [qtp1207168383-87] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:39.968 [qtp1207168383-71] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:40.474 [qtp1207168383-165] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:40.877 [qtp1207168383-78] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:41.244 [qtp1207168383-134] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:41.774 [qtp1207168383-41] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:42.667 [qtp1207168383-123] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:43.454 [qtp1207168383-202] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:44.146 [qtp1207168383-177] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:44.449 [qtp1207168383-205] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:45.115 [qtp1207168383-63] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:45.119 [qtp1207168383-118] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:45.756 [qtp1207168383-51] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:48.698 [qtp1207168383-186] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:49.947 [qtp1207168383-59] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:50.045 [qtp1207168383-130] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:50.212 [qtp1207168383-117] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:50.259 [qtp1207168383-215] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:50.550 [qtp1207168383-141] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:50.552 [qtp1207168383-167] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:50.889 [qtp1207168383-196] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:50.947 [qtp1207168383-183] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:51.765 [qtp1207168383-74] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:52.078 [qtp1207168383-154] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:52.614 [qtp1207168383-173] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:53.137 [qtp1207168383-49] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:53.299 [qtp1207168383-39] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:54.019 [qtp1207168383-187] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:54.734 [qtp1207168383-172] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:56.849 [qtp1207168383-132] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:57.097 [qtp1207168383-48] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:57.158 [qtp1207168383-139] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:57.364 [qtp1207168383-32] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:57.629 [qtp1207168383-219] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:57.749 [qtp1207168383-44] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:57.793 [qtp1207168383-117] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.024 [qtp1207168383-32] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.327 [qtp1207168383-138] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.332 [qtp1207168383-109] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.371 [qtp1207168383-208] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.397 [qtp1207168383-64] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.402 [qtp1207168383-99] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.507 [qtp1207168383-87] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.561 [qtp1207168383-89] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.561 [qtp1207168383-200] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.644 [qtp1207168383-141] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.678 [qtp1207168383-161] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.708 [qtp1207168383-120] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.803 [qtp1207168383-181] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.811 [qtp1207168383-177] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.817 [qtp1207168383-166] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.976 [qtp1207168383-116] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:58.992 [qtp1207168383-155] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.086 [qtp1207168383-60] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.127 [qtp1207168383-170] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.429 [qtp1207168383-176] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.444 [qtp1207168383-130] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.466 [qtp1207168383-229] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.466 [qtp1207168383-198] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.522 [qtp1207168383-185] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.524 [qtp1207168383-47] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.628 [qtp1207168383-230] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:40:59.758 [qtp1207168383-93] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.327 [qtp1207168383-229] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.361 [qtp1207168383-209] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.405 [qtp1207168383-55] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.496 [qtp1207168383-49] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.507 [qtp1207168383-226] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.638 [qtp1207168383-36] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.710 [qtp1207168383-113] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.745 [qtp1207168383-142] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.753 [qtp1207168383-105] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.760 [qtp1207168383-143] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:00.801 [qtp1207168383-172] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.074 [qtp1207168383-165] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.448 [qtp1207168383-149] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.468 [qtp1207168383-62] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.560 [qtp1207168383-118] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.646 [qtp1207168383-221] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.654 [qtp1207168383-121] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.725 [qtp1207168383-142] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:01.766 [qtp1207168383-163] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:02.222 [qtp1207168383-212] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:02.449 [qtp1207168383-159] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:02.455 [qtp1207168383-116] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:02.457 [qtp1207168383-117] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:02.559 [qtp1207168383-205] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:02.569 [qtp1207168383-73] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.009 [qtp1207168383-187] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.048 [qtp1207168383-146] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.089 [qtp1207168383-45] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.090 [qtp1207168383-207] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.090 [qtp1207168383-220] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.289 [qtp1207168383-228] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.310 [qtp1207168383-53] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.798 [qtp1207168383-31] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.883 [qtp1207168383-181] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:03.934 [qtp1207168383-185] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:04.137 [qtp1207168383-221] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:04.324 [qtp1207168383-133] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:04.493 [qtp1207168383-54] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:04.697 [qtp1207168383-200] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:04.963 [qtp1207168383-67] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.196 [qtp1207168383-38] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.228 [qtp1207168383-122] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.341 [qtp1207168383-112] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.430 [qtp1207168383-177] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.465 [qtp1207168383-229] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.498 [qtp1207168383-84] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.607 [qtp1207168383-212] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.744 [qtp1207168383-164] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:05.802 [qtp1207168383-147] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.055 [qtp1207168383-142] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.409 [qtp1207168383-186] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.459 [qtp1207168383-71] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.578 [qtp1207168383-178] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.579 [qtp1207168383-101] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.618 [qtp1207168383-222] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.619 [qtp1207168383-203] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.694 [qtp1207168383-52] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.786 [qtp1207168383-116] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.796 [qtp1207168383-143] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:06.821 [qtp1207168383-150] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.085 [qtp1207168383-40] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.194 [qtp1207168383-129] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.201 [qtp1207168383-137] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.202 [qtp1207168383-171] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.245 [qtp1207168383-95] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.254 [qtp1207168383-191] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.270 [qtp1207168383-183] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.297 [qtp1207168383-83] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.306 [qtp1207168383-34] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.336 [qtp1207168383-101] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.337 [qtp1207168383-192] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.392 [qtp1207168383-100] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.393 [qtp1207168383-88] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.396 [qtp1207168383-166] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.434 [qtp1207168383-96] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.490 [qtp1207168383-46] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.522 [qtp1207168383-63] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.543 [qtp1207168383-219] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.691 [qtp1207168383-172] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.753 [qtp1207168383-194] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:07.788 [qtp1207168383-71] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.120 [qtp1207168383-188] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.388 [qtp1207168383-225] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.420 [qtp1207168383-160] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.430 [qtp1207168383-42] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.507 [qtp1207168383-208] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.562 [qtp1207168383-46] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.574 [qtp1207168383-132] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.926 [qtp1207168383-216] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:08.953 [qtp1207168383-213] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.062 [qtp1207168383-49] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.118 [qtp1207168383-71] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.183 [qtp1207168383-151] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.192 [qtp1207168383-64] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.288 [qtp1207168383-143] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.363 [qtp1207168383-116] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.484 [qtp1207168383-95] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.519 [qtp1207168383-211] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.673 [qtp1207168383-110] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.703 [qtp1207168383-65] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.718 [qtp1207168383-71] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.724 [qtp1207168383-162] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.761 [qtp1207168383-156] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.809 [qtp1207168383-142] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.825 [qtp1207168383-80] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.831 [qtp1207168383-32] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.865 [qtp1207168383-61] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.866 [qtp1207168383-100] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.903 [qtp1207168383-226] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:09.921 [qtp1207168383-141] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.178 [qtp1207168383-194] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.243 [qtp1207168383-151] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.333 [qtp1207168383-61] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.426 [qtp1207168383-93] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.536 [qtp1207168383-49] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.591 [qtp1207168383-146] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.979 [qtp1207168383-216] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:10.996 [qtp1207168383-30] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:11.017 [qtp1207168383-69] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:11.455 [qtp1207168383-46] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:11.530 [qtp1207168383-177] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:11.601 [qtp1207168383-141] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+00:41:11.851 [qtp1207168383-101] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Deadlock found when trying to get lock; try restarting transaction
+Complete
+BENCHMARKING Plaintext ... Complete
+
+-----------------------------------------------------
+  Stopping ninja-standalone
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped ninja-standalone
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through ninja-standalone
+----------------------------------------------------

@@ -1,0 +1,119 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/updateraw.php?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/updateraw.php?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    22.01ms   15.78ms  91.85ms   92.75%
+    Req/Sec    53.74     16.60    93.00     71.35%
+  2175 requests in 5.01s, 549.13KB read
+Requests/sec:    434.03
+Transfer/sec:    109.58KB
+
+---------------------------------------------------------
+ Running Warmup php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updateraw.php?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updateraw.php?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   132.58ms   77.44ms 709.90ms   72.12%
+    Req/Sec     0.97k   118.53     1.16k    64.58%
+  28481 requests in 15.00s, 7.02MB read
+  Socket errors: connect 0, read 0, write 0, timeout 9
+Requests/sec:   1898.62
+Transfer/sec:    479.33KB
+
+---------------------------------------------------------
+ Queries: 1 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updateraw.php?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updateraw.php?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    95.71ms   65.66ms 593.64ms   77.31%
+    Req/Sec     1.34k   114.70     1.68k    75.78%
+  40167 requests in 15.00s, 8.61MB read
+Requests/sec:   2677.68
+Transfer/sec:    587.70KB
+
+---------------------------------------------------------
+ Queries: 5 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updateraw.php?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updateraw.php?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   319.94ms  131.17ms   1.48s    78.33%
+    Req/Sec   408.83     42.21   487.00     68.29%
+  12276 requests in 15.00s, 4.21MB read
+Requests/sec:    818.13
+Transfer/sec:    287.53KB
+
+---------------------------------------------------------
+ Queries: 10 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updateraw.php?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updateraw.php?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   579.87ms  209.91ms   1.87s    83.38%
+    Req/Sec   228.14     37.24   272.00     67.86%
+  6502 requests in 15.01s, 3.29MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    433.23
+Transfer/sec:    224.14KB
+
+---------------------------------------------------------
+ Queries: 15 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updateraw.php?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updateraw.php?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   862.61ms  281.66ms   2.05s    73.35%
+    Req/Sec   148.71     14.38   179.00     64.29%
+  4360 requests in 15.01s, 2.91MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    290.56
+Transfer/sec:    198.26KB
+
+---------------------------------------------------------
+ Queries: 20 for php-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updateraw.php?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updateraw.php?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.16s   315.63ms   2.51s    74.73%
+    Req/Sec   113.00     14.94   131.00     78.57%
+  3260 requests in 15.03s, 2.70MB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec:    216.96
+Transfer/sec:    183.83KB

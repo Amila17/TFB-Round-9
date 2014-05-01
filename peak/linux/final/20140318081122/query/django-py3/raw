@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 11:57:45 PDT 2014
+
+  System load:  0.04               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.44ms  238.77us   3.99ms   91.78%
+    Req/Sec   435.53     52.96   555.00     74.47%
+  16411 requests in 5.00s, 3.75MB read
+Requests/sec:   3281.71
+Transfer/sec:    767.73KB
+
+---------------------------------------------------------
+ Running Warmup django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    28.50ms   11.45ms  81.70ms   67.01%
+    Req/Sec   216.65     41.39   428.00     70.27%
+  126039 requests in 15.00s, 28.79MB read
+Requests/sec:   8400.92
+Transfer/sec:      1.92MB
+
+---------------------------------------------------------
+ Queries: 1 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.37ms   10.73ms  89.26ms   68.50%
+    Req/Sec   244.64     47.78   551.00     70.58%
+  144058 requests in 15.00s, 28.27MB read
+Requests/sec:   9603.07
+Transfer/sec:      1.88MB
+
+---------------------------------------------------------
+ Queries: 5 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    47.66ms   23.15ms 288.65ms   70.92%
+    Req/Sec   130.74     27.88   244.00     68.35%
+  77596 requests in 15.02s, 24.78MB read
+Requests/sec:   5167.12
+Transfer/sec:      1.65MB
+
+---------------------------------------------------------
+ Queries: 10 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    78.93ms   37.30ms 233.74ms   70.42%
+    Req/Sec    80.03     21.22   178.00     73.94%
+  46661 requests in 15.02s, 22.02MB read
+Requests/sec:   3105.90
+Transfer/sec:      1.47MB
+
+---------------------------------------------------------
+ Queries: 15 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   111.08ms   50.61ms 357.49ms   71.85%
+    Req/Sec    56.13     12.80   119.00     68.89%
+  33188 requests in 15.03s, 20.69MB read
+Requests/sec:   2208.37
+Transfer/sec:      1.38MB
+
+---------------------------------------------------------
+ Queries: 20 for django-py3
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   141.22ms   58.10ms 411.98ms   63.22%
+    Req/Sec    43.46      8.94    77.00     73.86%
+  25814 requests in 15.03s, 20.00MB read
+Requests/sec:   1717.32
+Transfer/sec:      1.33MB

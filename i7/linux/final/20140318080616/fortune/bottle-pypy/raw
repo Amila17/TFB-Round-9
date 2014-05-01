@@ -1,0 +1,131 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 09:25:41 PDT 2014
+
+  System load:  0.04               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  474 requests in 5.24s, 648.05KB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec:     90.43
+Transfer/sec:    123.64KB
+
+---------------------------------------------------------
+ Running Warmup bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.19s     3.74s    8.42s    69.48%
+    Req/Sec    11.05     17.49    86.00     88.64%
+  1416 requests in 16.01s, 1.89MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1514
+Requests/sec:     88.43
+Transfer/sec:    120.91KB
+
+---------------------------------------------------------
+ Concurrency: 8 for bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 16.01s, 0.00B read
+  Socket errors: connect 0, read 1, write 0, timeout 62
+Requests/sec:      0.00
+Transfer/sec:       0.00B
+
+---------------------------------------------------------
+ Concurrency: 16 for bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    92.99ms  446.67ms   3.11s    96.63%
+    Req/Sec   132.72     61.39   227.00     59.05%
+  15504 requests in 15.01s, 20.70MB read
+Requests/sec:   1033.15
+Transfer/sec:      1.38MB
+
+---------------------------------------------------------
+ Concurrency: 32 for bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    20.08ms   19.35ms 304.64ms   92.41%
+    Req/Sec   232.07     86.87   536.00     71.15%
+  25817 requests in 15.01s, 34.47MB read
+Requests/sec:   1720.49
+Transfer/sec:      2.30MB
+
+---------------------------------------------------------
+ Concurrency: 64 for bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.60ms   28.43ms 235.26ms   88.39%
+    Req/Sec   307.40    114.51   571.00     64.04%
+  34099 requests in 15.01s, 45.53MB read
+Requests/sec:   2272.46
+Transfer/sec:      3.03MB
+
+---------------------------------------------------------
+ Concurrency: 128 for bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    50.81ms   58.44ms 504.63ms   87.89%
+    Req/Sec   336.43    106.05   611.00     64.30%
+  38075 requests in 15.00s, 50.84MB read
+Requests/sec:   2537.98
+Transfer/sec:      3.39MB
+
+---------------------------------------------------------
+ Concurrency: 256 for bottle-pypy
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortune
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    90.52ms   96.08ms 805.23ms   85.68%
+    Req/Sec   369.38     88.58   602.00     68.83%
+  41904 requests in 15.01s, 55.95MB read
+Requests/sec:   2792.43
+Transfer/sec:      3.73MB

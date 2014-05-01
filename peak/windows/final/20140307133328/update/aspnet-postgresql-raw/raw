@@ -1,0 +1,123 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Mar  7 14:34:02 PST 2014
+
+  System load:  0.04               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+27 packages can be updated.
+24 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer aspnet-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.4:8080/ado/postgresql/update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.4:8080/ado/postgresql/update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.18ms  336.38us   9.27ms   94.69%
+    Req/Sec   482.97     60.51   666.00     57.23%
+  18294 requests in 5.00s, 5.52MB read
+Requests/sec:   3656.30
+Transfer/sec:      1.10MB
+
+---------------------------------------------------------
+ Running Warmup aspnet-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.4:8080/ado/postgresql/update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/ado/postgresql/update?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.10s     6.23s   15.16s    76.30%
+    Req/Sec   169.65    201.69     1.17k    86.07%
+  96638 requests in 15.17s, 29.18MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1035
+  Non-2xx or 3xx responses: 1
+Requests/sec:   6370.01
+Transfer/sec:      1.92MB
+
+---------------------------------------------------------
+ Queries: 1 for aspnet-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.4:8080/ado/postgresql/update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/ado/postgresql/update?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.20s     5.93s   15.08s    74.53%
+    Req/Sec   215.73    243.23     1.57k    84.93%
+  122375 requests in 15.14s, 33.24MB read
+  Socket errors: connect 0, read 0, write 0, timeout 964
+Requests/sec:   8084.65
+Transfer/sec:      2.20MB
+
+---------------------------------------------------------
+ Queries: 5 for aspnet-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.4:8080/ado/postgresql/update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/ado/postgresql/update?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.41s     6.22s   15.13s    31.97%
+    Req/Sec   126.01    158.44     1.20k    86.97%
+  72148 requests in 15.14s, 28.41MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1043
+Requests/sec:   4765.11
+Transfer/sec:      1.88MB
+
+---------------------------------------------------------
+ Queries: 10 for aspnet-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.4:8080/ado/postgresql/update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/ado/postgresql/update?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.82s     6.62s   15.16s    27.29%
+    Req/Sec    79.07     96.93   687.00     86.18%
+  44169 requests in 15.16s, 24.09MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1149
+  Non-2xx or 3xx responses: 1
+Requests/sec:   2914.42
+Transfer/sec:      1.59MB
+
+---------------------------------------------------------
+ Queries: 15 for aspnet-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.4:8080/ado/postgresql/update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/ado/postgresql/update?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.05s     5.86s   15.15s    71.38%
+    Req/Sec    61.95     62.80   333.00     84.91%
+  33601 requests in 15.19s, 23.41MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1159
+Requests/sec:   2211.68
+Transfer/sec:      1.54MB
+
+---------------------------------------------------------
+ Queries: 20 for aspnet-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.4:8080/ado/postgresql/update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.4:8080/ado/postgresql/update?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.75s     5.75s   15.10s    75.29%
+    Req/Sec    48.81     51.61   276.00     84.94%
+  26057 requests in 15.16s, 22.10MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1079
+Requests/sec:   1718.58
+Transfer/sec:      1.46MB

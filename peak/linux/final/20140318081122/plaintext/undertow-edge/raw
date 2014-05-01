@@ -1,0 +1,106 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 05:15:45 PDT 2014
+
+  System load:  7.41               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer undertow-edge
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    57.75us   12.31us 599.00us   77.84%
+    Req/Sec    16.82k     1.63k   20.00k    63.06%
+  633921 requests in 5.00s, 87.66MB read
+Requests/sec: 126796.35
+Transfer/sec:     17.53MB
+
+---------------------------------------------------------
+ Running Warmup undertow-edge
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   269.85us    2.54ms 213.57ms   99.74%
+    Req/Sec    27.25k     7.72k   53.22k    69.60%
+  15103350 requests in 15.00s, 2.04GB read
+  Socket errors: connect 0, read 0, write 0, timeout 13
+Requests/sec: 1007037.16
+Transfer/sec:    139.26MB
+
+---------------------------------------------------------
+ Concurrency: 256 for undertow-edge
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.16ms    4.92ms 241.33ms   97.95%
+    Req/Sec   114.30k    38.54k  302.22k    69.56%
+  61749184 requests in 15.00s, 8.34GB read
+  Socket errors: connect 0, read 0, write 0, timeout 34
+Requests/sec: 4117380.57
+Transfer/sec:    569.36MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for undertow-edge
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    46.93ms  412.11ms   4.88s    98.82%
+    Req/Sec   111.24k    40.75k  376.89k    71.47%
+  62272432 requests in 15.00s, 8.41GB read
+  Socket errors: connect 0, read 4, write 0, timeout 339
+Requests/sec: 4152434.47
+Transfer/sec:    574.21MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for undertow-edge
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.60s     4.02s   13.22s    82.38%
+    Req/Sec   117.82k   100.94k  528.00k    69.51%
+  61974784 requests in 15.01s, 8.37GB read
+  Socket errors: connect 0, read 789, write 0, timeout 18928
+Requests/sec: 4130229.82
+Transfer/sec:    571.14MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for undertow-edge
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.17s     4.55s   13.60s    44.70%
+    Req/Sec   111.08k    80.36k  551.11k    79.46%
+  61924937 requests in 15.06s, 8.36GB read
+  Socket errors: connect 0, read 1196, write 0, timeout 99570
+Requests/sec: 4112129.81
+Transfer/sec:    568.64MB

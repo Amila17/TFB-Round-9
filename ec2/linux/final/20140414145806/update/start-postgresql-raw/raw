@@ -1,0 +1,126 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 08:35:07 UTC 2014
+
+  System load:  1.03               Processes:           327
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 10%                IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/updates?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.20ms    2.81ms  38.06ms   90.77%
+    Req/Sec   102.22     20.66   160.00     65.39%
+  3988 requests in 5.01s, 1.03MB read
+Requests/sec:    796.64
+Transfer/sec:    211.23KB
+
+---------------------------------------------------------
+ Running Warmup start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   211.33ms  154.25ms   1.45s    87.35%
+    Req/Sec   607.98     59.98   676.00     86.67%
+  18173 requests in 15.00s, 4.71MB read
+Requests/sec:   1211.35
+Transfer/sec:    321.24KB
+
+---------------------------------------------------------
+ Queries: 1 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   148.38ms  219.53ms   4.44s    99.17%
+    Req/Sec   848.30     62.73     0.98k    79.73%
+  25338 requests in 15.00s, 5.79MB read
+  Socket errors: connect 0, read 0, write 0, timeout 48
+Requests/sec:   1689.03
+Transfer/sec:    395.46KB
+
+---------------------------------------------------------
+ Queries: 5 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   436.48ms  195.65ms   1.56s    73.74%
+    Req/Sec   291.54     12.04   312.00     71.43%
+  8625 requests in 15.00s, 3.02MB read
+Requests/sec:    574.93
+Transfer/sec:    205.99KB
+
+---------------------------------------------------------
+ Queries: 10 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   871.67ms  390.42ms   2.79s    71.32%
+    Req/Sec   151.31      9.77   167.00     71.43%
+  4434 requests in 15.00s, 2.23MB read
+  Socket errors: connect 0, read 0, write 0, timeout 5
+Requests/sec:    295.54
+Transfer/sec:    152.04KB
+
+---------------------------------------------------------
+ Queries: 15 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.28s   644.52ms   5.23s    79.67%
+    Req/Sec   101.05     20.20   139.00     88.10%
+  2973 requests in 15.02s, 1.94MB read
+  Socket errors: connect 0, read 0, write 0, timeout 53
+Requests/sec:    197.96
+Transfer/sec:    132.54KB
+
+---------------------------------------------------------
+ Queries: 20 for start-postgresql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.73s   798.15ms   4.84s    78.73%
+    Req/Sec    73.88     15.58    94.00     81.25%
+  2134 requests in 15.02s, 1.72MB read
+  Socket errors: connect 0, read 0, write 0, timeout 141
+Requests/sec:    142.12
+Transfer/sec:    117.21KB

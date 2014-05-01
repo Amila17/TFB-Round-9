@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 18:44:38 PDT 2014
+
+  System load:  0.05               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   558.95us  346.05us  19.08ms   99.36%
+    Req/Sec     1.90k   163.55     2.22k    73.47%
+  70694 requests in 5.00s, 12.26MB read
+Requests/sec:  14140.88
+Transfer/sec:      2.45MB
+
+---------------------------------------------------------
+ Running Warmup nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.26ms    6.47ms 144.52ms   94.48%
+    Req/Sec     1.94k   779.89     4.89k    70.17%
+  1015769 requests in 14.99s, 176.09MB read
+Requests/sec:  67751.52
+Transfer/sec:     11.75MB
+
+---------------------------------------------------------
+ Concurrency: 8 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   560.59us  635.71us  20.66ms   99.60%
+    Req/Sec     1.94k   188.32     2.33k    89.83%
+  220007 requests in 15.00s, 38.14MB read
+Requests/sec:  14667.91
+Transfer/sec:      2.54MB
+
+---------------------------------------------------------
+ Concurrency: 16 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   717.17us    1.14ms  21.28ms   99.33%
+    Req/Sec     1.60k   327.35     2.33k    70.04%
+  364264 requests in 15.00s, 63.15MB read
+Requests/sec:  24287.37
+Transfer/sec:      4.21MB
+
+---------------------------------------------------------
+ Concurrency: 32 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.88ms    1.98ms  68.50ms   99.26%
+    Req/Sec     1.32k   303.09     2.11k    65.42%
+  600366 requests in 15.00s, 104.08MB read
+Requests/sec:  40034.14
+Transfer/sec:      6.94MB
+
+---------------------------------------------------------
+ Concurrency: 64 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.93ms    1.31ms  25.09ms   98.77%
+    Req/Sec     1.23k   314.06     2.00k    60.24%
+  697007 requests in 15.00s, 120.83MB read
+Requests/sec:  46482.50
+Transfer/sec:      8.06MB
+
+---------------------------------------------------------
+ Concurrency: 128 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.89ms    1.81ms  34.91ms   94.69%
+    Req/Sec     1.78k   413.31     3.22k    68.03%
+  1009720 requests in 15.00s, 175.04MB read
+Requests/sec:  67336.23
+Transfer/sec:     11.67MB
+
+---------------------------------------------------------
+ Concurrency: 256 for nodejs-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/mysql
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/mysql
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.67ms    3.74ms  49.77ms   92.12%
+    Req/Sec     1.89k   456.80     3.89k    74.07%
+  1073920 requests in 14.99s, 186.17MB read
+Requests/sec:  71619.05
+Transfer/sec:     12.42MB

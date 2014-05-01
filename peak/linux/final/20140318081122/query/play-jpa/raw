@@ -1,0 +1,120 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 21:13:02 PDT 2014
+
+  System load:  0.51               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:9000/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:9000/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   517.57us  136.95us   5.37ms   98.10%
+    Req/Sec     2.02k   159.82     2.33k    74.20%
+  75987 requests in 5.00s, 10.91MB read
+Requests/sec:  15199.73
+Transfer/sec:      2.18MB
+
+---------------------------------------------------------
+ Running Warmup play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.41ms    2.69ms 213.09ms   87.33%
+    Req/Sec     1.48k   329.06     3.33k    77.94%
+  833579 requests in 14.99s, 119.69MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:  55592.61
+Transfer/sec:      7.98MB
+
+---------------------------------------------------------
+ Queries: 1 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.73ms   11.33ms 630.20ms   99.28%
+    Req/Sec     1.88k   419.05     3.67k    71.03%
+  1066286 requests in 14.99s, 120.79MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:  71111.52
+Transfer/sec:      8.06MB
+
+---------------------------------------------------------
+ Queries: 5 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.90ms    9.22ms 628.42ms   99.46%
+    Req/Sec   822.92    189.41     2.00k    81.75%
+  457525 requests in 15.00s, 107.74MB read
+  Socket errors: connect 0, read 0, write 0, timeout 46
+Requests/sec:  30506.23
+Transfer/sec:      7.18MB
+
+---------------------------------------------------------
+ Queries: 10 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.06ms   10.90ms 643.17ms   99.18%
+    Req/Sec   445.36     79.57   764.00     68.95%
+  259595 requests in 15.00s, 100.47MB read
+Requests/sec:  17307.22
+Transfer/sec:      6.70MB
+
+---------------------------------------------------------
+ Queries: 15 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    19.80ms   10.28ms 647.80ms   96.79%
+    Req/Sec   314.50     60.16   681.00     83.66%
+  181649 requests in 15.01s, 97.83MB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec:  12102.56
+Transfer/sec:      6.52MB
+
+---------------------------------------------------------
+ Queries: 20 for play-jpa
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/db?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.20ms    7.86ms 685.51ms   93.57%
+    Req/Sec   243.71     45.97   482.00     84.60%
+  141986 requests in 15.00s, 97.99MB read
+  Socket errors: connect 0, read 0, write 0, timeout 5
+Requests/sec:   9463.95
+Transfer/sec:      6.53MB

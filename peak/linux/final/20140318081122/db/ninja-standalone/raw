@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 18:09:46 PDT 2014
+
+  System load:  0.5                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   485.20us  447.76us  10.85ms   98.36%
+    Req/Sec     2.39k   581.92     3.33k    65.32%
+  84033 requests in 5.00s, 23.47MB read
+Requests/sec:  16809.55
+Transfer/sec:      4.69MB
+
+---------------------------------------------------------
+ Running Warmup ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.52ms    1.93ms  24.65ms   62.88%
+    Req/Sec   824.93     83.11     1.17k    70.63%
+  482262 requests in 14.99s, 134.70MB read
+Requests/sec:  32163.62
+Transfer/sec:      8.98MB
+
+---------------------------------------------------------
+ Concurrency: 8 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   377.61us   81.54us   5.62ms   91.48%
+    Req/Sec     2.76k   237.91     3.33k    57.77%
+  313412 requests in 15.00s, 87.54MB read
+Requests/sec:  20895.21
+Transfer/sec:      5.84MB
+
+---------------------------------------------------------
+ Concurrency: 16 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   505.37us  199.24us   4.71ms   89.46%
+    Req/Sec     2.08k   197.56     2.67k    76.89%
+  473898 requests in 15.00s, 132.36MB read
+Requests/sec:  31597.34
+Transfer/sec:      8.83MB
+
+---------------------------------------------------------
+ Concurrency: 32 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.01ms  599.05us  10.56ms   72.84%
+    Req/Sec     1.07k   212.89     2.00k    68.70%
+  488954 requests in 15.00s, 136.57MB read
+Requests/sec:  32605.07
+Transfer/sec:      9.11MB
+
+---------------------------------------------------------
+ Concurrency: 64 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.28ms  845.48us   8.47ms   67.41%
+    Req/Sec     0.86k   207.27     1.90k    69.70%
+  491523 requests in 14.99s, 137.28MB read
+Requests/sec:  32781.49
+Transfer/sec:      9.16MB
+
+---------------------------------------------------------
+ Concurrency: 128 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.29ms    6.26ms 102.04ms   98.74%
+    Req/Sec   828.69    172.59     1.64k    78.15%
+  476376 requests in 15.00s, 133.05MB read
+Requests/sec:  31765.51
+Transfer/sec:      8.87MB
+
+---------------------------------------------------------
+ Concurrency: 256 for ninja-standalone
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.80ms    2.03ms  21.73ms   61.30%
+    Req/Sec   790.77     90.64     1.12k    65.68%
+  461759 requests in 15.00s, 128.97MB read
+Requests/sec:  30790.11
+Transfer/sec:      8.60MB

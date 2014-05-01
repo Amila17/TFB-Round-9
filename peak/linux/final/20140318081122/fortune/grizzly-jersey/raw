@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 15:31:57 PDT 2014
+
+  System load:  0.23               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   740.85us  190.10us   6.13ms   91.57%
+    Req/Sec     1.44k   219.56     1.78k    61.44%
+  51446 requests in 5.00s, 70.80MB read
+Requests/sec:  10290.79
+Transfer/sec:     14.16MB
+
+---------------------------------------------------------
+ Running Warmup grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.85ms    1.86ms  26.41ms   87.20%
+    Req/Sec     1.06k   112.55     1.39k    73.88%
+  617474 requests in 14.99s, 849.78MB read
+Requests/sec:  41182.29
+Transfer/sec:     56.68MB
+
+---------------------------------------------------------
+ Concurrency: 8 for grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   655.75us  185.56us   6.34ms   99.87%
+    Req/Sec     1.61k   106.24     1.78k    72.17%
+  182562 requests in 15.00s, 251.25MB read
+Requests/sec:  12171.26
+Transfer/sec:     16.75MB
+
+---------------------------------------------------------
+ Concurrency: 16 for grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   694.84us  293.60us  11.72ms   99.76%
+    Req/Sec     1.51k   123.75     1.78k    85.75%
+  346130 requests in 15.00s, 476.35MB read
+Requests/sec:  23077.75
+Transfer/sec:     31.76MB
+
+---------------------------------------------------------
+ Concurrency: 32 for grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.01ms    3.40ms  58.90ms   99.40%
+    Req/Sec     1.30k   134.97     1.55k    84.02%
+  592921 requests in 14.99s, 815.99MB read
+Requests/sec:  39541.44
+Transfer/sec:     54.42MB
+
+---------------------------------------------------------
+ Concurrency: 64 for grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.89ms  328.24us   7.80ms   97.87%
+    Req/Sec     1.18k   109.82     1.44k    84.65%
+  673196 requests in 15.00s, 0.90GB read
+Requests/sec:  44894.66
+Transfer/sec:     61.79MB
+
+---------------------------------------------------------
+ Concurrency: 128 for grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.21ms    4.19ms  73.97ms   96.16%
+    Req/Sec     1.09k   228.25     1.89k    72.48%
+  619425 requests in 14.99s, 852.47MB read
+Requests/sec:  41311.91
+Transfer/sec:     56.85MB
+
+---------------------------------------------------------
+ Concurrency: 256 for grizzly-jersey
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortunes
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.89ms    1.91ms  26.46ms   87.41%
+    Req/Sec     1.06k   130.97     1.57k    72.48%
+  617186 requests in 14.99s, 849.38MB read
+Requests/sec:  41173.06
+Transfer/sec:     56.66MB

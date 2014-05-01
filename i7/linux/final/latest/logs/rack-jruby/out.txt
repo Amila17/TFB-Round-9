@@ -1,0 +1,353 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: rack-jruby
+self.results['completed']: {}
+
+=====================================================
+  Beginning rack-jruby
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting rack-jruby
+-----------------------------------------------------
+Using json (1.7.6) 
+Using rack (1.5.2) 
+Using rubyzip (1.0.0) 
+Using torqbox (0.1.7) 
+Using zip-zip (0.1) 
+Using bundler (1.3.5) 
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+[INFO ] TorqBox::Server  - TorqBox 0.1.7 starting...
+[INFO ] org.projectodd.wunderboss.web.WebComponent  - Undertow listening on 0.0.0.0:8080
+[INFO ] org.projectodd.wunderboss.web.WebComponent  - Started web context /
+
+-----------------------------------------------------
+  VERIFYING JSON (/json)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Connection: keep-alive
+Server: undertow
+Content-Type: application/json
+Content-Length: 27
+Date: Wed, 19 Mar 2014 05:20:12 GMT
+
+{"message":"Hello, World!"}
+
+VALIDATING JSON ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING PLAINTEXT (/plaintext)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Connection: keep-alive
+Server: undertow
+Content-Type: text/plain
+Content-Length: 13
+Date: Wed, 19 Mar 2014 05:20:12 GMT
+
+Hello, World!
+
+VALIDATING PLAINTEXT ... PASS
+
+
+-----------------------------------------------------
+  Benchmarking rack-jruby ...
+-----------------------------------------------------
+BENCHMARKING JSON ... Complete
+BENCHMARKING Plaintext ... [ERROR] org.xnio.listener  - XNIO001007: A channel event listener threw an exception
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:93)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:46)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:87)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:531)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] org.xnio.listener  - XNIO001007: A channel event listener threw an exception
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:93)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:46)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:87)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:531)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:654)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:56)
+	at io.undertow.server.handlers.SetHeaderHandler.handleRequest(SetHeaderHandler.java:49)
+	at io.undertow.server.handlers.DateHandler.handleRequest(DateHandler.java:41)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:142)
+	at io.undertow.server.protocol.http.HttpReadListener.run(HttpReadListener.java:234)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+[ERROR] io.undertow.request  - Blocking request failed HttpServerExchange{ GET /plaintext}
+java.lang.OutOfMemoryError: Direct buffer memory
+	at java.nio.Bits.reserveMemory(Bits.java:658)
+	at java.nio.DirectByteBuffer.<init>(DirectByteBuffer.java:123)
+	at java.nio.ByteBuffer.allocateDirect(ByteBuffer.java:306)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:57)
+	at org.xnio.BufferAllocator$2.allocate(BufferAllocator.java:55)
+	at org.xnio.ByteBufferSlicePool.allocate(ByteBufferSlicePool.java:149)
+	at io.undertow.io.UndertowInputStream.readIntoBuffer(UndertowInputStream.java:86)
+	at io.undertow.io.UndertowInputStream.close(UndertowInputStream.java:137)
+	at org.projectodd.wunderboss.ruby.rack.RewindableChannel.implCloseChannel(RewindableChannel.java:132)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at org.projectodd.wunderboss.ruby.rack.RackChannel.close(RackChannel.java:152)
+	at org.projectodd.wunderboss.ruby.rack.RackHandler.handleRequest(RackHandler.java:47)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:164)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:654)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:724)
+Complete
+
+-----------------------------------------------------
+  Stopping rack-jruby
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped rack-jruby
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through rack-jruby
+----------------------------------------------------

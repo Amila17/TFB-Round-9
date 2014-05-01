@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 04:47:40 PDT 2014
+
+  System load:  0.08               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer tornado-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   383.11us    2.89ms  59.07ms   99.72%
+    Req/Sec     4.45k   482.66     5.67k    75.57%
+  162204 requests in 5.00s, 21.97MB read
+Requests/sec:  32442.86
+Transfer/sec:      4.39MB
+
+---------------------------------------------------------
+ Running Warmup tornado-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.43ms    4.36ms 152.21ms   98.84%
+    Req/Sec     9.84k     1.53k   15.33k    70.38%
+  1115722 requests in 15.00s, 151.09MB read
+Requests/sec:  74383.41
+Transfer/sec:     10.07MB
+
+---------------------------------------------------------
+ Concurrency: 256 for tornado-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    42.80ms   23.97ms 167.74ms   73.85%
+    Req/Sec    11.91k     1.22k   20.03k    76.26%
+  1411033 requests in 15.00s, 191.08MB read
+Requests/sec:  94072.05
+Transfer/sec:     12.74MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for tornado-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   184.30ms   88.06ms 465.85ms   71.89%
+    Req/Sec    10.97k     1.56k   22.27k    73.31%
+  1308147 requests in 15.00s, 177.15MB read
+  Socket errors: connect 0, read 0, write 0, timeout 43
+Requests/sec:  87209.13
+Transfer/sec:     11.81MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for tornado-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   721.25ms  163.10ms   1.55s    69.07%
+    Req/Sec    10.59k   686.83    15.54k    84.25%
+  1268086 requests in 15.00s, 171.73MB read
+  Socket errors: connect 0, read 166, write 0, timeout 840
+Requests/sec:  84521.73
+Transfer/sec:     11.45MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for tornado-pypy
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.46s     1.04s    6.43s    83.56%
+    Req/Sec    10.45k     1.12k   16.13k    85.37%
+  1244712 requests in 15.01s, 168.56MB read
+  Socket errors: connect 11, read 487, write 0, timeout 42063
+Requests/sec:  82930.91
+Transfer/sec:     11.23MB

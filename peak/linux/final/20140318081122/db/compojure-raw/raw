@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 10:30:29 PDT 2014
+
+  System load:  0.17               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/compojure/dbraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   820.02us    2.96ms  23.87ms   98.33%
+    Req/Sec     2.56k   793.59     3.56k    71.89%
+  90639 requests in 5.00s, 15.19MB read
+Requests/sec:  18131.22
+Transfer/sec:      3.04MB
+
+---------------------------------------------------------
+ Running Warmup compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/compojure/dbraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.10ms    8.84ms 126.51ms   86.36%
+    Req/Sec   781.95    173.18     1.75k    69.13%
+  455343 requests in 15.00s, 76.33MB read
+Requests/sec:  30362.45
+Transfer/sec:      5.09MB
+
+---------------------------------------------------------
+ Concurrency: 8 for compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/compojure/dbraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   341.31us  147.80us   4.91ms   99.31%
+    Req/Sec     3.07k   314.95     3.67k    72.25%
+  348911 requests in 15.00s, 58.49MB read
+Requests/sec:  23262.17
+Transfer/sec:      3.90MB
+
+---------------------------------------------------------
+ Concurrency: 16 for compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/compojure/dbraw
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   351.96us  212.62us   7.24ms   99.61%
+    Req/Sec     2.99k   292.07     3.44k    81.92%
+  680252 requests in 15.00s, 114.04MB read
+Requests/sec:  45356.99
+Transfer/sec:      7.60MB
+
+---------------------------------------------------------
+ Concurrency: 32 for compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/compojure/dbraw
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   634.09us  433.42us   5.72ms   90.66%
+    Req/Sec     1.69k   270.29     2.67k    66.88%
+  768467 requests in 15.00s, 128.83MB read
+Requests/sec:  51244.47
+Transfer/sec:      8.59MB
+
+---------------------------------------------------------
+ Concurrency: 64 for compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/compojure/dbraw
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   835.28us  660.15us   7.52ms   88.45%
+    Req/Sec     1.31k   281.49     2.44k    65.28%
+  747138 requests in 14.99s, 125.25MB read
+Requests/sec:  49827.27
+Transfer/sec:      8.35MB
+
+---------------------------------------------------------
+ Concurrency: 128 for compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/compojure/dbraw
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.39ms    3.46ms  36.69ms   86.01%
+    Req/Sec     0.99k   286.39     2.54k    68.06%
+  569804 requests in 15.00s, 95.52MB read
+Requests/sec:  37997.36
+Transfer/sec:      6.37MB
+
+---------------------------------------------------------
+ Concurrency: 256 for compojure-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/compojure/dbraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/compojure/dbraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.16ms    8.92ms  97.19ms   86.38%
+    Req/Sec   775.94    169.47     1.62k    69.13%
+  459236 requests in 15.00s, 76.99MB read
+Requests/sec:  30620.44
+Transfer/sec:      5.13MB

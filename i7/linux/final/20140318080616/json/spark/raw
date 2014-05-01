@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 02:18:40 PDT 2014
+
+  System load:  0.06               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   228.34us  391.46us  11.55ms   99.72%
+    Req/Sec     4.77k   631.26     5.89k    87.58%
+  172273 requests in 5.00s, 25.79MB read
+Requests/sec:  34457.50
+Transfer/sec:      5.16MB
+
+---------------------------------------------------------
+ Running Warmup spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.09ms  248.97ms   2.94s    99.17%
+    Req/Sec    23.39k     5.99k   67.44k    81.50%
+  2571885 requests in 15.00s, 385.08MB read
+Requests/sec: 171467.22
+Transfer/sec:     25.67MB
+
+---------------------------------------------------------
+ Concurrency: 8 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   214.65us   94.09us   9.71ms   90.89%
+    Req/Sec     4.79k   363.35     6.00k    71.48%
+  545351 requests in 15.00s, 81.65MB read
+Requests/sec:  36352.28
+Transfer/sec:      5.44MB
+
+---------------------------------------------------------
+ Concurrency: 16 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   231.49us  152.66us   8.77ms   91.12%
+    Req/Sec     8.90k   739.07    11.22k    71.52%
+  1011738 requests in 15.00s, 151.48MB read
+Requests/sec:  67451.84
+Transfer/sec:     10.10MB
+
+---------------------------------------------------------
+ Concurrency: 32 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   237.68us  323.67us  10.81ms   95.03%
+    Req/Sec    17.87k     2.52k   25.44k    71.66%
+  2027092 requests in 15.00s, 303.51MB read
+Requests/sec: 135146.83
+Transfer/sec:     20.24MB
+
+---------------------------------------------------------
+ Concurrency: 64 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   358.85us  684.68us  16.66ms   96.60%
+    Req/Sec    25.65k     5.21k   49.78k    77.74%
+  2896006 requests in 15.00s, 433.61MB read
+Requests/sec: 193073.19
+Transfer/sec:     28.91MB
+
+---------------------------------------------------------
+ Concurrency: 128 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   735.84us    1.65ms  57.79ms   96.84%
+    Req/Sec    25.16k     4.59k   71.89k    81.79%
+  2842660 requests in 15.00s, 425.62MB read
+Requests/sec: 189528.43
+Transfer/sec:     28.38MB
+
+---------------------------------------------------------
+ Concurrency: 256 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/spark/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/spark/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.92ms    9.01ms 203.39ms   98.90%
+    Req/Sec    23.17k     4.38k   70.11k    84.28%
+  2626927 requests in 15.00s, 393.32MB read
+Requests/sec: 175162.72
+Transfer/sec:     26.23MB

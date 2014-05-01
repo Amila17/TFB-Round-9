@@ -1,0 +1,102 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 12:23:09 PDT 2014
+
+  System load:  0.54               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer falcon
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   210.59us   63.13us   1.39ms   80.06%
+    Req/Sec     4.88k   421.72     6.33k    67.95%
+  184561 requests in 5.00s, 28.69MB read
+Requests/sec:  36916.45
+Transfer/sec:      5.74MB
+
+---------------------------------------------------------
+ Running Warmup falcon
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.37ms    8.32ms 623.12ms   87.65%
+    Req/Sec     7.70k     1.99k   19.00k    71.18%
+  829405 requests in 15.00s, 128.93MB read
+Requests/sec:  55295.86
+Transfer/sec:      8.60MB
+
+---------------------------------------------------------
+ Concurrency: 256 for falcon
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    70.89ms   24.00ms 179.21ms   66.09%
+    Req/Sec     7.30k   524.80     8.22k    70.69%
+  863571 requests in 15.00s, 134.24MB read
+Requests/sec:  57569.31
+Transfer/sec:      8.95MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for falcon
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   283.45ms   52.19ms 715.47ms   83.08%
+    Req/Sec     7.19k   238.42     7.88k    80.00%
+  859177 requests in 15.00s, 133.56MB read
+Requests/sec:  57275.59
+Transfer/sec:      8.90MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for falcon
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.10s     1.16s    9.15s    94.99%
+    Req/Sec     7.59k     1.74k   10.12k    82.89%
+  853159 requests in 15.00s, 132.62MB read
+  Socket errors: connect 0, read 10, write 0, timeout 4361
+Requests/sec:  56867.44
+Transfer/sec:      8.84MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for falcon
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.87s     6.39s   14.53s    64.47%
+    Req/Sec     7.59k     4.68k   17.70k    60.47%
+  827630 requests in 15.05s, 128.66MB read
+  Socket errors: connect 11, read 2433, write 0, timeout 79175
+Requests/sec:  54976.14
+Transfer/sec:      8.55MB

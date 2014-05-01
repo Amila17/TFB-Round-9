@@ -1,0 +1,132 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 19:03:13 PDT 2014
+
+  System load:  0.16               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   498.21us  163.16us   1.16ms   69.57%
+    Req/Sec     2.10k   189.50     2.78k    61.88%
+  79166 requests in 5.00s, 13.80MB read
+Requests/sec:  15833.56
+Transfer/sec:      2.76MB
+
+---------------------------------------------------------
+ Running Warmup onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.05ms  171.44ms   6.48s    98.65%
+    Req/Sec     4.59k     1.30k    8.78k    77.27%
+  514782 requests in 15.00s, 89.73MB read
+  Socket errors: connect 0, read 169, write 0, timeout 320
+Requests/sec:  34319.47
+Transfer/sec:      5.98MB
+
+---------------------------------------------------------
+ Concurrency: 8 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   500.44us  162.42us   1.34ms   69.27%
+    Req/Sec     2.10k   188.85     2.89k    60.51%
+  238502 requests in 15.00s, 41.57MB read
+Requests/sec:  15900.33
+Transfer/sec:      2.77MB
+
+---------------------------------------------------------
+ Concurrency: 16 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   565.99us  252.54us   2.20ms   76.99%
+    Req/Sec     3.70k   326.58     5.00k    72.40%
+  417771 requests in 15.00s, 72.82MB read
+Requests/sec:  27852.04
+Transfer/sec:      4.85MB
+
+---------------------------------------------------------
+ Concurrency: 32 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.96ms  513.40us   4.62ms   68.16%
+    Req/Sec     4.37k   545.44     8.56k    79.72%
+  486524 requests in 15.00s, 84.80MB read
+Requests/sec:  32436.53
+Transfer/sec:      5.65MB
+
+---------------------------------------------------------
+ Concurrency: 64 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.83ms    6.59ms   1.46s   100.00%
+    Req/Sec     4.52k   641.81     8.22k    85.28%
+  512619 requests in 15.00s, 89.35MB read
+  Socket errors: connect 0, read 2, write 0, timeout 2
+Requests/sec:  34175.29
+Transfer/sec:      5.96MB
+
+---------------------------------------------------------
+ Concurrency: 128 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.13ms   51.00ms   1.47s    99.87%
+    Req/Sec     4.56k   835.07    11.44k    81.40%
+  518664 requests in 15.00s, 90.41MB read
+  Socket errors: connect 0, read 22, write 0, timeout 40
+Requests/sec:  34578.14
+Transfer/sec:      6.03MB
+
+---------------------------------------------------------
+ Concurrency: 256 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.10ms  122.14ms  13.18s    99.87%
+    Req/Sec     4.54k     1.25k    8.89k    75.43%
+  516617 requests in 15.00s, 90.05MB read
+  Socket errors: connect 0, read 152, write 0, timeout 291
+Requests/sec:  34443.18
+Transfer/sec:      6.00MB

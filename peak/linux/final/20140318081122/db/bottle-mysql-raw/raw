@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 09:11:07 PDT 2014
+
+  System load:  0.23               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/dbsraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   543.86us   48.62us   0.91ms   79.84%
+    Req/Sec     1.92k   107.36     2.22k    63.43%
+  72536 requests in 5.00s, 12.92MB read
+Requests/sec:  14509.46
+Transfer/sec:      2.58MB
+
+---------------------------------------------------------
+ Running Warmup bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.46ms    5.48ms  87.60ms   90.11%
+    Req/Sec     1.74k   664.50     4.33k    66.57%
+  809919 requests in 14.99s, 144.27MB read
+Requests/sec:  54019.58
+Transfer/sec:      9.62MB
+
+---------------------------------------------------------
+ Concurrency: 8 for bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   566.28us   63.36us   0.87ms   73.70%
+    Req/Sec     1.85k   135.94     2.22k    53.39%
+  210179 requests in 15.00s, 37.44MB read
+Requests/sec:  14012.45
+Transfer/sec:      2.50MB
+
+---------------------------------------------------------
+ Concurrency: 16 for bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   579.92us   66.70us   1.08ms   75.20%
+    Req/Sec     1.81k   115.12     2.11k    76.27%
+  410987 requests in 15.00s, 73.21MB read
+Requests/sec:  27402.71
+Transfer/sec:      4.88MB
+
+---------------------------------------------------------
+ Concurrency: 32 for bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   708.89us  178.32us   2.57ms   80.88%
+    Req/Sec     1.49k   243.21     2.11k    73.50%
+  677589 requests in 15.00s, 120.70MB read
+Requests/sec:  45182.78
+Transfer/sec:      8.05MB
+
+---------------------------------------------------------
+ Concurrency: 64 for bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   786.92us  261.25us   3.34ms   84.66%
+    Req/Sec     1.35k   252.38     1.89k    81.60%
+  766210 requests in 15.00s, 136.48MB read
+Requests/sec:  51095.66
+Transfer/sec:      9.10MB
+
+---------------------------------------------------------
+ Concurrency: 128 for bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.00ms    1.37ms  20.40ms   88.56%
+    Req/Sec     1.65k   502.65     3.56k    64.45%
+  935362 requests in 15.00s, 166.61MB read
+Requests/sec:  62377.27
+Transfer/sec:     11.11MB
+
+---------------------------------------------------------
+ Concurrency: 256 for bottle-mysql-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/dbsraw
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/dbsraw
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.51ms    3.11ms  35.02ms   81.05%
+    Req/Sec     1.48k   395.17     3.67k    68.62%
+  824422 requests in 15.00s, 146.85MB read
+Requests/sec:  54977.01
+Transfer/sec:      9.79MB

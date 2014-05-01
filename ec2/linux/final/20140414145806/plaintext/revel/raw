@@ -1,0 +1,105 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer revel
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.21ms  420.34us   5.89ms   97.15%
+    Req/Sec     0.87k   130.14     1.33k    81.59%
+  32974 requests in 5.00s, 4.09MB read
+Requests/sec:   6595.32
+Transfer/sec:    837.30KB
+
+---------------------------------------------------------
+ Running Warmup revel
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.07ms    4.46ms  37.59ms   73.76%
+    Req/Sec    11.93k     1.46k   14.55k    58.69%
+  350734 requests in 15.00s, 43.48MB read
+Requests/sec:  23375.17
+Transfer/sec:      2.90MB
+
+---------------------------------------------------------
+ Concurrency: 256 for revel
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   129.12ms  373.36ms   6.72s    96.09%
+    Req/Sec    15.54k     1.24k   18.60k    62.79%
+  464254 requests in 15.00s, 57.56MB read
+  Socket errors: connect 0, read 0, write 0, timeout 142
+Requests/sec:  30948.67
+Transfer/sec:      3.84MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for revel
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   365.90ms    1.12s   14.66s    95.96%
+    Req/Sec    15.59k     1.23k   18.54k    78.08%
+  464746 requests in 15.00s, 57.62MB read
+  Socket errors: connect 0, read 0, write 0, timeout 3250
+Requests/sec:  30977.32
+Transfer/sec:      3.84MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for revel
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.62s     6.29s   14.53s    71.58%
+    Req/Sec    15.50k     3.41k   21.31k    56.63%
+  481274 requests in 15.01s, 59.67MB read
+  Socket errors: connect 0, read 0, write 0, timeout 17945
+Requests/sec:  32063.11
+Transfer/sec:      3.98MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for revel
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.09s     6.52s   14.29s    62.69%
+    Req/Sec    14.11k     6.16k   23.41k    61.90%
+  464531 requests in 15.03s, 57.59MB read
+  Socket errors: connect 8197, read 0, write 0, timeout 96716
+Requests/sec:  30896.99
+Transfer/sec:      3.83MB

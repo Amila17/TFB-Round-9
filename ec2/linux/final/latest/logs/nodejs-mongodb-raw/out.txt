@@ -1,0 +1,112 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: nodejs-mongodb-raw
+self.results['completed']: {}
+
+=====================================================
+  Beginning nodejs-mongodb-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting nodejs-mongodb-raw
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 00:49:32 UTC 2014
+
+  System load:  0.02               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+mysql start/running, process 12643
+mongodb start/running, process 12708
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+
+-----------------------------------------------------
+  VERIFYING DB (/mongodbdriver)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 15 Apr 2014 00:50:49 GMT
+Connection: keep-alive
+Transfer-Encoding: chunked
+
+{"_id":8803,"id":8803,"randomNumber":2585}
+
+VALIDATING DB ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING QUERY (/mongodbdriver?queries=2)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Date: Tue, 15 Apr 2014 00:50:49 GMT
+Connection: keep-alive
+Transfer-Encoding: chunked
+
+[{"_id":5767,"id":5767,"randomNumber":5927},{"_id":8432,"id":8432,"randomNumber":3868}]
+
+/mongodbdriver?queries=2 - PASS
+
+-----------------------------------------------------
+
+/mongodbdriver?queries=0 - WARNING
+
+-----------------------------------------------------
+
+worker undefined died
+worker undefined died
+/mongodbdriver?queries=foo - WARNING
+
+-----------------------------------------------------
+
+/mongodbdriver?queries=501 - WARNING
+
+-----------------------------------------------------
+
+
+VALIDATING QUERY ... PASS (with warnings)
+
+
+-----------------------------------------------------
+  VERIFYING UPDATE (/update-mongodb?queries=)
+-----------------------------------------------------
+VALIDATING UPDATE ... FAIL
+
+
+-----------------------------------------------------
+  Benchmarking nodejs-mongodb-raw ...
+-----------------------------------------------------
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+BENCHMARKING Update ... Complete
+
+-----------------------------------------------------
+  Stopping nodejs-mongodb-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped nodejs-mongodb-raw
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through nodejs-mongodb-raw
+----------------------------------------------------

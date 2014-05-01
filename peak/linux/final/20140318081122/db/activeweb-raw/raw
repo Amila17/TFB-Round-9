@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 08:18:00 PDT 2014
+
+  System load:  0.35               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/activeweb/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.27ms    3.15ms  30.13ms   98.66%
+    Req/Sec     1.13k   202.47     1.44k    89.86%
+  41582 requests in 5.00s, 7.15MB read
+  Non-2xx or 3xx responses: 8
+Requests/sec:   8317.79
+Transfer/sec:      1.43MB
+
+---------------------------------------------------------
+ Running Warmup activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.02ms    4.57ms  71.89ms   86.02%
+    Req/Sec     2.22k   665.54     5.11k    70.07%
+  1256370 requests in 14.99s, 215.46MB read
+  Non-2xx or 3xx responses: 131
+Requests/sec:  83802.51
+Transfer/sec:     14.37MB
+
+---------------------------------------------------------
+ Concurrency: 8 for activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   522.70us  433.76us  13.14ms   99.79%
+    Req/Sec     2.05k   205.58     2.33k    93.10%
+  233386 requests in 15.00s, 40.02MB read
+  Non-2xx or 3xx responses: 17
+Requests/sec:  15559.39
+Transfer/sec:      2.67MB
+
+---------------------------------------------------------
+ Concurrency: 16 for activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/db
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   527.54us  461.86us   9.99ms   99.68%
+    Req/Sec     2.04k   239.56     2.33k    95.65%
+  464750 requests in 15.00s, 79.70MB read
+  Non-2xx or 3xx responses: 45
+Requests/sec:  30987.98
+Transfer/sec:      5.31MB
+
+---------------------------------------------------------
+ Concurrency: 32 for activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/db
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   604.89us  713.10us  11.80ms   99.32%
+    Req/Sec     1.85k   291.24     2.22k    93.92%
+  839531 requests in 15.00s, 143.97MB read
+  Non-2xx or 3xx responses: 86
+Requests/sec:  55982.53
+Transfer/sec:      9.60MB
+
+---------------------------------------------------------
+ Concurrency: 64 for activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/db
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   654.58us  784.35us  14.58ms   99.18%
+    Req/Sec     1.72k   287.82     2.11k    93.03%
+  978778 requests in 15.00s, 167.85MB read
+  Non-2xx or 3xx responses: 85
+Requests/sec:  65271.75
+Transfer/sec:     11.19MB
+
+---------------------------------------------------------
+ Concurrency: 128 for activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/db
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.49ms    1.91ms  23.63ms   94.57%
+    Req/Sec     2.43k   610.03     4.20k    80.03%
+  1383302 requests in 14.99s, 237.22MB read
+  Non-2xx or 3xx responses: 140
+Requests/sec:  92255.50
+Transfer/sec:     15.82MB
+
+---------------------------------------------------------
+ Concurrency: 256 for activeweb-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/activeweb/db
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/activeweb/db
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.99ms    4.47ms  56.85ms   86.53%
+    Req/Sec     2.25k   650.40     5.11k    70.11%
+  1307982 requests in 14.99s, 224.30MB read
+  Non-2xx or 3xx responses: 118
+Requests/sec:  87263.02
+Transfer/sec:     14.96MB

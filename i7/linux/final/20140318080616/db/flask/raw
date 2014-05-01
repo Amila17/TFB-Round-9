@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 12:56:01 PDT 2014
+
+  System load:  0.23               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.27ms    1.07ms  20.73ms   92.15%
+    Req/Sec   481.29     92.93   777.00     78.70%
+  18185 requests in 5.00s, 3.29MB read
+Requests/sec:   3636.78
+Transfer/sec:    673.99KB
+
+---------------------------------------------------------
+ Running Warmup flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    67.48ms   24.44ms 213.02ms   73.10%
+    Req/Sec   476.48     29.01   551.00     69.18%
+  56861 requests in 15.00s, 10.29MB read
+Requests/sec:   3790.27
+Transfer/sec:    702.44KB
+
+---------------------------------------------------------
+ Concurrency: 8 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.27ms  820.93us  20.06ms   85.29%
+    Req/Sec   478.40     91.46   777.00     78.50%
+  54400 requests in 15.00s, 9.85MB read
+Requests/sec:   3626.44
+Transfer/sec:    672.07KB
+
+---------------------------------------------------------
+ Concurrency: 16 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.30ms    1.78ms  72.57ms   80.18%
+    Req/Sec   504.93    112.86     0.92k    73.32%
+  57735 requests in 15.00s, 10.45MB read
+Requests/sec:   3848.78
+Transfer/sec:    713.29KB
+
+---------------------------------------------------------
+ Concurrency: 32 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.56ms    5.48ms  54.82ms   86.80%
+    Req/Sec   503.15    121.72     0.94k    66.92%
+  56833 requests in 15.00s, 10.29MB read
+Requests/sec:   3788.26
+Transfer/sec:    702.06KB
+
+---------------------------------------------------------
+ Concurrency: 64 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.31ms   10.23ms  79.57ms   69.57%
+    Req/Sec   496.26    128.82     0.86k    63.65%
+  56692 requests in 15.00s, 10.26MB read
+Requests/sec:   3778.59
+Transfer/sec:    700.27KB
+
+---------------------------------------------------------
+ Concurrency: 128 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    32.33ms   15.16ms 147.78ms   76.68%
+    Req/Sec   500.13     61.65   706.00     68.62%
+  56784 requests in 15.00s, 10.28MB read
+Requests/sec:   3784.72
+Transfer/sec:    701.42KB
+
+---------------------------------------------------------
+ Concurrency: 256 for flask
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/dbs
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/dbs
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    67.54ms   24.06ms 203.52ms   69.71%
+    Req/Sec   476.17     38.92   596.00     77.15%
+  56762 requests in 15.00s, 10.27MB read
+Requests/sec:   3783.01
+Transfer/sec:    701.11KB

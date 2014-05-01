@@ -1,0 +1,137 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/index.php?json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.38ms   51.64ms 188.69ms   89.22%
+    Req/Sec    49.55     27.35   126.00     67.66%
+  1998 requests in 6.00s, 819.42KB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:    332.95
+Transfer/sec:    136.55KB
+
+---------------------------------------------------------
+ Running Warmup phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?json
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.63s     2.17s    5.36s    75.00%
+    Req/Sec   231.62    149.54   367.00     75.00%
+  6183 requests in 15.00s, 2.48MB read
+  Socket errors: connect 0, read 0, write 0, timeout 520
+Requests/sec:    412.07
+Transfer/sec:    169.01KB
+
+---------------------------------------------------------
+ Concurrency: 8 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?json
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.10s     2.17s    6.04s    84.49%
+    Req/Sec    33.24     83.43   358.00     86.16%
+  1195 requests in 16.00s, 490.10KB read
+  Socket errors: connect 0, read 0, write 0, timeout 32
+Requests/sec:     74.69
+Transfer/sec:     30.63KB
+
+---------------------------------------------------------
+ Concurrency: 16 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?json
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.85s     2.38s    4.84s    62.50%
+    Req/Sec    52.38     54.47   116.00     75.00%
+  1947 requests in 15.01s, 798.50KB read
+  Socket errors: connect 0, read 0, write 0, timeout 32
+Requests/sec:    129.69
+Transfer/sec:     53.19KB
+
+---------------------------------------------------------
+ Concurrency: 32 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?json
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.38s     2.09s    4.70s    71.88%
+    Req/Sec    86.01    154.85   478.00     81.25%
+  2463 requests in 15.95s, 0.99MB read
+  Socket errors: connect 0, read 0, write 0, timeout 83
+Requests/sec:    154.39
+Transfer/sec:     63.32KB
+
+---------------------------------------------------------
+ Concurrency: 64 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?json
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   521.56ms    1.53s    5.93s    92.86%
+    Req/Sec   108.00     25.60   131.00     75.00%
+  2656 requests in 16.01s, 1.06MB read
+  Socket errors: connect 0, read 0, write 0, timeout 206
+Requests/sec:    165.91
+Transfer/sec:     68.05KB
+
+---------------------------------------------------------
+ Concurrency: 128 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?json
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   230.03ms  420.09ms   1.58s    92.31%
+    Req/Sec   204.00      0.00   204.00    100.00%
+  3923 requests in 15.06s, 1.57MB read
+  Socket errors: connect 0, read 0, write 0, timeout 295
+Requests/sec:    260.41
+Transfer/sec:    106.81KB
+
+---------------------------------------------------------
+ Concurrency: 256 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/index.php?json
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/index.php?json
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   275.03ms  181.02ms 600.79ms   57.69%
+    Req/Sec   138.50      7.78   144.00    100.00%
+  5061 requests in 16.01s, 2.03MB read
+  Socket errors: connect 0, read 0, write 0, timeout 476
+Requests/sec:    316.07
+Transfer/sec:    129.64KB

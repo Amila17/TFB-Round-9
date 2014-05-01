@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 07:01:37 PDT 2014
+
+  System load:  0.38               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    63.96us   46.82us   5.26ms   99.88%
+    Req/Sec    15.46k     1.04k   18.00k    62.99%
+  581813 requests in 5.00s, 73.24MB read
+Requests/sec: 116372.26
+Transfer/sec:     14.65MB
+
+---------------------------------------------------------
+ Running Warmup vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   276.92us    1.46ms 167.20ms   99.35%
+    Req/Sec    24.47k     6.48k   45.78k    66.10%
+  13785171 requests in 15.00s, 1.69GB read
+Requests/sec: 919169.31
+Transfer/sec:    115.71MB
+
+---------------------------------------------------------
+ Concurrency: 256 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.14ms    7.14ms 138.29ms   94.41%
+    Req/Sec    59.73k    23.82k  184.89k    67.76%
+  33701040 requests in 15.00s, 4.14GB read
+Requests/sec: 2247106.02
+Transfer/sec:    282.88MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.14ms    8.44ms  97.64ms   80.76%
+    Req/Sec    59.47k    11.32k  124.44k    70.71%
+  33954272 requests in 15.00s, 4.17GB read
+Requests/sec: 2264230.68
+Transfer/sec:    285.03MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    41.89ms  157.70ms   2.13s    98.81%
+    Req/Sec    56.79k    20.11k  193.26k    79.57%
+  30758544 requests in 15.00s, 3.78GB read
+  Socket errors: connect 0, read 0, write 0, timeout 3368
+Requests/sec: 2050917.85
+Transfer/sec:    258.18MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for vertx
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 40 http://10.0.3.2:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/plaintext
+  40 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   497.41ms    2.05s   10.29s    95.26%
+    Req/Sec    52.18k    23.52k  179.37k    67.34%
+  30097633 requests in 15.01s, 3.70GB read
+  Socket errors: connect 0, read 215, write 0, timeout 70434
+Requests/sec: 2004750.97
+Transfer/sec:    252.37MB

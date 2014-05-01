@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 06:47:49 PDT 2014
+
+  System load:  0.02               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.71ms    5.25ms  23.52ms   49.58%
+    Req/Sec    72.15     26.18   125.00     74.97%
+  2780 requests in 5.01s, 3.64MB read
+Requests/sec:    555.13
+Transfer/sec:    743.78KB
+
+---------------------------------------------------------
+ Running Warmup urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   503.69ms  112.09ms 732.54ms   77.59%
+    Req/Sec    64.82     15.15   102.00     66.84%
+  7800 requests in 15.06s, 10.21MB read
+Requests/sec:    517.87
+Transfer/sec:    693.87KB
+
+---------------------------------------------------------
+ Concurrency: 8 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.27ms  754.02us  17.02ms   76.02%
+    Req/Sec    99.07     17.95   142.00     83.16%
+  11680 requests in 15.01s, 15.28MB read
+Requests/sec:    778.27
+Transfer/sec:      1.02MB
+
+---------------------------------------------------------
+ Concurrency: 16 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.59ms    8.21ms  52.29ms   76.78%
+    Req/Sec    51.59     13.90    86.00     82.91%
+  6171 requests in 15.02s, 8.07MB read
+Requests/sec:    410.77
+Transfer/sec:    550.36KB
+
+---------------------------------------------------------
+ Concurrency: 32 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    86.97ms   10.19ms  98.89ms   89.98%
+    Req/Sec    46.56      8.33    86.00     89.50%
+  5629 requests in 15.04s, 7.37MB read
+Requests/sec:    374.29
+Transfer/sec:    501.49KB
+
+---------------------------------------------------------
+ Concurrency: 64 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   138.16ms   33.63ms 188.12ms   56.69%
+    Req/Sec    60.95     13.86    86.00     50.32%
+  7273 requests in 15.05s, 9.52MB read
+Requests/sec:    483.30
+Transfer/sec:    647.54KB
+
+---------------------------------------------------------
+ Concurrency: 128 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   359.03ms    7.88ms 372.48ms   91.98%
+    Req/Sec    44.16      1.29    51.00     89.31%
+  5349 requests in 15.09s, 7.00MB read
+Requests/sec:    354.52
+Transfer/sec:    475.00KB
+
+---------------------------------------------------------
+ Concurrency: 256 for urweb-postgres
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/fortunes
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/fortunes
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   623.42ms  126.79ms 865.15ms   68.02%
+    Req/Sec    52.87     13.24    76.00     67.91%
+  6327 requests in 15.40s, 8.28MB read
+Requests/sec:    410.78
+Transfer/sec:    550.39KB

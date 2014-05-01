@@ -1,0 +1,115 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 09:25:16 PDT 2014
+
+  System load:  0.33               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.40ms  318.86us   4.21ms   73.04%
+    Req/Sec   438.63     59.25   600.00     67.76%
+  16663 requests in 5.00s, 3.46MB read
+Requests/sec:   3331.85
+Transfer/sec:    707.74KB
+
+---------------------------------------------------------
+ Running Warmup bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.84ms    8.54ms  91.96ms   73.76%
+    Req/Sec   253.32     29.89   416.00     69.06%
+  151358 requests in 15.00s, 31.40MB read
+Requests/sec:  10088.55
+Transfer/sec:      2.09MB
+
+---------------------------------------------------------
+ Queries: 1 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    16.80ms    6.27ms  57.29ms   75.18%
+    Req/Sec   362.74     39.05   521.00     69.17%
+  216193 requests in 15.00s, 38.29MB read
+Requests/sec:  14410.49
+Transfer/sec:      2.55MB
+
+---------------------------------------------------------
+ Queries: 5 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    46.05ms   13.76ms 116.90ms   70.41%
+    Req/Sec   131.04     12.35   185.00     69.12%
+  78690 requests in 15.01s, 23.55MB read
+Requests/sec:   5241.98
+Transfer/sec:      1.57MB
+
+---------------------------------------------------------
+ Queries: 10 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    83.53ms   20.04ms 192.95ms   68.30%
+    Req/Sec    71.84      6.54    96.00     69.25%
+  43417 requests in 15.03s, 19.58MB read
+Requests/sec:   2888.38
+Transfer/sec:      1.30MB
+
+---------------------------------------------------------
+ Queries: 15 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   125.75ms   26.28ms 227.40ms   66.79%
+    Req/Sec    47.21      4.31    64.00     70.28%
+  28739 requests in 15.05s, 17.31MB read
+Requests/sec:   1910.02
+Transfer/sec:      1.15MB
+
+---------------------------------------------------------
+ Queries: 20 for bottle-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   170.69ms   33.28ms 289.88ms   61.93%
+    Req/Sec    34.92      3.35    46.00     69.30%
+  21233 requests in 15.05s, 16.01MB read
+Requests/sec:   1410.61
+Transfer/sec:      1.06MB

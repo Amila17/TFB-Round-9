@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 07:49:41 UTC 2014
+
+  System load:  0.11               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/spark/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.92ms    2.67ms  27.88ms   81.97%
+    Req/Sec   120.21     35.38   222.00     59.31%
+  4701 requests in 5.00s, 738.08KB read
+Requests/sec:    939.36
+Transfer/sec:    147.48KB
+
+---------------------------------------------------------
+ Running Warmup spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/spark/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   207.08ms  165.69ms   1.00s    90.13%
+    Req/Sec   686.65    117.73     0.85k    88.33%
+  19946 requests in 15.03s, 3.06MB read
+Requests/sec:   1327.47
+Transfer/sec:    208.42KB
+
+---------------------------------------------------------
+ Concurrency: 8 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/spark/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.06ms  641.29us  17.41ms   81.31%
+    Req/Sec   684.87     67.37     0.92k    60.32%
+  19717 requests in 15.00s, 3.02MB read
+Requests/sec:   1314.37
+Transfer/sec:    206.37KB
+
+---------------------------------------------------------
+ Concurrency: 16 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/spark/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.47ms  704.08us  16.59ms   80.74%
+    Req/Sec     1.28k    94.81     1.62k    69.04%
+  37037 requests in 15.00s, 5.68MB read
+Requests/sec:   2469.00
+Transfer/sec:    387.64KB
+
+---------------------------------------------------------
+ Concurrency: 32 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/spark/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.66ms    2.06ms  26.81ms   73.21%
+    Req/Sec     1.89k   149.33     2.27k    70.75%
+  55449 requests in 15.00s, 8.50MB read
+Requests/sec:   3696.51
+Transfer/sec:    580.38KB
+
+---------------------------------------------------------
+ Concurrency: 64 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/spark/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.11ms    3.82ms  49.23ms   78.92%
+    Req/Sec     1.88k   126.40     2.19k    70.92%
+  55816 requests in 15.00s, 8.56MB read
+Requests/sec:   3720.92
+Transfer/sec:    584.20KB
+
+---------------------------------------------------------
+ Concurrency: 128 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/spark/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    38.02ms   16.24ms 149.20ms   75.33%
+    Req/Sec     1.70k   122.62     1.97k    73.44%
+  50607 requests in 15.00s, 7.76MB read
+Requests/sec:   3373.32
+Transfer/sec:    529.64KB
+
+---------------------------------------------------------
+ Concurrency: 256 for spark
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/spark/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/spark/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.42ms   37.48ms 373.17ms   76.25%
+    Req/Sec     1.54k    80.86     1.69k    71.84%
+  45903 requests in 15.00s, 7.04MB read
+Requests/sec:   3060.04
+Transfer/sec:    480.45KB

@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 01:56:58 PDT 2014
+
+  System load:  0.26               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.48ms   39.00ms 128.92ms   50.18%
+    Req/Sec     0.31      3.19    49.00     98.94%
+  228 requests in 6.00s, 1.64MB read
+  Socket errors: connect 0, read 0, write 0, timeout 17
+  Non-2xx or 3xx responses: 8
+Requests/sec:     37.99
+Transfer/sec:    279.42KB
+
+---------------------------------------------------------
+ Running Warmup sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.67s   391.39ms   2.34s    70.02%
+    Req/Sec    16.53     10.20    54.00     70.98%
+  2558 requests in 15.19s, 49.88MB read
+  Socket errors: connect 0, read 21, write 0, timeout 203
+  Non-2xx or 3xx responses: 248
+Requests/sec:    168.41
+Transfer/sec:      3.28MB
+
+---------------------------------------------------------
+ Concurrency: 8 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.37s     2.58s   10.12s    92.99%
+    Req/Sec     0.05      0.44     5.00     98.36%
+  57 requests in 16.00s, 1.43MB read
+  Socket errors: connect 0, read 1, write 0, timeout 48
+  Non-2xx or 3xx responses: 7
+Requests/sec:      3.56
+Transfer/sec:     91.82KB
+
+---------------------------------------------------------
+ Concurrency: 16 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.81s     3.89s    7.99s    53.35%
+    Req/Sec     4.51      9.38    49.00     82.96%
+  637 requests in 16.00s, 14.75MB read
+  Socket errors: connect 0, read 9, write 0, timeout 80
+  Non-2xx or 3xx responses: 72
+Requests/sec:     39.81
+Transfer/sec:      0.92MB
+
+---------------------------------------------------------
+ Concurrency: 32 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.14s     1.72s    4.28s    75.72%
+    Req/Sec    10.59     10.46    53.00     49.79%
+  1410 requests in 16.00s, 34.95MB read
+  Socket errors: connect 0, read 23, write 0, timeout 120
+  Non-2xx or 3xx responses: 170
+Requests/sec:     88.12
+Transfer/sec:      2.18MB
+
+---------------------------------------------------------
+ Concurrency: 64 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   266.55ms  104.75ms 517.09ms   56.71%
+    Req/Sec    17.53      5.96    42.00     73.78%
+  2089 requests in 15.15s, 49.60MB read
+  Socket errors: connect 0, read 20, write 0, timeout 148
+  Non-2xx or 3xx responses: 244
+Requests/sec:    137.90
+Transfer/sec:      3.27MB
+
+---------------------------------------------------------
+ Concurrency: 128 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   744.46ms  125.18ms   1.19s    66.93%
+    Req/Sec    16.29      3.96    28.00     67.72%
+  1948 requests in 15.16s, 48.88MB read
+  Socket errors: connect 0, read 22, write 0, timeout 168
+  Non-2xx or 3xx responses: 242
+Requests/sec:    128.48
+Transfer/sec:      3.22MB
+
+---------------------------------------------------------
+ Concurrency: 256 for sinatra-ruby
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.62s   266.81ms   2.02s    75.91%
+    Req/Sec    16.37      5.34    33.00     65.29%
+  2033 requests in 15.69s, 47.88MB read
+  Socket errors: connect 0, read 20, write 0, timeout 185
+  Non-2xx or 3xx responses: 237
+Requests/sec:    129.53
+Transfer/sec:      3.05MB

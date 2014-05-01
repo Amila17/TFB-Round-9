@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 02:23:36 PDT 2014
+
+  System load:  0.02               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   373.21us    2.87ms  32.71ms   99.05%
+    Req/Sec    11.81k     3.54k   15.67k    81.46%
+  411033 requests in 5.00s, 71.34MB read
+Requests/sec:  82227.29
+Transfer/sec:     14.27MB
+
+---------------------------------------------------------
+ Running Warmup spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.03ms    0.97ms  22.50ms   83.27%
+    Req/Sec     3.19k   489.25     6.44k    72.47%
+  1810292 requests in 14.99s, 314.21MB read
+Requests/sec: 120751.30
+Transfer/sec:     20.96MB
+
+---------------------------------------------------------
+ Concurrency: 8 for spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    75.23us   17.15us   2.25ms   91.75%
+    Req/Sec    13.27k   811.01    15.56k    60.43%
+  1506474 requests in 15.00s, 261.48MB read
+Requests/sec: 100438.79
+Transfer/sec:     17.43MB
+
+---------------------------------------------------------
+ Concurrency: 16 for spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   111.10us   29.92us   2.29ms   88.22%
+    Req/Sec     9.11k   839.94    12.33k    69.46%
+  2071045 requests in 15.00s, 359.47MB read
+Requests/sec: 138088.30
+Transfer/sec:     23.97MB
+
+---------------------------------------------------------
+ Concurrency: 32 for spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   197.39us  173.53us  10.39ms   99.84%
+    Req/Sec     5.30k     1.10k   11.33k    72.60%
+  2406555 requests in 15.00s, 417.70MB read
+Requests/sec: 160476.43
+Transfer/sec:     27.85MB
+
+---------------------------------------------------------
+ Concurrency: 64 for spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   232.55us  204.66us  10.37ms   97.23%
+    Req/Sec     4.58k     1.16k    8.44k    70.36%
+  2598106 requests in 15.00s, 450.95MB read
+Requests/sec: 173261.12
+Transfer/sec:     30.07MB
+
+---------------------------------------------------------
+ Concurrency: 128 for spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.05ms    0.94ms  36.62ms   98.12%
+    Req/Sec     3.16k   557.78     5.33k    70.56%
+  1806313 requests in 14.99s, 313.52MB read
+Requests/sec: 120492.37
+Transfer/sec:     20.91MB
+
+---------------------------------------------------------
+ Concurrency: 256 for spray
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.96ms    1.12ms  25.59ms   91.21%
+    Req/Sec     3.33k   561.03     6.22k    74.43%
+  1891765 requests in 14.99s, 328.35MB read
+Requests/sec: 126202.61
+Transfer/sec:     21.90MB

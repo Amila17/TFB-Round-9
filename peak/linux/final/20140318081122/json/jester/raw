@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 16:15:25 PDT 2014
+
+  System load:  0.09               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   256.63us  785.93us  13.53ms   98.63%
+    Req/Sec     4.96k     0.98k    6.89k    73.52%
+  188192 requests in 5.00s, 36.42MB read
+Requests/sec:  37647.01
+Transfer/sec:      7.29MB
+
+---------------------------------------------------------
+ Running Warmup jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.64ms   80.27ms   1.01s    99.35%
+    Req/Sec     2.77k   719.25     7.00k    72.95%
+  1577818 requests in 14.99s, 305.38MB read
+Requests/sec: 105238.47
+Transfer/sec:     20.37MB
+
+---------------------------------------------------------
+ Concurrency: 8 for jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   257.48us  785.71us  13.46ms   98.67%
+    Req/Sec     4.91k   833.29     6.89k    77.15%
+  558328 requests in 15.00s, 108.06MB read
+Requests/sec:  37224.51
+Transfer/sec:      7.20MB
+
+---------------------------------------------------------
+ Concurrency: 16 for jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   585.94us    2.81ms  26.19ms   98.66%
+    Req/Sec     3.93k     0.89k    6.22k    76.83%
+  894869 requests in 15.00s, 173.20MB read
+Requests/sec:  59663.80
+Transfer/sec:     11.55MB
+
+---------------------------------------------------------
+ Concurrency: 32 for jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.28ms    5.50ms  35.82ms   97.48%
+    Req/Sec     2.65k   725.71     5.00k    75.79%
+  1208614 requests in 14.99s, 233.93MB read
+Requests/sec:  80603.63
+Transfer/sec:     15.60MB
+
+---------------------------------------------------------
+ Concurrency: 64 for jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.36ms    5.28ms  33.24ms   97.20%
+    Req/Sec     2.23k   630.42     4.67k    74.97%
+  1270662 requests in 14.99s, 245.93MB read
+Requests/sec:  84747.06
+Transfer/sec:     16.40MB
+
+---------------------------------------------------------
+ Concurrency: 128 for jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.50ms    7.66ms  48.73ms   96.97%
+    Req/Sec     2.69k   663.94     5.67k    84.03%
+  1528997 requests in 14.99s, 295.93MB read
+Requests/sec: 101984.23
+Transfer/sec:     19.74MB
+
+---------------------------------------------------------
+ Concurrency: 256 for jester
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.57ms   66.80ms   1.03s    99.56%
+    Req/Sec     2.79k   718.73     6.78k    74.83%
+  1591487 requests in 14.99s, 308.03MB read
+Requests/sec: 106138.84
+Transfer/sec:     20.54MB

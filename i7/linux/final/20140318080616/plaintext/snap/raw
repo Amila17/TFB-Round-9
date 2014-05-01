@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 02:15:21 PDT 2014
+
+  System load:  0.07               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer snap
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8000/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8000/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   379.62us   94.92us   1.25ms   86.30%
+    Req/Sec     2.75k   298.04     3.67k    69.24%
+  102059 requests in 5.00s, 12.85MB read
+Requests/sec:  20412.92
+Transfer/sec:      2.57MB
+
+---------------------------------------------------------
+ Running Warmup snap
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8000/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8000/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.57ms    3.76ms  32.01ms   74.76%
+    Req/Sec     2.15k   395.49     3.11k    67.16%
+  253736 requests in 15.00s, 31.94MB read
+Requests/sec:  16915.48
+Transfer/sec:      2.13MB
+
+---------------------------------------------------------
+ Concurrency: 256 for snap
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8000/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8000/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    69.41ms   10.36ms 147.77ms   79.87%
+    Req/Sec     7.36k   698.87    11.77k    71.25%
+  878710 requests in 15.00s, 110.62MB read
+Requests/sec:  58574.73
+Transfer/sec:      7.37MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for snap
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8000/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8000/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   284.58ms   56.98ms   1.06s    82.22%
+    Req/Sec     6.98k   771.44     9.23k    70.13%
+  812382 requests in 15.00s, 102.27MB read
+  Socket errors: connect 0, read 33, write 0, timeout 249
+Requests/sec:  54150.90
+Transfer/sec:      6.82MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for snap
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8000/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8000/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   669.66ms  344.30ms   4.00s    90.66%
+    Req/Sec     6.27k     1.57k    8.72k    81.76%
+  722808 requests in 15.00s, 90.99MB read
+  Socket errors: connect 0, read 326, write 0, timeout 13741
+Requests/sec:  48171.74
+Transfer/sec:      6.06MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for snap
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8000/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8000/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.09s     3.94s   13.96s    91.03%
+    Req/Sec     5.40k     1.93k    9.45k    73.41%
+  671054 requests in 15.02s, 84.48MB read
+  Socket errors: connect 11, read 3242, write 0, timeout 85899
+Requests/sec:  44674.55
+Transfer/sec:      5.62MB

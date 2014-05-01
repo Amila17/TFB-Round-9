@@ -1,0 +1,130 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 21:56:00 PDT 2014
+
+  System load:  0.07               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:9000/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   584.44us    2.54ms  30.48ms   98.97%
+    Req/Sec     3.75k     1.45k    5.78k    63.12%
+  130519 requests in 5.00s, 14.07MB read
+Requests/sec:  26108.89
+Transfer/sec:      2.81MB
+
+---------------------------------------------------------
+ Running Warmup play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.13ms    4.27ms 215.46ms   96.88%
+    Req/Sec     3.18k     1.02k   12.33k    80.53%
+  1725883 requests in 14.99s, 185.99MB read
+  Socket errors: connect 0, read 0, write 0, timeout 78
+Requests/sec: 115101.45
+Transfer/sec:     12.40MB
+
+---------------------------------------------------------
+ Concurrency: 8 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   196.29us  108.60us   4.13ms   99.90%
+    Req/Sec     5.29k   372.22     6.00k    79.10%
+  600664 requests in 15.00s, 64.73MB read
+Requests/sec:  40047.39
+Transfer/sec:      4.32MB
+
+---------------------------------------------------------
+ Concurrency: 16 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   301.74us    1.00ms  17.33ms   99.41%
+    Req/Sec     4.32k   613.97     5.22k    92.32%
+  983169 requests in 15.00s, 105.95MB read
+Requests/sec:  65555.95
+Transfer/sec:      7.06MB
+
+---------------------------------------------------------
+ Concurrency: 32 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   666.26us    2.61ms  24.15ms   98.11%
+    Req/Sec     2.96k   688.12     6.55k    82.12%
+  1344474 requests in 15.00s, 144.89MB read
+Requests/sec:  89650.30
+Transfer/sec:      9.66MB
+
+---------------------------------------------------------
+ Concurrency: 64 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   711.84us    2.84ms  35.21ms   98.31%
+    Req/Sec     2.56k   611.81     4.89k    79.43%
+  1457094 requests in 14.99s, 157.02MB read
+Requests/sec:  97190.24
+Transfer/sec:     10.47MB
+
+---------------------------------------------------------
+ Concurrency: 128 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.16ms    1.93ms  39.15ms   97.17%
+    Req/Sec     3.04k   756.99     6.89k    72.71%
+  1729604 requests in 14.99s, 186.39MB read
+Requests/sec: 115386.63
+Transfer/sec:     12.43MB
+
+---------------------------------------------------------
+ Concurrency: 256 for play2
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:9000/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:9000/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.27ms    8.67ms 630.03ms   99.37%
+    Req/Sec     3.06k   655.73     8.56k    71.56%
+  1739291 requests in 14.99s, 187.44MB read
+Requests/sec: 116024.20
+Transfer/sec:     12.50MB

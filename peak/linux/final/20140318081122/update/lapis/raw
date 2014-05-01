@@ -1,0 +1,122 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 16:35:22 PDT 2014
+
+  System load:  0.25               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.52ms  343.80us   7.44ms   83.85%
+    Req/Sec   702.23    106.88     1.00k    80.17%
+  25751 requests in 5.00s, 5.96MB read
+Requests/sec:   5150.30
+Transfer/sec:      1.19MB
+
+---------------------------------------------------------
+ Running Warmup lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/update?queries=2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    29.87ms  132.99ms   4.68s    99.83%
+    Req/Sec   262.13    118.11   605.00     63.36%
+  155151 requests in 15.00s, 59.97MB read
+  Socket errors: connect 0, read 0, write 0, timeout 75
+  Non-2xx or 3xx responses: 16011
+Requests/sec:  10343.45
+Transfer/sec:      4.00MB
+
+---------------------------------------------------------
+ Queries: 1 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/update?queries=1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.17ms   13.68ms 237.77ms   86.82%
+    Req/Sec   614.71    240.63     1.23k    66.52%
+  362975 requests in 15.00s, 79.78MB read
+  Non-2xx or 3xx responses: 4896
+Requests/sec:  24205.61
+Transfer/sec:      5.32MB
+
+---------------------------------------------------------
+ Queries: 5 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/update?queries=5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    87.24ms   91.93ms   1.04s    83.29%
+    Req/Sec   100.04     60.15   536.00     69.45%
+  60497 requests in 15.01s, 72.80MB read
+  Non-2xx or 3xx responses: 37714
+Requests/sec:   4030.65
+Transfer/sec:      4.85MB
+
+---------------------------------------------------------
+ Queries: 10 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/update?queries=10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   252.43ms  315.23ms   1.01s    83.89%
+    Req/Sec    71.15     60.94   577.00     77.18%
+  43462 requests in 15.03s, 37.31MB read
+  Non-2xx or 3xx responses: 13231
+Requests/sec:   2891.04
+Transfer/sec:      2.48MB
+
+---------------------------------------------------------
+ Queries: 15 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/update?queries=15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   375.55ms  359.07ms   1.00s    53.79%
+    Req/Sec    63.40     74.39   548.00     89.54%
+  35049 requests in 15.04s, 38.55MB read
+  Non-2xx or 3xx responses: 14966
+Requests/sec:   2331.06
+Transfer/sec:      2.56MB
+
+---------------------------------------------------------
+ Queries: 20 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/update?queries=20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   508.84ms  463.32ms   1.21s    36.42%
+    Req/Sec    60.39     80.61   640.00     85.89%
+  32778 requests in 15.10s, 46.83MB read
+  Non-2xx or 3xx responses: 22272
+Requests/sec:   2170.66
+Transfer/sec:      3.10MB

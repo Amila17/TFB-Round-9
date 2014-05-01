@@ -1,0 +1,123 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 18:58:13 PDT 2014
+
+  System load:  0.17               Processes:            268
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   365.85us   94.16us   1.02ms   86.17%
+    Req/Sec     2.83k   243.62     3.44k    65.22%
+  107358 requests in 5.00s, 149.89MB read
+Requests/sec:  21475.74
+Transfer/sec:     29.98MB
+
+---------------------------------------------------------
+ Running Warmup onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    15.86ms  148.31ms   6.62s    98.30%
+    Req/Sec     0.92k   435.77     5.78k    80.98%
+  414686 requests in 15.02s, 578.98MB read
+  Socket errors: connect 0, read 30, write 0, timeout 478
+Requests/sec:  27606.03
+Transfer/sec:     38.54MB
+
+---------------------------------------------------------
+ Concurrency: 8 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   383.83us  102.11us   1.15ms   84.82%
+    Req/Sec     2.72k   226.73     3.33k    70.36%
+  309378 requests in 15.00s, 431.95MB read
+Requests/sec:  20626.34
+Transfer/sec:     28.80MB
+
+---------------------------------------------------------
+ Concurrency: 16 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   609.66us  574.54us  39.21ms   93.59%
+    Req/Sec     1.76k   236.48     2.78k    62.43%
+  397578 requests in 15.00s, 555.09MB read
+Requests/sec:  26508.72
+Transfer/sec:     37.01MB
+
+---------------------------------------------------------
+ Concurrency: 32 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.23ms  770.89us  39.31ms   71.00%
+    Req/Sec     0.88k   189.32     2.33k    70.12%
+  398817 requests in 15.00s, 556.82MB read
+Requests/sec:  26594.40
+Transfer/sec:     37.13MB
+
+---------------------------------------------------------
+ Concurrency: 64 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    66.42ms  127.74ms 323.86ms   80.05%
+    Req/Sec   511.68    310.10     1.78k    67.57%
+  289510 requests in 15.00s, 404.21MB read
+Requests/sec:  19306.43
+Transfer/sec:     26.96MB
+
+---------------------------------------------------------
+ Concurrency: 128 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/fortune
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.35s   501.49ms   1.55s    87.64%
+    Req/Sec    87.33    273.04     2.67k    90.80%
+  43501 requests in 16.01s, 60.74MB read
+  Socket errors: connect 0, read 19328, write 1372873, timeout 627
+Requests/sec:   2717.61
+Transfer/sec:      3.79MB
+
+---------------------------------------------------------
+ Concurrency: 256 for onion-raw
+ wrk -H 'Host: localhost' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/fortune
+---------------------------------------------------------
+

@@ -1,0 +1,127 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Apr 14 18:16:29 UTC 2014
+
+  System load:  0.12               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer django
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/update?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/update?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    39.96ms   15.85ms 105.27ms   82.62%
+    Req/Sec    27.82     10.23    47.00     60.96%
+  1023 requests in 5.03s, 239.33KB read
+Requests/sec:    203.19
+Transfer/sec:     47.54KB
+
+---------------------------------------------------------
+ Running Warmup django
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.22s   417.28ms   3.53s    87.29%
+    Req/Sec   106.52     29.56   178.00     69.57%
+  3061 requests in 15.02s, 719.77KB read
+  Socket errors: connect 0, read 22, write 0, timeout 12
+Requests/sec:    203.81
+Transfer/sec:     47.92KB
+
+---------------------------------------------------------
+ Queries: 1 for django
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   726.95ms  158.62ms   1.56s    88.80%
+    Req/Sec   176.65     25.46   246.00     82.61%
+  5175 requests in 15.00s, 1.03MB read
+Requests/sec:    344.91
+Transfer/sec:     69.98KB
+
+---------------------------------------------------------
+ Queries: 5 for django
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.24s     1.28s    5.72s    76.92%
+    Req/Sec    51.63     20.49    95.00     68.42%
+  1353 requests in 15.04s, 485.25KB read
+  Socket errors: connect 0, read 253, write 0, timeout 486
+Requests/sec:     89.95
+Transfer/sec:     32.26KB
+
+---------------------------------------------------------
+ Queries: 10 for django
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.34s     2.63s   10.19s    37.45%
+    Req/Sec    24.89     17.30    46.00     57.89%
+  643 requests in 15.14s, 358.27KB read
+  Socket errors: connect 0, read 282, write 0, timeout 851
+Requests/sec:     42.48
+Transfer/sec:     23.67KB
+
+---------------------------------------------------------
+ Queries: 15 for django
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.21s     1.90s    8.86s    53.85%
+    Req/Sec    26.00      0.00    26.00    100.00%
+  353 requests in 15.89s, 253.14KB read
+  Socket errors: connect 0, read 165, write 0, timeout 1193
+Requests/sec:     22.21
+Transfer/sec:     15.93KB
+
+---------------------------------------------------------
+ Queries: 20 for django
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/update?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/update?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.78s     2.66s   10.85s    53.85%
+    Req/Sec    17.00      0.00    17.00    100.00%
+  252 requests in 16.01s, 225.54KB read
+  Socket errors: connect 0, read 151, write 0, timeout 1355
+Requests/sec:     15.74
+Transfer/sec:     14.09KB

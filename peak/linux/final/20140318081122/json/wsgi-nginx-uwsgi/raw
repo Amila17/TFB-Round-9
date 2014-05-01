@@ -1,0 +1,129 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 07:32:58 PDT 2014
+
+  System load:  0.65               Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   325.88us  103.38us   1.03ms   69.43%
+    Req/Sec     3.36k   840.38     6.44k    66.28%
+  123963 requests in 5.00s, 21.27MB read
+Requests/sec:  24797.40
+Transfer/sec:      4.26MB
+
+---------------------------------------------------------
+ Running Warmup wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.47ms    4.95ms  73.33ms   89.93%
+    Req/Sec     2.09k   680.57     5.00k    70.14%
+  1193417 requests in 14.99s, 204.81MB read
+Requests/sec:  79601.05
+Transfer/sec:     13.66MB
+
+---------------------------------------------------------
+ Concurrency: 8 for wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   325.43us  104.38us   1.09ms   69.97%
+    Req/Sec     3.36k     0.85k    6.55k    67.97%
+  379518 requests in 15.00s, 65.13MB read
+Requests/sec:  25302.76
+Transfer/sec:      4.34MB
+
+---------------------------------------------------------
+ Concurrency: 16 for wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 16 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  16 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   609.19us  212.03us   2.23ms   74.16%
+    Req/Sec     1.86k   556.68     4.44k    70.57%
+  421680 requests in 15.00s, 72.37MB read
+Requests/sec:  28115.41
+Transfer/sec:      4.82MB
+
+---------------------------------------------------------
+ Concurrency: 32 for wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 32 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  32 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.15ms  453.89us  12.59ms   78.54%
+    Req/Sec     1.01k   347.45     2.78k    76.48%
+  456499 requests in 14.99s, 78.34MB read
+Requests/sec:  30443.73
+Transfer/sec:      5.22MB
+
+---------------------------------------------------------
+ Concurrency: 64 for wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.40ms  635.02us  18.39ms   83.28%
+    Req/Sec   844.23    304.33     2.44k    72.15%
+  478271 requests in 15.00s, 82.08MB read
+Requests/sec:  31894.05
+Transfer/sec:      5.47MB
+
+---------------------------------------------------------
+ Concurrency: 128 for wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.49ms    1.41ms  29.46ms   92.73%
+    Req/Sec     2.33k   694.55     5.27k    69.42%
+  1311761 requests in 14.99s, 225.12MB read
+Requests/sec:  87490.39
+Transfer/sec:     15.01MB
+
+---------------------------------------------------------
+ Concurrency: 256 for wsgi-nginx-uwsgi
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 40 http://10.0.3.2:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/json
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.92ms    4.77ms  66.69ms   91.08%
+    Req/Sec     1.90k   689.41     4.78k    65.15%
+  1087014 requests in 14.99s, 186.55MB read
+Requests/sec:  72501.31
+Transfer/sec:     12.44MB

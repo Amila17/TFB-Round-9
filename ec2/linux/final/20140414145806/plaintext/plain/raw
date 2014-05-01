@@ -1,0 +1,114 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 02:49:46 UTC 2014
+
+  System load:  1.35               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer plain
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  0 requests in 6.00s, 0.00B read
+  Socket errors: connect 0, read 0, write 0, timeout 16
+Requests/sec:      0.00
+Transfer/sec:       0.00B
+
+---------------------------------------------------------
+ Running Warmup plain
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.03s     3.39s   12.45s    91.74%
+    Req/Sec    16.31k     6.43k   23.89k    81.44%
+  108780 requests in 15.00s, 15.56MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1178
+Requests/sec:   7251.71
+Transfer/sec:      1.04MB
+
+---------------------------------------------------------
+ Concurrency: 256 for plain
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    59.66ms  201.92ms   1.22s    96.76%
+    Req/Sec    86.30k    19.77k  123.53k    90.15%
+  2542224 requests in 15.00s, 363.67MB read
+  Socket errors: connect 0, read 28, write 0, timeout 0
+Requests/sec: 169470.04
+Transfer/sec:     24.24MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for plain
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   197.18ms  643.15ms   4.01s    96.74%
+    Req/Sec    88.53k    22.03k  180.54k    80.90%
+  2615657 requests in 15.00s, 374.17MB read
+  Socket errors: connect 0, read 23, write 0, timeout 4
+Requests/sec: 174332.06
+Transfer/sec:     24.94MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for plain
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.20s     3.66s   14.79s    92.89%
+    Req/Sec    82.97k    28.62k  151.64k    65.38%
+  2515520 requests in 15.01s, 359.85MB read
+  Socket errors: connect 0, read 70, write 0, timeout 12560
+Requests/sec: 167570.52
+Transfer/sec:     23.97MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for plain
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 2 http://50.112.80.55:8080/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/plaintext
+  2 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.90s     5.74s   14.68s    80.79%
+    Req/Sec    91.93k    39.28k  138.14k    54.55%
+  2734729 requests in 15.04s, 391.21MB read
+  Socket errors: connect 8197, read 155, write 0, timeout 99702
+Requests/sec: 181872.29
+Transfer/sec:     26.02MB

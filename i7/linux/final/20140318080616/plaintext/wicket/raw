@@ -1,0 +1,103 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 07:36:51 PDT 2014
+
+  System load:  0.12               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer wicket
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/wicket/plaintext
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/wicket/plaintext
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   150.28us   58.68us   3.13ms   87.12%
+    Req/Sec     6.71k   510.66     8.22k    69.72%
+  254235 requests in 5.00s, 71.04MB read
+Requests/sec:  50848.72
+Transfer/sec:     14.21MB
+
+---------------------------------------------------------
+ Running Warmup wicket
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/wicket/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/wicket/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.31ms  782.77us  32.75ms   96.85%
+    Req/Sec    14.57k     1.09k   19.44k    83.59%
+  1650291 requests in 15.00s, 461.14MB read
+Requests/sec: 110024.26
+Transfer/sec:     30.74MB
+
+---------------------------------------------------------
+ Concurrency: 256 for wicket
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 256 -t 8 http://172.16.98.122:8080/wicket/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/wicket/plaintext
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.57ms   23.12ms 484.99ms   94.65%
+    Req/Sec    27.44k     2.59k   37.48k    70.21%
+  3248091 requests in 15.00s, 0.89GB read
+Requests/sec: 216541.71
+Transfer/sec:     60.51MB
+
+---------------------------------------------------------
+ Concurrency: 1024 for wicket
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 1024 -t 8 http://172.16.98.122:8080/wicket/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/wicket/plaintext
+  8 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   191.65ms  910.43ms  11.59s    97.66%
+    Req/Sec    27.53k     7.10k   44.68k    79.30%
+  3290747 requests in 15.00s, 0.90GB read
+  Socket errors: connect 0, read 0, write 0, timeout 1067
+Requests/sec: 219381.89
+Transfer/sec:     61.31MB
+
+---------------------------------------------------------
+ Concurrency: 4096 for wicket
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 4096 -t 8 http://172.16.98.122:8080/wicket/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/wicket/plaintext
+  8 threads and 4096 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   473.05ms    1.57s   13.90s    94.00%
+    Req/Sec    27.12k     9.55k   54.38k    75.78%
+  3291477 requests in 15.00s, 0.90GB read
+  Socket errors: connect 0, read 0, write 0, timeout 18337
+Requests/sec: 219392.06
+Transfer/sec:     61.31MB
+
+---------------------------------------------------------
+ Concurrency: 16384 for wicket
+ wrk-pipeline -H 'Host: localhost' -H 'Accept: text/plain,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' --pipeline 16 -d 15 -c 16384 -t 8 http://172.16.98.122:8080/wicket/plaintext
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/wicket/plaintext
+  8 threads and 16384 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   997.47ms    3.37s   14.23s    93.35%
+    Req/Sec    32.32k     4.02k   43.15k    75.48%
+  3238008 requests in 16.04s, 0.88GB read
+  Socket errors: connect 11, read 724, write 0, timeout 97810
+Requests/sec: 201908.56
+Transfer/sec:     56.42MB

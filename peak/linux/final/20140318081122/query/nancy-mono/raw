@@ -1,0 +1,128 @@
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 17:44:31 PDT 2014
+
+  System load:  0.0                Processes:            267
+  Usage of /:   0.2% of 884.93GB   Users logged in:      1
+  Memory usage: 2%                 IP address for eth4:  10.0.3.3
+  Swap usage:   0%                 IP address for bond0: 69.194.0.133
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+30 packages can be updated.
+25 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://10.0.3.2:8080/db/2
+---------------------------------------------------------
+
+Running 5s test @ http://10.0.3.2:8080/db/2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.86ms   18.56ms 137.48ms   96.98%
+    Req/Sec   120.83     40.01   200.00     72.67%
+  4659 requests in 5.01s, 97.51MB read
+  Non-2xx or 3xx responses: 4659
+Requests/sec:    929.39
+Transfer/sec:     19.45MB
+
+---------------------------------------------------------
+ Running Warmup nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/2
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/2
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.42s     5.61s   13.80s    70.17%
+    Req/Sec    13.39     25.14   181.00     83.90%
+  9201 requests in 16.00s, 192.58MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1171
+  Non-2xx or 3xx responses: 9201
+Requests/sec:    575.02
+Transfer/sec:     12.04MB
+
+---------------------------------------------------------
+ Queries: 1 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/1
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/1
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.57s     5.17s   13.85s    60.39%
+    Req/Sec    13.49     26.20   157.00     85.14%
+  9318 requests in 16.00s, 195.03MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1197
+  Non-2xx or 3xx responses: 9318
+Requests/sec:    582.27
+Transfer/sec:     12.19MB
+
+---------------------------------------------------------
+ Queries: 5 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/5
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/5
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.85s     5.19s   13.51s    51.87%
+    Req/Sec    14.93     25.52   151.00     82.75%
+  9988 requests in 16.00s, 209.05MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1100
+  Non-2xx or 3xx responses: 9988
+Requests/sec:    624.17
+Transfer/sec:     13.06MB
+
+---------------------------------------------------------
+ Queries: 10 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/10
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/10
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.89s     3.45s    9.57s    70.90%
+    Req/Sec    24.23     28.40   224.00     83.26%
+  15701 requests in 16.00s, 328.63MB read
+  Socket errors: connect 0, read 0, write 0, timeout 584
+  Non-2xx or 3xx responses: 15701
+Requests/sec:    981.27
+Transfer/sec:     20.54MB
+
+---------------------------------------------------------
+ Queries: 15 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/15
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/15
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.63s     2.83s    7.21s    71.06%
+    Req/Sec    20.22     25.03   159.00     83.78%
+  12881 requests in 16.00s, 269.66MB read
+  Socket errors: connect 0, read 0, write 0, timeout 639
+  Non-2xx or 3xx responses: 12881
+Requests/sec:    805.03
+Transfer/sec:     16.85MB
+
+---------------------------------------------------------
+ Queries: 20 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 40 http://10.0.3.2:8080/db/20
+---------------------------------------------------------
+
+Running 15s test @ http://10.0.3.2:8080/db/20
+  40 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.62s     4.98s   12.67s    33.84%
+    Req/Sec    15.32     22.81   185.00     82.49%
+  9866 requests in 16.00s, 206.50MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1018
+  Non-2xx or 3xx responses: 9866
+Requests/sec:    616.55
+Transfer/sec:     12.90MB

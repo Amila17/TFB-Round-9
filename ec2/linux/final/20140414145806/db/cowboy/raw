@@ -1,0 +1,136 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Apr 14 17:14:04 UTC 2014
+
+  System load:  0.27               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 9%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.34ms    4.11ms  28.57ms   69.61%
+    Req/Sec    78.54     16.95   151.00     63.01%
+  3107 requests in 5.01s, 542.35KB read
+Requests/sec:    620.60
+Transfer/sec:    108.33KB
+
+---------------------------------------------------------
+ Running Warmup cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    82.31ms   40.05ms 501.58ms   98.03%
+    Req/Sec     1.60k   128.56     1.75k    90.70%
+  46770 requests in 15.00s, 7.97MB read
+Requests/sec:   3117.76
+Transfer/sec:    544.24KB
+
+---------------------------------------------------------
+ Concurrency: 8 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.32ms    3.83ms  23.67ms   62.31%
+    Req/Sec   403.79     72.08   633.00     69.77%
+  11920 requests in 15.00s, 2.03MB read
+Requests/sec:    794.65
+Transfer/sec:    138.70KB
+
+---------------------------------------------------------
+ Concurrency: 16 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     8.03ms    3.56ms  28.19ms   81.38%
+    Req/Sec     1.06k   247.25     1.52k    58.65%
+  30940 requests in 15.00s, 5.27MB read
+Requests/sec:   2062.59
+Transfer/sec:    360.01KB
+
+---------------------------------------------------------
+ Concurrency: 32 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.96ms    1.61ms  27.99ms   80.91%
+    Req/Sec     1.65k   144.26     1.96k    76.22%
+  48230 requests in 15.00s, 8.22MB read
+Requests/sec:   3215.21
+Transfer/sec:    561.19KB
+
+---------------------------------------------------------
+ Concurrency: 64 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    18.96ms    3.33ms  37.15ms   70.07%
+    Req/Sec     1.70k   117.82     1.98k    71.23%
+  50501 requests in 15.00s, 8.61MB read
+Requests/sec:   3366.17
+Transfer/sec:    587.56KB
+
+---------------------------------------------------------
+ Concurrency: 128 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    40.29ms    6.48ms  69.25ms   69.30%
+    Req/Sec     1.60k   100.84     1.86k    69.69%
+  47788 requests in 15.00s, 8.15MB read
+Requests/sec:   3185.12
+Transfer/sec:    555.96KB
+
+---------------------------------------------------------
+ Concurrency: 256 for cowboy
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    83.74ms   25.82ms 262.61ms   94.19%
+    Req/Sec     1.57k   193.94     1.77k    92.59%
+  46683 requests in 15.00s, 7.96MB read
+Requests/sec:   3111.99
+Transfer/sec:    543.24KB

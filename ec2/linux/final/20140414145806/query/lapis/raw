@@ -1,0 +1,121 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 2.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.40ms    2.38ms  30.94ms   99.05%
+    Req/Sec   249.15     56.41   333.00     83.04%
+  9392 requests in 5.00s, 2.17MB read
+Requests/sec:   1877.58
+Transfer/sec:    444.70KB
+
+---------------------------------------------------------
+ Running Warmup lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   236.31ms  627.50ms   2.28s    89.11%
+    Req/Sec   604.54    229.24     1.12k    62.92%
+  18885 requests in 15.02s, 4.37MB read
+  Socket errors: connect 0, read 0, write 0, timeout 34
+Requests/sec:   1256.95
+Transfer/sec:    297.74KB
+
+---------------------------------------------------------
+ Queries: 1 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   145.74ms  470.24ms   2.03s    92.25%
+    Req/Sec     0.91k   318.88     1.56k    64.71%
+  27318 requests in 15.01s, 5.44MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1
+Requests/sec:   1820.27
+Transfer/sec:    371.10KB
+
+---------------------------------------------------------
+ Queries: 5 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   252.31ms  828.23ms   3.79s    92.95%
+    Req/Sec   560.86    112.01   847.00     71.43%
+  16899 requests in 15.01s, 5.45MB read
+  Socket errors: connect 0, read 0, write 0, timeout 643
+Requests/sec:   1125.86
+Transfer/sec:    371.56KB
+
+---------------------------------------------------------
+ Queries: 10 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   659.52ms  976.04ms   3.23s    79.16%
+    Req/Sec   205.49     77.09   409.00     66.22%
+  6273 requests in 15.01s, 2.98MB read
+  Socket errors: connect 0, read 0, write 0, timeout 311
+Requests/sec:    417.83
+Transfer/sec:    203.13KB
+
+---------------------------------------------------------
+ Queries: 15 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   378.73ms    1.19s    8.00s    94.67%
+    Req/Sec   261.50     98.99   457.00     64.52%
+  7724 requests in 15.02s, 4.84MB read
+  Socket errors: connect 0, read 0, write 0, timeout 920
+Requests/sec:    514.23
+Transfer/sec:    329.80KB
+
+---------------------------------------------------------
+ Queries: 20 for lapis
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/db?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.24s   560.61ms   3.75s    78.72%
+    Req/Sec   103.20     15.64   136.00     73.33%
+  3112 requests in 15.04s, 2.42MB read
+  Socket errors: connect 0, read 0, write 0, timeout 128
+Requests/sec:    206.85
+Transfer/sec:    164.78KB

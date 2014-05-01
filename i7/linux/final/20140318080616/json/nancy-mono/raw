@@ -1,0 +1,144 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 17:34:03 PDT 2014
+
+  System load:  0.02               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   677.63ms  625.07ms   1.36s    17.34%
+    Req/Sec    57.86    130.49   562.00     83.30%
+  2585 requests in 6.00s, 593.72KB read
+  Socket errors: connect 0, read 3, write 0, timeout 11
+  Non-2xx or 3xx responses: 48
+Requests/sec:    430.78
+Transfer/sec:     98.94KB
+
+---------------------------------------------------------
+ Running Warmup nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.03s   842.29ms   2.11s    53.92%
+    Req/Sec   116.98    168.31     0.99k    72.94%
+  15634 requests in 16.00s, 3.84MB read
+  Socket errors: connect 0, read 113, write 0, timeout 1602
+  Non-2xx or 3xx responses: 3676
+Requests/sec:    977.04
+Transfer/sec:    245.92KB
+
+---------------------------------------------------------
+ Concurrency: 8 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.23ms    8.34ms  40.69ms   91.30%
+    Req/Sec    60.43    130.84   666.00     82.62%
+  6876 requests in 16.00s, 1.54MB read
+  Socket errors: connect 0, read 2, write 0, timeout 46
+  Non-2xx or 3xx responses: 122
+Requests/sec:    429.72
+Transfer/sec:     98.54KB
+
+---------------------------------------------------------
+ Concurrency: 16 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.40ms    2.47ms  38.30ms   85.33%
+    Req/Sec    46.71    109.99   416.00     84.20%
+  4861 requests in 16.00s, 1.10MB read
+  Socket errors: connect 0, read 10, write 0, timeout 104
+  Non-2xx or 3xx responses: 243
+Requests/sec:    303.77
+Transfer/sec:     70.58KB
+
+---------------------------------------------------------
+ Concurrency: 32 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.86ms    3.95ms  72.37ms   82.93%
+    Req/Sec    45.21    110.35   500.00     85.25%
+  5600 requests in 16.00s, 1.28MB read
+  Socket errors: connect 0, read 15, write 0, timeout 214
+  Non-2xx or 3xx responses: 318
+Requests/sec:    349.96
+Transfer/sec:     81.65KB
+
+---------------------------------------------------------
+ Concurrency: 64 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     7.76ms    3.60ms  11.22ms   75.96%
+    Req/Sec    43.09    106.44   673.00     85.59%
+  6143 requests in 16.00s, 1.42MB read
+  Socket errors: connect 0, read 23, write 0, timeout 436
+  Non-2xx or 3xx responses: 543
+Requests/sec:    383.88
+Transfer/sec:     90.96KB
+
+---------------------------------------------------------
+ Concurrency: 128 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   316.45ms  191.90ms 488.20ms   72.71%
+    Req/Sec    84.23    145.02     1.03k    74.63%
+  10697 requests in 16.00s, 2.57MB read
+  Socket errors: connect 0, read 89, write 0, timeout 871
+  Non-2xx or 3xx responses: 2014
+Requests/sec:    668.51
+Transfer/sec:    164.55KB
+
+---------------------------------------------------------
+ Concurrency: 256 for nancy-mono
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/json
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/json
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.95s     1.48s    3.82s    53.68%
+    Req/Sec    83.93    141.54     0.90k    80.93%
+  10771 requests in 16.01s, 2.72MB read
+  Socket errors: connect 0, read 133, write 0, timeout 1503
+  Non-2xx or 3xx responses: 3301
+Requests/sec:    672.96
+Transfer/sec:    174.11KB

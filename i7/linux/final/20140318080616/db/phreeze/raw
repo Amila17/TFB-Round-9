@@ -1,0 +1,135 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Mar 18 20:26:11 PDT 2014
+
+  System load:  0.03               Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   739.48ms  833.07ms   1.83s    62.81%
+    Req/Sec     7.52      6.64    20.00     47.93%
+  347 requests in 5.69s, 145.62KB read
+Requests/sec:     60.94
+Transfer/sec:     25.57KB
+
+---------------------------------------------------------
+ Running Warmup phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.86s     3.13s    6.85s    56.40%
+    Req/Sec    30.51     33.88   104.00     77.78%
+  3875 requests in 15.12s, 1.59MB read
+  Socket errors: connect 0, read 0, write 0, timeout 770
+Requests/sec:    256.23
+Transfer/sec:    107.53KB
+
+---------------------------------------------------------
+ Concurrency: 8 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  169 requests in 16.01s, 70.93KB read
+  Socket errors: connect 0, read 0, write 0, timeout 48
+Requests/sec:     10.56
+Transfer/sec:      4.43KB
+
+---------------------------------------------------------
+ Concurrency: 16 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  298 requests in 16.01s, 125.05KB read
+  Socket errors: connect 0, read 0, write 0, timeout 96
+Requests/sec:     18.61
+Transfer/sec:      7.81KB
+
+---------------------------------------------------------
+ Concurrency: 32 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  307 requests in 15.15s, 128.84KB read
+  Socket errors: connect 0, read 0, write 0, timeout 188
+Requests/sec:     20.26
+Transfer/sec:      8.50KB
+
+---------------------------------------------------------
+ Concurrency: 64 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     0.00      0.00     0.00      -nan%
+  1091 requests in 16.01s, 457.86KB read
+  Socket errors: connect 0, read 0, write 0, timeout 385
+Requests/sec:     68.16
+Transfer/sec:     28.61KB
+
+---------------------------------------------------------
+ Concurrency: 128 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   165.39ms   70.75ms 261.72ms   71.88%
+    Req/Sec    18.25      0.46    19.00     75.00%
+  1656 requests in 16.01s, 694.95KB read
+  Socket errors: connect 0, read 0, write 0, timeout 752
+Requests/sec:    103.43
+Transfer/sec:     43.40KB
+
+---------------------------------------------------------
+ Concurrency: 256 for phreeze
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 8 http://172.16.98.122:8080/index.php?db
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/index.php?db
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   456.52ms  163.47ms 638.57ms   80.36%
+    Req/Sec    32.25      1.58    36.00     87.50%
+  2252 requests in 16.01s, 0.92MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1300
+Requests/sec:    140.66
+Transfer/sec:     59.03KB

@@ -1,0 +1,121 @@
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.9.0-030900-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 01:36:23 PDT 2014
+
+  System load:  0.0                Processes:           120
+  Usage of /:   5.8% of 129.62GB   Users logged in:     0
+  Memory usage: 2%                 IP address for eth1: 172.16.98.98
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+109 packages can be updated.
+60 updates are security updates.
+
+
+---------------------------------------------------------
+ Running Primer silex-orm
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     9.94ms   12.77ms  94.48ms   89.58%
+    Req/Sec   111.42     37.06   222.00     70.02%
+  4437 requests in 5.01s, 1.30MB read
+  Non-2xx or 3xx responses: 2200
+Requests/sec:    885.51
+Transfer/sec:    265.97KB
+
+---------------------------------------------------------
+ Running Warmup silex-orm
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=2
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   281.36ms  308.72ms   1.26s    80.35%
+    Req/Sec   110.15      9.33   135.00     73.54%
+  13219 requests in 15.05s, 3.88MB read
+  Non-2xx or 3xx responses: 6594
+Requests/sec:    878.46
+Transfer/sec:    264.00KB
+
+---------------------------------------------------------
+ Queries: 1 for silex-orm
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=1
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   272.33ms  295.39ms   1.13s    80.51%
+    Req/Sec   113.27      9.84   146.00     71.60%
+  13664 requests in 15.03s, 3.79MB read
+  Non-2xx or 3xx responses: 6807
+Requests/sec:    909.34
+Transfer/sec:    258.20KB
+
+---------------------------------------------------------
+ Queries: 5 for silex-orm
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=5
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   305.82ms  328.71ms   1.55s    80.58%
+    Req/Sec   101.85      8.58   124.00     64.75%
+  12262 requests in 15.02s, 4.16MB read
+  Non-2xx or 3xx responses: 6095
+Requests/sec:    816.49
+Transfer/sec:    283.55KB
+
+---------------------------------------------------------
+ Queries: 10 for silex-orm
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=10
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   350.40ms  377.44ms   1.52s    82.12%
+    Req/Sec    91.85     15.08   141.00     78.06%
+  11019 requests in 15.15s, 4.58MB read
+  Non-2xx or 3xx responses: 5497
+Requests/sec:    727.30
+Transfer/sec:    309.42KB
+
+---------------------------------------------------------
+ Queries: 15 for silex-orm
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=15
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   377.38ms  410.17ms   1.80s    81.10%
+    Req/Sec    83.21      9.77   116.00     72.31%
+  9981 requests in 15.09s, 4.91MB read
+  Non-2xx or 3xx responses: 4969
+Requests/sec:    661.42
+Transfer/sec:    333.09KB
+
+---------------------------------------------------------
+ Queries: 20 for silex-orm
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 8 http://172.16.98.122:8080/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://172.16.98.122:8080/db?queries=20
+  8 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   434.59ms  432.47ms   1.64s    41.40%
+    Req/Sec    76.12     13.54   133.00     82.48%
+  9098 requests in 15.02s, 5.16MB read
+  Non-2xx or 3xx responses: 4540
+Requests/sec:    605.60
+Transfer/sec:    351.79KB

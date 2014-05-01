@@ -1,0 +1,121 @@
+test.os.lower() = linux  test.database_os.lower() = linux
+self.results['frameworks'] != None: True
+test.name: yesod-mongodb-raw
+self.results['completed']: {}
+
+=====================================================
+  Beginning yesod-mongodb-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Starting yesod-mongodb-raw
+-----------------------------------------------------
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-58-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Wed Mar 19 07:55:11 PDT 2014
+
+  System load:  6.9                Processes:            265
+  Usage of /:   7.7% of 151.38GB   Users logged in:      0
+  Memory usage: 3%                 IP address for eth4:  10.0.3.5
+  Swap usage:   0%                 IP address for bond0: 69.194.0.135
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+31 packages can be updated.
+26 updates are security updates.
+
+mysql start/running, process 28205
+mongodb start/running, process 28265
+ * Restarting PostgreSQL 9.1 database server
+   ...done.
+Downloading the latest package list from hackage.haskell.org
+Resolving dependencies...
+Configuring bench-0.0.0...
+Building bench-0.0.0...
+Preprocessing executable 'bench' for bench-0.0.0...
+Installing executable(s) in /home/techempower/.cabal/bin
+Resolving dependencies...
+Configuring bench-0.0.0...
+Building bench-0.0.0...
+Preprocessing executable 'bench' for bench-0.0.0...
+
+-----------------------------------------------------
+  VERIFYING DB (/mongo/raw/db)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Server: Warp/1.3.10.2
+Transfer-Encoding: chunked
+Content-Type: application/json; charset=utf-8
+
+{"randomNumber":2800,"id":3848.0}
+
+VALIDATING DB ... PASS
+
+
+-----------------------------------------------------
+  VERIFYING QUERY (/mongo/raw/dbs/2)
+-----------------------------------------------------
+HTTP/1.1 200 OK
+Server: Warp/1.3.10.2
+Transfer-Encoding: chunked
+Content-Type: application/json; charset=utf-8
+
+[{"randomNumber":2800,"id":3848.0},{"randomNumber":2582,"id":615.0}]
+
+/mongo/raw/dbs/2 - PASS
+
+-----------------------------------------------------
+
+HTTP/1.1 200 OK
+Server: Warp/1.3.10.2
+Transfer-Encoding: chunked
+Content-Type: application/json; charset=utf-8
+
+[]
+
+/mongo/raw/dbs/0 - WARNING
+
+-----------------------------------------------------
+
+HTTP/1.1 404 Not Found
+Server: Warp/1.3.10.2
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=utf-8
+
+<!DOCTYPE html>
+<html><head><title>Not Found</title></head><body><h1>Not Found</h1>
+<p>/mongo/raw/dbs/foo</p>
+</body></html>
+
+/mongo/raw/dbs/foo - WARNING
+
+-----------------------------------------------------
+
+/mongo/raw/dbs/501 - WARNING
+
+-----------------------------------------------------
+
+
+VALIDATING QUERY ... PASS (with warnings)
+
+
+-----------------------------------------------------
+  Benchmarking yesod-mongodb-raw ...
+-----------------------------------------------------
+BENCHMARKING DB ... Complete
+BENCHMARKING Query ... Complete
+
+-----------------------------------------------------
+  Stopping yesod-mongodb-raw
+-----------------------------------------------------
+
+-----------------------------------------------------
+  Stopped yesod-mongodb-raw
+-----------------------------------------------------
+
+----------------------------------------------------
+Saving results through yesod-mongodb-raw
+----------------------------------------------------

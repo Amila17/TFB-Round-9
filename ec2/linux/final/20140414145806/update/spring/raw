@@ -1,0 +1,126 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 08:11:21 UTC 2014
+
+  System load:  0.18               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/updates?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    34.99ms    4.41ms  68.80ms   85.59%
+    Req/Sec    28.50      6.05    42.00     75.64%
+  1153 requests in 5.03s, 246.11KB read
+Requests/sec:    229.21
+Transfer/sec:     48.92KB
+
+---------------------------------------------------------
+ Running Warmup spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   760.71ms   54.87ms 872.47ms   71.03%
+    Req/Sec   168.09     14.78   193.00     59.38%
+  5036 requests in 15.01s, 1.05MB read
+Requests/sec:    335.54
+Transfer/sec:     71.63KB
+
+---------------------------------------------------------
+ Queries: 1 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   386.22ms   21.82ms 457.05ms   67.98%
+    Req/Sec   333.08     18.83   373.00     62.50%
+  9947 requests in 15.01s, 1.77MB read
+Requests/sec:    662.84
+Transfer/sec:    120.90KB
+
+---------------------------------------------------------
+ Queries: 5 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.70s   249.02ms   2.12s    79.49%
+    Req/Sec    72.80     19.83    98.00     56.67%
+  2193 requests in 15.02s, 672.22KB read
+  Socket errors: connect 0, read 0, write 0, timeout 3
+Requests/sec:    146.01
+Transfer/sec:     44.76KB
+
+---------------------------------------------------------
+ Queries: 10 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.19s   750.85ms   3.68s    85.81%
+    Req/Sec    35.79      9.92    55.00     68.97%
+  1091 requests in 15.04s, 504.75KB read
+  Socket errors: connect 0, read 0, write 0, timeout 666
+Requests/sec:     72.54
+Transfer/sec:     33.56KB
+
+---------------------------------------------------------
+ Queries: 15 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.76s     1.06s    6.34s    80.77%
+    Req/Sec    27.00     10.00    41.00     60.00%
+  668 requests in 16.01s, 412.77KB read
+  Socket errors: connect 0, read 0, write 0, timeout 1054
+Requests/sec:     41.72
+Transfer/sec:     25.78KB
+
+---------------------------------------------------------
+ Queries: 20 for spring
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/updates?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/updates?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.60s     1.32s    9.46s    72.12%
+    Req/Sec    17.75      2.87    21.00     50.00%
+  454 requests in 15.10s, 350.95KB read
+  Socket errors: connect 0, read 0, write 0, timeout 1126
+Requests/sec:     30.06
+Transfer/sec:     23.24KB

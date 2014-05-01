@@ -1,0 +1,125 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 12:06:40 UTC 2014
+
+  System load:  0.5                Processes:           71
+  Usage of /:   25.8% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:9000/db?queries=2
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:9000/db?queries=2
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    14.77ms    1.01ms  20.99ms   71.49%
+    Req/Sec    68.22     11.34   103.00     86.14%
+  2707 requests in 5.01s, 461.41KB read
+Requests/sec:    540.03
+Transfer/sec:     92.05KB
+
+---------------------------------------------------------
+ Running Warmup unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:9000/db?queries=2
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db?queries=2
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   469.41ms    6.78ms 491.07ms   69.85%
+    Req/Sec   272.35      3.30   279.00     61.29%
+  8182 requests in 15.00s, 1.36MB read
+Requests/sec:    545.35
+Transfer/sec:     92.96KB
+
+---------------------------------------------------------
+ Queries: 1 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:9000/db?queries=1
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db?queries=1
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   241.88ms   10.30ms 278.17ms   83.33%
+    Req/Sec   529.65     20.70   572.00     74.07%
+  15847 requests in 15.01s, 2.16MB read
+Requests/sec:   1056.09
+Transfer/sec:    147.26KB
+
+---------------------------------------------------------
+ Queries: 5 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:9000/db?queries=5
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db?queries=5
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.10s    80.22ms   1.13s    95.55%
+    Req/Sec   114.56      9.47   132.00     62.50%
+  3453 requests in 15.00s, 0.89MB read
+Requests/sec:    230.15
+Transfer/sec:     60.89KB
+
+---------------------------------------------------------
+ Queries: 10 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:9000/db?queries=10
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db?queries=10
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.10s   329.87ms   2.28s    91.59%
+    Req/Sec    57.75     10.05    78.00     65.62%
+  1742 requests in 15.05s, 731.25KB read
+  Socket errors: connect 0, read 0, write 0, timeout 143
+Requests/sec:    115.77
+Transfer/sec:     48.60KB
+
+---------------------------------------------------------
+ Queries: 15 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:9000/db?queries=15
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db?queries=15
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.10s   659.50ms   3.46s    88.68%
+    Req/Sec    41.39     28.26    77.00     50.00%
+  1151 requests in 16.02s, 661.68KB read
+  Socket errors: connect 0, read 0, write 0, timeout 660
+Requests/sec:     71.86
+Transfer/sec:     41.31KB
+
+---------------------------------------------------------
+ Queries: 20 for unfiltered
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:9000/db?queries=20
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:9000/db?queries=20
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.10s     1.04s    4.68s    87.56%
+    Req/Sec    30.35     22.77    59.00     52.94%
+  860 requests in 15.35s, 627.92KB read
+  Socket errors: connect 0, read 0, write 0, timeout 836
+Requests/sec:     56.04
+Transfer/sec:     40.92KB

@@ -1,0 +1,138 @@
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Tue Apr 15 01:25:30 UTC 2014
+
+  System load:  0.01               Processes:           71
+  Usage of /:   25.7% of 19.69GB   Users logged in:     0
+  Memory usage: 6%                 IP address for eth0: 10.254.75.91
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+150 packages can be updated.
+81 updates are security updates.
+
+*** /dev/xvda1 will be checked for errors at next reboot ***
+
+
+---------------------------------------------------------
+ Running Primer php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 5 -c 8 -t 8 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 5s test @ http://50.112.80.55:8080/bench/db
+  8 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    25.70ms    6.73ms  67.57ms   71.60%
+    Req/Sec    39.96      8.27    65.00     64.81%
+  1600 requests in 5.01s, 373.20KB read
+Requests/sec:    319.14
+Transfer/sec:     74.44KB
+
+---------------------------------------------------------
+ Running Warmup php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive' -d 15 -c 256 -t 2 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/bench/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   817.69ms  344.94ms   3.21s    89.23%
+    Req/Sec   167.10     16.47   185.00     80.00%
+  4679 requests in 15.01s, 1.07MB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:    311.78
+Transfer/sec:     72.73KB
+
+---------------------------------------------------------
+ Concurrency: 8 for php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 8 -t 2 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/bench/db
+  2 threads and 8 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.49ms    6.37ms  50.00ms   70.91%
+    Req/Sec   163.11     15.40   207.00     63.43%
+  4857 requests in 15.01s, 1.11MB read
+Requests/sec:    323.60
+Transfer/sec:     75.47KB
+
+---------------------------------------------------------
+ Concurrency: 16 for php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 16 -t 2 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/bench/db
+  2 threads and 16 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    45.64ms   17.43ms 103.71ms   66.67%
+    Req/Sec   177.42     16.42   212.00     63.89%
+  5297 requests in 15.00s, 1.21MB read
+Requests/sec:    353.09
+Transfer/sec:     82.35KB
+
+---------------------------------------------------------
+ Concurrency: 32 for php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 32 -t 2 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/bench/db
+  2 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    90.03ms   28.74ms 183.25ms   67.50%
+    Req/Sec   181.07     10.74   212.00     71.82%
+  5422 requests in 15.00s, 1.23MB read
+Requests/sec:    361.40
+Transfer/sec:     84.29KB
+
+---------------------------------------------------------
+ Concurrency: 64 for php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 64 -t 2 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/bench/db
+  2 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   178.59ms   48.14ms 335.17ms   68.85%
+    Req/Sec   176.98      9.32   200.00     63.93%
+  5281 requests in 15.01s, 1.20MB read
+Requests/sec:    351.91
+Transfer/sec:     82.09KB
+
+---------------------------------------------------------
+ Concurrency: 128 for php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 128 -t 2 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/bench/db
+  2 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   359.37ms   88.19ms 622.78ms   68.51%
+    Req/Sec   175.34     10.27   197.00     65.62%
+  5236 requests in 15.01s, 1.19MB read
+Requests/sec:    348.86
+Transfer/sec:     81.37KB
+
+---------------------------------------------------------
+ Concurrency: 256 for php-kohana-raw
+ wrk -H 'Host: localhost' -H 'Accept: application/json,text/html;q=0.9,application/xhtml+xml;q=0.9,application/xml;q=0.8,*/*;q=0.7' -H 'Connection: keep-alive'  -d 15 -c 256 -t 2 http://50.112.80.55:8080/bench/db
+---------------------------------------------------------
+
+Running 15s test @ http://50.112.80.55:8080/bench/db
+  2 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   734.71ms  484.80ms   8.41s    99.34%
+    Req/Sec   171.66     17.37   200.00     65.52%
+  5064 requests in 15.01s, 1.15MB read
+  Socket errors: connect 0, read 0, write 0, timeout 73
+Requests/sec:    337.37
+Transfer/sec:     78.69KB
